@@ -167,7 +167,15 @@
 
 const SUPABASE_URL = 'https://rknepvongsjlqodnkbtg.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJrbmVwdm9uZ3NqbHFvZG5rYnRnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMzNTAxNzYsImV4cCI6MjA5ODkyNjE3Nn0.5smHl86AN9x6gZIWW0416UP1xUawEWqjBIRmadRokgE';
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// window.supabase comes from the CDN <script> tag above; guard against it failing
+// to load so a network hiccup can't take the rest of this script (and the
+// start-screen click handlers below) down with it.
+let supabase = null;
+try {
+  supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+} catch(e) {
+  console.error('Supabase client init failed', e);
+}
 
 function shuffleEqualWeights(rows){
   const groups = new Map();
@@ -182,6 +190,7 @@ function shuffleEqualWeights(rows){
 }
 
 async function fetchQuestions(player, cat){
+  if(!supabase){ console.error('fetchQuestions: supabase client unavailable'); return []; }
   let priQuery = supabase.from('v_question_priority').select('q_id, weight').eq('user_id', player);
   if(cat !== 'all') priQuery = priQuery.eq('category', cat);
   const { data: priRows, error: priErr } = await priQuery.order('weight', { ascending: false }).limit(20);
@@ -198,6 +207,7 @@ async function fetchQuestions(player, cat){
 }
 
 async function logAttempt(player, qid, chosen, isCorrect, ms, sessionId){
+  if(!supabase){ console.error('logAttempt: supabase client unavailable'); return; }
   const { error } = await supabase.from('attempts').insert({
     user_id: player,
     q_id: qid,
@@ -211,9 +221,10 @@ async function logAttempt(player, qid, chosen, isCorrect, ms, sessionId){
 
 /* ---------------- state ---------------- */
 const PER_QUESTION_S = 60;
+const uuid=()=>(typeof crypto!=='undefined'&&crypto.randomUUID) ? crypto.randomUUID() : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return (c==='x'?r:(r&0x3|0x8)).toString(16);});
 let player='alperen', cat='all';
 let queue=[], idx=0, correct=0, wrongs=[], answered=false;
-let tLeft=0, tHandle=null, tStart=0, sessionId=crypto.randomUUID();
+let tLeft=0, tHandle=null, tStart=0, sessionId=uuid();
 
 const $=id=>document.getElementById(id);
 const show=id=>{document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');}
@@ -240,7 +251,7 @@ $('btn-start').onclick=async()=>{
     $('timerbar').style.visibility='hidden';
     return;
   }
-  idx=0; correct=0; wrongs=[]; sessionId=crypto.randomUUID();
+  idx=0; correct=0; wrongs=[]; sessionId=uuid();
   $('timerbar').style.visibility='visible';
   show('s-quiz'); renderQ();
 };
