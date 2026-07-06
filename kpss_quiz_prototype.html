@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>KPSS Drill — Optik</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF8F3;      /* exam paper */
+    --ink:#1B2A4A;        /* booklet ink navy */
+    --graphite:#3A3A3A;   /* pencil fill */
+    --osym-red:#C0392B;   /* registration-mark red */
+    --stamp-green:#1E7B4F;/* grader's green */
+    --line:#D8D3C8;       /* faint form lines */
+    --muted:#8A8577;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{
+    font-family:'IBM Plex Sans',system-ui,sans-serif;
+    background:var(--paper); color:var(--ink);
+    min-height:100dvh; display:flex; flex-direction:column;
+  }
+  .mono{font-family:'IBM Plex Mono',monospace}
+
+  /* ---------- top bar: booklet header ---------- */
+  header{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:14px 18px 10px; border-bottom:2px solid var(--ink);
+  }
+  header .code{font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:.8rem; letter-spacing:.12em}
+  header .cat{font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); font-weight:600}
+
+  /* ---------- timer bar ---------- */
+  .timer{height:4px; background:var(--line); position:relative}
+  .timer i{position:absolute; inset:0 auto 0 0; width:100%; background:var(--ink); transition:width .25s linear}
+  .timer.low i{background:var(--osym-red)}
+
+  /* ---------- screens ---------- */
+  .screen{flex:1; display:none; flex-direction:column; padding:22px 18px; max-width:560px; width:100%; margin:0 auto}
+  .screen.active{display:flex}
+
+  /* ---------- start ---------- */
+  .brand{font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:.75rem; letter-spacing:.2em; color:var(--muted); margin-bottom:6px}
+  h1{font-size:1.7rem; font-weight:700; line-height:1.15; margin-bottom:26px}
+  .fieldlabel{font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:600; margin:18px 0 8px}
+  .chips{display:flex; gap:8px; flex-wrap:wrap}
+  .chip{
+    padding:10px 16px; border:1.5px solid var(--ink); border-radius:999px;
+    font-size:.9rem; font-weight:600; background:transparent; color:var(--ink); cursor:pointer;
+  }
+  .chip.sel{background:var(--ink); color:var(--paper)}
+  .go{
+    margin-top:auto; padding:16px; width:100%;
+    background:var(--ink); color:var(--paper); border:none; border-radius:10px;
+    font-family:'IBM Plex Sans',sans-serif; font-size:1.05rem; font-weight:700; cursor:pointer;
+  }
+
+  /* ---------- quiz ---------- */
+  .qtext{font-size:1.12rem; line-height:1.55; font-weight:400; margin:6px 0 26px; white-space:pre-line}
+  .opts{display:flex; flex-direction:column; gap:10px}
+  .opt{
+    display:flex; align-items:center; gap:14px; text-align:left;
+    padding:13px 14px; background:transparent; border:1px solid var(--line); border-radius:10px;
+    font-family:'IBM Plex Sans',sans-serif; font-size:.98rem; color:var(--ink); cursor:pointer;
+    transition:border-color .12s;
+  }
+  .opt:active{border-color:var(--ink)}
+  .bubble{
+    flex:none; width:30px; height:30px; border-radius:50%;
+    border:1.8px solid var(--ink); display:grid; place-items:center;
+    font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:.85rem;
+    transition:all .15s;
+  }
+  /* filled like graphite */
+  .opt.picked .bubble{background:var(--graphite); border-color:var(--graphite); color:var(--paper)}
+  /* grading marks */
+  .opt.correct{border-color:var(--stamp-green)}
+  .opt.correct .bubble{background:var(--stamp-green); border-color:var(--stamp-green); color:#fff}
+  .opt.wrong{border-color:var(--osym-red); position:relative}
+  .opt.wrong .bubble{background:var(--osym-red); border-color:var(--osym-red); color:#fff}
+  .opt.wrong::after{
+    content:''; position:absolute; left:8px; right:8px; top:50%;
+    border-top:2px solid var(--osym-red); transform:rotate(-1.2deg); opacity:.55;
+  }
+  .opt:disabled{cursor:default}
+
+  .verdict{
+    margin-top:22px; font-family:'IBM Plex Mono',monospace; font-weight:600;
+    font-size:.85rem; letter-spacing:.1em; min-height:1.4em;
+  }
+  .verdict.ok{color:var(--stamp-green)}
+  .verdict.no{color:var(--osym-red)}
+  .next{
+    margin-top:14px; padding:14px; background:transparent; color:var(--ink);
+    border:1.5px solid var(--ink); border-radius:10px; font-weight:700; font-size:1rem; cursor:pointer;
+    font-family:'IBM Plex Sans',sans-serif; display:none;
+  }
+
+  /* ---------- summary: corrected sheet ---------- */
+  .score{font-family:'IBM Plex Mono',monospace; font-size:2.4rem; font-weight:600; margin:4px 0 2px}
+  .score small{font-size:1rem; color:var(--muted)}
+  .sheet{margin-top:20px; border-top:1px solid var(--line)}
+  .row{display:flex; gap:12px; padding:12px 2px; border-bottom:1px solid var(--line); font-size:.9rem; align-items:baseline}
+  .row .n{font-family:'IBM Plex Mono',monospace; font-weight:600; color:var(--muted); flex:none; width:2.2em}
+  .row .mark{font-family:'IBM Plex Mono',monospace; font-weight:600; flex:none}
+  .row.wrongrow .mark{color:var(--osym-red)}
+  .row.okrow .mark{color:var(--stamp-green)}
+  .row p{flex:1; color:var(--ink); opacity:.85; line-height:1.4}
+  .again{margin-top:22px}
+</style>
+</head>
+<body>
+
+<div class="timer" id="timerbar" style="visibility:hidden"><i id="timerfill"></i></div>
+<header>
+  <span class="code" id="hdrcode">KPSS · GK</span>
+  <span class="cat" id="hdrcat">DENEME KİTAPÇIĞI</span>
+</header>
+
+<!-- START -->
+<section class="screen active" id="s-start">
+  <div class="brand">OPTİK · v0.1</div>
+  <h1>Sınav kitapçığını aç.</h1>
+
+  <div class="fieldlabel">Aday</div>
+  <div class="chips" id="players">
+    <button class="chip sel" data-p="alperen">Alperen</button>
+    <button class="chip" data-p="hatice">Hatice</button>
+  </div>
+
+  <div class="fieldlabel">Ders</div>
+  <div class="chips" id="cats">
+    <button class="chip sel" data-c="all">Hepsi</button>
+    <button class="chip" data-c="tarih">Tarih</button>
+    <button class="chip" data-c="cografya">Coğrafya</button>
+    <button class="chip" data-c="vatandaslik">Vatandaşlık</button>
+  </div>
+
+  <button class="go" id="btn-start">Sınavı Başlat</button>
+</section>
+
+<!-- QUIZ -->
+<section class="screen" id="s-quiz">
+  <p class="qtext" id="qtext"></p>
+  <div class="opts" id="opts"></div>
+  <div class="verdict" id="verdict"></div>
+  <button class="next" id="btn-next">Sonraki Soru →</button>
+</section>
+
+<!-- SUMMARY -->
+<section class="screen" id="s-end">
+  <div class="brand">SONUÇ BELGESİ</div>
+  <div class="score" id="score"></div>
+  <div class="fieldlabel">Cevap Anahtarı Karşılaştırması</div>
+  <div class="sheet" id="sheet"></div>
+  <button class="go again" id="btn-again">Yeni Oturum</button>
+</section>
+
+<script>
+/* =====================================================================
+   SUPABASE SEAM — the coding agent replaces exactly these two functions.
+   Everything below them is pure UI and should not need changes.
+   ===================================================================== */
+
+// TODO(agent): replace with
+//   supabase.from('v_question_priority') join questions,
+//   where user_id = :player and (category = :cat or :cat = 'all')
+//   order by weight desc, random() limit 20
+async function fetchQuestions(player, cat){
+  const bank = DUMMY_QUESTIONS.filter(q => cat==='all' || q.category===cat);
+  return shuffle(bank).slice(0, 20);
+}
+
+// TODO(agent): insert into attempts (user_id,q_id,chosen_answer,is_correct,time_taken_ms,session_id)
+async function logAttempt(player, qid, chosen, isCorrect, ms, sessionId){
+  console.log('attempt', {player, qid, chosen, isCorrect, ms, sessionId});
+}
+
+/* ---------------- dummy bank (replaced by DB) ---------------- */
+const DUMMY_QUESTIONS = [
+ {q_id:'d1', category:'tarih', question_text:'Kurtuluş Savaşı döneminde düzenli ordunun kazandığı ilk askeri başarı aşağıdakilerden hangisidir?',
+  options:{A:'Sakarya Meydan Muharebesi',B:'I. İnönü Muharebesi',C:'Büyük Taarruz',D:'Kütahya-Eskişehir Muharebeleri',E:'II. İnönü Muharebesi'}, correct_answer:'B'},
+ {q_id:'d2', category:'tarih', question_text:'Osmanlı Devleti\'nde ilk kez padişahın yetkilerini sınırlandıran ve halka temsil hakkı tanıyan gelişme aşağıdakilerden hangisidir?',
+  options:{A:'Tanzimat Fermanı',B:'Islahat Fermanı',C:'Sened-i İttifak',D:'Kanun-ı Esasi\'nin ilanı',E:'II. Meşrutiyet\'in ilanı'}, correct_answer:'D'},
+ {q_id:'d3', category:'cografya', question_text:'Türkiye\'nin en uzun akarsuyu aşağıdakilerden hangisidir?',
+  options:{A:'Sakarya',B:'Fırat',C:'Kızılırmak',D:'Yeşilırmak',E:'Dicle'}, correct_answer:'C'},
+ {q_id:'d4', category:'cografya', question_text:'Aşağıdaki iklim tiplerinden hangisinde yıllık sıcaklık farkı en fazladır?',
+  options:{A:'Akdeniz iklimi',B:'Karadeniz iklimi',C:'Karasal iklim',D:'Marmara (geçiş) iklimi',E:'Okyanusal iklim'}, correct_answer:'C'},
+ {q_id:'d5', category:'vatandaslik', question_text:'1982 Anayasası\'na göre yasama yetkisi aşağıdakilerden hangisine aittir?',
+  options:{A:'Cumhurbaşkanı',B:'Bakanlar Kurulu',C:'Anayasa Mahkemesi',D:'Türkiye Büyük Millet Meclisi',E:'Yargıtay'}, correct_answer:'D'},
+ {q_id:'d6', category:'vatandaslik', question_text:'Aşağıdakilerden hangisi kişinin dokunulmaz, devredilmez ve vazgeçilmez temel hak ve hürriyetlerinden biri değildir?',
+  options:{A:'Yaşama hakkı',B:'Kişi dokunulmazlığı',C:'Düşünce özgürlüğü',D:'Dilekçe hakkı',E:'Milletvekili seçilme yeterliliği'}, correct_answer:'E'},
+ {q_id:'d7', category:'tarih', question_text:'Cumhuriyet\'in ilanından sonra gerçekleştirilen "Harf İnkılabı" hangi yılda kabul edilmiştir?',
+  options:{A:'1924',B:'1926',C:'1928',D:'1930',E:'1933'}, correct_answer:'C'},
+ {q_id:'d8', category:'cografya', question_text:'Türkiye\'de nüfus yoğunluğunun en fazla olduğu bölge aşağıdakilerden hangisidir?',
+  options:{A:'İç Anadolu',B:'Marmara',C:'Ege',D:'Akdeniz',E:'Karadeniz'}, correct_answer:'B'},
+];
+
+/* ---------------- state ---------------- */
+const PER_QUESTION_S = 60;
+let player='alperen', cat='all';
+let queue=[], idx=0, correct=0, wrongs=[], answered=false;
+let tLeft=0, tHandle=null, tStart=0, sessionId=crypto.randomUUID();
+
+const $=id=>document.getElementById(id);
+const show=id=>{document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');}
+const shuffle=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(v=>v[1]);
+const catLabel={tarih:'TARİH',cografya:'COĞRAFYA',vatandaslik:'VATANDAŞLIK',guncel:'GÜNCEL'};
+
+/* ---------------- start screen ---------------- */
+document.querySelectorAll('#players .chip').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#players .chip').forEach(x=>x.classList.remove('sel'));
+  b.classList.add('sel'); player=b.dataset.p;
+});
+document.querySelectorAll('#cats .chip').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#cats .chip').forEach(x=>x.classList.remove('sel'));
+  b.classList.add('sel'); cat=b.dataset.c;
+});
+$('btn-start').onclick=async()=>{
+  queue=await fetchQuestions(player,cat);
+  idx=0; correct=0; wrongs=[]; sessionId=crypto.randomUUID();
+  $('timerbar').style.visibility='visible';
+  show('s-quiz'); renderQ();
+};
+
+/* ---------------- quiz loop ---------------- */
+function renderQ(){
+  const q=queue[idx]; answered=false;
+  $('hdrcode').textContent=`SORU ${String(idx+1).padStart(2,'0')} / ${queue.length}`;
+  $('hdrcat').textContent=catLabel[q.category]||'GK';
+  $('qtext').textContent=q.question_text;
+  $('verdict').textContent=''; $('verdict').className='verdict';
+  $('btn-next').style.display='none';
+  const box=$('opts'); box.innerHTML='';
+  for(const k of ['A','B','C','D','E']){
+    if(!(k in q.options)) continue;
+    const b=document.createElement('button');
+    b.className='opt'; b.dataset.k=k;
+    b.innerHTML=`<span class="bubble">${k}</span><span>${q.options[k]}</span>`;
+    b.onclick=()=>answer(k,b);
+    box.appendChild(b);
+  }
+  startTimer();
+}
+
+function startTimer(){
+  clearInterval(tHandle); tLeft=PER_QUESTION_S; tStart=Date.now();
+  const bar=$('timerbar'), fill=$('timerfill');
+  bar.classList.remove('low'); fill.style.width='100%';
+  tHandle=setInterval(()=>{
+    tLeft-=0.25;
+    fill.style.width=Math.max(0,(tLeft/PER_QUESTION_S)*100)+'%';
+    if(tLeft<=10) bar.classList.add('low');
+    if(tLeft<=0) answer(null,null);
+  },250);
+}
+
+function answer(k, btn){
+  if(answered) return; answered=true;
+  clearInterval(tHandle);
+  const q=queue[idx], ok=(k===q.correct_answer), ms=Date.now()-tStart;
+  document.querySelectorAll('.opt').forEach(o=>{
+    o.disabled=true;
+    if(o.dataset.k===q.correct_answer) o.classList.add('correct');
+  });
+  if(btn){ btn.classList.add('picked'); if(!ok) btn.classList.add('wrong'); }
+  const v=$('verdict');
+  if(ok){ correct++; v.textContent='DOĞRU ✓'; v.classList.add('ok'); }
+  else{
+    wrongs.push({q, chosen:k});
+    v.textContent = k===null ? 'SÜRE DOLDU — CEVAP: '+q.correct_answer : 'YANLIŞ ✗ — CEVAP: '+q.correct_answer;
+    v.classList.add('no');
+  }
+  logAttempt(player,q.q_id,k,ok,ms,sessionId);
+  $('btn-next').style.display='block';
+  $('btn-next').textContent = idx+1<queue.length ? 'Sonraki Soru →' : 'Sonucu Gör →';
+}
+
+$('btn-next').onclick=()=>{
+  idx++;
+  if(idx<queue.length) renderQ();
+  else endQuiz();
+};
+
+/* ---------------- summary ---------------- */
+function endQuiz(){
+  clearInterval(tHandle);
+  $('timerbar').style.visibility='hidden';
+  $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='SONUÇ';
+  $('score').innerHTML=`${correct} / ${queue.length} <small>· ${player==='alperen'?'Alperen':'Hatice'}</small>`;
+  const sheet=$('sheet'); sheet.innerHTML='';
+  queue.forEach((q,i)=>{
+    const w=wrongs.find(x=>x.q.q_id===q.q_id);
+    const row=document.createElement('div');
+    row.className='row '+(w?'wrongrow':'okrow');
+    row.innerHTML=`<span class="n">${String(i+1).padStart(2,'0')}</span>
+      <span class="mark">${w?'✗ '+(w.chosen??'—')+'→'+q.correct_answer:'✓ '+q.correct_answer}</span>
+      <p>${q.question_text.slice(0,90)}${q.question_text.length>90?'…':''}</p>`;
+    sheet.appendChild(row);
+  });
+  show('s-end');
+}
+$('btn-again').onclick=()=>{ $('hdrcat').textContent='DENEME KİTAPÇIĞI'; show('s-start'); };
+</script>
+</body>
+</html>
