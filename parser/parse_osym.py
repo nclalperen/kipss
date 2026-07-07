@@ -47,14 +47,34 @@ LLM_SYSTEM_PROMPT = (
 MAX_QUESTION_NO = 60
 KEY_MIN_PAIRS = 8          # a page with at least this many "N. X" pairs is an answer-key page
 IMAGE_STEM_CHARS = 15      # stem shorter than this => probably an image/map/table question
+# Official ÖSYM PDFs carry a giant diagonal "ÖSYM" security watermark rendered
+# as individual ~250pt characters (vs. ~9pt body text) that bleed into both
+# extract_text() and word tokenization (e.g. "3." becomes "M3."). Any char
+# this large is watermark, never body content — drop it before extracting.
+WATERMARK_SIZE_PT = 20
 
+FURNITURE_LINES = {"KÜLTÜR", "YETENEK", "GENEL", "GENEL KÜLTÜR", "GENEL YETENEK",
+                    "GENEL K", "GENEL Y"}
 QNUM_RE = re.compile(r"^[ \t]*(\d{1,2})\.[ \t]*")
 OPT_LINE_RE = re.compile(r"(?m)^[ \t]*([A-E])\)[ \t]*")
 KEYPAIR_RE = re.compile(r"\b(\d{1,2})\s*[.)]\s*([A-E])\b")
+KEYNUM_RE = re.compile(r"(\d{1,2})\.$")
+
+
+def clean_page(page):
+    return page.filter(lambda obj: not (obj.get("object_type") == "char"
+                                        and obj.get("size", 0) > WATERMARK_SIZE_PT))
 
 
 def nfc(s):
     return unicodedata.normalize("NFC", s)
+
+
+def tr_lower(s):
+    # Python's str.lower() doesn't know Turkish casing: dotted 'İ' becomes
+    # 'i' + a combining dot above (not plain 'i'), so plain-ASCII substring
+    # checks silently fail against ALL-CAPS Turkish text (e.g. "TESTİ").
+    return s.replace("İ", "i").replace("I", "ı").lower()
 
 
 def parse_range(spec, name):
@@ -79,6 +99,7 @@ def category_for(no, ranges):
 def page_column_events(page):
     """Yield per-column lists of events ({'kind':'line','text':...} or {'kind':'image'})
     in reading order: left column fully, then right column."""
+    page = clean_page(page)
     mid = page.width / 2
     columns = []
     for x0, x1 in ((0, mid), (mid, page.width)):
@@ -97,23 +118,87 @@ def page_column_events(page):
     return columns
 
 
-def find_answer_key(pages_text):
-    """Detect answer-key pages (dense 'N. X' pairs) and build {no: letter}.
-    Returns (key_map, key_page_indexes, conflicts)."""
-    key, key_pages, conflicts = {}, set(), []
-    for idx, text in pages_text:
-        pairs = KEYPAIR_RE.findall(text)
-        if len(pairs) < KEY_MIN_PAIRS:
+def extract_merged_gy_gk_key(page):
+    """Official ÖSYM booklets print one combined answer-key page: 4 number/letter
+    columns under 'GENEL YETENEK GENEL YETENEK GENEL KÜLTÜR GENEL KÜLTÜR' headers
+    (GY 1-47, GY 48-60, GK 1-47, GK 48-60). Returns the GK-only {no: letter} dict,
+    or None if this page isn't that layout."""
+    words = page.extract_words()
+    header = [w for w in words if w["top"] < 130 and w["text"] in ("GENEL", "YETENEK", "KÜLTÜR")]
+    kultur_x = sorted(w["x0"] for w in header if w["text"] == "KÜLTÜR")
+    if len(kultur_x) < 2:
+        return None
+
+    numbers = [w for w in words if w["top"] > 130 and KEYNUM_RE.search(w["text"])]
+    if len(numbers) < KEY_MIN_PAIRS:
+        return None
+
+    xs = sorted(set(round(w["x0"]) for w in numbers))
+    clusters, cur = [], [xs[0]]
+    for x in xs[1:]:
+        if x - cur[-1] > 20:
+            clusters.append(cur)
+            cur = [x]
+        else:
+            cur.append(x)
+    clusters.append(cur)
+    col_ranges = [(min(c) - 5, max(c) + 5) for c in clusters]
+
+    def col_of(x0):
+        for i, (lo, hi) in enumerate(col_ranges):
+            if lo <= x0 <= hi:
+                return i
+        return None
+
+    gk_cols = {min(range(len(col_ranges)),
+                    key=lambda i: abs((col_ranges[i][0] + col_ranges[i][1]) / 2 - kx))
+               for kx in kultur_x}
+
+    letters = [w for w in words if w["top"] > 130 and re.fullmatch(r"[A-E]", w["text"])]
+    key = {}
+    for numw in numbers:
+        if col_of(numw["x0"]) not in gk_cols:
             continue
+        no = int(KEYNUM_RE.search(numw["text"]).group(1))
+        cands = [l for l in letters if abs(l["top"] - numw["top"]) < 3 and l["x0"] > numw["x0"]]
+        if cands:
+            key[no] = min(cands, key=lambda l: l["x0"])["text"]
+    return key or None
+
+
+def find_answer_key(pdf, page_filter):
+    """Detect answer-key page(s) anywhere in the PDF (the key often sits outside
+    the --pages range used for question bodies) and build {no: letter}.
+    Tries the real ÖSYM merged-table layout first, falls back to a plain
+    'N. X' scan for simpler single-test sources. Returns (key, key_pages, conflicts)."""
+    key, key_pages, conflicts = {}, set(), []
+
+    def add(no, letter, idx):
+        if no < 1 or no > MAX_QUESTION_NO:
+            return
+        if no in key and key[no] != letter:
+            conflicts.append((no, key[no], letter))
+        else:
+            key.setdefault(no, letter)
         key_pages.add(idx)
-        for no_s, letter in pairs:
-            no = int(no_s)
-            if no < 1 or no > MAX_QUESTION_NO:
-                continue
-            if no in key and key[no] != letter:
-                conflicts.append((no, key[no], letter))
-            else:
-                key.setdefault(no, letter)
+
+    for i, page in enumerate(pdf.pages, start=1):
+        page = clean_page(page)
+        merged = extract_merged_gy_gk_key(page)
+        if merged:
+            for no, letter in merged.items():
+                add(no, letter, i)
+            continue
+        text = nfc(page.extract_text() or "")
+        pairs = KEYPAIR_RE.findall(text)
+        if len(pairs) >= KEY_MIN_PAIRS:
+            for no_s, letter in pairs:
+                add(int(no_s), letter, i)
+
+    # only pages actually inside the scoped question range should ever be
+    # excluded from body scanning by key_pages membership
+    if page_filter:
+        key_pages = {p for p in key_pages if p in page_filter}
     return key, key_pages, conflicts
 
 
@@ -123,13 +208,7 @@ def extract_questions(pdf, page_filter, start_no=1):
     Question markers must be sequential (expected or expected+1, logging the
     gap) so years like '1923.' or stray numbers can't open a bogus question.
     """
-    pages_text = []
-    for i, page in enumerate(pdf.pages, start=1):
-        if page_filter and i not in page_filter:
-            continue
-        pages_text.append((i, nfc(page.extract_text() or "")))
-
-    key, key_pages, key_conflicts = find_answer_key(pages_text)
+    key, key_pages, key_conflicts = find_answer_key(pdf, page_filter)
 
     questions, missing = [], []
     expected = start_no
@@ -142,6 +221,23 @@ def extract_questions(pdf, page_filter, start_no=1):
                 if ev["kind"] == "image":
                     if current:
                         current["saw_image"] = True
+                    continue
+                low = tr_lower(ev["text"])
+                stripped = ev["text"].strip()
+                if ("soru vardır" in low or "cevaplarınızı" in low or "işaretleyiniz" in low
+                        or "diğer sayfaya" in low or "testi bitti" in low or "kontrol ediniz" in low
+                        or stripped in FURNITURE_LINES or re.match(r"^\d{4}-KPSS", stripped)
+                        or (stripped.isdigit() and len(stripped) <= 3)):
+                    # Page furniture: the per-test instructions boilerplate
+                    # ("Bu testte NN soru vardır." / "Cevaplarınızı ...
+                    # işaretleyiniz.", numbered 1./2. exactly like real
+                    # questions) and the running header ("<year>-KPSS/... GENEL
+                    # KÜLTÜR") are both full-width lines that get truncated
+                    # mid-word at the two-column crop boundary — the tail
+                    # fragment ("KÜLTÜR", "rılan kısmına işaretleyiniz.") lands
+                    # as an orphan line at the *start* of the right column,
+                    # which would otherwise silently glue onto whatever
+                    # question is still open from the left column.
                     continue
                 m = QNUM_RE.match(ev["text"])
                 no = int(m.group(1)) if m else None
