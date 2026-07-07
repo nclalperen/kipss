@@ -374,11 +374,17 @@ async function fetchQuestions(player, cat, limit){
   if(!sb){ console.error('fetchQuestions: supabase client unavailable'); return []; }
   let priQuery = sb.from('v_question_priority').select('q_id, weight').eq('user_id', player);
   if(cat !== 'all') priQuery = priQuery.eq('category', cat);
-  const { data: priRows, error: priErr } = await priQuery.order('weight', { ascending: false }).limit(limit);
+  // No .limit() here: with far more questions than fit in one session, most
+  // rows tie on weight (e.g. every unseen question scores a flat 3.0), and
+  // Postgres has no reason to break ties randomly. Truncating server-side
+  // would let the same fixed subset win the tie every time, effectively
+  // hiding the rest. Fetch every candidate (cheap at this scale), shuffle
+  // within each weight tier, THEN slice to the requested count.
+  const { data: priRows, error: priErr } = await priQuery.order('weight', { ascending: false });
   if(priErr){ console.error('fetchQuestions priority error', priErr); return []; }
   if(!priRows || priRows.length === 0) return [];
 
-  const ordered = shuffleEqualWeights(priRows);
+  const ordered = shuffleEqualWeights(priRows).slice(0, limit);
   const ids = ordered.map(r => r.q_id);
   const { data: qRows, error: qErr } = await sb.from('questions').select('*').in('q_id', ids);
   if(qErr){ console.error('fetchQuestions questions error', qErr); return []; }
