@@ -398,6 +398,18 @@
   <button class="linkbtn" id="btn-mp-result-leave">Ana menüye dön</button>
 </section>
 
+<section class="screen" id="s-quiz">
+  <div id="mp-scoreboard" style="display:none; justify-content:space-between; margin-bottom:12px; font-weight:600; font-family:'IBM Plex Mono',monospace; font-size:.9rem; color:var(--muted)">
+    <span id="score-me">Sen: 0</span>
+    <span id="score-opp">Rakip: 0</span>
+  </div>
+  
+  <p class="qtext" id="qtext"></p>
+  <div class="opts" id="opts"></div>
+  <div class="verdict" id="verdict"></div>
+  <button class="next" id="btn-next">Sonraki Soru →</button>
+</section>
+
 <!-- QUIZ -->
 <section class="screen" id="s-quiz">
   <p class="qtext" id="qtext"></p>
@@ -545,6 +557,12 @@ let mpPresenceChannel=null;    // per-match presence, used to detect the opponen
 let quizStartedForMatch=null;  // match_id already transitioned into s-quiz, guards duplicate starts
 let myMpFinished=false;        // I've submitted my score for the current match, just waiting on the opponent
 let incomingInvite=null;
+let myLockedAnswer = undefined;
+let oppLockedAnswer = undefined;
+let myNextReady = false;
+let oppNextReady = false;
+let myMpScore = 0;
+let oppMpScore = 0;
 
 function applyTheme(settings){
   document.documentElement.setAttribute('data-theme', settings.theme==='dark' ? 'dark' : 'light');
@@ -836,7 +854,21 @@ function subscribeToMatch(matchId){
     .on('postgres_changes', {event:'UPDATE', schema:'public', table:'matches', filter:`match_id=eq.${matchId}`}, payload=>{
       onMatchUpdate(payload.new);
     })
+    .on('broadcast', { event: 'mp_action' }, ({ payload }) => {
+      handleMpAction(payload);
+    })
     .subscribe();
+}
+
+function handleMpAction(payload) {
+  if (!mpMatch || mpMatch.status !== 'in_progress') return;
+  if (payload.action === 'lock_answer' && payload.userId !== currentUser.user_id) {
+    oppLockedAnswer = payload.ans;
+    checkRoundResolve();
+  } else if (payload.action === 'next_q' && payload.userId !== currentUser.user_id) {
+    oppNextReady = true;
+    checkNextResolve();
+  }
 }
 
 function onMatchUpdate(row){
@@ -949,7 +981,19 @@ async function beginMultiplayerQuiz(row){
   queue = row.question_ids.map(id=>qMap.get(id)).filter(Boolean);
   perQuestionS = row.per_question_seconds;
   idx=0; correct=0; wrongs=[]; sessionId=row.match_id;
+  
+  // Reset Scores
+  myMpScore = 0; 
+  oppMpScore = 0;
+  
   show('s-quiz'); renderQ();
+}
+
+function updateScoreboard() {
+  if (!mpMatch) return;
+  const oppId = mpMatch.host_id === currentUser.user_id ? mpMatch.guest_id : mpMatch.host_id;
+  $('score-me').textContent = `Sen: ${myMpScore}`;
+  $('score-opp').textContent = `${displayNameFor(oppId)}: ${oppMpScore}`;
 }
 
 async function endMultiplayerQuiz(){
@@ -1151,11 +1195,25 @@ $('btn-start').onclick=async()=>{
 /* ---------------- quiz loop ---------------- */
 function renderQ(){
   const q=queue[idx]; answered=false;
+  
+  // Reset synchronization state for the new question
+  myLockedAnswer = undefined;
+  oppLockedAnswer = undefined;
+  myNextReady = false;
+  oppNextReady = false;
+
   $('hdrcode').textContent=`SORU ${String(idx+1).padStart(2,'0')} / ${queue.length}`;
   $('hdrcat').textContent=catLabel[q.category]||'GK';
   $('qtext').textContent=q.question_text;
   $('verdict').textContent=''; $('verdict').className='verdict';
+  
   $('btn-next').style.display='none';
+  $('btn-next').disabled = false;
+  
+  // Show/Hide Scoreboard
+  $('mp-scoreboard').style.display = mpMatch ? 'flex' : 'none';
+  updateScoreboard();
+
   const box=$('opts'); box.innerHTML='';
   for(const k of ['A','B','C','D','E']){
     if(!(k in q.options)) continue;
@@ -1185,30 +1243,107 @@ function startTimer(){
 function answer(k, btn){
   if(answered) return; answered=true;
   clearInterval(tHandle);
-  const q=queue[idx], ok=(k===q.correct_answer), ms=Date.now()-tStart;
-  document.querySelectorAll('.opt').forEach(o=>{
-    o.disabled=true;
-    if(o.dataset.k===q.correct_answer) o.classList.add('correct');
-  });
-  if(btn){ btn.classList.add('picked'); if(!ok) btn.classList.add('wrong'); }
-  const v=$('verdict');
-  if(ok){ correct++; v.textContent='DOĞRU ✓'; v.classList.add('ok'); }
-  else{
-    wrongs.push({q, chosen:k});
-    v.textContent = k===null ? 'SÜRE DOLDU — CEVAP: '+q.correct_answer : 'YANLIŞ ✗ — CEVAP: '+q.correct_answer;
-    v.classList.add('no');
+
+  if (mpMatch) {
+    // MULTIPLAYER LOGIC
+    myLockedAnswer = k;
+    document.querySelectorAll('.opt').forEach(o => o.disabled = true);
+    if (btn) btn.classList.add('picked');
+
+    const v = $('verdict');
+    v.textContent = 'Rakip bekleniyor...';
+    v.className = 'verdict';
+
+    // Tell the opponent we locked an answer
+    matchChannel.send({
+      type: 'broadcast',
+      event: 'mp_action',
+      payload: { action: 'lock_answer', userId: currentUser.user_id, ans: k }
+    });
+
+    checkRoundResolve();
+  } else {
+    // SOLO LOGIC
+    const q=queue[idx], ok=(k===q.correct_answer), ms=Date.now()-tStart;
+    document.querySelectorAll('.opt').forEach(o=>{
+      o.disabled=true;
+      if(o.dataset.k===q.correct_answer) o.classList.add('correct');
+    });
+    if(btn){ btn.classList.add('picked'); if(!ok) btn.classList.add('wrong'); }
+    const v=$('verdict');
+    if(ok){ correct++; v.textContent='DOĞRU ✓'; v.classList.add('ok'); }
+    else{
+      wrongs.push({q, chosen:k});
+      v.textContent = k===null ? 'SÜRE DOLDU — CEVAP: '+q.correct_answer : 'YANLIŞ ✗ — CEVAP: '+q.correct_answer;
+      v.classList.add('no');
+    }
+    logAttempt(currentUser.user_id,q.q_id,k,ok,ms,sessionId);
+    $('btn-next').style.display='block';
+    $('btn-next').textContent = idx+1<queue.length ? 'Sonraki Soru →' : 'Sonucu Gör →';
   }
-  logAttempt(currentUser.user_id,q.q_id,k,ok,ms,sessionId);
-  $('btn-next').style.display='block';
-  $('btn-next').textContent = idx+1<queue.length ? 'Sonraki Soru →' : 'Sonucu Gör →';
 }
 
+function checkRoundResolve() {
+  if (myLockedAnswer !== undefined && oppLockedAnswer !== undefined) {
+    // Both players have locked their answers
+    const q = queue[idx];
+    const myOk = (myLockedAnswer === q.correct_answer);
+    const oppOk = (oppLockedAnswer === q.correct_answer);
+
+    if (myOk) { correct++; myMpScore++; }
+    else wrongs.push({q, chosen: myLockedAnswer});
+
+    if (oppOk) oppMpScore++;
+    updateScoreboard();
+    logAttempt(currentUser.user_id, q.q_id, myLockedAnswer, myOk, Date.now()-tStart, sessionId);
+
+    // Apply grading visuals
+    document.querySelectorAll('.opt').forEach(o => {
+      if (o.dataset.k === q.correct_answer) o.classList.add('correct');
+      if (o.dataset.k === myLockedAnswer && !myOk) o.classList.add('wrong');
+    });
+
+    const v = $('verdict');
+    if (myOk) { v.textContent='DOĞRU ✓'; v.classList.add('ok'); }
+    else {
+      v.textContent = myLockedAnswer === null ? 'SÜRE DOLDU — CEVAP: '+q.correct_answer : 'YANLIŞ ✗ — CEVAP: '+q.correct_answer;
+      v.classList.add('no');
+    }
+    
+    // Add subtext for how the opponent did
+    const oppMsg = oppLockedAnswer === null ? 'Rakip süreye yenildi.' : (oppOk ? 'Rakip doğru bildi.' : 'Rakip yanlış bildi.');
+    v.innerHTML += `<br><span style="color:var(--muted); font-size:0.8rem; font-weight:400; letter-spacing:0">${oppMsg}</span>`;
+
+    $('btn-next').style.display='block';
+    $('btn-next').textContent = idx+1<queue.length ? 'Hazırım (İleri) →' : 'Sonucu Gör →';
+  }
+}
 $('btn-next').onclick=()=>{
-  idx++;
-  if(idx<queue.length) renderQ();
-  else if(mpMatch) endMultiplayerQuiz();
-  else endQuiz();
+  if (mpMatch) {
+    myNextReady = true;
+    $('btn-next').disabled = true;
+    $('btn-next').textContent = 'Rakip Bekleniyor...';
+
+    matchChannel.send({
+      type: 'broadcast',
+      event: 'mp_action',
+      payload: { action: 'next_q', userId: currentUser.user_id }
+    });
+    checkNextResolve();
+  } else {
+    idx++;
+    if(idx<queue.length) renderQ();
+    else endQuiz();
+  }
 };
+
+function checkNextResolve() {
+  if (myNextReady && oppNextReady) {
+    idx++;
+    if (idx < queue.length) renderQ();
+    else endMultiplayerQuiz();
+  }
+}
 
 /* ---------------- summary ---------------- */
 function endQuiz(){
