@@ -129,6 +129,25 @@
   .wrow-inner p{ flex:1; font-size:.92rem; line-height:1.35; }
   .wdetail .qtext{ font-size:1.05rem; margin-bottom:18px; }
 
+  /* ---------- multiplayer ---------- */
+  .codebox{ font-family:'IBM Plex Mono',monospace; font-size:1.4rem; font-weight:700; letter-spacing:.14em; }
+  .mp-actionbtn{ border:1.5px solid var(--ink); border-radius:8px; padding:10px 14px; background:transparent; color:var(--ink); font-weight:600; cursor:pointer; font-family:'IBM Plex Sans',sans-serif; }
+  .joinrow{ display:flex; gap:8px; }
+  .joinrow input{ flex:1; text-transform:uppercase; }
+  .joinrow .go{ width:auto; margin:0; padding:12px 18px; }
+  .mp-player{ display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid var(--line); }
+  .mp-player .rdy{ font-family:'IBM Plex Mono',monospace; font-size:.75rem; font-weight:600; color:var(--muted); letter-spacing:.08em; }
+  .mp-player .rdy.on{ color:var(--stamp-green); }
+  .pvp-summary{ display:flex; gap:18px; margin-bottom:16px; }
+  .pvp-stat{ text-align:center; }
+  .pvp-stat b{ display:block; font-family:'IBM Plex Mono',monospace; font-size:1.5rem; }
+  .pvp-stat span{ font-size:.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:.1em; }
+  .pvp-row{ display:flex; justify-content:space-between; padding:12px 2px; border-bottom:1px solid var(--line); font-size:.9rem; }
+  .pvp-row .res{ font-weight:700; }
+  .pvp-row .res.win{ color:var(--stamp-green); }
+  .pvp-row .res.loss{ color:var(--osym-red); }
+  .go:disabled{ opacity:.5; cursor:default; }
+
   /* ---------- quiz ---------- */
   .qtext{font-size:1.12rem; line-height:1.55; font-weight:400; margin:6px 0 26px; white-space:pre-line}
   .opts{display:flex; flex-direction:column; gap:10px}
@@ -213,6 +232,40 @@
   </div>
 </div>
 
+<div class="overlay" id="mp-overlay">
+  <div class="sheet-panel">
+    <h2>Çok Oyunculu</h2>
+    <div class="fieldlabel">Çevrimiçi Oyuncular</div>
+    <div class="userlist" id="mp-online-list"></div>
+    <p id="mp-online-empty" style="color:var(--muted); display:none">Şu an çevrimiçi kimse yok.</p>
+
+    <div class="fieldlabel">Davet Kodu ile Oyna</div>
+    <button class="mp-actionbtn" id="btn-gen-code">Kod Oluştur</button>
+    <div id="mp-code-display" style="display:none; margin-top:10px">
+      <div class="codebox" id="mp-my-code"></div>
+      <button class="mp-actionbtn" id="btn-copy-code" style="margin-top:8px">Kopyala</button>
+    </div>
+
+    <div class="fieldlabel">Kod ile Katıl</div>
+    <div class="joinrow">
+      <input type="text" id="mp-join-code" placeholder="KOD">
+      <button class="go" id="btn-join-code">Katıl</button>
+    </div>
+    <div class="formerr" id="mp-join-err"></div>
+
+    <button class="go" id="btn-close-mp" style="margin-top:18px">Kapat</button>
+  </div>
+</div>
+
+<div class="overlay" id="invite-overlay">
+  <div class="sheet-panel">
+    <h2 id="invite-title">.</h2>
+    <p style="color:var(--muted); margin-bottom:18px">Seni bir maça davet etti.</p>
+    <button class="go" id="btn-invite-accept">Kabul Et</button>
+    <button class="linkbtn" id="btn-invite-decline">Reddet</button>
+  </div>
+</div>
+
 <!-- LOGIN -->
 <section class="screen active" id="s-login">
   <div class="brand">OPTİK · v0.1</div>
@@ -251,9 +304,9 @@
     <strong>Kendi Başına Oyna</strong>
     <span>Tek kişilik antrenman</span>
   </button>
-  <button class="menubtn" id="btn-goto-mp" disabled>
+  <button class="menubtn" id="btn-goto-mp">
     <strong>Çok Oyunculu</strong>
-    <span>Yakında</span>
+    <span>Bir rakip seç veya davet kodu paylaş</span>
   </button>
   <button class="menubtn" id="btn-goto-stats">
     <strong>İstatistikler</strong>
@@ -297,6 +350,54 @@
   <button class="linkbtn" id="btn-lobby-back">← Ana menü</button>
 </section>
 
+<!-- MULTIPLAYER MATCH LOBBY -->
+<section class="screen" id="s-mplobby">
+  <div class="brand">ÇOK OYUNCULU</div>
+  <h1>Maç Lobisi</h1>
+
+  <div id="mp-waiting-msg" style="display:none; color:var(--muted); margin-bottom:16px"></div>
+
+  <div class="fieldlabel">Oyuncular</div>
+  <div id="mp-players" style="margin-bottom:8px"></div>
+
+  <div id="mp-settings-block">
+    <div class="fieldlabel">Ders</div>
+    <div class="chips" id="mp-cats">
+      <button class="chip sel" data-c="all">Hepsi</button>
+      <button class="chip" data-c="tarih">Tarih</button>
+      <button class="chip" data-c="cografya">Coğrafya</button>
+      <button class="chip" data-c="vatandaslik">Vatandaşlık</button>
+      <button class="chip" data-c="guncel">Güncel</button>
+    </div>
+    <div class="fieldlabel">Soru Sayısı</div>
+    <div class="chips" id="mp-qcounts">
+      <button class="chip" data-n="10">10</button>
+      <button class="chip sel" data-n="20">20</button>
+      <button class="chip" data-n="30">30</button>
+      <button class="chip" data-n="60">60</button>
+    </div>
+    <div class="fieldlabel">Soru Başına Süre</div>
+    <div class="chips" id="mp-durations">
+      <button class="chip" data-s="30">30sn</button>
+      <button class="chip sel" data-s="60">60sn</button>
+      <button class="chip" data-s="90">90sn</button>
+      <button class="chip" data-s="0">Süresiz</button>
+    </div>
+  </div>
+
+  <button class="go" id="btn-mp-ready">Hazırım</button>
+  <button class="linkbtn" id="btn-mp-leave">← Maçtan çık</button>
+</section>
+
+<!-- MULTIPLAYER RESULT -->
+<section class="screen" id="s-mp-result">
+  <div class="brand">MAÇ SONUCU</div>
+  <h1 id="mp-result-title">.</h1>
+  <div class="score" id="mp-result-score"></div>
+  <button class="go" id="btn-mp-rematch">Yeniden Oyna</button>
+  <button class="linkbtn" id="btn-mp-result-leave">Ana menüye dön</button>
+</section>
+
 <!-- QUIZ -->
 <section class="screen" id="s-quiz">
   <p class="qtext" id="qtext"></p>
@@ -325,7 +426,9 @@
   </div>
 
   <div id="tab-pvp">
-    <p style="color:var(--muted)">Çok oyunculu henüz aktif değil — maç geçmişi burada görünecek.</p>
+    <div class="pvp-summary" id="pvp-summary"></div>
+    <div id="pvp-history"></div>
+    <p id="pvp-empty" style="color:var(--muted); display:none">Henüz maç oynamadın.</p>
   </div>
 
   <div id="tab-wrong" style="display:none">
@@ -433,6 +536,16 @@ let perQuestionS=60;
 let queue=[], idx=0, correct=0, wrongs=[], answered=false;
 let tLeft=0, tHandle=null, tStart=0, sessionId=uuid();
 
+/* multiplayer state */
+let mpMatch=null;              // current matches row, kept fresh by the realtime subscription
+let lobbyPresenceChannel=null; // who's online, for the multiplayer popup
+let inviteChannel=null;        // personal channel this user listens on for incoming invites
+let matchChannel=null;         // postgres_changes subscription on the active match row
+let mpPresenceChannel=null;    // per-match presence, used to detect the opponent disconnecting
+let quizStartedForMatch=null;  // match_id already transitioned into s-quiz, guards duplicate starts
+let myMpFinished=false;        // I've submitted my score for the current match, just waiting on the opponent
+let incomingInvite=null;
+
 function applyTheme(settings){
   document.documentElement.setAttribute('data-theme', settings.theme==='dark' ? 'dark' : 'light');
   document.documentElement.setAttribute('data-motion', settings.reducedMotion ? 'reduced' : 'normal');
@@ -512,6 +625,8 @@ function loginAs(u){
   currentUser = { user_id:u.user_id, display_name:u.display_name, settings:u.settings||{} };
   applyTheme(currentUser.settings);
   $('btn-gear').classList.add('show');
+  startLobbyPresence();
+  startInviteListener();
   goToMenu();
 }
 
@@ -563,10 +678,13 @@ function goToMenu(){
   show('s-menu');
 }
 $('btn-goto-solo').onclick=()=>{ $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='KURAL AYARI'; show('s-lobby'); };
-$('btn-goto-stats').onclick=()=>{ $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='İSTATİSTİK'; show('s-stats'); };
+$('btn-goto-stats').onclick=()=>{ $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='İSTATİSTİK'; show('s-stats'); refreshPvpStats(); };
 $('btn-lobby-back').onclick=goToMenu;
 $('btn-stats-back').onclick=goToMenu;
 $('btn-logout').onclick=()=>{
+  cleanupMatch();
+  if(lobbyPresenceChannel){ sb.removeChannel(lobbyPresenceChannel); lobbyPresenceChannel=null; }
+  if(inviteChannel){ sb.removeChannel(inviteChannel); inviteChannel=null; }
   currentUser=null;
   $('btn-gear').classList.remove('show');
   document.documentElement.removeAttribute('data-theme');
@@ -577,6 +695,428 @@ $('btn-logout').onclick=()=>{
   show('s-login');
   initLogin();
 };
+
+/* ---------------- multiplayer: presence & invites ---------------- */
+function genInviteCode(){
+  const alphabet='ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // no O/0, I/1 — easy to read aloud
+  let code='';
+  for(let i=0;i<6;i++) code+=alphabet[Math.floor(Math.random()*alphabet.length)];
+  return code;
+}
+
+function subscribeAndWait(channel){
+  return new Promise(resolve=>{ channel.subscribe(status=>{ if(status==='SUBSCRIBED') resolve(); }); });
+}
+
+function displayNameFor(userId){
+  if(currentUser && userId===currentUser.user_id) return currentUser.display_name;
+  const u=allUsers.find(x=>x.user_id===userId);
+  return u ? u.display_name : (userId||'—');
+}
+
+function startLobbyPresence(){
+  lobbyPresenceChannel = sb.channel('lobby-presence', { config:{ presence:{ key: currentUser.user_id } } });
+  lobbyPresenceChannel.on('presence', {event:'sync'}, ()=>{
+    if($('mp-overlay').classList.contains('active')) renderOnlineList();
+  });
+  lobbyPresenceChannel.subscribe(async status=>{
+    if(status==='SUBSCRIBED') await lobbyPresenceChannel.track({user_id:currentUser.user_id, display_name:currentUser.display_name});
+  });
+}
+
+function startInviteListener(){
+  inviteChannel = sb.channel('invites-'+currentUser.user_id);
+  inviteChannel.on('broadcast', {event:'invite'}, ({payload})=>{ showIncomingInvite(payload); });
+  inviteChannel.subscribe();
+}
+
+function renderOnlineList(){
+  const state = lobbyPresenceChannel ? lobbyPresenceChannel.presenceState() : {};
+  const seen=new Set(); const others=[];
+  Object.values(state).flat().forEach(p=>{
+    if(p.user_id===currentUser.user_id || seen.has(p.user_id)) return;
+    seen.add(p.user_id); others.push(p);
+  });
+  const box=$('mp-online-list'); box.innerHTML='';
+  $('mp-online-empty').style.display = others.length ? 'none' : 'block';
+  others.forEach(p=>{
+    const b=document.createElement('button');
+    b.className='userbtn'; b.textContent=p.display_name;
+    b.onclick=()=>inviteUser(p.user_id);
+    box.appendChild(b);
+  });
+}
+
+$('btn-goto-mp').onclick=()=>{
+  renderOnlineList();
+  $('mp-join-err').textContent=''; $('mp-join-code').value='';
+  $('mp-code-display').style.display='none';
+  $('mp-overlay').classList.add('active');
+};
+$('btn-close-mp').onclick=()=>{ $('mp-overlay').classList.remove('active'); };
+
+$('btn-gen-code').onclick=async()=>{
+  const code=genInviteCode();
+  const { data, error } = await sb.from('matches').insert({invite_code:code, host_id:currentUser.user_id, status:'waiting'}).select().single();
+  if(error){ console.error('gen code error', error); $('mp-join-err').textContent='Bir şeyler ters gitti.'; return; }
+  $('mp-overlay').classList.remove('active');
+  enterMatchLobby(data);
+};
+
+$('btn-copy-code').onclick=async()=>{
+  try{ await navigator.clipboard.writeText($('mp-my-code').textContent); }catch(e){ /* clipboard unavailable, ignore */ }
+};
+
+$('btn-join-code').onclick=async()=>{
+  const code=$('mp-join-code').value.trim().toUpperCase();
+  $('mp-join-err').textContent='';
+  if(!code) return;
+  const { data, error } = await sb.from('matches').select('*').eq('invite_code', code).eq('status','waiting').is('guest_id', null).maybeSingle();
+  if(error || !data){ $('mp-join-err').textContent='Kod bulunamadı.'; return; }
+  if(data.host_id===currentUser.user_id){ $('mp-join-err').textContent='Kendi kodunla oynayamazsın.'; return; }
+  const joined=await claimMatch(data.match_id);
+  if(!joined){ $('mp-join-err').textContent='Bu maça başka biri katılmış olabilir.'; return; }
+  $('mp-overlay').classList.remove('active');
+  enterMatchLobby(joined);
+};
+
+async function inviteUser(targetUserId){
+  const code=genInviteCode();
+  const { data, error } = await sb.from('matches').insert({invite_code:code, host_id:currentUser.user_id, status:'waiting'}).select().single();
+  if(error){ console.error('inviteUser error', error); return; }
+  const ch=sb.channel('invites-'+targetUserId);
+  await subscribeAndWait(ch);
+  await ch.send({ type:'broadcast', event:'invite', payload:{ match_id:data.match_id, from_id:currentUser.user_id, from_name:currentUser.display_name } });
+  await sb.removeChannel(ch);
+  $('mp-overlay').classList.remove('active');
+  enterMatchLobby(data);
+}
+
+function showIncomingInvite(payload){
+  incomingInvite=payload;
+  $('invite-title').textContent=payload.from_name;
+  $('invite-overlay').classList.add('active');
+}
+
+$('btn-invite-decline').onclick=async()=>{
+  $('invite-overlay').classList.remove('active');
+  if(incomingInvite){
+    await sb.from('matches').update({status:'abandoned'}).eq('match_id', incomingInvite.match_id).eq('status','waiting');
+    incomingInvite=null;
+  }
+};
+
+$('btn-invite-accept').onclick=async()=>{
+  if(!incomingInvite) return;
+  $('invite-overlay').classList.remove('active');
+  const joined=await claimMatch(incomingInvite.match_id);
+  incomingInvite=null;
+  if(joined) enterMatchLobby(joined);
+};
+
+async function claimMatch(matchId){
+  const { data, error } = await sb.from('matches').update({guest_id:currentUser.user_id, status:'lobby'}).eq('match_id', matchId).eq('status','waiting').select().single();
+  if(error || !data) return null;
+  return data;
+}
+
+/* ---------------- multiplayer: match lobby ---------------- */
+function enterMatchLobby(row){
+  cleanupMatch();
+  mpMatch=row;
+  subscribeToMatch(row.match_id);
+  joinMatchPresence(row.match_id);
+  renderMpLobbyUI(row);
+  $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='MAÇ LOBİSİ';
+  show('s-mplobby');
+}
+
+function subscribeToMatch(matchId){
+  matchChannel = sb.channel('match-'+matchId)
+    .on('postgres_changes', {event:'UPDATE', schema:'public', table:'matches', filter:`match_id=eq.${matchId}`}, payload=>{
+      onMatchUpdate(payload.new);
+    })
+    .subscribe();
+}
+
+function onMatchUpdate(row){
+  mpMatch=row;
+  if(row.status==='abandoned' || row.status==='completed'){ showMpResult(row); return; }
+  if(row.status==='lobby' || row.status==='waiting'){
+    renderMpLobbyUI(row);
+    if(document.querySelector('.screen.active')?.id!=='s-mplobby'){
+      $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='MAÇ LOBİSİ';
+      show('s-mplobby');
+    }
+    if(row.host_ready && row.guest_ready && row.host_id===currentUser.user_id){
+      startMatchAsHost(row);
+    }
+    return;
+  }
+  if(row.status==='in_progress'){
+    if(quizStartedForMatch!==row.match_id){ beginMultiplayerQuiz(row); return; }
+    if(myMpFinished) maybeFinalizeAndShowResult(row);
+  }
+}
+
+function renderMpLobbyUI(row){
+  const isHost = row.host_id===currentUser.user_id;
+  const waitingForGuest = row.status==='waiting' || !row.guest_id;
+  $('mp-waiting-msg').style.display = waitingForGuest ? 'block' : 'none';
+  $('mp-waiting-msg').textContent = `Rakip bekleniyor… Kodu paylaş: ${row.invite_code}`;
+  $('mp-settings-block').style.display = waitingForGuest ? 'none' : 'block';
+  $('btn-mp-ready').style.display = waitingForGuest ? 'none' : 'block';
+
+  const players=$('mp-players'); players.innerHTML='';
+  const entries=[{id:row.host_id, ready:row.host_ready}];
+  if(row.guest_id) entries.push({id:row.guest_id, ready:row.guest_ready});
+  entries.forEach(e=>{
+    const label = e.id===currentUser.user_id ? `${displayNameFor(e.id)} (Sen)` : displayNameFor(e.id);
+    const d=document.createElement('div'); d.className='mp-player';
+    d.innerHTML=`<span>${label}</span><span class="rdy ${e.ready?'on':''}">${e.ready?'HAZIR':'BEKLİYOR'}</span>`;
+    players.appendChild(d);
+  });
+
+  syncLobbyChips('mp-cats', 'c', row.category);
+  syncLobbyChips('mp-qcounts', 'n', String(row.question_count));
+  syncLobbyChips('mp-durations', 's', String(row.per_question_seconds));
+
+  const myReady = isHost ? row.host_ready : row.guest_ready;
+  $('btn-mp-ready').textContent = myReady ? 'Hazır ✓ (rakip bekleniyor)' : 'Hazırım';
+  $('btn-mp-ready').disabled = myReady;
+}
+
+function syncLobbyChips(containerId, attr, value){
+  document.querySelectorAll(`#${containerId} .chip`).forEach(b=>{
+    b.classList.toggle('sel', b.dataset[attr]===value);
+  });
+}
+
+document.querySelectorAll('#mp-cats .chip').forEach(b=>b.onclick=async()=>{
+  if(!mpMatch || mpMatch.host_id!==currentUser.user_id) return;
+  await sb.from('matches').update({category:b.dataset.c, host_ready:false, guest_ready:false}).eq('match_id', mpMatch.match_id);
+});
+document.querySelectorAll('#mp-qcounts .chip').forEach(b=>b.onclick=async()=>{
+  if(!mpMatch || mpMatch.host_id!==currentUser.user_id) return;
+  await sb.from('matches').update({question_count:parseInt(b.dataset.n,10), host_ready:false, guest_ready:false}).eq('match_id', mpMatch.match_id);
+});
+document.querySelectorAll('#mp-durations .chip').forEach(b=>b.onclick=async()=>{
+  if(!mpMatch || mpMatch.host_id!==currentUser.user_id) return;
+  await sb.from('matches').update({per_question_seconds:parseInt(b.dataset.s,10), host_ready:false, guest_ready:false}).eq('match_id', mpMatch.match_id);
+});
+
+$('btn-mp-ready').onclick=async()=>{
+  if(!mpMatch) return;
+  const isHost=mpMatch.host_id===currentUser.user_id;
+  await sb.from('matches').update(isHost?{host_ready:true}:{guest_ready:true}).eq('match_id', mpMatch.match_id);
+};
+
+$('btn-mp-leave').onclick=async()=>{
+  if(mpMatch && mpMatch.status!=='completed' && mpMatch.status!=='abandoned'){
+    await sb.from('matches').update({status:'abandoned', ended_at:new Date().toISOString()}).eq('match_id', mpMatch.match_id);
+  }
+  cleanupMatch();
+  goToMenu();
+};
+
+async function startMatchAsHost(row){
+  const qids=await drawRandomQuestionIds(row.category, row.question_count);
+  if(qids.length===0){
+    $('mp-waiting-msg').style.display='block';
+    $('mp-waiting-msg').textContent='Soru bankası boş, kategori değiştir.';
+    return;
+  }
+  await sb.from('matches').update({
+    question_ids: qids, status:'in_progress', started_at:new Date().toISOString()
+  }).eq('match_id', row.match_id).eq('status','lobby');
+}
+
+async function drawRandomQuestionIds(category, count){
+  let q = sb.from('questions').select('q_id').eq('has_image', false);
+  if(category!=='all') q = q.eq('category', category);
+  const { data, error } = await q;
+  if(error){ console.error('drawRandomQuestionIds error', error); return []; }
+  return shuffle((data||[]).map(r=>r.q_id)).slice(0, count);
+}
+
+/* ---------------- multiplayer: quiz + result ---------------- */
+async function beginMultiplayerQuiz(row){
+  quizStartedForMatch=row.match_id;
+  myMpFinished=false;
+  const { data: qs, error } = await sb.from('questions').select('*').in('q_id', row.question_ids);
+  if(error){ console.error('beginMultiplayerQuiz error', error); return; }
+  const qMap=new Map(qs.map(q=>[q.q_id,q]));
+  queue = row.question_ids.map(id=>qMap.get(id)).filter(Boolean);
+  perQuestionS = row.per_question_seconds;
+  idx=0; correct=0; wrongs=[]; sessionId=row.match_id;
+  show('s-quiz'); renderQ();
+}
+
+async function endMultiplayerQuiz(){
+  clearInterval(tHandle);
+  $('timerbar').style.visibility='hidden';
+  myMpFinished=true;
+  const isHost=mpMatch.host_id===currentUser.user_id;
+  const field=isHost?{host_score:correct, host_finished:true}:{guest_score:correct, guest_finished:true};
+  const { data, error } = await sb.from('matches').update(field).eq('match_id', mpMatch.match_id).select().single();
+  if(error){ console.error('endMultiplayerQuiz error', error); return; }
+  mpMatch=data;
+  maybeFinalizeAndShowResult(data);
+}
+
+function maybeFinalizeAndShowResult(row){
+  if(row.host_finished && row.guest_finished && row.host_id===currentUser.user_id){
+    finalizeMatch(row);
+    return;
+  }
+  showMpResult(row);
+}
+
+async function finalizeMatch(row){
+  let winner=null;
+  if(row.host_score>row.guest_score) winner=row.host_id;
+  else if(row.guest_score>row.host_score) winner=row.guest_id;
+  const { data, error } = await sb.from('matches').update({
+    status:'completed', winner_id:winner, ended_at:new Date().toISOString()
+  }).eq('match_id', row.match_id).eq('status','in_progress').select().single();
+  if(error || !data) return;
+  mpMatch=data;
+  showMpResult(data);
+}
+
+function showMpResult(row){
+  stopMatchPresence();
+  const isHost=row.host_id===currentUser.user_id;
+  const myScore = isHost ? row.host_score : row.guest_score;
+  const oppScore = isHost ? row.guest_score : row.host_score;
+
+  $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='MAÇ SONUCU';
+
+  if(row.status==='completed'){
+    const wt=row.winner_id;
+    $('mp-result-title').textContent = !wt ? 'Berabere!' : (wt===currentUser.user_id ? 'Kazandın! 🎉' : 'Kaybettin.');
+    $('mp-result-score').textContent = `${myScore} — ${oppScore}`;
+  } else if(row.status==='abandoned'){
+    if(row.winner_id){
+      $('mp-result-title').textContent = row.winner_id===currentUser.user_id ? 'Rakip bağlantıyı kaybetti — Kazandın!' : 'Bağlantın koptu — Kaybettin.';
+      $('mp-result-score').textContent = `${myScore ?? correct} — ${oppScore ?? '—'}`;
+    } else {
+      $('mp-result-title').textContent='Maç iptal edildi.';
+      $('mp-result-score').textContent='';
+    }
+  } else {
+    $('mp-result-title').textContent='Rakip bekleniyor…';
+    $('mp-result-score').textContent = `Sen: ${myScore ?? correct}`;
+  }
+  show('s-mp-result');
+}
+
+$('btn-mp-rematch').onclick=async()=>{
+  if(!mpMatch) return;
+  const { data, error } = await sb.from('matches').update({
+    status:'lobby', host_ready:false, guest_ready:false, question_ids:null,
+    host_score:null, guest_score:null, host_finished:false, guest_finished:false,
+    winner_id:null, started_at:null, ended_at:null
+  }).eq('match_id', mpMatch.match_id).select().single();
+  if(error || !data) return;
+  mpMatch=data; quizStartedForMatch=null; myMpFinished=false;
+  joinMatchPresence(data.match_id);
+  renderMpLobbyUI(data);
+  $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='MAÇ LOBİSİ';
+  show('s-mplobby');
+};
+
+$('btn-mp-result-leave').onclick=()=>{ cleanupMatch(); goToMenu(); };
+
+/* ---------------- multiplayer: disconnect detection ---------------- */
+function joinMatchPresence(matchId){
+  if(mpPresenceChannel) return;
+  mpPresenceChannel = sb.channel('match-presence-'+matchId, { config:{ presence:{ key: currentUser.user_id } } });
+  mpPresenceChannel.on('presence', {event:'leave'}, ({leftPresences})=>{ handlePossibleForfeit(leftPresences); });
+  mpPresenceChannel.subscribe(async status=>{
+    if(status==='SUBSCRIBED') await mpPresenceChannel.track({user_id:currentUser.user_id});
+  });
+}
+
+function stopMatchPresence(){
+  if(mpPresenceChannel){ sb.removeChannel(mpPresenceChannel); mpPresenceChannel=null; }
+}
+
+function handlePossibleForfeit(leftPresences){
+  if(!mpMatch) return;
+  const leftIds=leftPresences.map(p=>p.user_id);
+  const opponentId = mpMatch.host_id===currentUser.user_id ? mpMatch.guest_id : mpMatch.host_id;
+  if(!opponentId || !leftIds.includes(opponentId)) return;
+  if(mpMatch.status==='in_progress') forfeitWin();
+  else if(mpMatch.status==='waiting' || mpMatch.status==='lobby') abandonMatch();
+}
+
+async function forfeitWin(){
+  const isHost=mpMatch.host_id===currentUser.user_id;
+  const patch={ status:'abandoned', winner_id:currentUser.user_id, ended_at:new Date().toISOString() };
+  patch[isHost?'host_score':'guest_score']=correct;
+  const { data, error } = await sb.from('matches').update(patch).eq('match_id', mpMatch.match_id).eq('status', mpMatch.status).select().single();
+  if(error || !data) return;
+  clearInterval(tHandle);
+  mpMatch=data;
+  showMpResult(data);
+}
+
+async function abandonMatch(){
+  const { data, error } = await sb.from('matches').update({status:'abandoned', ended_at:new Date().toISOString()}).eq('match_id', mpMatch.match_id).eq('status', mpMatch.status).select().single();
+  if(error || !data) return;
+  mpMatch=data;
+  showMpResult(data);
+}
+
+function cleanupMatch(){
+  if(matchChannel){ sb.removeChannel(matchChannel); matchChannel=null; }
+  stopMatchPresence();
+  mpMatch=null; quizStartedForMatch=null; myMpFinished=false;
+}
+
+/* ---------------- multiplayer: pvp stats ---------------- */
+async function loadPvpStats(){
+  if(!sb || !currentUser) return {wins:0, losses:0, draws:0, history:[]};
+  const { data, error } = await sb.from('matches')
+    .select('match_id,host_id,guest_id,host_score,guest_score,winner_id,status,category,ended_at')
+    .or(`host_id.eq.${currentUser.user_id},guest_id.eq.${currentUser.user_id}`)
+    .in('status', ['completed','abandoned'])
+    .not('ended_at', 'is', null)
+    .order('ended_at', {ascending:false});
+  if(error){ console.error('loadPvpStats error', error); return {wins:0,losses:0,draws:0,history:[]}; }
+  let wins=0, losses=0, draws=0;
+  (data||[]).forEach(m=>{
+    if(!m.winner_id) draws++;
+    else if(m.winner_id===currentUser.user_id) wins++;
+    else losses++;
+  });
+  return { wins, losses, draws, history:data||[] };
+}
+
+function renderPvpStats({wins,losses,draws,history}){
+  $('pvp-summary').innerHTML = `
+    <div class="pvp-stat"><b>${wins}</b><span>Galibiyet</span></div>
+    <div class="pvp-stat"><b>${losses}</b><span>Mağlubiyet</span></div>
+    <div class="pvp-stat"><b>${draws}</b><span>Berabere</span></div>`;
+  const box=$('pvp-history'); box.innerHTML='';
+  $('pvp-empty').style.display = history.length ? 'none' : 'block';
+  history.forEach(m=>{
+    const isHost=m.host_id===currentUser.user_id;
+    const myScore=isHost?m.host_score:m.guest_score;
+    const oppScore=isHost?m.guest_score:m.host_score;
+    const oppId=isHost?m.guest_id:m.host_id;
+    let resLabel='Berabere', resClass='';
+    if(m.winner_id){ resLabel = m.winner_id===currentUser.user_id?'Galibiyet':'Mağlubiyet'; resClass = m.winner_id===currentUser.user_id?'win':'loss'; }
+    const row=document.createElement('div'); row.className='pvp-row';
+    row.innerHTML=`<span>${displayNameFor(oppId)} · ${catLabel[m.category]||'Hepsi'}</span><span class="res ${resClass}">${resLabel} (${myScore??'—'}-${oppScore??'—'})</span>`;
+    box.appendChild(row);
+  });
+}
+
+async function refreshPvpStats(){
+  renderPvpStats(await loadPvpStats());
+}
 
 /* ---------------- solo lobby ---------------- */
 document.querySelectorAll('#cats .chip').forEach(b=>b.onclick=()=>{
@@ -666,6 +1206,7 @@ function answer(k, btn){
 $('btn-next').onclick=()=>{
   idx++;
   if(idx<queue.length) renderQ();
+  else if(mpMatch) endMultiplayerQuiz();
   else endQuiz();
 };
 
@@ -697,6 +1238,7 @@ document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
   $('tab-pvp').style.display = tab==='pvp' ? 'block':'none';
   $('tab-wrong').style.display = tab==='wrong' ? 'block':'none';
   if(tab==='wrong') refreshWrongList();
+  if(tab==='pvp') refreshPvpStats();
 });
 
 async function loadWrongAnswers(){
