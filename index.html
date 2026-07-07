@@ -15,12 +15,24 @@
     --stamp-green:#1E7B4F;/* grader's green */
     --line:#D8D3C8;       /* faint form lines */
     --muted:#8A8577;
+    --scale:1;
   }
+  :root[data-theme="dark"]{
+    --paper:#1C1B1F;
+    --ink:#EDEAE1;
+    --graphite:#B8B8B8;
+    --osym-red:#E5645A;
+    --stamp-green:#4CC38A;
+    --line:#3A3936;
+    --muted:#9C9890;
+  }
+  :root[data-motion="reduced"] *{ transition:none !important; }
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   body{
     font-family:'IBM Plex Sans',system-ui,sans-serif;
     background:var(--paper); color:var(--ink);
     min-height:100dvh; display:flex; flex-direction:column;
+    font-size:calc(1rem * var(--scale));
   }
   .mono{font-family:'IBM Plex Mono',monospace}
 
@@ -32,6 +44,27 @@
   header .code{font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:.8rem; letter-spacing:.12em}
   header .cat{font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); font-weight:600}
 
+  /* ---------- gear / settings ---------- */
+  .gear-btn{
+    position:fixed; top:12px; right:14px; z-index:50;
+    width:34px; height:34px; border-radius:50%;
+    border:1.5px solid var(--ink); background:var(--paper); color:var(--ink);
+    display:none; align-items:center; justify-content:center; cursor:pointer; font-size:1.05rem;
+  }
+  .gear-btn.show{ display:flex; }
+  .overlay{
+    position:fixed; inset:0; background:rgba(0,0,0,.4); z-index:100;
+    display:none; align-items:flex-end; justify-content:center;
+  }
+  .overlay.active{ display:flex; }
+  .sheet-panel{
+    background:var(--paper); color:var(--ink); width:100%; max-width:560px;
+    border-radius:18px 18px 0 0; padding:22px 18px 28px; max-height:80vh; overflow-y:auto;
+  }
+  .sheet-panel h2{ font-size:1.2rem; margin-bottom:16px; }
+  .opt-row{ display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px solid var(--line); }
+  .opt-row input[type=checkbox]{ width:20px; height:20px; }
+
   /* ---------- timer bar ---------- */
   .timer{height:4px; background:var(--line); position:relative}
   .timer i{position:absolute; inset:0 auto 0 0; width:100%; background:var(--ink); transition:width .25s linear}
@@ -41,7 +74,7 @@
   .screen{flex:1; display:none; flex-direction:column; padding:22px 18px; max-width:560px; width:100%; margin:0 auto}
   .screen.active{display:flex}
 
-  /* ---------- start ---------- */
+  /* ---------- generic ---------- */
   .brand{font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:.75rem; letter-spacing:.2em; color:var(--muted); margin-bottom:6px}
   h1{font-size:1.7rem; font-weight:700; line-height:1.15; margin-bottom:26px}
   .fieldlabel{font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:600; margin:18px 0 8px}
@@ -56,6 +89,45 @@
     background:var(--ink); color:var(--paper); border:none; border-radius:10px;
     font-family:'IBM Plex Sans',sans-serif; font-size:1.05rem; font-weight:700; cursor:pointer;
   }
+  .linkbtn{
+    background:none; border:none; color:var(--muted); text-decoration:underline;
+    font-size:.9rem; cursor:pointer; padding:10px 0; text-align:left;
+  }
+
+  /* ---------- login ---------- */
+  .userlist{ display:flex; flex-direction:column; gap:10px; margin-top:4px; }
+  .userbtn{
+    padding:14px 16px; border:1.5px solid var(--ink); border-radius:10px; background:transparent;
+    color:var(--ink); font-size:1rem; font-weight:600; text-align:left; cursor:pointer;
+  }
+  .pwform{ display:flex; flex-direction:column; gap:12px; margin-top:16px; }
+  input[type=password], input[type=text]{
+    padding:13px 14px; border:1px solid var(--line); border-radius:10px; background:transparent;
+    color:var(--ink); font-family:'IBM Plex Sans',sans-serif; font-size:1rem;
+  }
+  .formerr{ color:var(--osym-red); font-size:.85rem; font-weight:600; min-height:1.2em; }
+
+  /* ---------- menu ---------- */
+  .menubtn{
+    display:flex; flex-direction:column; gap:4px; padding:20px; margin-bottom:12px;
+    border:1.5px solid var(--ink); border-radius:14px; background:transparent; color:var(--ink);
+    text-align:left; cursor:pointer;
+  }
+  .menubtn strong{ font-size:1.1rem; }
+  .menubtn span{ font-size:.8rem; color:var(--muted); }
+  .menubtn:disabled{ opacity:.4; cursor:default; }
+  .menu-logout{ margin-top:auto; }
+
+  /* ---------- stats ---------- */
+  .tabs{ display:flex; gap:6px; margin-bottom:16px; }
+  .tab{ flex:1; padding:10px; border:1.5px solid var(--ink); background:transparent; color:var(--ink); border-radius:8px; font-weight:600; cursor:pointer; font-family:'IBM Plex Sans',sans-serif; }
+  .tab.sel{ background:var(--ink); color:var(--paper); }
+  .wronglist{ display:flex; flex-direction:column; gap:8px; }
+  .wrow{ position:relative; overflow:hidden; border-radius:10px; }
+  .wrow-del{ position:absolute; inset:0; background:var(--osym-red); color:#fff; display:flex; align-items:center; justify-content:flex-end; padding-right:20px; font-weight:700; border-radius:10px; }
+  .wrow-inner{ position:relative; display:flex; justify-content:space-between; gap:10px; align-items:center; padding:14px; background:var(--paper); border:1px solid var(--line); border-radius:10px; cursor:pointer; }
+  .wrow-inner p{ flex:1; font-size:.92rem; line-height:1.35; }
+  .wdetail .qtext{ font-size:1.05rem; margin-bottom:18px; }
 
   /* ---------- quiz ---------- */
   .qtext{font-size:1.12rem; line-height:1.55; font-weight:400; margin:6px 0 26px; white-space:pre-line}
@@ -116,19 +188,85 @@
 <div class="timer" id="timerbar" style="visibility:hidden"><i id="timerfill"></i></div>
 <header>
   <span class="code" id="hdrcode">KPSS · GK</span>
-  <span class="cat" id="hdrcat">DENEME KİTAPÇIĞI</span>
+  <span class="cat" id="hdrcat">GİRİŞ</span>
 </header>
+<button class="gear-btn" id="btn-gear" aria-label="Ayarlar">⚙</button>
 
-<!-- START -->
-<section class="screen active" id="s-start">
-  <div class="brand">OPTİK · v0.1</div>
-  <h1>Sınav kitapçığını aç.</h1>
-
-  <div class="fieldlabel">Aday</div>
-  <div class="chips" id="players">
-    <button class="chip sel" data-p="alperen">Alperen</button>
-    <button class="chip" data-p="hatice">Hatice</button>
+<div class="overlay" id="settings-overlay">
+  <div class="sheet-panel">
+    <h2>Ayarlar</h2>
+    <div class="fieldlabel">Tema</div>
+    <div class="chips" id="theme-chips">
+      <button class="chip" data-theme="light">Aydınlık</button>
+      <button class="chip" data-theme="dark">Karanlık</button>
+    </div>
+    <div class="fieldlabel">Yazı Boyutu</div>
+    <div class="chips" id="fontsize-chips">
+      <button class="chip" data-size="normal">Normal</button>
+      <button class="chip" data-size="large">Büyük</button>
+    </div>
+    <div class="opt-row">
+      <span>Azaltılmış Hareket</span>
+      <input type="checkbox" id="chk-reduced-motion">
+    </div>
+    <button class="go" id="btn-close-settings" style="margin-top:18px">Kapat</button>
   </div>
+</div>
+
+<!-- LOGIN -->
+<section class="screen active" id="s-login">
+  <div class="brand">OPTİK · v0.1</div>
+  <h1>Kimsin?</h1>
+
+  <div class="userlist" id="userlist"></div>
+  <button class="linkbtn" id="btn-show-newuser">+ Yeni kullanıcı oluştur</button>
+
+  <div class="pwform" id="pwform" style="display:none">
+    <div class="fieldlabel" id="pwform-label"></div>
+    <input type="password" id="pw-input" placeholder="Şifre">
+    <input type="password" id="pw-confirm" placeholder="Şifre (tekrar)" style="display:none">
+    <div class="formerr" id="pw-err"></div>
+    <button class="go" id="btn-pw-submit">Devam Et</button>
+    <button class="linkbtn" id="btn-pw-cancel">← Geri</button>
+  </div>
+
+  <div class="pwform" id="newuserform" style="display:none">
+    <div class="fieldlabel">Ad</div>
+    <input type="text" id="nu-name" placeholder="Adın">
+    <div class="fieldlabel">Şifre</div>
+    <input type="password" id="nu-pw" placeholder="Şifre">
+    <input type="password" id="nu-pw2" placeholder="Şifre (tekrar)">
+    <div class="formerr" id="nu-err"></div>
+    <button class="go" id="btn-nu-submit">Hesap Oluştur</button>
+    <button class="linkbtn" id="btn-nu-cancel">← Geri</button>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="screen" id="s-menu">
+  <div class="brand">HOŞ GELDİN</div>
+  <h1 id="menu-name">.</h1>
+
+  <button class="menubtn" id="btn-goto-solo">
+    <strong>Kendi Başına Oyna</strong>
+    <span>Tek kişilik antrenman</span>
+  </button>
+  <button class="menubtn" id="btn-goto-mp" disabled>
+    <strong>Çok Oyunculu</strong>
+    <span>Yakında</span>
+  </button>
+  <button class="menubtn" id="btn-goto-stats">
+    <strong>İstatistikler</strong>
+    <span>Performans ve yanlış cevap bankası</span>
+  </button>
+
+  <button class="linkbtn menu-logout" id="btn-logout">Çıkış yap</button>
+</section>
+
+<!-- SOLO LOBBY -->
+<section class="screen" id="s-lobby">
+  <div class="brand">KENDİ BAŞINA</div>
+  <h1>Kuralları ayarla.</h1>
 
   <div class="fieldlabel">Ders</div>
   <div class="chips" id="cats">
@@ -136,9 +274,27 @@
     <button class="chip" data-c="tarih">Tarih</button>
     <button class="chip" data-c="cografya">Coğrafya</button>
     <button class="chip" data-c="vatandaslik">Vatandaşlık</button>
+    <button class="chip" data-c="guncel">Güncel</button>
+  </div>
+
+  <div class="fieldlabel">Soru Sayısı</div>
+  <div class="chips" id="qcounts">
+    <button class="chip" data-n="10">10</button>
+    <button class="chip sel" data-n="20">20</button>
+    <button class="chip" data-n="30">30</button>
+    <button class="chip" data-n="60">60</button>
+  </div>
+
+  <div class="fieldlabel">Soru Başına Süre</div>
+  <div class="chips" id="durations">
+    <button class="chip" data-s="30">30sn</button>
+    <button class="chip sel" data-s="60">60sn</button>
+    <button class="chip" data-s="90">90sn</button>
+    <button class="chip" data-s="0">Süresiz</button>
   </div>
 
   <button class="go" id="btn-start">Sınavı Başlat</button>
+  <button class="linkbtn" id="btn-lobby-back">← Ana menü</button>
 </section>
 
 <!-- QUIZ -->
@@ -156,6 +312,29 @@
   <div class="fieldlabel">Cevap Anahtarı Karşılaştırması</div>
   <div class="sheet" id="sheet"></div>
   <button class="go again" id="btn-again">Yeni Oturum</button>
+</section>
+
+<!-- STATS -->
+<section class="screen" id="s-stats">
+  <div class="brand">İSTATİSTİK</div>
+  <h1>Performansın.</h1>
+
+  <div class="tabs">
+    <button class="tab sel" data-tab="pvp">PvP</button>
+    <button class="tab" data-tab="wrong">Yanlış Cevaplar</button>
+  </div>
+
+  <div id="tab-pvp">
+    <p style="color:var(--muted)">Çok oyunculu henüz aktif değil — maç geçmişi burada görünecek.</p>
+  </div>
+
+  <div id="tab-wrong" style="display:none">
+    <div class="wronglist" id="wronglist"></div>
+    <p id="wrong-empty" style="color:var(--muted); display:none">Yanlış cevap yok. Harika gidiyorsun.</p>
+    <div class="wdetail" id="wrong-detail" style="display:none"></div>
+  </div>
+
+  <button class="linkbtn" id="btn-stats-back">← Ana menü</button>
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
@@ -190,11 +369,12 @@ function shuffleEqualWeights(rows){
   return out;
 }
 
-async function fetchQuestions(player, cat){
+async function fetchQuestions(player, cat, limit){
+  limit = limit || 20;
   if(!sb){ console.error('fetchQuestions: supabase client unavailable'); return []; }
   let priQuery = sb.from('v_question_priority').select('q_id, weight').eq('user_id', player);
   if(cat !== 'all') priQuery = priQuery.eq('category', cat);
-  const { data: priRows, error: priErr } = await priQuery.order('weight', { ascending: false }).limit(20);
+  const { data: priRows, error: priErr } = await priQuery.order('weight', { ascending: false }).limit(limit);
   if(priErr){ console.error('fetchQuestions priority error', priErr); return []; }
   if(!priRows || priRows.length === 0) return [];
 
@@ -220,29 +400,195 @@ async function logAttempt(player, qid, chosen, isCorrect, ms, sessionId){
   if(error) console.error('logAttempt error', error);
 }
 
-/* ---------------- state ---------------- */
-const PER_QUESTION_S = 60;
-const uuid=()=>(typeof crypto!=='undefined'&&crypto.randomUUID) ? crypto.randomUUID() : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return (c==='x'?r:(r&0x3|0x8)).toString(16);});
-let player='alperen', cat='all';
-let queue=[], idx=0, correct=0, wrongs=[], answered=false;
-let tLeft=0, tHandle=null, tStart=0, sessionId=uuid();
-
+/* ---------------- utilities ---------------- */
 const $=id=>document.getElementById(id);
 const show=id=>{document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');}
 const shuffle=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(v=>v[1]);
 const catLabel={tarih:'TARİH',cografya:'COĞRAFYA',vatandaslik:'VATANDAŞLIK',guncel:'GÜNCEL'};
+const uuid=()=>(typeof crypto!=='undefined'&&crypto.randomUUID) ? crypto.randomUUID() : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return (c==='x'?r:(r&0x3|0x8)).toString(16);});
 
-/* ---------------- start screen ---------------- */
-document.querySelectorAll('#players .chip').forEach(b=>b.onclick=()=>{
-  document.querySelectorAll('#players .chip').forEach(x=>x.classList.remove('sel'));
-  b.classList.add('sel'); player=b.dataset.p;
+async function sha256Hex(text){
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+  return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
+function slugify(name){
+  const map={'ç':'c','ğ':'g','ı':'i','ö':'o','ş':'s','ü':'u'};
+  const base=name.trim().toLowerCase().replace(/[çğıöşü]/g,c=>map[c]||c).replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,'');
+  return base || 'kullanici';
+}
+
+/* ---------------- state ---------------- */
+let currentUser=null;      // {user_id, display_name, settings}
+let pendingUser=null;      // user row mid password check/creation on login screen
+let allUsers=[];
+let lobbyCat='all', lobbyQCount=20, lobbyPerQ=60;
+let perQuestionS=60;
+let queue=[], idx=0, correct=0, wrongs=[], answered=false;
+let tLeft=0, tHandle=null, tStart=0, sessionId=uuid();
+
+function applyTheme(settings){
+  document.documentElement.setAttribute('data-theme', settings.theme==='dark' ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-motion', settings.reducedMotion ? 'reduced' : 'normal');
+  document.documentElement.style.setProperty('--scale', settings.fontSize==='large' ? '1.15' : '1');
+}
+
+/* ---------------- login ---------------- */
+async function loadUsers(){
+  if(!sb) return [];
+  const { data, error } = await sb.from('users').select('user_id,display_name,password_hash,settings').order('display_name');
+  if(error){ console.error('loadUsers error', error); return []; }
+  return data || [];
+}
+
+function renderUserList(){
+  const box=$('userlist'); box.innerHTML='';
+  allUsers.forEach(u=>{
+    const b=document.createElement('button');
+    b.className='userbtn'; b.textContent=u.display_name;
+    b.onclick=()=>openPwForm(u);
+    box.appendChild(b);
+  });
+}
+
+function openPwForm(u){
+  pendingUser=u;
+  $('newuserform').style.display='none';
+  $('pwform').style.display='flex';
+  $('pw-confirm').style.display = u.password_hash ? 'none' : 'block';
+  $('pwform-label').textContent = u.password_hash ? `${u.display_name} — şifre gir` : `${u.display_name} — ilk giriş, şifre belirle`;
+  $('pw-input').value=''; $('pw-confirm').value=''; $('pw-err').textContent='';
+  $('pw-input').focus();
+}
+
+$('btn-pw-cancel').onclick=()=>{ $('pwform').style.display='none'; pendingUser=null; };
+
+$('btn-pw-submit').onclick=async()=>{
+  const pw=$('pw-input').value;
+  if(!pw){ $('pw-err').textContent='Şifre gerekli.'; return; }
+  if(!pendingUser.password_hash){
+    const pw2=$('pw-confirm').value;
+    if(pw!==pw2){ $('pw-err').textContent='Şifreler uyuşmuyor.'; return; }
+    const hash=await sha256Hex(pw);
+    const { error } = await sb.from('users').update({password_hash:hash}).eq('user_id',pendingUser.user_id);
+    if(error){ $('pw-err').textContent='Bir şeyler ters gitti.'; console.error(error); return; }
+    pendingUser.password_hash=hash;
+    loginAs(pendingUser);
+  } else {
+    const hash=await sha256Hex(pw);
+    if(hash!==pendingUser.password_hash){ $('pw-err').textContent='Şifre yanlış.'; return; }
+    loginAs(pendingUser);
+  }
+};
+
+$('btn-show-newuser').onclick=()=>{
+  $('pwform').style.display='none';
+  $('newuserform').style.display='flex';
+  $('nu-name').value=''; $('nu-pw').value=''; $('nu-pw2').value=''; $('nu-err').textContent='';
+};
+$('btn-nu-cancel').onclick=()=>{ $('newuserform').style.display='none'; };
+
+$('btn-nu-submit').onclick=async()=>{
+  const name=$('nu-name').value.trim();
+  const pw=$('nu-pw').value, pw2=$('nu-pw2').value;
+  if(!name){ $('nu-err').textContent='Ad gerekli.'; return; }
+  if(!pw || pw!==pw2){ $('nu-err').textContent='Şifreler uyuşmuyor.'; return; }
+  const base=slugify(name);
+  let candidate=base, n=1;
+  while(allUsers.some(u=>u.user_id===candidate)) candidate = base+'_'+(++n);
+  const hash=await sha256Hex(pw);
+  const { data, error } = await sb.from('users').insert({user_id:candidate, display_name:name, password_hash:hash}).select().single();
+  if(error){ $('nu-err').textContent='Bir şeyler ters gitti.'; console.error(error); return; }
+  loginAs(data);
+};
+
+function loginAs(u){
+  currentUser = { user_id:u.user_id, display_name:u.display_name, settings:u.settings||{} };
+  applyTheme(currentUser.settings);
+  $('btn-gear').classList.add('show');
+  goToMenu();
+}
+
+async function initLogin(){
+  allUsers = await loadUsers();
+  renderUserList();
+}
+
+/* ---------------- settings panel ---------------- */
+$('btn-gear').onclick=()=>{
+  if(!currentUser) return;
+  document.querySelectorAll('#theme-chips .chip').forEach(b=>b.classList.toggle('sel', b.dataset.theme===(currentUser.settings.theme||'light')));
+  document.querySelectorAll('#fontsize-chips .chip').forEach(b=>b.classList.toggle('sel', b.dataset.size===(currentUser.settings.fontSize||'normal')));
+  $('chk-reduced-motion').checked = !!currentUser.settings.reducedMotion;
+  $('settings-overlay').classList.add('active');
+};
+$('btn-close-settings').onclick=()=>{ $('settings-overlay').classList.remove('active'); };
+
+async function saveSettings(){
+  if(!sb || !currentUser) return;
+  const { error } = await sb.from('users').update({settings: currentUser.settings}).eq('user_id', currentUser.user_id);
+  if(error) console.error('saveSettings error', error);
+}
+
+document.querySelectorAll('#theme-chips .chip').forEach(b=>b.onclick=async()=>{
+  document.querySelectorAll('#theme-chips .chip').forEach(x=>x.classList.remove('sel'));
+  b.classList.add('sel');
+  currentUser.settings.theme=b.dataset.theme;
+  applyTheme(currentUser.settings);
+  await saveSettings();
 });
+document.querySelectorAll('#fontsize-chips .chip').forEach(b=>b.onclick=async()=>{
+  document.querySelectorAll('#fontsize-chips .chip').forEach(x=>x.classList.remove('sel'));
+  b.classList.add('sel');
+  currentUser.settings.fontSize=b.dataset.size;
+  applyTheme(currentUser.settings);
+  await saveSettings();
+});
+$('chk-reduced-motion').onchange=async(e)=>{
+  currentUser.settings.reducedMotion=e.target.checked;
+  applyTheme(currentUser.settings);
+  await saveSettings();
+};
+
+/* ---------------- menu ---------------- */
+function goToMenu(){
+  $('menu-name').textContent = currentUser.display_name;
+  $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='ANA MENÜ';
+  show('s-menu');
+}
+$('btn-goto-solo').onclick=()=>{ $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='KURAL AYARI'; show('s-lobby'); };
+$('btn-goto-stats').onclick=()=>{ $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='İSTATİSTİK'; show('s-stats'); };
+$('btn-lobby-back').onclick=goToMenu;
+$('btn-stats-back').onclick=goToMenu;
+$('btn-logout').onclick=()=>{
+  currentUser=null;
+  $('btn-gear').classList.remove('show');
+  document.documentElement.removeAttribute('data-theme');
+  document.documentElement.removeAttribute('data-motion');
+  document.documentElement.style.setProperty('--scale','1');
+  $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='GİRİŞ';
+  $('pwform').style.display='none'; $('newuserform').style.display='none';
+  show('s-login');
+  initLogin();
+};
+
+/* ---------------- solo lobby ---------------- */
 document.querySelectorAll('#cats .chip').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('#cats .chip').forEach(x=>x.classList.remove('sel'));
-  b.classList.add('sel'); cat=b.dataset.c;
+  b.classList.add('sel'); lobbyCat=b.dataset.c;
 });
+document.querySelectorAll('#qcounts .chip').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#qcounts .chip').forEach(x=>x.classList.remove('sel'));
+  b.classList.add('sel'); lobbyQCount=parseInt(b.dataset.n,10);
+});
+document.querySelectorAll('#durations .chip').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#durations .chip').forEach(x=>x.classList.remove('sel'));
+  b.classList.add('sel'); lobbyPerQ=parseInt(b.dataset.s,10);
+});
+
 $('btn-start').onclick=async()=>{
-  queue=await fetchQuestions(player,cat);
+  perQuestionS=lobbyPerQ;
+  queue=await fetchQuestions(currentUser.user_id, lobbyCat, lobbyQCount);
   if(queue.length === 0){
     show('s-quiz');
     $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='UYARI';
@@ -253,7 +599,6 @@ $('btn-start').onclick=async()=>{
     return;
   }
   idx=0; correct=0; wrongs=[]; sessionId=uuid();
-  $('timerbar').style.visibility='visible';
   show('s-quiz'); renderQ();
 };
 
@@ -278,12 +623,14 @@ function renderQ(){
 }
 
 function startTimer(){
-  clearInterval(tHandle); tLeft=PER_QUESTION_S; tStart=Date.now();
+  clearInterval(tHandle); tStart=Date.now();
   const bar=$('timerbar'), fill=$('timerfill');
-  bar.classList.remove('low'); fill.style.width='100%';
+  if(perQuestionS<=0){ bar.style.visibility='hidden'; return; }
+  bar.style.visibility='visible'; bar.classList.remove('low'); fill.style.width='100%';
+  tLeft=perQuestionS;
   tHandle=setInterval(()=>{
     tLeft-=0.25;
-    fill.style.width=Math.max(0,(tLeft/PER_QUESTION_S)*100)+'%';
+    fill.style.width=Math.max(0,(tLeft/perQuestionS)*100)+'%';
     if(tLeft<=10) bar.classList.add('low');
     if(tLeft<=0) answer(null,null);
   },250);
@@ -305,7 +652,7 @@ function answer(k, btn){
     v.textContent = k===null ? 'SÜRE DOLDU — CEVAP: '+q.correct_answer : 'YANLIŞ ✗ — CEVAP: '+q.correct_answer;
     v.classList.add('no');
   }
-  logAttempt(player,q.q_id,k,ok,ms,sessionId);
+  logAttempt(currentUser.user_id,q.q_id,k,ok,ms,sessionId);
   $('btn-next').style.display='block';
   $('btn-next').textContent = idx+1<queue.length ? 'Sonraki Soru →' : 'Sonucu Gör →';
 }
@@ -321,7 +668,7 @@ function endQuiz(){
   clearInterval(tHandle);
   $('timerbar').style.visibility='hidden';
   $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='SONUÇ';
-  $('score').innerHTML=`${correct} / ${queue.length} <small>· ${player==='alperen'?'Alperen':'Hatice'}</small>`;
+  $('score').innerHTML=`${correct} / ${queue.length} <small>· ${currentUser.display_name}</small>`;
   const sheet=$('sheet'); sheet.innerHTML='';
   queue.forEach((q,i)=>{
     const w=wrongs.find(x=>x.q.q_id===q.q_id);
@@ -334,7 +681,105 @@ function endQuiz(){
   });
   show('s-end');
 }
-$('btn-again').onclick=()=>{ $('hdrcat').textContent='DENEME KİTAPÇIĞI'; show('s-start'); };
+$('btn-again').onclick=()=>{ $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='KURAL AYARI'; show('s-lobby'); };
+
+/* ---------------- stats ---------------- */
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('sel'));
+  t.classList.add('sel');
+  const tab=t.dataset.tab;
+  $('tab-pvp').style.display = tab==='pvp' ? 'block':'none';
+  $('tab-wrong').style.display = tab==='wrong' ? 'block':'none';
+  if(tab==='wrong') refreshWrongList();
+});
+
+async function loadWrongAnswers(){
+  if(!sb || !currentUser) return [];
+  const { data: atts, error } = await sb.from('attempts')
+    .select('attempt_id,q_id,chosen_answer,created_at')
+    .eq('user_id', currentUser.user_id).eq('is_correct', false)
+    .order('created_at', {ascending:false});
+  if(error){ console.error('loadWrongAnswers error', error); return []; }
+  if(!atts || atts.length===0) return [];
+  const ids=[...new Set(atts.map(a=>a.q_id))];
+  const { data: qs, error: qErr } = await sb.from('questions').select('*').in('q_id', ids);
+  if(qErr){ console.error('loadWrongAnswers questions error', qErr); return []; }
+  const qMap=new Map(qs.map(q=>[q.q_id,q]));
+  return atts.map(a=>({attempt:a, q:qMap.get(a.q_id)})).filter(x=>x.q);
+}
+
+async function deleteAttempt(id){
+  const { error } = await sb.from('attempts').delete().eq('attempt_id', id);
+  if(error) console.error('deleteAttempt error', error);
+}
+
+function showWrongDetail(q, attempt){
+  $('wronglist').style.display='none';
+  $('wrong-empty').style.display='none';
+  const d=$('wrong-detail');
+  d.style.display='block';
+  let html=`<p class="qtext">${q.question_text}</p><div class="opts">`;
+  for(const k of ['A','B','C','D','E']){
+    if(!(k in q.options)) continue;
+    let cls='opt';
+    if(k===q.correct_answer) cls+=' correct';
+    if(k===attempt.chosen_answer && k!==q.correct_answer) cls+=' wrong picked';
+    html+=`<div class="${cls}"><span class="bubble">${k}</span><span>${q.options[k]}</span></div>`;
+  }
+  html+=`</div><button class="linkbtn" id="btn-close-detail" style="margin-top:18px">← Listeye dön</button>`;
+  d.innerHTML=html;
+  $('btn-close-detail').onclick=()=>{
+    d.style.display='none';
+    $('wronglist').style.display='flex';
+  };
+}
+
+function renderWrongList(items){
+  const box=$('wronglist'); box.innerHTML='';
+  $('wrong-empty').style.display = items.length ? 'none' : 'block';
+  items.forEach(({attempt,q})=>{
+    const row=document.createElement('div'); row.className='wrow';
+    row.innerHTML=`<div class="wrow-del">Sil</div>
+      <div class="wrow-inner">
+        <p>${q.question_text.slice(0,70)}${q.question_text.length>70?'…':''}</p>
+        <span class="mono" style="color:var(--osym-red); flex:none">${attempt.chosen_answer??'—'}→${q.correct_answer}</span>
+      </div>`;
+    const inner=row.querySelector('.wrow-inner');
+    let startX=0, startY=0, dx=0, dragging=false;
+    inner.addEventListener('touchstart', e=>{ startX=e.touches[0].clientX; startY=e.touches[0].clientY; dragging=true; dx=0; }, {passive:true});
+    inner.addEventListener('touchmove', e=>{
+      if(!dragging) return;
+      const ndx=e.touches[0].clientX-startX;
+      const dy=e.touches[0].clientY-startY;
+      if(Math.abs(dy)>Math.abs(ndx)) return;
+      dx=ndx;
+      if(dx<0) inner.style.transform=`translateX(${dx}px)`;
+    }, {passive:true});
+    inner.addEventListener('touchend', ()=>{
+      dragging=false;
+      if(dx<-80){
+        inner.style.transform='translateX(-100%)';
+        inner.style.opacity='0';
+        deleteAttempt(attempt.attempt_id);
+        setTimeout(()=>{ row.remove(); if(!$('wronglist').children.length) $('wrong-empty').style.display='block'; }, 200);
+      } else {
+        inner.style.transform='';
+      }
+    });
+    inner.addEventListener('click', ()=>{ if(Math.abs(dx)<5) showWrongDetail(q, attempt); });
+    box.appendChild(row);
+  });
+}
+
+async function refreshWrongList(){
+  $('wrong-detail').style.display='none';
+  $('wronglist').style.display='flex';
+  const items=await loadWrongAnswers();
+  renderWrongList(items);
+}
+
+/* ---------------- boot ---------------- */
+initLogin();
 </script>
 </body>
 </html>
