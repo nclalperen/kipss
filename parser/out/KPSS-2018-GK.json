@@ -1,0 +1,902 @@
+[
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 1,
+  "question_text": "İslamiyet öncesi Türk devletlerinin yönetim\nanlayışıyla ilgili olarak aşağıdakilerden hangisi\nsöylenemez?",
+  "options": {
+   "A": "Hükümdar olma hakkı, hanedanın erkek üyelerine aittir.",
+   "B": "Hükümdar olma yetkisinin tanrısal olduğu inancı vardır.",
+   "C": "Ülke, ikili teşkilatla yönetilmiştir.",
+   "D": "Ülke yönetimi ile ilgili kararlar, kurultayda alınır.",
+   "E": "Hanedanın hükümdar olacak üyesi önceden belirlenir."
+  },
+  "correct_answer": "E",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 2,
+  "question_text": "Selçukluların, Türk-İslam mimarisine kazandırdığı\nyapı aşağıdakilerden hangisidir?",
+  "options": {
+   "A": "Otağ",
+   "B": "Ribat",
+   "C": "Şadırvan",
+   "D": "Cami",
+   "E": "Kümbet"
+  },
+  "correct_answer": "E",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 3,
+  "question_text": "Türk-İslam devletlerinde gelirleri; bilim, eğitim,\nsağlık gibi alanlardaki kurumların yapım ve onarımı\nile görevlilerinin maaşlarının ödenmesi için ayrılan\narazilere verilen ad aşağıdakilerden hangisidir?",
+  "options": {
+   "A": "Has arazi",
+   "B": "İkta arazi",
+   "C": "Mülk arazi",
+   "D": "Vakıf arazi",
+   "E": "Mirî arazi"
+  },
+  "correct_answer": "D",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 4,
+  "question_text": "Aşağıdakilerden hangisinin, Balkanlardaki ahalinin\nOsmanlı yönetimini kolay kabullenmesinin\nnedenlerinden biri olduğu söylenemez?",
+  "options": {
+   "A": "Osmanlı vergi düzeninin esnekliği",
+   "B": "Gayrimüslimlerin avarızdan muaf tutulması",
+   "C": "Eski yöneticilerin Osmanlı sistemi içine alınması",
+   "D": "Yerleşik ahalinin âdetlerinin dikkate alınması",
+   "E": "İslamiyetin, Hristiyanlara zimmi statüsünü tanıması"
+  },
+  "correct_answer": "B",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 5,
+  "question_text": "Aşağıdakilerden hangisi Osmanlı Devleti’nde\nfethedilen topraklar üzerinde timar sisteminin\nuygulanma nedenlerinden biri değildir?",
+  "options": {
+   "A": "Fetih hareketlerini hızlandırmak",
+   "B": "Merkezî yönetimi güçlendirmek",
+   "C": "Hassa ordusu oluşturmak",
+   "D": "Ayni vergileri doğrudan tahsil etmek",
+   "E": "Taşra yönetimini yeniden yapılandırmak"
+  },
+  "correct_answer": "C",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 6,
+  "question_text": "XVI. yüzyılın sonlarından itibaren girilen yoğun savaş\ndöneminde, Celâli isyanlarının da etkisiyle Osmanlı\nekonomisinde bazı sorunlar yaşanmış ve bütçe açıkları\nortaya çıkmıştır.\nAşağıdakilerden hangisinin bu durumla ilgili bir\ngelişme olduğu söylenemez?",
+  "options": {
+   "A": "Köylerin boşalmasının",
+   "B": "Yüksek fiyat artışları yaşanmasının",
+   "C": "Akçenin değerinin düşmesinin",
+   "D": "Timarlıların sayısının artmasının",
+   "E": "Ulufelilerin gerçek gelirinin azalmasının"
+  },
+  "correct_answer": "D",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 7,
+  "question_text": "Aşağıdakilerden hangisi, Osmanlı maliyesinde\nvergilerin şerive örfiolarakayrılmasının\nsebeplerinden biridir?",
+  "options": {
+   "A": "Vergi oranlarının bölgeden bölgeye değişmesi",
+   "B": "Esnaf ve zanaat üretim alanlarının çok çeşitli olması",
+   "C": "Hukuk sisteminde ikili bir yapının bulunması",
+   "D": "Gayrimüslimlerin çift resmi yerine ispençe ödemesi",
+   "E": "Devletin vergi toplama şeklinin zamanla değişmesi"
+  },
+  "correct_answer": "C",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 8,
+  "question_text": "Osmanlı Devleti'nde Karahisarlı Ahmet, Hafız Osman\nve Şeyh Hamdullah'ın önde gelen temsilcileri\nolduğu; kûfi, nesih, sülüs ve ta’lîk gibi çeşitleri\nbulunan Türk-İslam sanatı aşağıdakilerden\nhangisidir?",
+  "options": {
+   "A": "Hat",
+   "B": "Ebru",
+   "C": "Tezhip",
+   "D": "Minyatür",
+   "E": "Çini"
+  },
+  "correct_answer": "A",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 9,
+  "question_text": "III. Selim Dönemi’nde aşağıdaki alanların hangisinde\nıslahat yapıldığı söylenemez?",
+  "options": {
+   "A": "Ordu",
+   "B": "Eğitim",
+   "C": "Diplomasi",
+   "D": "İdare",
+   "E": "Din"
+  },
+  "correct_answer": "E",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 10,
+  "question_text": "1838’de İngiltere ile imzalanan Baltalimanı Ticaret\nAntlaşması ile Osmanlı Devleti ülke içinde fiyatları\nkontrol etmek için kullandığı tekel sistemini kaldırdı ve\nyabancı tüccarların Osmanlı sınırları içinde ticaret\nyapması serbest bırakıldı. Bununla birlikte İngiliz\ntacirlere, Osmanlı topraklarında yaptıkları ticarette yerli\ntacirlerle aynı vergileri ödeme yükümlülüğü getirildi.\nAyrıca bu tüccarlara yün, pamuk, ipek, hububat gibi\nihracı yasak ya da izne tabi Osmanlı ürünlerini\nserbestçe ihraç etme hakkı tanındı.\nBu antlaşmanın Osmanlı ekonomisi üzerindeki\netkileriyle ilgili olarak aşağıdakilerden hangisi\nsöylenemez?",
+  "options": {
+   "A": "Kapitülasyonların kapsamı genişletilmiştir.",
+   "B": "Osmanlı ülkesi açık pazar durumuna gelmiştir.",
+   "C": "Osmanlı Devleti’nde yerli sanayi olumsuz etkilenmiştir.",
+   "D": "Osmanlı ülkesinden ham madde çıkışı kolaylaşmıştır.",
+   "E": "Tarımsal üretimde düşüş yaşanmıştır."
+  },
+  "correct_answer": "E",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 11,
+  "question_text": "Osmanlı modernleşme sürecinde ortaya çıkan\ndüşünce akımları ve temsilcileriyle ilgili aşağıdaki\neşleştirmelerdenhangisi yanlıştır?",
+  "options": {
+   "A": "Batıcılık - Sait Halim Paşa",
+   "B": "Osmanlıcılık - Namık Kemal",
+   "C": "Türkçülük - Ziya Gökalp",
+   "D": "Batıcılık - Abdullah Cevdet",
+   "E": "Türkçülük - Yusuf Akçura"
+  },
+  "correct_answer": "A",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 12,
+  "question_text": "Osmanlı Devleti’nde Kanunuesasi’nin kabulüyle;\nI. parlamentolu sisteme geçilmesi,\nII. tebaanın tüm unsurlarının mecliste temsil\nedilmesi,\nIII.padişahın yürütme yetkisinin sona ermesi\ngelişmelerinden hangileri yaşanmıştır?",
+  "options": {
+   "A": "Yalnız I",
+   "B": "I ve II",
+   "C": "I ve III",
+   "D": "II ve III",
+   "E": "I, II ve III"
+  },
+  "correct_answer": "B",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 13,
+  "question_text": "Birinci Dünya Savaşı sırasında Osmanlı Devleti\ntarafından 27 Mayıs 1915’te çıkarılan Sevk ve İskân\nKanunu ile aşağıdakilerden hangisi amaçlanmıştır?",
+  "options": {
+   "A": "Osmanlı ülkesinde güvenliğin sağlanması",
+   "B": "Vilayet sınırlarının yeniden belirlenmesi",
+   "C": "Doğudaki aşiretler arasındaki anlaşmazlıkların giderilmesi",
+   "D": "Orduya asker alımının düzenlenmesi",
+   "E": "Olası doğal afetler için tedbir alınması"
+  },
+  "correct_answer": "A",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 14,
+  "question_text": "Mustafa Kemal Paşa, “Osmanlı Devleti bu mütareke ile\nkendisini kayıtsız ve şartsız düşmanlara teslim etmeye\nrazı olmuştu.” ifadesini aşağıdakilerden hangisi için\nkullanmıştır?",
+  "options": {
+   "A": "Mudanya Anlaşması",
+   "B": "Montrö Sözleşmesi",
+   "C": "Mondros Anlaşması",
+   "D": "Londra Ön Barışı",
+   "E": "Selanik Anlaşması"
+  },
+  "correct_answer": "C",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 15,
+  "question_text": "Temuçin Öğretmen; “Kuvayımilliye birlikleri, tüm\nçabalara rağmen askerî bir disiplin ve hiyerarşi içine\nsokulamamıştır. Bu birlikler düşmana zarar vermiş, ama\nilerlemesini durduramamıştır. Her Kuvayımilliye birliği,\nkendi şefinin emrini dinlemiş, yakaladıkları asileri kendi\nyöntemleriyle cezalandırmış ve son zamanlarda halktan\nbazen zorla malzeme alma yoluna gitmiştir. Dolayısıyla\ndevlet düzeni içinde bu tür davranışlar asla hoş\ngörülmemiştir.” demiştir.\nBu bilgiyi veren Temuçin Öğretmen, öğrencilerine\naşağıdaki konulardan hangisini anlatmaktadır?",
+  "options": {
+   "A": "Kuvayımilliyenin oluşturulma sürecini",
+   "B": "Heyet-i Temsiliyenin Ankara'ya gelmesini",
+   "C": "Mondros Anlaşması sonrası işgalleri",
+   "D": "Kongrelerin toplanmasını",
+   "E": "Düzenli ordunun kurulmasının sebeplerini"
+  },
+  "correct_answer": "E",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 16,
+  "question_text": "1919 yılında Türkiye’ye gelen ve Sivas’ta Mustafa\nKemal Paşa ile görüşme yapan General Harbord,\naşağıdaki konulardan hangisinde araştırma yapmak\nüzere gönderilmiştir?",
+  "options": {
+   "A": "Boğazlar sorunu",
+   "B": "Yunan işgali",
+   "C": "Manda konusu",
+   "D": "Kapitülasyonlar",
+   "E": "Musul petrolleri"
+  },
+  "correct_answer": "C",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 17,
+  "question_text": "İstiklal Mahkemelerinin amacı, millî birliğin, huzurun ve\ngüvenliğin tesisini sağlamaktı. Üyeleri Meclis tarafından,\nmilletvekilleri arasından seçilen mahkemelere\nolağanüstü yetkiler tanınmıştı. Kararları temyiz\nedilemeyen bu mahkemeler, Millî Mücadele’nin başarıya\nulaşmasında ve inkılapların uygulanmasında etkili\nolmuşlardır.\nBu bilgiyle İstiklal Mahkemeleri ile ilgili olarak\naşağıdakilerden hangisine ulaşılamaz?",
+  "options": {
+   "A": "TBMM’nin yargı gücünü kullanmasını sağlamışlardır.",
+   "B": "TBMM’ye karşı çıkan isyanların bastırılmasında etkili olmuşlardır.",
+   "C": "Faaliyetleri Millî Mücadele Dönemi'yle sınırlı kalmıştır.",
+   "D": "Gerektiği hâllerde kurularak yargılama yapmışlardır.",
+   "E": "Kararları kesin olup, derhâl uygulanmıştır."
+  },
+  "correct_answer": "C",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 18,
+  "question_text": "Millî Mücadele Dönemi’nde gerçekleşen ve Mustafa\nKemal Paşa’nın daha sonra “Rum Sındığı” olarak da\nadlandırdığı savaş, aşağıdakilerden hangisidir?",
+  "options": {
+   "A": "Birinci İnönü Muharebesi",
+   "B": "İkinci İnönü Muharebesi",
+   "C": "Kütahya-Eskişehir Muharebesi",
+   "D": "Sakarya Meydan Muharebesi",
+   "E": "Başkomutan Meydan Muharebesi"
+  },
+  "correct_answer": "E",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 19,
+  "question_text": "Lozan Konferansı sırasında ve görüşmelere ara\nverildiği dönemde, TBMM’de muhalefeti oluşturan\nikinci grubun yoğun eleştirileri, aşağıdakilerden\nhangisinin gerçekleşmesinde etkili olmuştur?",
+  "options": {
+   "A": "Takrir-i Sükûn Kanunu’nun çıkarılması",
+   "B": "Milletvekili seçimleri için karar alınması",
+   "C": "Başkomutanlık yetkisinin uzatılması",
+   "D": "Felah-ı Vatan Grubu’nun kurulması",
+   "E": "Hıyanet-i Vataniye Kanunu’nun yürürlüğe girmesi"
+  },
+  "correct_answer": "B",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 20,
+  "question_text": "Aşağıdakilerden hangisi saltanat ve hilafetin\nkaldırılmasının ortak nedenlerinden biridir?",
+  "options": {
+   "A": "Rejimin cumhuriyet olmasını sağlamak",
+   "B": "TBMM’yi egemenliği kullanan tek güç hâline getirmek",
+   "C": "Dış müdahalelerin önüne geçmek",
+   "D": "Meclisteki muhalif ikinci grubun gücünü kırmak",
+   "E": "Lozan Konferansı’ndaki temsil kargaşasını önlemek"
+  },
+  "correct_answer": "B",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 21,
+  "question_text": "Aşağıdaki kurumlardan hangisi, Atatürk Dönemi’nde\naçılmıştır?",
+  "options": {
+   "A": "Darülfünun",
+   "B": "Mülkiye Mektebi",
+   "C": "Türk Ocakları",
+   "D": "Ankara Hukuk Mektebi",
+   "E": "Sanayi-i Nefise Mektebi"
+  },
+  "correct_answer": "D",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 22,
+  "question_text": "19 Nisan 1926 tarihli Kabotaj Kanunu'yla\naşağıdakilerden hangisi düzenlenmiştir?",
+  "options": {
+   "A": "Âşar vergisi",
+   "B": "Toprak reformu",
+   "C": "Millî bankacılık",
+   "D": "Deniz ticareti",
+   "E": "Planlı sanayi"
+  },
+  "correct_answer": "D",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 23,
+  "question_text": "1929 Dünya Ekonomik Krizi’nin etkisiyle ortaya çıkan\notarşi (kendine yetme) eğiliminin Türkiye’de\nyansıması olarak geliştirilen Atatürk ilkesi,\naşağıdakilerden hangisidir?",
+  "options": {
+   "A": "Devletçilik",
+   "B": "Laiklik",
+   "C": "Cumhuriyetçilik",
+   "D": "Milliyetçilik",
+   "E": "Halkçılık"
+  },
+  "correct_answer": "A",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 24,
+  "question_text": "Atatürk Dönemi’nde en uzun süre Dışişleri Bakanlığı\ngörevinde bulunan ve Hatay sorununun çözümünde\nönemli katkı sağlayan devlet adamı aşağıdakilerden\nhangisidir?",
+  "options": {
+   "A": "Tevfik Rüştü Aras",
+   "B": "Yusuf Kemal Tengirşenk",
+   "C": "Şükrü Kaya",
+   "D": "Mahmut Esat Bozkurt",
+   "E": "Ali Fethi Okyar"
+  },
+  "correct_answer": "A",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 25,
+  "question_text": "Yusuf, bir sahafta eski gazetelerin yer aldığı bölüme\ngitmiş ve eline aldığı bir gazetenin ilk sayfasında\nBulgaristan’da toplanmış olan Alman kuvvetlerinin\nYunanistan’a girerek işgale başladığı haberini\nokumuştur.\nGazetenin bu nüshasında yer alan haberin aşağıdaki\nsavaşların hangisine ait olduğu söylenebilir?",
+  "options": {
+   "A": "Birinci Balkan Savaşı",
+   "B": "İkinci Balkan Savaşı",
+   "C": "Trablusgarp Savaşı",
+   "D": "Birinci Dünya Savaşı",
+   "E": "İkinci Dünya Savaşı"
+  },
+  "correct_answer": "E",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 26,
+  "question_text": "Aşağıdakilerden hangisi, 27 Mayıs 1960 Askerî\nDarbesi sonrasında kurulan, Genel Başkanlığını\nRagıp Gümüşpala'nın üstlendiği ve Demokrat\nPartinin devamı niteliğinde olan siyasi partidir?",
+  "options": {
+   "A": "Adalet Partisi",
+   "B": "Hürriyet Partisi",
+   "C": "Millet Partisi",
+   "D": "Millî Kalkınma Partisi",
+   "E": "Ahali Cumhuriyet Partisi"
+  },
+  "correct_answer": "A",
+  "has_image": false
+ },
+ {
+  "category": "tarih",
+  "source": "KPSS-2018-GK",
+  "question_no": 27,
+  "question_text": "SSCB’nin yıkılmasından sonraAzerbaycan, Gürcistan\nve Türkiye üzerinden bir enerji koridoru oluşturulmuştur.\nBu politikanın;\nI. Rusya’nın bölgedeki etkinliğini azaltmak,\nII. Türkiye’nin önemini artırmak,\nIII.Bağımsız Devletler Topluluğunu güçlendirmek\namaçlarından hangilerini taşıdığı söylenebilir?",
+  "options": {
+   "A": "Yalnız I",
+   "B": "I ve II",
+   "C": "I ve III",
+   "D": "II ve III",
+   "E": "I, II ve III"
+  },
+  "correct_answer": "B",
+  "has_image": false
+ },
+ {
+  "category": "cografya",
+  "source": "KPSS-2018-GK",
+  "question_no": 28,
+  "question_text": "I. Ege Denizi'nin oluşması - İkinci Jeolojik Zaman\nII. Kuzey Anadolu ve Toros Dağlarının\noluşması - Üçüncü Jeolojik Zaman\nIII.İstanbul Boğazı'nın oluşması - Dördüncü Jeolojik\nZaman\nTürkiye'deki bazı coğrafi olayların meydana geldiği\njeolojik zamanlarla ilgili yukarıdaki eşleştirmelerden\nhangileri doğrudur?",
+  "options": {
+   "A": "Yalnız I",
+   "B": "Yalnız II",
+   "C": "Yalnız III",
+   "D": "I ve II",
+   "E": "II ve III"
+  },
+  "correct_answer": "E",
+  "has_image": false
+ },
+ {
+  "category": "cografya",
+  "source": "KPSS-2018-GK",
+  "question_no": 29,
+  "question_text": "Aşağıdaki coğrafi koordinatlardan hangisi Türkiye\nsınırları içinde kalmaktadır?",
+  "options": {
+   "A": "28oDoğu 35oKuzey",
+   "B": "40oDoğu 30oKuzey",
+   "C": "38oDoğu 28oKuzey",
+   "D": "36oDoğu 38oKuzey",
+   "E": "26oDoğu 45oKuzey"
+  },
+  "correct_answer": "D",
+  "has_image": false
+ },
+ {
+  "category": "cografya",
+  "source": "KPSS-2018-GK",
+  "question_no": 30,
+  "question_text": "Yukarıdaki haritada numaralandırılarak koyu renkle\ngösterilen yerlerden hangisi masif arazilerin\nbulunduğu alanlardan biri değildir?",
+  "options": {
+   "A": "I",
+   "B": "II",
+   "C": "III",
+   "D": "IV",
+   "E": "V"
+  },
+  "correct_answer": "D",
+  "has_image": true
+ },
+ {
+  "category": "cografya",
+  "source": "KPSS-2018-GK",
+  "question_no": 31,
+  "question_text": "Yukarıdaki haritada numaralandırılarak ve kırmızı\nrenkle gösterilen kıyı hatlarının hangisinde kıyı\nkumulları daha az görülmektedir?",
+  "options": {
+   "A": "I",
+   "B": "II",
+   "C": "III",
+   "D": "IV",
+   "E": "V"
+  },
+  "correct_answer": "C",
+  "has_image": true
+ },
+ {
+  "category": "cografya",
+  "source": "KPSS-2018-GK",
+  "question_no": 32,
+  "question_text": "Türkiye’nin endemik bitki türleri bakımından zengin\nolmasında,\nI. geçmiş küresel iklim değişimleri,\nII. Kuzey Yarım Küre'de yer alması,\nIII.yeryüzü şekilleri,\nIV.doğu boylamlarında yer alması\nözelliklerinden hangileri etkili olmuştur?",
+  "options": {
+   "A": "I ve II",
+   "B": "I ve III",
+   "C": "II ve III",
+   "D": "II ve IV",
+   "E": "III ve IV"
+  },
+  "correct_answer": "B",
+  "has_image": false
+ },
+ {
+  "category": "cografya",
+  "source": "KPSS-2018-GK",
+  "question_no": 33,
+  "question_text": "Yaklaşık olarak aynı enlemlerde yer almasına karşın\nyaz mevsiminde Şanlıurfa'nın Mersin'e göre daha\nsıcak olmasında aşağıdakilerden hangisinin etkisi\nyoktur?",
+  "options": {
+   "A": "Yükseltinin",
+   "B": "Karasallığın",
+   "C": "Nem oranının düşük olmasının",
+   "D": "Basra Alçak Basıncı'nın",
+   "E": "Güneyden esen rüzgârların"
+  },
+  "correct_answer": "A",
+  "has_image": false
+ },
+ {
+  "category": "cografya",
+  "source": "KPSS-2018-GK",
+  "question_no": 34,
+  "question_text": "Aşağıdakilerden hangisi, Anadolu'nun iç\nkısımlarından kaynağını alarak kuzey veya\ngüneydeki sıradağları aşan akarsulardan biri\ndeğildir?",
+  "options": {
+   "A": "Kızılırmak",
+   "B": "Fırat Irmağı",
+   "C": "Seyhan Nehri",
+   "D": "Sakarya Irmağı",
+   "E": "Dalaman Çayı"
+  },
+  "correct_answer": "E",
+  "has_image": false
+ },
+ {
+  "category": "cografya",
+  "source": "KPSS-2018-GK",
+  "question_no": 35,
+  "question_text": "Türkiye, 557 sayılı Nüfus Planlaması Kanunu'yla birlikte\nnüfus politikalarının netleştiği bir döneme girmiştir. Bu\ndönemin en belirgin özelliği, odöneme kadar\nbenimsenen nüfusun artması yönündeki görüşlerin terk\nedilerek “bireylerin istediği sayıda ve istediği zaman\nçocuk sahibi olmaları” gerektiğiyle ilgili görüşlerin ağırlık\nkazanmasıdır.\nNüfus politikalarıyla ilgili önemli bir değişimin\nyaşandığı bu dönem, aşağıdakilerden hangisidir?",
+  "options": {
+   "A": "1923-1965 dönemi",
+   "B": "1965-1980 dönemi",
+   "C": "1980-2005 dönemi",
+   "D": "2005-2014 dönemi",
+   "E": "2014 sonrası dönem"
+  },
+  "correct_answer": "B",
+  "has_image": false
+ },
+ {
+  "category": "cografya",
+  "source": "KPSS-2018-GK",
+  "question_no": 36,
+  "question_text": "Aşağıdakilerden hangisi Türkiye’de kırdan kente\nyapılan göçlerde doğrudan etkili olan faktörlerden\nbiri değildir?",
+  "options": {
+   "A": "Ekonomik yetersizlikler",
+   "B": "Kamulaştırma işlemleri",
+   "C": "Doğal afetler",
+   "D": "Sosyal yetersizlikler",
+   "E": "Arazi toplulaştırması"
+  },
+  "correct_answer": "E",
+  "has_image": false
+ },
+ {
+  "category": "cografya",
+  "source": "KPSS-2018-GK",
+  "question_no": 37,
+  "question_text": "Türkiye'nin yazları sıcak ve bunaltıcı geçen yörelerinde\nsayfiye veya dinlenme amaçlı yaylacılık faaliyeti giderek\nönem kazanmaktadır.\nBu tür yaylalar aşağıdaki yörelerin hangisinde daha\nfazla bulunur?",
+  "options": {
+   "A": "Aydın Dağları",
+   "B": "Orta Toroslar",
+   "C": "Ilgaz Dağları",
+   "D": "Güneydoğu Toroslar",
+   "E": "Yıldız Dağları"
+  },
+  "correct_answer": "B",
+  "has_image": false
+ },
+ {
+  "category": "cografya",
+  "source": "KPSS-2018-GK",
+  "question_no": 38,
+  "question_text": "Türkiye’nin en büyük bölgesel kalkınma planlarından biri\nolan Güneydoğu Anadolu Projesi kapsamında önemli\nenerji yatırımları yapılmıştır.\nAşağıdakilerden hangisi bu proje kapsamındaki\nhidroelektrik santrallerinden biri değildir?",
+  "options": {
+   "A": "Atatürk",
+   "B": "Ilısu",
+   "C": "Deriner",
+   "D": "Birecik",
+   "E": "Karkamış"
+  },
+  "correct_answer": "C",
+  "has_image": false
+ },
+ {
+  "category": "cografya",
+  "source": "KPSS-2018-GK",
+  "question_no": 39,
+  "question_text": "Türkiye'de iklim ve bitki örtüsü çeşitliliği aşağıdaki\nekonomik faaliyetlerden hangisinin gelişmesine\ndaha fazla katkı sağlamıştır?",
+  "options": {
+   "A": "Arıcılık",
+   "B": "İpek böcekciliği",
+   "C": "Besi hayvancılığı",
+   "D": "Kümes hayvancılığı",
+   "E": "Balıkçılık"
+  },
+  "correct_answer": "A",
+  "has_image": false
+ },
+ {
+  "category": "cografya",
+  "source": "KPSS-2018-GK",
+  "question_no": 40,
+  "question_text": "Aşağıdaki illerin hangisinde sanayi diğerlerine göre\ndaha az gelişmiştir?",
+  "options": {
+   "A": "İstanbul",
+   "B": "İzmir",
+   "C": "Bursa",
+   "D": "Kocaeli",
+   "E": "Samsun"
+  },
+  "correct_answer": "E",
+  "has_image": false
+ },
+ {
+  "category": "cografya",
+  "source": "KPSS-2018-GK",
+  "question_no": 41,
+  "question_text": "Türkiye’de aşağıdaki fosil enerji kaynaklarından\nhangisinin bilinen toplam rezervi diğerlerinden daha\nazdır?",
+  "options": {
+   "A": "Petrol",
+   "B": "Doğalgaz",
+   "C": "Asfaltit",
+   "D": "Linyit",
+   "E": "Taş kömürü"
+  },
+  "correct_answer": "B",
+  "has_image": false
+ },
+ {
+  "category": "cografya",
+  "source": "KPSS-2018-GK",
+  "question_no": 42,
+  "question_text": "Aşağıdakilerden hangisi, Türkiye’de zeytin tarımının\nson yıllarda daha fazla gelişme göstermesinin\nnedenlerinden biri değildir?",
+  "options": {
+   "A": "Zeytin üretim alanlarının genişlemesi",
+   "B": "Zeytin bahçelerinin bakım koşullarının iyileştirilmesi",
+   "C": "Zeytin ağacı sayısındaki artış",
+   "D": "İç ve dış talepteki artış",
+   "E": "Sulama olanaklarının gelişmesi"
+  },
+  "correct_answer": "E",
+  "has_image": false
+ },
+ {
+  "category": "cografya",
+  "source": "KPSS-2018-GK",
+  "question_no": 43,
+  "question_text": "Türkiye'de aşağıdaki göllerden hangisi su ürünleri\nüretimi bakımından daha önemli bir paya sahiptir?",
+  "options": {
+   "A": "Van",
+   "B": "Çıldır",
+   "C": "Eğirdir",
+   "D": "Abant",
+   "E": "Sapanca"
+  },
+  "correct_answer": "A",
+  "has_image": false
+ },
+ {
+  "category": "cografya",
+  "source": "KPSS-2018-GK",
+  "question_no": 44,
+  "question_text": "Aşağıda, Türkiye’de yer alan bir millî parkla ilgili bazı\nözellikler verilmiştir.\n Türkiye Cumhuriyeti’nin ilk millî parkıdır.\n Geçmişte Anadolu’nun ormanlarla kaplı olduğunun\nbir kanıtıdır.\n Park alanı genellikle karaçam, ardıç ve meşe gibi\nağaçlardan oluşur.\nBu özellikler aşağıdaki millî parklardan hangisine\naittir?",
+  "options": {
+   "A": "Yozgat Çamlığı Millî Parkı",
+   "B": "Soğuksu Millî Parkı",
+   "C": "Ilgaz Dağı Millî Parkı",
+   "D": "Boğazköy-Alacahöyük Millî Parkı",
+   "E": "Küre Dağları Millî Parkı"
+  },
+  "correct_answer": "A",
+  "has_image": false
+ },
+ {
+  "category": "cografya",
+  "source": "KPSS-2018-GK",
+  "question_no": 45,
+  "question_text": "Türkiye’nin yeryüzüşekilleri ve yükselti özellikleri\ndikkate alındığında yukarıdaki haritada\nnumaralandırılarak verilen doğrultuların hangisinde\nkarayolu ve demiryolu ulaşım maliyetlerinin daha\nfazla olması beklenir?",
+  "options": {
+   "A": "I ve II",
+   "B": "I ve V",
+   "C": "II ve III",
+   "D": "III ve IV",
+   "E": "IV ve V"
+  },
+  "correct_answer": "D",
+  "has_image": true
+ },
+ {
+  "category": "vatandaslik",
+  "source": "KPSS-2018-GK",
+  "question_no": 46,
+  "question_text": "1982 Anayasası’na göre bakanlar hakkında,\ngörevleriyle ilgili bir suç işledikleri iddiasıyla\nYüce Divana sevk kararı alma yetkisi\naşağıdakilerin hangisine aittir?",
+  "options": {
+   "A": "Cumhurbaşkanı",
+   "B": "Türkiye Büyük Millet Meclisi",
+   "C": "Anayasa Mahkemesi",
+   "D": "Yargıtay Cumhuriyet Başsavcılığı",
+   "E": "Yargıtay Ceza Genel Kurulu"
+  },
+  "correct_answer": "B",
+  "has_image": false
+ },
+ {
+  "category": "vatandaslik",
+  "source": "KPSS-2018-GK",
+  "question_no": 47,
+  "question_text": "1982 Anayasası’na göre Millî Güvenlik Kurulunun\ngündemi, ilgililerin önerileri dikkate alınarak\naşağıdakilerin hangisi tarafından düzenlenir?",
+  "options": {
+   "A": "İçişleri bakanı",
+   "B": "Genelkurmay başkanı",
+   "C": "Millî savunma bakanı",
+   "D": "Cumhurbaşkanı",
+   "E": "Millî Güvenlik Kurulu Genel Sekreterliği"
+  },
+  "correct_answer": "D",
+  "has_image": false
+ },
+ {
+  "category": "vatandaslik",
+  "source": "KPSS-2018-GK",
+  "question_no": 48,
+  "question_text": "A şağıdakilerin hangisi 1982 Anayasası’nda koruma\naltına alınan inkılap kanunlarından biri değildir?",
+  "options": {
+   "A": "Tevhidi Tedrisat Kanunu",
+   "B": "Tekke ve Zaviyelerle Türbelerin Seddine ve Türbedarlıklar ile Birtakım Unvanların Men ve İlgasına Dair Kanun",
+   "C": "Türk Harflerinin Kabul ve Tatbiki Hakkında Kanun",
+   "D": "Şapka İktisası Hakkında Kanun",
+   "E": "Yıpranan Tarihî ve Kültürel Taşınmaz Varlıkların Yenilenerek Korunması ve Yaşatılarak Kullanılması Hakkında Kanun"
+  },
+  "correct_answer": "E",
+  "has_image": false
+ },
+ {
+  "category": "vatandaslik",
+  "source": "KPSS-2018-GK",
+  "question_no": 49,
+  "question_text": "Memurların, amirlerinin vermiş olduğu emirleri\nyerine getirme zorunluluğunun istisnası\n1982 Anayasası’nda hangi madde başlığı\naltında düzenlenmiştir?",
+  "options": {
+   "A": "Merkezî idare",
+   "B": "Kanunsuz emir",
+   "C": "İdarenin bütünlüğü ve kamu tüzel kişiliği",
+   "D": "Suç ve cezalara ilişkin esaslar",
+   "E": "Yargı yolu"
+  },
+  "correct_answer": "B",
+  "has_image": false
+ },
+ {
+  "category": "vatandaslik",
+  "source": "KPSS-2018-GK",
+  "question_no": 50,
+  "question_text": "5393 sayılı Belediye Kanunu’na göre belediyelerle\nilgili,\nI. İlçe merkezlerinde belediye kurulması zorunludur.\nII. Köylerde belediye kurulması zorunludur.\nIII. Nüfusu 5.000 ve üzerinde olan yerleşim\nbirimlerinde belediye kurulabilir.\nifadelerinden hangileri doğrudur?",
+  "options": {
+   "A": "Yalnız I",
+   "B": "I ve II",
+   "C": "I ve III",
+   "D": "II ve III",
+   "E": "I, II ve III"
+  },
+  "correct_answer": "C",
+  "has_image": false
+ },
+ {
+  "category": "vatandaslik",
+  "source": "KPSS-2018-GK",
+  "question_no": 51,
+  "question_text": "1982 Anayasası’na göre, merkezî yönetim bütçesi\nkapsamındaki kamu idareleri ile sosyal güvenlik\nkurumlarının bütün gelir ve giderleri ile mallarını\nTürkiye Büyük Millet Meclisi adına denetleme ve\nsorumluların hesap ve işlemlerini kesin hükme\nbağlama ve kanunlarla verilen inceleme, denetleme\nve hükme bağlama işlerini yapma görevi\naşağıdakilerden hangisine aittir?",
+  "options": {
+   "A": "Devlet Denetleme Kurulu",
+   "B": "Anayasa Mahkemesi",
+   "C": "İçişleri Bakanlığı",
+   "D": "Sayıştay",
+   "E": "Danıştay"
+  },
+  "correct_answer": "D",
+  "has_image": false
+ },
+ {
+  "category": "vatandaslik",
+  "source": "KPSS-2018-GK",
+  "question_no": 52,
+  "question_text": "Ergin olma, 4721 sayılı Türk Medeni Kanunu’nda\nkural olarak aşağıdakilerin hangisiyle ilişkili\nkılınmıştır?",
+  "options": {
+   "A": "Belli bir yaşı doldurma",
+   "B": "Ayırt etme gücüne sahip olma",
+   "C": "Kısıtlı olmama",
+   "D": "Hak ehliyetine sahip olma",
+   "E": "Sağ olarak tamamıyla doğma"
+  },
+  "correct_answer": "A",
+  "has_image": false
+ },
+ {
+  "category": "vatandaslik",
+  "source": "KPSS-2018-GK",
+  "question_no": 53,
+  "question_text": "Türkiye’de Cumhuriyet’in ilanından sonra kaç farklı\nanayasa yürürlüğe girmiştir?",
+  "options": {
+   "A": "1",
+   "B": "2",
+   "C": "3",
+   "D": "4",
+   "E": "5"
+  },
+  "correct_answer": "C",
+  "has_image": false
+ },
+ {
+  "category": "vatandaslik",
+  "source": "KPSS-2018-GK",
+  "question_no": 54,
+  "question_text": "Bir kimsenin, durumun gereklerine göre kendisinden\nbeklenen özeni göstermesine rağmen bir hakkın\nkazanılmasına veya hukuki sonucun doğmasına ilişkin\nengelin farkında olmamasıdır.\nBu ifadeyle açıklanan kavram aşağıdakilerden\nhangisidir?",
+  "options": {
+   "A": "Fiil ehliyeti",
+   "B": "Hakkın kötüye kullanılması",
+   "C": "Kanuna karşı hile",
+   "D": "Muvazaa",
+   "E": "İyi niyet"
+  },
+  "correct_answer": "E",
+  "has_image": false
+ },
+ {
+  "category": "guncel",
+  "source": "KPSS-2018-GK",
+  "question_no": 55,
+  "question_text": "Ankara’nın önemli tarihî mekânlarından biri olan ve\nMehmet Akif Ersoy’un İstiklal Marşı’nı yazmış olduğu\nyer aşağıdakilerden hangisidir?",
+  "options": {
+   "A": "Zağfiran Han",
+   "B": "Tâceddin Dergâhı",
+   "C": "İbadullah Camii",
+   "D": "Hacı Bayram Veli Türbesi",
+   "E": "Ahi Şerafettin Türbesi"
+  },
+  "correct_answer": "B",
+  "has_image": false
+ },
+ {
+  "category": "guncel",
+  "source": "KPSS-2018-GK",
+  "question_no": 56,
+  "question_text": "“ Olmak ya da olmamak, işte bütün mesele bu.” sözüyle\ntanınan, Hamlet oyununun yazarı İngiliz edebiyatçı\naşağıdakilerden hangisidir?",
+  "options": {
+   "A": "George Eliot",
+   "B": "Thomas More",
+   "C": "William Shakespeare",
+   "D": "Charles Dickens",
+   "E": "Daniel Defoe"
+  },
+  "correct_answer": "C",
+  "has_image": false
+ },
+ {
+  "category": "guncel",
+  "source": "KPSS-2018-GK",
+  "question_no": 57,
+  "question_text": "Anadolu’da, kış mevsiminden sonra doğanın\ncanlanması ile bolluk ve bereket beklentisinin\nsimgesi olarak her yıl mayıs ayında kutlanan ve\nUNESCO tarafından 2017’de İnsanlığın Somut\nOlmayan Kültürel Mirasının Temsili Listesi’ne\nkaydedilen gün aşağıdakilerden hangisidir?",
+  "options": {
+   "A": "Saya Bayramı",
+   "B": "Etik Günü",
+   "C": "Aşure Günü",
+   "D": "Hıdırellez",
+   "E": "Nevruz"
+  },
+  "correct_answer": "D",
+  "has_image": false
+ },
+ {
+  "category": "guncel",
+  "source": "KPSS-2018-GK",
+  "question_no": 58,
+  "question_text": "Aşağıdakilerden hangisi, Türk Dili Konuşan Ülkeler\nİşbirliği Konseyinin kurucu üyelerinden biri değildir?",
+  "options": {
+   "A": "Kazakistan",
+   "B": "Azerbaycan",
+   "C": "Türkiye",
+   "D": "Kırgızistan",
+   "E": "Özbekistan"
+  },
+  "correct_answer": "E",
+  "has_image": false
+ },
+ {
+  "category": "guncel",
+  "source": "KPSS-2018-GK",
+  "question_no": 59,
+  "question_text": "1998 yılında Atatürk Uluslararası Barış Ödülü’ne\nlayık görülen, özellikle Orta Doğu tarihi üzerine\nçalışmalarıyla tanınan ve 2018 yılının Mayıs ayında\nhayatını kaybeden ünlü tarihçi aşağıdakilerden\nhangisidir?",
+  "options": {
+   "A": "Bernard Lewis",
+   "B": "Arnold Joseph Toynbee",
+   "C": "Eric Hobsbawm",
+   "D": "Fernard Braudel",
+   "E": "Stanford Shaw"
+  },
+  "correct_answer": "A",
+  "has_image": false
+ },
+ {
+  "category": "guncel",
+  "source": "KPSS-2018-GK",
+  "question_no": 60,
+  "question_text": "2018 yılının Şubat ayından itibaren Nüfus ve\nVatandaşlık İşleri Genel Müdürlüğü tarafından\ne-Devlet Kapısı üzerinden sunulmaya başlanan\nve yoğun bir ilgi gören hizmet aşağıdakilerden\nhangisidir?",
+  "options": {
+   "A": "Adres değişikliği bildirimi",
+   "B": "Alt-üst soy bilgisi sorgulama",
+   "C": "Geçici kimlik belgesi sorgulama",
+   "D": "Nüfus kayıt örneği belgesi sorgulama",
+   "E": "Yerleşim yeri (ikametgâh) ve diğer adres belgesi sorgulama"
+  },
+  "correct_answer": "B",
+  "has_image": false
+ }
+]
