@@ -167,7 +167,16 @@
 
 const SUPABASE_URL = 'https://rknepvongsjlqodnkbtg.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJrbmVwdm9uZ3NqbHFvZG5rYnRnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMzNTAxNzYsImV4cCI6MjA5ODkyNjE3Nn0.5smHl86AN9x6gZIWW0416UP1xUawEWqjBIRmadRokgE';
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// The CDN's UMD build declares a global `var supabase`, so this variable must
+// NOT be named `supabase` — a top-level redeclaration is a SyntaxError that
+// kills the whole script before any click handler binds. try/catch guards
+// against the CDN script failing to load entirely.
+let sb = null;
+try {
+  sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+} catch(e) {
+  console.error('Supabase client init failed', e);
+}
 
 function shuffleEqualWeights(rows){
   const groups = new Map();
@@ -182,7 +191,8 @@ function shuffleEqualWeights(rows){
 }
 
 async function fetchQuestions(player, cat){
-  let priQuery = supabase.from('v_question_priority').select('q_id, weight').eq('user_id', player);
+  if(!sb){ console.error('fetchQuestions: supabase client unavailable'); return []; }
+  let priQuery = sb.from('v_question_priority').select('q_id, weight').eq('user_id', player);
   if(cat !== 'all') priQuery = priQuery.eq('category', cat);
   const { data: priRows, error: priErr } = await priQuery.order('weight', { ascending: false }).limit(20);
   if(priErr){ console.error('fetchQuestions priority error', priErr); return []; }
@@ -190,7 +200,7 @@ async function fetchQuestions(player, cat){
 
   const ordered = shuffleEqualWeights(priRows);
   const ids = ordered.map(r => r.q_id);
-  const { data: qRows, error: qErr } = await supabase.from('questions').select('*').in('q_id', ids);
+  const { data: qRows, error: qErr } = await sb.from('questions').select('*').in('q_id', ids);
   if(qErr){ console.error('fetchQuestions questions error', qErr); return []; }
 
   const qMap = new Map(qRows.map(q => [q.q_id, q]));
@@ -198,7 +208,8 @@ async function fetchQuestions(player, cat){
 }
 
 async function logAttempt(player, qid, chosen, isCorrect, ms, sessionId){
-  const { error } = await supabase.from('attempts').insert({
+  if(!sb){ console.error('logAttempt: supabase client unavailable'); return; }
+  const { error } = await sb.from('attempts').insert({
     user_id: player,
     q_id: qid,
     chosen_answer: chosen,
@@ -211,9 +222,10 @@ async function logAttempt(player, qid, chosen, isCorrect, ms, sessionId){
 
 /* ---------------- state ---------------- */
 const PER_QUESTION_S = 60;
+const uuid=()=>(typeof crypto!=='undefined'&&crypto.randomUUID) ? crypto.randomUUID() : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return (c==='x'?r:(r&0x3|0x8)).toString(16);});
 let player='alperen', cat='all';
 let queue=[], idx=0, correct=0, wrongs=[], answered=false;
-let tLeft=0, tHandle=null, tStart=0, sessionId=crypto.randomUUID();
+let tLeft=0, tHandle=null, tStart=0, sessionId=uuid();
 
 const $=id=>document.getElementById(id);
 const show=id=>{document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');}
@@ -240,7 +252,7 @@ $('btn-start').onclick=async()=>{
     $('timerbar').style.visibility='hidden';
     return;
   }
-  idx=0; correct=0; wrongs=[]; sessionId=crypto.randomUUID();
+  idx=0; correct=0; wrongs=[]; sessionId=uuid();
   $('timerbar').style.visibility='visible';
   show('s-quiz'); renderQ();
 };
