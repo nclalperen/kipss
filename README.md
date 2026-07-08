@@ -11,6 +11,6 @@ how to use:
 
 
 
-<img width="591" height="547" alt="image" src="https://github.com/user-attachments/assets/f4cd478e-5bba-4c8a-bea7-387be5bb473c" />
+<img width="500" height="450" alt="image" src="https://github.com/user-attachments/assets/f4cd478e-5bba-4c8a-bea7-387be5bb473c" />
 
-<img width="571" height="532" alt="image" src="https://github.com/user-attachments/assets/af7399cc-c8ef-421d-9c9a-822ad826797d" />
+<img width="500" height="450" alt="image" src="https://github.com/user-attachments/assets/af7399cc-c8ef-421d-9c9a-822ad826797d" />
