@@ -1,0 +1,2254 @@
+=== PAGE 01 ===
+2022
+EĞİTİM
+BİZİMİŞİMİZ
+GENEL YETENEK - GENEL KÜLTÜR
+MATEMATİK
+GEOMETRİ
+SORU
+TAMAMI
+BANKASI
+VİDEO ÇÖZÜMLÜ
+MODÜLER
+SET
+QRKODU OKUTARAK
+PEGEMKAMPÜS
+UYGULAMASINIİNDİR
+SORULARIN ÇÖZÜM
+VİDEOLARINI HEMEN İZLE
+Lütfen detaylıbilgi için ön sözü okuyunuz.
+PEGEM AKADEMİ
+
+=== PAGE 02 ===
+GYGK LİSANS MATEMATİK / GEOMETRİ SORU BANKASI
+Komisyon
+ISBN 978-0-2021-0002-9
+Kitapta yer alan bölümlerin tüm sorumluluğu yazarlarına aittir.
+Bu kitabın basım, yayım ve satış hakları Pegem Akademi Yay. Eğt. Dan. Hizm. Tic. AŞ’ye aittir. Anılan kuruluşun izni
+alınmadan kitabın tümü ya da bölümleri, kapak tasarımı; mekanik, elektronik, fotokopi, manyetik kayıt ya da başka
+yöntemlerle çoğaltılamaz, basılamaz ve dağıtılamaz. Bu kitap, T.C. Kültür ve Turizm Bakanlığı bandrolü ile satılmakta-
+dır. Okuyucularımızın bandrolü olmayan kitaplar hakkında yayınevimize bilgi vermesini ve bandrolsüz yayınları satın
+almamasını diliyoruz.
+Pegem Akademi Yayıncılık, 1998 yılından bugüne uluslararası düzeyde düzenli faaliyet yürüten uluslararası akademik
+bir yayınevidir. Yayımladığı kitaplar; Yükseköğretim Kurulunca tanınan yükseköğretim kurumlarının kataloglarında yer
+almaktadır. Dünyadaki en büyük çevrimiçi kamu erişim kataloğu olan WorldCat ve ayrıca Türkiye’de kurulan Turca-
+demy.com tarafından yayınları taranmaktadır, indekslenmektedir. Aynı alanda farklı yazarlara ait 1000’in üzerinde ya-
+yını bulunmaktadır. Pegem Akademi Yayınları ile ilgili detaylı bilgilere http://pegem.net adresinden ulaşılabilmektedir.
+7. Baskı: 2022, Ankara
+Proje-Yayın: Nilay Balin
+Dizgi-Grafik Tasarım: Gülnur Öcalan
+Kapak Tasarımı: Pegem Akademi
+Baskı: Vadi Grup Basım AŞ
+Saray Mah. 126. Cad. No: 20/A
+Kazan/ANKARA
+(0312 394 55 91)
+Yayıncı Sertifika No: 51818
+Matbaa Sertifika No: 49180
+İLETİŞİM
+Shira Ticaret İş Merkezi
+Macun Mah. 204. Cad. No: 141/A-33 Yenimahalle/ANKARA
+Yayınevi: 0312 430 67 50
+www.pegem.net 0538 594 92 40
+Dağıtım: 0312 434 54 24
+pegem@pegem.net pegemakademi
+Hazırlık Kursları: 0312 419 05 60
+
+=== PAGE 03 ===
+Değerli Adaylar;
+Bu kitap, Kamu Personeli Seçme Sınavı (KPSS) Genel Kültür testinde önemli bir yeri olan Matematik bölümündeki soruları
+uygun bir sürede ve hatasız çözebilmeniz için oluşturulmuştur.
+Kitabın çalışmalarınızda yararlı olması dileğiyle, KPSS’de ve meslek hayatınızda başarılar.
+Bu kitaba ilişkin görüşlerinizi pegem@pegem.net adresine e-posta yoluyla ya da 0538 594 92 40 numarasına WhatsApp
+üzerinden iletmeniz yeterli olacaktır.
+Pegem Akademi
+Uygulamanızı Kullanabilmeniz İçin
+Aşağıdaki Adımları Takip Ediniz:
+Kapaktaki QR kodunu Üyelik ekranına erişebilmek için;
+herhangi bir kod okuyucu 1. Adım “Kayıt Ol” butonuna tıklayarak,
+uygulaması ile okutarak Uygulama 2. Adım üyelik formunu eksiksiz
+ilgili Pegem Kampüs uygu- İndirme Üyelik doldurduktan sonra uygulamayı
+lamasını indirebilirsiniz. kullanmaya başlayabilirsiniz.
+Üye girişi yaptıktan sonra açılan Aktivasyonunu yapmış
+pencerede sol tarafta bulunan olduğunuz konu anlatım
+kategori menüsünden “Aktivasyon 3. Adım 4. Adım kitabınızı “Video Çözümler”
+Kodlarım”ı, seçerek “Kod Ekle”ye Aktivasyon Ürünlerim sekmesinden görüntüleyebilir
+tıklayıp kitabınız ile birlikte size ve videolarınızı izlemeye
+iletilen aktivasyon kodu ile aktivasyon başlayabilirsiniz.
+işlemlerini gerçekleştirebilirsiniz.
+Kitabın içerisindeki QR’ı okutarak 5. Adım
+ilgili kitabınızın videolarını QR Kod
+izleyebilirsiniz. Okutma
+BC_300123
+Pegem Kampüs Web Sitesi Üzerinden Videolarınıza
+Erişebilmek İçin Aşağıdaki Adımları Takip Ediniz:
+1 Mevcut tarayıcınıza https://dijital.pegemkampus.com yazarak web sitemiz üzerinden erişim sağlayabilirsiniz.
+2 Pegem Kampüs üyeliğiniz yoksa “Kayıt Ol” butonuna tıkladıktan sonra formu doldurarak üyelik işlemlerinizi
+gerçekleştirebilirsiniz.
+3 Üyelik bilgileriniz ile giriş yaptıktan sonra sağ üst sekmede yer alan “Aktivasyon Kodlarım” alanından kodunuzu
+aktif edebilirsiniz.
+Aktivasyon işleminizi tamamladıktan sonra kategori alanından “Video Çözümler” sekmesine tıklayarak videolarınıza
+4
+ulaşabilirsiniz..
+Aktivasyon Kodu Türkçe kitabınızın ilk sayfasında yer almaktadır.
+Aktivasyon Kodu ile aktif ettiğiniz video dersler 31 Ağustos 2022 tarihine kadar geçerlidir.
+Pegem Kampüs İletişim Hattı
+0312 418 51 55
+iii
+
+=== PAGE 04 ===
+Doğal Sayı - Tam Sayı Rasyonel Sayılar
+Test 1 �������������������������������������������������������������������������������������������������������������2 Test 1 ����������������������������������������������������������������������������������������������������������114
+Test 2 ������������������������������������������������������������������������������������������������������������6 Test 2 ����������������������������������������������������������������������������������������������������������118
+Test 3 ����������������������������������������������������������������������������������������������������������10
+Ondalık Sayılar
+Pozitif - Negatif Sayılar
+Test �����������������������������������������������������������������������������������������������������������122
+Test 1 ������������������������������������������������������������������������������������������������������������14
+Rasyonel Sayılarda Sıralama
+Test 2 �����������������������������������������������������������������������������������������������������������18
+Test ����������������������������������������������������������������������������������������������������������126
+Tek - Çift Sayılar
+Eşitsizlikler
+Test 1 ����������������������������������������������������������������������������������������������������������22
+Test 1 ��������������������������������������������������������������������������������������������������������130
+Test 2 ���������������������������������������������������������������������������������������������������������26
+Ardışık Sayılar30 Test 2 ��������������������������������������������������������������������������������������������������������134
+Test 1 ����������������������������������������������������������������������������������������������������������30 Test 3 ��������������������������������������������������������������������������������������������������������138
+Test 2 ���������������������������������������������������������������������������������������������������������34 Mutlak Değer
+Basamak Analizi Test 1 ���������������������������������������������������������������������������������������������������������142
+Test �������������������������������������������������������������������������������������������������������������38 Test 2 ��������������������������������������������������������������������������������������������������������146
+Çözümleme
+Test 3 �������������������������������������������������������������������������������������������������������150
+Test 1 ����������������������������������������������������������������������������������������������������������42
+Üslü İfadeler
+Test 2 ���������������������������������������������������������������������������������������������������������46
+Test 1 ���������������������������������������������������������������������������������������������������������154
+Faktöriyel
+Test 2 ��������������������������������������������������������������������������������������������������������158
+Test 1 ���������������������������������������������������������������������������������������������������������50
+Test 3 �������������������������������������������������������������������������������������������������������162
+Test 2 ���������������������������������������������������������������������������������������������������������54
+Köklü Sayılar
+Bölme
+Test 1 ����������������������������������������������������������������������������������������������������������58 Test 1 ��������������������������������������������������������������������������������������������������������166
+Test 2 ���������������������������������������������������������������������������������������������������������62 Test 2 �������������������������������������������������������������������������������������������������������170
+Bölünebilme Kuralları Test 3 ��������������������������������������������������������������������������������������������������������174
+Test 1 ����������������������������������������������������������������������������������������������������������66 Çarpanlara Ayırma
+Test 2 ���������������������������������������������������������������������������������������������������������70 Test 1 ���������������������������������������������������������������������������������������������������������178
+Asal Sayılar
+Test 2 ��������������������������������������������������������������������������������������������������������182
+Test 1 �����������������������������������������������������������������������������������������������������������74
+Test 3 ��������������������������������������������������������������������������������������������������������186
+Asal Çarpanlara Ayırma
+Test 4 �������������������������������������������������������������������������������������������������������190
+Test 1 �����������������������������������������������������������������������������������������������������������78
+Test 5��������������������������������������������������������������������������������������������������������194
+Test 2 ����������������������������������������������������������������������������������������������������������82
+Oran - Orantı
+EBOB - EKOK
+Test 1 ���������������������������������������������������������������������������������������������������������198
+Test 1 ����������������������������������������������������������������������������������������������������������86
+Test 2 ������������������������������������������������������������������������������������������������������202
+Test 2 ��������������������������������������������������������������������������������������������������������90
+EBOB - EKOK Problemleri Test 3 �����������������������������������������������������������������������������������������������������206
+Test 1 ����������������������������������������������������������������������������������������������������������94 Oran - Orantı Problemleri
+Test 2 ���������������������������������������������������������������������������������������������������������98 Test 1 ��������������������������������������������������������������������������������������������������������210
+Birinci Dereceden Denklemler Test 2 ��������������������������������������������������������������������������������������������������������214
+Test 1 ��������������������������������������������������������������������������������������������������������102 Sayı Problemleri
+Test 2 �������������������������������������������������������������������������������������������������������106 Test 1 ���������������������������������������������������������������������������������������������������������218
+Test 3 ���������������������������������������������������������������������������������������������������������110 Test 2 ������������������������������������������������������������������������������������������������������222
+iv
+
+=== PAGE 05 ===
+Test 3 ������������������������������������������������������������������������������������������������������226 Permütasyon
+Test 4 ������������������������������������������������������������������������������������������������������230 Test ���������������������������������������������������������������������������������������������������������330
+Kesir Problemleri Kombinasyon
+Test 1 �������������������������������������������������������������������������������������������������������234 Test ���������������������������������������������������������������������������������������������������������334
+Test 2 �������������������������������������������������������������������������������������������������������238 Olasılık
+Yaş Problemleri Test 1 ��������������������������������������������������������������������������������������������������������338
+Test 1 ��������������������������������������������������������������������������������������������������������242 Test 2 ������������������������������������������������������������������������������������������������������342
+Test 2 ������������������������������������������������������������������������������������������������������246 Karma Test (Permütasyon-Kombinasyon-Olasılık)
+Yüzde - Faiz Problemleri Test ���������������������������������������������������������������������������������������������������������346
+Test ��������������������������������������������������������������������������������������������������������250 Tablo ve Grafik Yorumlama
+Kâr - Zarar Problemleri Test 1 ������������������������������������������������������������������������������������������������������350
+Test 1 �������������������������������������������������������������������������������������������������������254 Test 2 ������������������������������������������������������������������������������������������������������353
+Test 2 ������������������������������������������������������������������������������������������������������258 Test 3 ������������������������������������������������������������������������������������������������������356
+Karışım Problemleri Test 4 �����������������������������������������������������������������������������������������������������360
+Test 1 �������������������������������������������������������������������������������������������������������262 SAYISAL MANTIK
+Test 2 ������������������������������������������������������������������������������������������������������266 Sayısal Mantık (Akıl Yürütme)
+İşçi Problemleri Test 1 �������������������������������������������������������������������������������������������������������364
+Test 1 �������������������������������������������������������������������������������������������������������270 Test 2 ������������������������������������������������������������������������������������������������������368
+Test 2 �������������������������������������������������������������������������������������������������������274 Test 3 �������������������������������������������������������������������������������������������������������372
+Havuz Problemleri Sayısal Mantık (Tablo)
+Test ����������������������������������������������������������������������������������������������������������278 Test 4 ������������������������������������������������������������������������������������������������������376
+Hareket Problemleri Sayısal Mantık (Görsel Yetenek)
+Test 1 ��������������������������������������������������������������������������������������������������������282 Test 5������������������������������������������������������������������������������������������������������380
+Test 2 ������������������������������������������������������������������������������������������������������286 Sayısal Mantık (Karma Test)
+Test 3 �����������������������������������������������������������������������������������������������������290 Test 6 �����������������������������������������������������������������������������������������������������385
+Test 4 ������������������������������������������������������������������������������������������������������294 Test 7 ������������������������������������������������������������������������������������������������������389
+Kümeler GEOMETRİ
+Test 1 �������������������������������������������������������������������������������������������������������298 Doğruda Açı
+Test 2 ������������������������������������������������������������������������������������������������������302 Test ���������������������������������������������������������������������������������������������������������394
+Test 3 �����������������������������������������������������������������������������������������������������306 Üçgende Açı
+İşlem Test ���������������������������������������������������������������������������������������������������������399
+Test 1 ��������������������������������������������������������������������������������������������������������310 Üçgende Açı - Kenar Bağıntıları
+Test 2 ��������������������������������������������������������������������������������������������������������314 Test ���������������������������������������������������������������������������������������������������������403
+Fonksiyonlar Dik Üçgen
+Test 1 ���������������������������������������������������������������������������������������������������������318 Test ���������������������������������������������������������������������������������������������������������407
+Test 2 ������������������������������������������������������������������������������������������������������322 İkizkenar Üçgen ve Eşkenar Üçgen
+Modüler Aritmetik Test ������������������������������������������������������������������������������������������������������������411
+Test ���������������������������������������������������������������������������������������������������������326 Açıortay ve Kenarortay
+Test �����������������������������������������������������������������������������������������������������������415
+v
+
+=== PAGE 06 ===
+Üçgende Benzerlik
+Test 1 ���������������������������������������������������������������������������������������������������������419
+Test 2 ������������������������������������������������������������������������������������������������������423
+Üçgende Alan
+Test ����������������������������������������������������������������������������������������������������������427
+Üçgenler (Karma Test)
+Test 1 ���������������������������������������������������������������������������������������������������������431
+Test 2 ������������������������������������������������������������������������������������������������������435
+Çokgenler
+Test ���������������������������������������������������������������������������������������������������������439
+Dikdörtgen ve Kare
+Test ����������������������������������������������������������������������������������������������������������443
+Paralelkenar ve Eşkenar Dörtgen
+Test ����������������������������������������������������������������������������������������������������������447
+Yamuk ve Deltoid
+Test �����������������������������������������������������������������������������������������������������������451
+Çokgen - Dörtgen (Karma Test)
+Test ���������������������������������������������������������������������������������������������������������455
+Çemberde Açı
+Test ���������������������������������������������������������������������������������������������������������459
+Çemberde Uzunluk
+Test ���������������������������������������������������������������������������������������������������������463
+Dairede Alan
+Test ����������������������������������������������������������������������������������������������������������467
+Çember - Daire (Karma Test)
+Test �����������������������������������������������������������������������������������������������������������471
+ANALİTİK GEOMETRİ
+Noktanın ve Doğrunun Analitik İncelemesi
+Test 1 ��������������������������������������������������������������������������������������������������������475
+Test 2 �������������������������������������������������������������������������������������������������������479
+Katı Cisim
+Test ����������������������������������������������������������������������������������������������������������483
+vi
+
+=== PAGE 07 ===
+MATEMATİK
+
+=== PAGE 08 ===
+Çözümlü videoları
+izlemek için kare kodu
+Doğal Sayı – Tam Sayı okutunuz.
+6. x, y ! N olmak üzere,
+TEST - 1
+3x + 5y = 46 eşitliğini sağlayan (x, y) sıralı ikilisi kaç
+tanedir?
+1. a ve b birer rakam olmak üzere,
+A) 5 B) 4 C) 3 D) 2 E) 1
+11a + 17b = 152 olduğuna göre a · b çarpımı kaçtır?
+A) 35 B) 28 C) 24 D) 21 E) 18
+2. a ve b sayma sayılarıdır.
+a · b = 20
+olduğuna göre, a + b toplamının en büyük değeri 7. a, b, c birer doğal sayıdır.
+ile en küçük değerinin toplamı kaçtır?
+a + b + c = 19 olduğuna göre, a · b · c çarpımının
+A) 9 B) 16 C) 21 D) 24 E) 30 alabileceği en büyük değer kaçtır?
+A) 150 B) 230 C) 252 D) 264 E) 286
+P
+E
+G
+E
+3. a ve b sayma sayılarıdır. M
+2a + 3b = 36 A
+K
+olduğuna göre, b’nin alabileceği değerler toplamı
+A
+kaçtır?
+D
+E
+A) 42 B) 40 C) 36 D) 30 E) 28
+M
+İ
+8. x, y, z doğal sayılardır.
+3x – 4y + 3z = 0
+olduğuna göre, 6x + 7y + 6z toplamı aşağıdakiler-
+den hangisi olamaz?
+4. m, n, k sayma sayılarıdır.
+A) 0 B) 45 C) 70 D) 90 E) 135
+2m + 3n + 4k = 48
+olduğuna göre, k en çok kaçtır?
+A) 11 B) 10 C) 9 D) 8 E) 7
+5. a, b, c birbirinden farklı doğal sayılardır.
+9. x, y, z birbirinden farklı doğal sayılardır.
+a · b = 48
+5x + 2y + 6z = 42
+a · c = 32
+olduğuna göre, x + y + z toplamı en az kaçtır?
+olduğuna göre, a + b + c toplamı en az kaçtır?
+A) 7 B) 8 C) 9 D) 10 E) 11
+A) 16 B) 18 C) 21 D) 24 E) 27
+2
+
+=== PAGE 09 ===
+Doğal Sayı – Tam Sayı
+10. x, y, z birbirinden farklı doğal sayılardır. 15. a ve b tam sayıdır.
+4x + 3y + 2z = 83 a · b = 15 olduğuna göre, 3a + 4b toplam en az kaç-
+tır?
+olduğuna göre, x + y + z toplamının alabileceği en
+büyük değer kaçtır? A) 29 B) 27 C) –27 D) –49 E) –63
+A) 38 B) 41 C) 43 D) 45 E) 48
+11. a ve b doğal sayıdır.
+1 1
+a · b = 24 olduğuna göre, + toplamı en az kaç-
+a b 16. x ve y pozitif sayı olmak üzere, 2x + 3y = 17 olduğuna
+tır? göre, x – y farkının alabileceği en küçük değer kaçtır?
+1 3 5 1 5 A) –4 B) –2 C) 1 D) 3 E) 6
+A) B) C) D) E)
+3 8 12 2 8
+P
+E
+G
+E
+M
+A
+12. m ve n doğal sayıdır.
+K
+n · (m2 + 1) = 16 A
+D
+olduğuna göre, m + n toplamı en az kaçtır? E
+M
+A) 9 B) 10 C) 13 D) 15 E) 17 İ 17. x, y ve z tam sayıdır.
+x · y = –8 ve x · z = –13
+olduğuna göre, x · y · z çarpımı en çok kaçtır?
+A) –104 B) –52 C) 26 D) 52 E) 104
+13. x, y birer pozitif tam sayı ve x + y = 14 olduğuna göre
+x · y çarpımının alabileceği en büyük tam sayı değeri
+en küçük tam sayı değerinden kaç fazladır?
+A) 49 B) 42 C) 39 D) 36 E) 35
+18. a, b, c pozitif tam sayıdır.
+a + b – 5c = 0
+14. 5a = 7b eşitliğini sağlayan en küçük a ve b pozitif tam olduğuna göre, a + b + c toplamı aşağıdakilerden
+sayıları için a + 2b toplamı kaçtır? hangisi olabilir?
+A) 19 B) 17 C) 16 D) 15 E) 12 A) 121 B) 124 C) 126 D) 128 E) 130
+3
+
+=== PAGE 10 ===
+Doğal Sayı – Tam Sayı
+6. x, y ! N ise
+ÇÖZÜMLER - 1
+3x + 5y = 46
+. .
+2 8
+1. 11a + 17b = 152
+. . 12 2
+3 7 7 5
+Buna göre, a · b = 3 · 7 = 21 bulunur. Buna göre, 3 tane (x, y) sıralı ikilisi bulunur.
+Cevap D
+Cevap C
+2. a · b = 20 ise
+1 20
+2 10
+4 5 olur.
+7. a + b + c = 19 ise a · b · c’nin en büyük olması için birbirine
+Bu durumda a + b = 21
+. . .
+6 7 6
+en büyük değeri, a + b = 9 en küçük değeri olacaktır.
+yakın sayılar seçilmelidir. Buna göre, 6 · 6 · 7 = 252 bu-
+Toplamları ise 21 + 9 = 30 bulunur. lunur.
+P
+E
+Cevap E Cevap C
+G
+E
+M
+A
+K
+A
+D
+3. 2a + 3b = 36 olacak şekilde b sayma sayısı 2, 4, 6, 8 ve E
+10 değerleri alır. M
+İ
+Bu değerler toplamı 2 + 4 + 6 + 8 + 10 = 30 bulunur.
+Cevap D
+8. 3x – 4y + 3z = 0 & 3x + 3z = 4y olur Buradan;
+6x + 7y + 6z ifadesinde 6x + 6z yerine 8y yazılırsa ifade
+7y + 8y = 15y olur. y doğal sayı olacak şekilde 15y ifadesi
+70’e eşit olamaz.
+4. 2m + 3n + 4k = 48 olacak şekilde k’nin en büyük olması
+Cevap C
+için m ve n sayıları en küçük değerlerini almalıdır. O hâlde
+m = 1, n = 2 için k = 10 olur.
+Cevap B
+5. a · b = 48 ve a · c = 32 olacak şekilde
+a + b + c toplamının en az olması için a, b ve c sayıları 9. 5x + 2y + 6z = 42 ifadesinde x + y + z toplamının en az
+birbirine yakın seçilmelidir. O hâlde a = 8, b = 6 ve c = 4 olması için x = 2, y = 1 ve z = 5 seçilmelidir.
+için a + b + c = 8 + 6 + 4 = 18 olur.
+Buradan x + y + z = 2 + 1 + 5 = 8 olur.
+Cevap B
+Cevap B
+4
+
+=== PAGE 11 ===
+2022
+EĞİTİM
+BİZİMİŞİMİZ
+GENEL YETENEK - GENEL KÜLTÜR
+TÜRKÇE
+SORU
+TAMAMI
+BANKASI
+VİDEO ÇÖZÜMLÜ
+MODÜLER
+SET
+QRKODU OKUTARAK
+PEGEMKAMPÜS
+UYGULAMASINIİNDİR
+SORULARIN ÇÖZÜM
+VİDEOLARINI HEMEN İZLE
+Lütfen detaylıbilgi için ön sözü okuyunuz.
+PEGEM AKADEMİ
+
+=== PAGE 12 ===
+GYGK LİSANS TÜRKÇE SORU BANKASI
+Yazar:
+Komisyon
+ISBN 978-0-2021-0002-9
+Kitapta yer alan bölümlerin tüm sorumluluğu yazarlarına aittir.
+Bu kitabın basım, yayım ve satış hakları Pegem Akademi Yay. Eğt. Dan. Hizm. Tic. AŞ’ye aittir. Anılan kuruluşun izni
+alınmadan kitabın tümü ya da bölümleri, kapak tasarımı; mekanik, elektronik, fotokopi, manyetik kayıt ya da başka
+yöntemlerle çoğaltılamaz, basılamaz ve dağıtılamaz. Bu kitap, T.C. Kültür ve Turizm Bakanlığı bandrolü ile satılmakta-
+dır. Okuyucularımızın bandrolü olmayan kitaplar hakkında yayınevimize bilgi vermesini ve bandrolsüz yayınları satın
+almamasını diliyoruz.
+Pegem Akademi Yayıncılık, 1998 yılından bugüne uluslararası düzeyde düzenli faaliyet yürüten uluslararası akademik
+bir yayınevidir. Yayımladığı kitaplar; Yükseköğretim Kurulunca tanınan yükseköğretim kurumlarının kataloglarında yer
+almaktadır. Dünyadaki en büyük çevrimiçi kamu erişim kataloğu olan WorldCat ve ayrıca Türkiye’de kurulan Turca-
+demy.com tarafından yayınları taranmaktadır, indekslenmektedir. Aynı alanda farklı yazarlara ait 1000’in üzerinde ya-
+yını bulunmaktadır. Pegem Akademi Yayınları ile ilgili detaylı bilgilere http://pegem.net adresinden ulaşılabilmektedir.
+7. Baskı: 2022, Ankara
+Proje-Yayın: Nilay Balin
+Dizgi-Grafik Tasarım: Gülnur Öcalan
+Kapak Tasarımı: Pegem Akademi
+Baskı: Vadi Grup Basım AŞ
+Saray Mah. 126. Cad. No: 20/A
+Kazan/ANKARA
+(0312 394 55 91)
+Yayıncı Sertifika No: 51818
+Matbaa Sertifika No: 49180
+İLETİŞİM
+Shira Ticaret Merkezi, Macun Mahallesi 204 Cd. No: 141/33 Yenimahalle/ANKARA
+Yayınevi: 0312 430 67 50
+www.pegem.net 0538 594 92 40
+Dağıtım: 0312 434 54 24
+pegem@pegem.net pegemakademi
+Hazırlık Kursları: 0312 419 05 60
+
+=== PAGE 13 ===
+Değerli Adaylar;
+Bu kitap, Kamu Personeli Seçme Sınavı (KPSS) Genel Kültür testinde önemli bir yeri olan Türkçe bölümündeki soruları uygun
+bir sürede ve hatasız çözebilmeniz için oluşturulmuştur.
+Kitabın çalışmalarınızda yararlı olması dileğiyle, KPSS’de ve meslek hayatınızda başarılar.
+Bu kitaba ilişkin görüşlerinizi pegem@pegem.net adresine e-posta yoluyla ya da 0538 594 92 40 numarasına WhatsApp
+üzerinden iletmeniz yeterli olacaktır.
+Pegem Akademi
+Uygulamanızı Kullanabilmeniz İçin
+Aşağıdaki Adımları Takip Ediniz:
+Kapaktaki QR kodunu Üyelik ekranına erişebilmek için;
+herhangi bir kod okuyucu 1. Adım “Kayıt Ol” butonuna tıklayarak,
+uygulaması ile okutarak Uygulama 2. Adım üyelik formunu eksiksiz
+ilgili Pegem Kampüs uygu- İndirme Üyelik doldurduktan sonra uygulamayı
+lamasını indirebilirsiniz. kullanmaya başlayabilirsiniz.
+Üye girişi yaptıktan sonra açılan Aktivasyonunu yapmış
+pencerede sol tarafta bulunan olduğunuz konu anlatım
+kategori menüsünden “Aktivasyon 3. Adım 4. Adım kitabınızı “Video Çözümler”
+Kodlarım”ı, seçerek “Kod Ekle”ye Aktivasyon Ürünlerim sekmesinden görüntüleyebilir
+tıklayıp kitabınız ile birlikte size ve videolarınızı izlemeye
+iletilen aktivasyon kodu ile aktivasyon başlayabilirsiniz.
+işlemlerini gerçekleştirebilirsiniz.
+Kitabın içerisindeki QR’ı okutarak 5. Adım
+ilgili kitabınızın videolarını QR Kod
+izleyebilirsiniz. Okutma
+BC_326052
+Pegem Kampüs Web Sitesi Üzerinden Videolarınıza
+Erişebilmek İçin Aşağıdaki Adımları Takip Ediniz:
+1 Mevcut tarayıcınıza https://dijital.pegemkampus.com yazarak web sitemiz üzerinden erişim sağlayabilirsiniz.
+2 Pegem Kampüs üyeliğiniz yoksa “Kayıt Ol” butonuna tıkladıktan sonra formu doldurarak üyelik işlemlerinizi
+gerçekleştirebilirsiniz.
+3 Üyelik bilgileriniz ile giriş yaptıktan sonra sağ üst sekmede yer alan “Aktivasyon Kodlarım” alanından kodunuzu
+aktif edebilirsiniz.
+Aktivasyon işleminizi tamamladıktan sonra kategori alanından “Video Çözümler” sekmesine tıklayarak videolarınıza
+4
+ulaşabilirsiniz..
+Aktivasyon Kodu Türkçe kitabınızın ilk sayfasında yer almaktadır.
+Aktivasyon Kodu ile aktif ettiğiniz video dersler 31 Ağustos 2022 tarihine kadar geçerlidir.
+Pegem Kampüs İletişim Hattı
+0312 418 51 55
+iii
+
+=== PAGE 14 ===
+İÇİNDEKİLER
+Sözcük Düzeyinde Anlam Ses Bilgisi
+Test ������������������������������������������������������������������������������������������������������������������1 Test ���������������������������������������������������������������������������������������������������������������146
+Söz Öbekleri (Deyim – Atasözü – İkileme – Pekiştirme) Yapı Bilgisi
+Test �����������������������������������������������������������������������������������������������������������������6 Test ���������������������������������������������������������������������������������������������������������������152
+Sözcükte Anlam Olayları Sözcük Türleri (İsim – Sıfat – Zamir – Zarf )
+Test ����������������������������������������������������������������������������������������������������������������11 Test - 1 �����������������������������������������������������������������������������������������������������������158
+Cümlede Anlam Test - 2 ����������������������������������������������������������������������������������������������������������164
+Test - 1 �������������������������������������������������������������������������������������������������������������16 Test - 3 ����������������������������������������������������������������������������������������������������������169
+Test - 2 ������������������������������������������������������������������������������������������������������������21 Sözcük Türleri (Edat – Bağlaç)
+Cümle Analizi Test ���������������������������������������������������������������������������������������������������������������175
+Test ���������������������������������������������������������������������������������������������������������������26 Fiiller
+Cümlenin Yorumu Test - 1 ������������������������������������������������������������������������������������������������������������181
+Test �����������������������������������������������������������������������������������������������������������������32 Test - 2 ����������������������������������������������������������������������������������������������������������187
+Cümle Oluşturma Fiil Çatıları
+Test �����������������������������������������������������������������������������������������������������������������37 Test ���������������������������������������������������������������������������������������������������������������192
+Anlatım Biçimleri ve Düşünceyi Geliştirme Yolları Cümle Türleri
+Test - 1 �������������������������������������������������������������������������������������������������������������43 Test ���������������������������������������������������������������������������������������������������������������198
+Test - 2 �����������������������������������������������������������������������������������������������������������49 Cümlenin Ögeleri
+Paragrafta Çıkarım Test ��������������������������������������������������������������������������������������������������������������204
+Test ����������������������������������������������������������������������������������������������������������������55 Karma Dil Bilgisi
+Konu ve Ana Düşünce Test - 1 ����������������������������������������������������������������������������������������������������������209
+Test ����������������������������������������������������������������������������������������������������������������60 Test - 2 ����������������������������������������������������������������������������������������������������������215
+Yardımcı Düşünceler Yazım Kuralları
+Test - 1 �������������������������������������������������������������������������������������������������������������67 Test - 1 ����������������������������������������������������������������������������������������������������������222
+Test - 2 ������������������������������������������������������������������������������������������������������������76 Test - 2 ����������������������������������������������������������������������������������������������������������227
+Paragrafın Akışını Bozan Cümle Test - 3 ����������������������������������������������������������������������������������������������������������233
+Noktalama İşaretleri
+Test - 1 �������������������������������������������������������������������������������������������������������������86
+Test - 2 ������������������������������������������������������������������������������������������������������������91 Test - 1 ����������������������������������������������������������������������������������������������������������239
+Paragrafta Yer Değiştirme Test - 2 ���������������������������������������������������������������������������������������������������������244
+Test ����������������������������������������������������������������������������������������������������������������96 Test - 3 ���������������������������������������������������������������������������������������������������������249
+Paragraf Bölme Anlatım Bozukluğu
+Test ���������������������������������������������������������������������������������������������������������������102 Test - 1 ����������������������������������������������������������������������������������������������������������254
+Paragrafta Boşluk Tamamlama Test - 2 ���������������������������������������������������������������������������������������������������������259
+Sözel Mantık
+Test ���������������������������������������������������������������������������������������������������������������108
+Paragraf Oluşturma Test - 1 ����������������������������������������������������������������������������������������������������������264
+Test - 1 �����������������������������������������������������������������������������������������������������������116
+Test - 2 ���������������������������������������������������������������������������������������������������������269
+Test - 2 ���������������������������������������������������������������������������������������������������������124
+Test - 3 ���������������������������������������������������������������������������������������������������������274
+Paragrafta Çoklu Sorular
+Test - 4���������������������������������������������������������������������������������������������������������279
+Test - 5 ���������������������������������������������������������������������������������������������������������284
+Test - 1 �����������������������������������������������������������������������������������������������������������132
+Test - 6 ���������������������������������������������������������������������������������������������������������289
+Test - 2 ����������������������������������������������������������������������������������������������������������139
+iv
+
+=== PAGE 15 ===
+Çözümlü videoları
+izlemek için kare kodu
+okutunuz. Sözcük Düzeyinde Anlam
+4. Aşağıdaki cümlelerde yer alan altı çizili sözcükle-
+TEST
+rin hangisinin parantez içindeki anlamı yanlış ve-
+rilmiştir?
+1. Eski Türkler savaşlarda en çok yay ve oku kullandıkları
+A) Asık bir yüz, keder dolu bir görünüş olabilir miydi?
+I
+(Nitel Anlam)
+için yağışlı havalarda savaşmaktan çekinirlerdi. Çünkü
+B) Jest ve mimiklerinizle nasıl bir tepki sergilerdiniz?
+II
+(Gerçek Anlam)
+yağışlı havalarda yaylar ıslandığında kullanılmaz
+III C) Mutluluktan uçuyorsunuz. (Soyut Anlam)
+hâle gelirdi. Yani, işlevselliğini yitirirdi. D) O zamanlarda sadece lisede okuyorsunuz. (Yan
+IV V Anlam)
+Bu parçadaki numaralanmış sözcüklerden hangisi E) Şu an 100 milyon ¨ ikramiye kazandığını öğrendi.
+gerçek anlamı dışında kullanılmıştır? (Nicel Anlam)
+A) I B) II C) III D) IV E) V
+5.
+• Örneğin denizi seyrederken huzur duyarız.
+• Yeşilliklerin ortasında içimiz mutlulukla dolar.
+P
+2.
+E • “Fast Food”larda, dakikalar içinde midemizi
+I. Ses çıkarmadan, söz söylemeden. G
+doldurur çıkarız.
+E
+II. Kıyafetlerimizle, duruşumuzla. M
+• Hatta renklerin etkilerinden yola çıkılarak geliş-
+III. İnsanlarla aramıza engeller koyarak veya kaldıra-
+A tirilmiş, kromoterapi denilen renk terapisinde
+rak.
+K alternatif tıbbın bir parçası olarak günden güne
+IV. Bedenimiz de konuşur. A
+yaygınlaşıyor.
+D
+V. O da hareketlerle ipuçları verir.
+E Yukarıdaki altı çizili sözcükler aşağıda verilenler-
+Yukarıdaki numaralanmış cümlelerden hangisin- M
+den hangisini örneklendirmemektedir?
+deki altı çizili sözcük gerçek anlamı dışında kulla- İ
+nılmıştır? A) Mecaz anlam
+B) Nicel anlam
+A) V B) IV C) III D) II E) I
+C) Terim anlam
+D) Soyut anlam
+E) Somut anlam
+3. Gerçek anlam, sözcüğün temel anlamına, yan anlam
+ve anlamlarına denir.
+6. Aşağıdaki cümlelerden hangisinde nicel anlamlı
+Aşağıdaki altı çizili sözcüklerden hangisi gerçek
+sözcük kullanılmıştır?
+anlamı dışında kullanılmıştır?
+A) Bolu Bey’i Köroğlu’nun babası Yusuf’u gönderir.
+A) Arkeolojik kazılar sırasında mumyalar bulunmuş-
+B) Orhan Hoca gibi zarif, kibar, nezih insanla tanışmış
+tur.
+olduk.
+B) Kazı sırasında on at mumyası çıkarılmıştır.
+C) Güzel sanatlar ilgimi çekiyor.
+C) Atların kulaklarında izler tespit edilmiştir.
+D) Sözcükler insanların kendisine yüklemiş olduğu
+D) Bu izler Türk âdetlerine uygundur.
+manaları binlerce yıl taşımaktadır.
+E) Âdetler sonraki kuşaklara kesintisiz olarak aktarıl-
+E) Halk edebiyatına ilgim amatörden farklı değil.
+mıştır.
+1
+
+=== PAGE 16 ===
+Sözcük Düzeyinde Anlam
+7. Aşağıdakilerin hangisinde somut ve soyut anlamlı 10. Üstelik çok büyük bir farkla iletişimsizlik toplumun ne-
+sözcükler aynı cümlede verilmiştir? redeyse tamamına yayılmış durumda. Çok acı. Örnek
+istemeyin. Her şey yanı başınızda cereyan ediyor. Ve
+A) Yer altı suları, içerisinde yüzey sularından daha
+uzaktan kumandanızın tuşları kadar yakın. Açın tele-
+fazla çözünmüş madde barındırır.
+vizyonunuzu, programlara, haberlere bakın yeter. Bir-
+B) İnsanın sağlıklı yaşaması için zorunlu olan su, do- birimizi dinleyemiyoruz. Herkes kendi derdinde.
+ğada çeşitli şekillerde bulunur.
+Bu parçadaki altı çizili sözcüklerin anlam özellik-
+C) Yer altı sularının yüzeye çıkmasına kaynak suyu
+lerine göre sıralanışı aşağıdakilerden hangisinde
+denir.
+doğru olarak verilmiştir?
+D) Kaynaklar suyun çıkışına göre ayrılır.
+A) Nicel - Mecaz - Gerçek - Somut
+E) Yer altı suları kırık ve fay çizgisinde çıkar.
+B) Nitel - Gerçek - Mecaz - Soyut
+C) Nitel - Mecaz - Mecaz - Soyut
+D) Nicel - Gerçek - Mecaz - Somut
+E) Nicel - Gerçek - Gerçek - Somut
+P
+E
+8. Vurgumuz yok ise sıkıcı bir konuşmacısınız demektir,
+G
+I II
+E
+tekdüze olduğunuz için dinleyenler keyif almaz, M
+III IV
+A
+dikkatleri dağılacağı için emeğiniz boşa gider.
+K
+V
+A
+Bu cümledeki numaralanmış sözcüklerden hangisi D
+gerçek anlamı dışında kullanılmıştır? E
+M
+A) I B) II C) III D) IV E) V İ
+11. Büyük bir filozof olduğu kadar ünlü bir hekim olan İbn-i
+I II
+Sina, bu alandaki eserleriyle İslam dünyasıyla birlikte
+Avrupa tıp geleneğini de derinden etkilemiştir. Onun
+Batı’daki etkisinin XVIII. yüzyıla kadar sürdüğü eski
+Yunan tıp otoritesi olan Hipokrat ve Galen’in şöhretini
+gölgede bıraktığı kabul edilmektedir.
+9. Aşağıdaki cümlelerin hangisinde yan anlamda kul-
+III
+lanılan sözcük vardır?
+Bu parçadaki numaralanmış sözcüklerle ilgili ola-
+A) İklimler özellikleriyle canlıları etkiler. rak aşağıda verilenlerden hangisi yanlıştır?
+B) Günümüzde insan faaliyetleri ısınma eğilimlerini
+A) III. sözcük, mecaz anlamlıdır.
+artırmıştır.
+B) II. sözcük, gerçek anlamlıdır.
+C) Bilim insanları iddialarını ispatlıyor.
+C) I. sözcük, mecaz anlamlıdır.
+D) Doğal ortamı etkileyen en önemli unsurlardan birisi
+iklimdir. D) II. sözcük, soyut anlamlıdır.
+E) Kaynaşlı’nın sırtlarına yeni evler yapıldı. E) I. sözcük, nicel anlamlıdır.
+2
+
+=== PAGE 17 ===
+Sözcük Düzeyinde Anlam
+12. Gece vakti, şehir ışıklarından uzak bir yerde gökyüzüne 14. Sokrates, yaşamı boyunca hiç seyahat etmemiş, Atina
+I
+I
+baktığımızda, birbirinden farklı parlaklığa sahip birçok
+kırlarına çıkışı bile çoğunlukla rastlantı sonucu ve onun
+II
+alışkanlıklarına aykırı nadir davranışlardan olmuştur.
+yıldızın gökyüzünü doldurduğunu görürüz. Tabii bunlar
+II
+insan gözünün görebildikleri kadarıdır. Yıldızlar,
+Ona göre her şey insandan ibarettir. Tüm yaşamını
+III
+III
+evrenin sonsuz boşluğunda tek başlarına değillerdir. Ge-
+zegenler, onların uyduları, kuyruklu yıldızlar ve meteorlar kendisini ve insanları incelemekle geçirdiği için dış
+diğer gök cisimlerini oluştururlar. Dünyamızın âleme karşı da fazla ilgi duymamıştır. Bununla birlikte
+IV
+IV
+evrendeki adresi gözlemlenebilir evrenin Başak Süper
+Sokrates, kendisini ve yurttaşlarını ciddi olarak in-
+Kümesinin, yerel grubu içerisinde bulunan Samanyolu
+celemeyi, ahlaki açıdan olgunlaşmak için durmadan
+Galaksisi’nin Orion kolundaki Güneş sistemi diyebili-
+çalışmayı hayatının ödevi olarak görmüştür.
+V
+V
+riz. Güneş sisteminde yer alan Dünya, Güneş’e uzak-
+Bu parçadaki numaralanmış sözcüklerden hangisi
+lık bakımından üçüncü, büyüklük bakımından beşinci
+gerçek anlamı dışında kullanılmıştır?
+ama yaşamın varlığı açısından tek gezegendir.
+Bu parçadaki numaralanmış sözcüklerden hangi- A) I B) II C) III D) IV E) V
+sinin anlam özelliği yanlış verilmiştir?
+P
+A) I. sözcük, gerçek anlam
+E
+B) II. sözcük, somut anlam G
+E
+C) III. sözcük, mecaz anlam
+M
+D) IV. sözcük, gerçek anlam
+A
+E) V. sözcük, yan anlam
+K
+A
+D
+E
+M
+İ
+13. Aşağıdaki cümlelerin hangisinde “geniş” sözcüğü 15. Aşağıdaki cümlelerin hangisinde terim anlamlı bir
+nicel anlamda kullanılmamıştır? sözcük kullanılmıştır?
+A) Eşyaları koymak için arabanın arkası yeterince ge- A) Günlük iş koşuşturması arasında onu aramayı er-
+niş değil. teledim durdum.
+B) Geniş bir koridordan geçip aradığımız odaya ulaş- B) Onun ayakta durmaya bile mecali yoktu.
+tık. C) Dünya’nın oluşumu, şekli, diğer gök cisimlerine
+C) Daha geniş bir koltuk seçersek rahat edeceğiz. göre durumu merak edilmiştir.
+D) Tüm bu eserleri daha geniş bir hayal gücü saye- D) Çok uzun mesafeleri hızla koşan, eşi benzeri ol-
+sinde ortaya koydu. mayan biriydi.
+E) Evin salonu yeterince geniş olmadığı için evi tut- E) Sonunda kafasındaki soru işaretlerinin cevabını
+maktan vazgeçtik. bulmuştu.
+3
+
+=== PAGE 18 ===
+Sözcük Düzeyinde Anlam
+16. Her şeyden ders almayı, eleştirilere açık olmayı bile- 19. Aşağıdaki cümlelerin hangisinde yan anlamlı bir
+ceksiniz. sözcük kullanılmıştır?
+Bir eleştirisi hâlâ aklımda ve yüreğimde sıcaklığını ko-
+A) Tüm poşetleri yere bırakıp uzaklaştı.
+ruyor.
+B) Dünden kalan yemek bozulunca çöpe attı.
+Yukarıdaki altı çizili sözcüklerin anlam özelliği aşa-
+C) Bizlere o gün çok dokunaklı sözler söyledi.
+ğıdakilerden hangisidir?
+D) Günümüzde insanlar arasında yanlış anlaşılmalar
+A) Yan Anlam sıkça yaşanıyor.
+B) Gerçek Anlam E) Halının deseni herkes tarafından beğenildi.
+C) Terim Anlam
+D) Mecaz Anlam
+E) Nicel Anlam
+17. 1851’de taş baskı olarak ilk defa basılan ve elli yıla
+kadar ders kitabı olarak okutulan Kavaid-i Osmaniye,
+Türk dilinin ilk Türkçe yazılmış dil bilgisi kitabıdır.
+Bu cümleyle ilgili olarak aşağıdakilerden hangisi
+P
+yanlıştır?
+E
+G
+A) Nicel anlamlı kelime kullanılmıştır.
+E
+B) Gerçek anlamlı kelime kullanılmıştır. M
+C) Somut anlamlı kelime kullanılmıştır.
+A
+D) Terim anlamlı kelime kullanılmamıştır. K
+A
+E) Yan anlamlı kelime kullanılmamıştır.
+D
+E
+M
+İ
+18.
+I. Günü acı tatlı olaylarla yaşayıp bitirmişti.
+II. Birey olarak bizlere görevler düştüğü hiçbir zaman
+unutulmamalıdır.
+III. Dünyayı pek parlak bir gelecek beklemiyor.
+IV. Afrika’da halkın yarısı sudan yoksun.
+20. Geçmişte her ülke kendi başlangıç meridyenini kendi
+V. Bir milyardan fazla kişi, temiz ve sağlıklı suya ula-
+I
+şamıyor.
+ülkesine göre belirlediği, bu meridyenleri ve onların ye-
+Numaralanmış cümlelerle ilgili olarak aşağıdakiler-
+rel saatlerini de kendilerine göre değiştirdikleri için bir
+den hangisi yanlıştır?
+II
+A) I. cümledeki “tatlı” sözcüğü nitel anlamlıdır. süre sonra işler içinden çıkılamaz hâle gelmiştir.
+III IV V
+B) II. cümledeki “düştüğü” sözcüğü mecaz anlamlıdır.
+Bu cümlede altı çizili sözcüklerden hangisi gerçek
+C) III. cümledeki “parlak” sözcüğü gerçek anlamlıdır.
+anlamı dışında kullanılmıştır?
+D) IV. cümledeki “sudan” sözcüğü somut anlamlıdır.
+A) I B) II C) III D) IV E) V
+E) V. cümledeki “sağlıklı” sözcüğü soyut anlamlıdır.
+4
+
+=== PAGE 19 ===
+Sözcük Düzeyinde Anlam
+10. Ölçülemeyecek bir büyüklükten bahsettiği için “büyük”
+ÇÖZÜMLER
+sözcüğü nitel, “toplum” sözcüğü akla gelen anlamda ol-
+duğu için gerçek, “acı” sözcüğü gerçek anlamdan uzak
+olduğu için mecaz, “dert” sözcüğü duyu organlarıyla algı-
+1. IV. sözcük akla gelen ilk anlamda değildir. Gerçek anlamı lanamayacağı için soyut anlamdadır.
+dışında kullanılmıştır
+Cevap B
+Cevap D
+11. Nicel anlam; sayılabilen, ölçülebilen, azalıp çoğalabilen
+sözcüklerin anlamıdır. “Büyük” sözcüğü ölçülemeyen sa-
+2. I, II, IV ve V. cümlelerdeki sözcükler gerçek anlamlıdır. III. yılamayan anlamda olduğundan niteldir.
+cümledeki sözcük gerçek anlamı dışındadır.
+Cevap E
+Cevap C
+12. A, B, D ve E seçeneklerinde anlam özellikleri doğru ve-
+rilmiştir. C seçeneğindeki “göz” sözcüğü akla gelen ilk
+3. A, B, C ve D seçeneklerindeki altı çizili sözcükler gerçek anlamda kullanıldığından gerçek anlamdır.
+anlamında kullanılmıştır. E seçeneğindeki altı çizili sözcük
+Cevap C
+gerçek anlamı dışında kullanılmıştır.
+Cevap E 13. Sayılabilen, artıp çoğalabilen, ölçülebilen sözcükler nicel
+anlamlıdır. D seçeneğindeki “geniş” sözcüğü nicel anlam
+dışındadır.
+4. A, C, D ve E seçeneklerindeki altı çizili sözcükler paran-
+Cevap D
+tez içi anlamlarla uyuşmaktadır. B seçeneğindeki altı çizili
+sözcük, akla gelen ilk anlamda olmadığından gerçek an-
+P 14. Bir sözcüğün temel anlamına, yan anlam ve anlamlarına
+lam değildir.
+E gerçek anlam denir. IV. sözcük gerçek anlam dışında kul-
+G
+Cevap B lanılmıştır.
+E
+M Cevap D
+5. “huzur” sözcüğü soyut anlamda, “yeşilliklerin” sözcüğü A
+15. Sözcüğü herhangi bir alanla ilgili kullanmaya terim anlam
+somut anlamda, “dakikalar” sözcüğü nicel anlamda, “çı- K
+denir. C seçeneğindeki “Dünya” sözcüğü coğrafi terim
+kılarak” sözcüğü mecaz anlamda kullanılmıştır. Cümleler- A
+olarak kullanılmıştır.
+deki altı çizili sözcüklerde terim anlam kullanılmamıştır. D
+E
+Cevap C
+Cevap C M
+İ
+16. Altı çizili sözcükler gerçek anlamı dışında mecaz anlamda
+6. Varlıkların ölçülebilen, sayılabilen kısacası çoğalıp azala-
+kullanılmıştır.
+bilen özelliklerini ifade eden sözcüklerin anlamına nicel
+anlam denir. D seçeneğinde nicel anlam kullanılmıştır. Cevap D
+Cevap D 17. Bilim, sanat, spor, siyaset ya da meslek dallarıyla ilgili ke-
+limelere terim anlamlı kelime denir. Cümlede “dil bilgisi”
+7. Beş duyu organından en az biriyle algılanan sözcüklere gibi terim anlamlı kelime bulunmaktadır.
+somut, algılanamayanlara soyut sözcükler denir. B seçe-
+Cevap D
+neğindeki sağlık sözcüğü soyut, “su” sözcüğü somut an-
+lamlı olduğundan sorunun cevabı B seçeneğidir.
+18. A, B, D ve E seçenekleri doğru verilmiştir. C seçeneğinde-
+Cevap B ki “parlak” sözcüğü gerçek anlamında değildir.
+Cevap C
+8. I, II, III ve V. sözcükler gerçek anlamda kullanılmıştır. IV.
+19. Gerçek anlamdan uzaklaşmadan yeni anlam kazanan
+sözcük gerçek anlamı dışında kullanılmıştır.
+sözcüklere yan anlamlı kelimeler denir. B seçeneğindeki
+Cevap D “bozulunca” sözcüğü yan anlamlıdır.
+Cevap B
+9. Sözcüğün temel anlamına bağlı kalarak kazandığı yeni
+20. I, II, III ve IV. sözcükler gerçek anlamlıdır. V. sözcük gerçek
+anlamlara yan anlam denir. E seçeneğindeki “sırt” kelime-
+anlamı dışında kullanılmıştır.
+si yan anlamdadır.
+Cevap E
+Cevap E
+5
+
+=== PAGE 20 ===
+Çözümlü videoları
+izlemek için kare kodu
+Söz Öbekleri (Deyim – Atasözü – İkileme – Pekiştirme) okutunuz.
+4. Aşağıdaki cümlelerin hangisinde deyim ile anlamı
+TEST
+uyuşmamaktadır?
+A) Sürekli birini düşünmek: Abesle iştigal etmek.
+1. Aşağıdaki cümlelerin hangisinde deyim, açıklama-
+B) Zor görünen bir işi başarmak: Dağ devirmek.
+sıyla birlikte verilmemiştir?
+C) Sevinmek, mutlu olmak: Şad olmak.
+A) Bu kadar kısa sürede daha mürekkebi kurumadan
+D) Arzularının, ihtiraslarının önüne geçmek: Nefsini
+bu işten vazgeçti.
+yenmek.
+B) Yıllarca uğraşıp yaptığı evi bir anda yandı, buna
+E) Gereksiz bir heyecana, telaşa düşürmek: Velvele-
+can mı dayanırdı?
+ye vermek.
+C) Ona saçını süpürge etmiş, yıllarca ona hizmet et-
+mişti, karşılığı bu olmamalıydı.
+D) Bu hayatın tadına varamadan, güzel bir gün yaşa-
+madan hayatı son buldu.
+E) Bu işi çok hafife aldı, hiç önem vermedi bu işlere.
+5. Aşağıdaki cümlelerde kullanılan deyimlerden han-
+gisi mecaz anlamıyla kullanılmamıştır?
+A) İçeridekilerin hepsini topa tuttu.
+B) Arabayı sanayiye bir soktuk, yüzü astarını geçti.
+P C) Beni tanıdığı için bize biraz fiyat kırdı.
+E
+2. Aşağıdaki cümlelerin hangisinde “başkasının sö- D) Bir şey diyemiyordu, orada taş kesilip kaldı.
+G
+zünden çıkmayacak bir duruma düşmek, birinin ida- E E) Bugün çok çalıştık ama çoğu gitti azı kaldı.
+resine girmek” anlamında bir deyim kullanılmıştır? M
+A) Daha üç gündür tanıdığı insanla sarmaş dolaş A
+oldu, bu kadarı da fazla artık. K
+A
+B) Onun hepimize hakkı geçti, bunu biliyorduk. D
+C) Müdürün yaptıkları çok oldu, bu işin tadı tuzu kal- E
+M
+madı.
+İ 6. Aşağıdakilerden hangisi ayraç içinde verilen anlam
+D) Bu saatten sonra sakalı ele verdi, geri dönüşü yok.
+ile uyuşmamaktadır?
+E) İki kişi birden onun hakkından gelemediler.
+A) Laf ile peynir gemisi yürümez. (emek)
+B) İt ürür, kervan yürür. (olacak olur)
+C) Hazıra dağ dayanmaz. (sabır)
+D) Keskin sirke küpüne zarardır. (öfke)
+E) Ağaç yaşken eğilir. (eğitim)
+3. Yönetici olunca çok önemli kararlar aldı ve bu hepimizi
+ilgilendiriyordu. Çok da değişmişti ayrıca ilk iş olarak
+idari kadroya bir tırpan attı, herkes suspus oldu.
+7. Aşağıdaki atasözlerinden hangisinin mecaz anlamı
+Bu parçadaki altı çizili ifade parçaya hangi anlamı
+bulunmaz?
+katmıştır?
+A) Ağılda oğlak doğsa ovada otu biter.
+A) Sinirlenerek etrafındakileri azarlamak
+B) Kanı kanla yumazlar, kanı su ile yurlar.
+B) İnsanları disiplinli şekilde yönetmek
+C) Kol kırılır yen içinde kalır.
+C) İstemediği kişilerin görevine son vermek
+D) İyilik eden iyilik bulur.
+D) İnsanları küçümseyici şekilde davranmak
+E) Komşunun tavuğu komşuya kaz görünür.
+E) İnsanlar arasındaki kavgaya son vermek
+6
+
+=== PAGE 21 ===
+2022
+EĞİTİM
+BİZİMİŞİMİZ
+GENEL YETENEK - GENEL KÜLTÜR
+TARİH
+SORU
+TAMAMI BANKASI
+VİDEO ÇÖZÜMLÜ
+MODÜLER
+SET
+QRKODU OKUTARAK
+PEGEMKAMPÜS
+UYGULAMASINIİNDİR
+SORULARIN ÇÖZÜM
+VİDEOLARINI HEMEN İZLE
+Lütfen detaylıbilgi için ön sözü okuyunuz.
+PEGEM AKADEMİ
+
+=== PAGE 22 ===
+GYGK LİSANS TARİH SORU BANKASI
+Komisyon
+ISBN 978-0-2021-0002-9
+Kitapta yer alan bölümlerin tüm sorumluluğu yazarlarına aittir.
+Bu kitabın basım, yayım ve satış hakları Pegem Akademi Yay. Eğt. Dan. Hizm. Tic. AŞ’ye aittir. Anılan kuruluşun izni
+alınmadan kitabın tümü ya da bölümleri, kapak tasarımı; mekanik, elektronik, fotokopi, manyetik kayıt ya da başka
+yöntemlerle çoğaltılamaz, basılamaz ve dağıtılamaz. Bu kitap, T.C. Kültür ve Turizm Bakanlığı bandrolü ile satılmakta-
+dır. Okuyucularımızın bandrolü olmayan kitaplar hakkında yayınevimize bilgi vermesini ve bandrolsüz yayınları satın
+almamasını diliyoruz.
+Pegem Akademi Yayıncılık, 1998 yılından bugüne uluslararası düzeyde düzenli faaliyet yürüten uluslararası akademik
+bir yayınevidir. Yayımladığı kitaplar; Yükseköğretim Kurulunca tanınan yükseköğretim kurumlarının kataloglarında yer
+almaktadır. Dünyadaki en büyük çevrimiçi kamu erişim kataloğu olan WorldCat ve ayrıca Türkiye’de kurulan Turca-
+demy.com tarafından yayınları taranmaktadır, indekslenmektedir. Aynı alanda farklı yazarlara ait 1000’in üzerinde ya-
+yını bulunmaktadır. Pegem Akademi Yayınları ile ilgili detaylı bilgilere http://pegem.net adresinden ulaşılabilmektedir.
+7. Baskı: 2022, Ankara
+Proje-Yayın: Nilay Balin
+Dizgi-Grafik Tasarım: Gülnur Öcalan
+Kapak Tasarımı: Pegem Akademi
+Baskı: Vadi Grup Basım AŞ
+Saray Mah. 126. Cad. No: 20/A
+Kazan/ANKARA
+(0312 394 55 91)
+Yayıncı Sertifika No: 51818
+Matbaa Sertifika No: 49180
+İLETİŞİM
+Shira Ticaret Merkezi, Macun Mah. 204. Cad. No: 141/A-33 Yenimahalle/ANKARA
+Yayınevi: 0312 430 67 50
+www.pegem.net 0538 594 92 40
+Dağıtım: 0312 434 54 24
+pegem@pegem.net pegemakademi
+Hazırlık Kursları: 0312 419 05 60
+
+=== PAGE 23 ===
+İçindekiler
+Değerli Adaylar;
+Bu kitap, Kamu Personeli Seçme Sınavı (KPSS) Genel Kültür testinde önemli bir yeri olan Tarih bölümündeki soruları uygun
+bir sürede ve hatasız çözebilmeniz için oluşturulmuştur.
+Kitabın çalışmalarınızda yararlı olması dileğiyle, KPSS’de ve meslek hayatınızda başarılar.
+Bu kitaba ilişkin görüşlerinizi pegem@pegem.net adresine e-posta yoluyla ya da 0538 594 92 40 numarasına WhatsApp
+üzerinden iletmeniz yeterli olacaktır.
+Pegem Akademi
+Uygulamanızı Kullanabilmeniz İçin
+Aşağıdaki Adımları Takip Ediniz:
+Kapaktaki QR kodunu Üyelik ekranına erişebilmek için;
+herhangi bir kod okuyucu 1. Adım “Kayıt Ol” butonuna tıklayarak,
+uygulaması ile okutarak Uygulama 2. Adım üyelik formunu eksiksiz
+ilgili Pegem Kampüs uygu- İndirme Üyelik doldurduktan sonra uygulamayı
+lamasını indirebilirsiniz. kullanmaya başlayabilirsiniz.
+Üye girişi yaptıktan sonra açılan Aktivasyonunu yapmış
+pencerede sol tarafta bulunan olduğunuz konu anlatım
+kategori menüsünden “Aktivasyon 3. Adım 4. Adım kitabınızı “Video Çözümler”
+Kodlarım”ı, seçerek “Kod Ekle”ye Aktivasyon Ürünlerim sekmesinden görüntüleyebilir
+tıklayıp kitabınız ile birlikte size ve videolarınızı izlemeye
+iletilen aktivasyon kodu ile aktivasyon başlayabilirsiniz.
+işlemlerini gerçekleştirebilirsiniz.
+Kitabın içerisindeki QR’ı okutarak 5. Adım
+ilgili kitabınızın videolarını QR Kod
+izleyebilirsiniz. Okutma
+BC_302120
+Pegem Kampüs Web Sitesi Üzerinden Videolarınıza
+Erişebilmek İçin Aşağıdaki Adımları Takip Ediniz:
+1 Mevcut tarayıcınıza https://dijital.pegemkampus.com yazarak web sitemiz üzerinden erişim sağlayabilirsiniz.
+2 Pegem Kampüs üyeliğiniz yoksa “Kayıt Ol” butonuna tıkladıktan sonra formu doldurarak üyelik işlemlerinizi
+gerçekleştirebilirsiniz.
+3 Üyelik bilgileriniz ile giriş yaptıktan sonra sağ üst sekmede yer alan “Aktivasyon Kodlarım” alanından kodunuzu
+aktif edebilirsiniz.
+Aktivasyon işleminizi tamamladıktan sonra kategori alanından “Video Çözümler” sekmesine tıklayarak videolarınıza
+4
+ulaşabilirsiniz..
+Aktivasyon Kodu Türkçe kitabınızın ilk sayfasında yer almaktadır.
+Aktivasyon Kodu ile aktif ettiğiniz video dersler 31 Ağustos 2022 tarihine kadar geçerlidir.
+Pegem Kampüs İletişim Hattı
+0312 418 51 55
+iii
+
+=== PAGE 24 ===
+İçindekiler
+İlk Türk Devleti Osmanlı Kültür ve Medeniyeti
+Test - 1 ����������������������������������������������������������������������������������������������������������������1 Test - 1 ���������������������������������������������������������������������������������������������������������120
+Test - 2 �������������������������������������������������������������������������������������������������������������4 Test - 2 ���������������������������������������������������������������������������������������������������������123
+Test - 3 �����������������������������������������������������������������������������������������������������������10 Test - 3 ���������������������������������������������������������������������������������������������������������127
+Test - 4������������������������������������������������������������������������������������������������������������13 Test - 4��������������������������������������������������������������������������������������������������������130
+Test - 5 ������������������������������������������������������������������������������������������������������������17 Test - 5 ���������������������������������������������������������������������������������������������������������135
+Test - 6 ����������������������������������������������������������������������������������������������������������20 Test - 6 ���������������������������������������������������������������������������������������������������������138
+Test - 7 ����������������������������������������������������������������������������������������������������������25 Test - 7 ���������������������������������������������������������������������������������������������������������142
+Türk İslam ve Türk Tarihi
+Test - 1 �����������������������������������������������������������������������������������������������������������29
+Test - 2 ����������������������������������������������������������������������������������������������������������34 17. yy Osmanlı Devleti Yenilikleri
+Test - 3 ����������������������������������������������������������������������������������������������������������38 Test - 1 ����������������������������������������������������������������������������������������������������������146
+Test - 4����������������������������������������������������������������������������������������������������������43
+Test - 5 �����������������������������������������������������������������������������������������������������������47
+Test - 6 ������������������������������������������������������������������������������������������������������������51
+18. yy Osmanlı Devleti Yenilikleri
+Test - 7 ����������������������������������������������������������������������������������������������������������55 Test - 1 ���������������������������������������������������������������������������������������������������������150
+Test - 8 ���������������������������������������������������������������������������������������������������������60
+Osmanlı Devleti Kuruluş Dönemi
+19. yy Osmanlı Devleti Islahatları
+Test - 1 �����������������������������������������������������������������������������������������������������������67
+Test - 1 ����������������������������������������������������������������������������������������������������������154
+Test - 2 �����������������������������������������������������������������������������������������������������������72
+Test - 2 ���������������������������������������������������������������������������������������������������������158
+Test - 3 ��������������������������������������������������������������������������������������������������������163
+Osmanlı Devleti Yükselme Dönemi
+Test - 4���������������������������������������������������������������������������������������������������������168
+Test - 1 ������������������������������������������������������������������������������������������������������������78
+Test - 2 �����������������������������������������������������������������������������������������������������������82
+Osmanlı Devleti Duraklama Dönemi
+Avrupa Tarihi
+Test - 1 ������������������������������������������������������������������������������������������������������������87
+Test - 1 ����������������������������������������������������������������������������������������������������������172
+Test - 2 ����������������������������������������������������������������������������������������������������������92
+Osmanlı Devleti Gerileme Dönemi
+Dünya Savaşı Öncesi ve Sonrası Gelişmeler
+Test - 1 �����������������������������������������������������������������������������������������������������������98
+Test - 1 ����������������������������������������������������������������������������������������������������������176
+Test - 2 ��������������������������������������������������������������������������������������������������������103
+Test - 2 �����������������������������������������������������������������������������������������������������������181
+Test - 3 ���������������������������������������������������������������������������������������������������������185
+Osmanlı Devleti Dağılma Dönemi
+Test - 4���������������������������������������������������������������������������������������������������������189
+Test - 1 ���������������������������������������������������������������������������������������������������������109
+Test - 5 ���������������������������������������������������������������������������������������������������������193
+Test - 2 ����������������������������������������������������������������������������������������������������������115
+iv
+
+=== PAGE 25 ===
+İçindekiler
+Kurtuluş Savaşı’nın Hazırlık Dönemi ve TBMM’nin Dış Politika
+Açılması Test - 1 ����������������������������������������������������������������������������������������������������������321
+Test - 1 ����������������������������������������������������������������������������������������������������������197 Test - 2 �������������������������������������������������������������������������������������������������������326
+Test - 2 �������������������������������������������������������������������������������������������������������202 Test - 3 �������������������������������������������������������������������������������������������������������330
+Test - 3 �������������������������������������������������������������������������������������������������������207
+Test - 4���������������������������������������������������������������������������������������������������������212
+Test - 5 ���������������������������������������������������������������������������������������������������������217 Çağdaş Türk ve Dünya Tarihi
+Test - 6 �������������������������������������������������������������������������������������������������������222 Test - 1 ��������������������������������������������������������������������������������������������������������334
+Test - 7 ��������������������������������������������������������������������������������������������������������227 Test - 2 ��������������������������������������������������������������������������������������������������������338
+Test - 8 �������������������������������������������������������������������������������������������������������232 Test - 3 �������������������������������������������������������������������������������������������������������342
+Test - 4�������������������������������������������������������������������������������������������������������346
+Kurtuluş Savaşı Muharebeleri ve Antlaşmalar Dönemi Test - 5 ������������������������������������������������������������������������������������������������������350
+Test - 1 ���������������������������������������������������������������������������������������������������������237 Test - 6 �������������������������������������������������������������������������������������������������������354
+Test - 2 ���������������������������������������������������������������������������������������������������������241
+Test - 3 ��������������������������������������������������������������������������������������������������������244
+Test - 4��������������������������������������������������������������������������������������������������������248 II. Dünya Savaşı ve Soğuk Savaş Dönemi
+Test - 5 �������������������������������������������������������������������������������������������������������252 Test - 1 ��������������������������������������������������������������������������������������������������������358
+Test - 6 �������������������������������������������������������������������������������������������������������256
+İnkılaplar Yumuşama Dönemi
+Test - 1 �������������������������������������������������������������������������������������������������������260 Test - 1 ��������������������������������������������������������������������������������������������������������363
+Test - 2 �������������������������������������������������������������������������������������������������������264
+Test - 3 �������������������������������������������������������������������������������������������������������268
+Test - 4��������������������������������������������������������������������������������������������������������272
+Küreselleşme Dönemi
+Test - 5 �������������������������������������������������������������������������������������������������������276 Test - 1 ��������������������������������������������������������������������������������������������������������368
+Test - 6 �������������������������������������������������������������������������������������������������������280
+Test - 7 ��������������������������������������������������������������������������������������������������������284
+Test - 8 ��������������������������������������������������������������������������������������������������������288
+Test - 9 �������������������������������������������������������������������������������������������������������293
+Atatürk İlke ve İnkılapları
+Test - 1 ��������������������������������������������������������������������������������������������������������298
+Test - 2 �������������������������������������������������������������������������������������������������������303
+Test - 3 �������������������������������������������������������������������������������������������������������307
+Test - 4����������������������������������������������������������������������������������������������������������311
+Test - 5 ��������������������������������������������������������������������������������������������������������316
+v
+
+=== PAGE 26 ===
+[Empty]
+
+=== PAGE 27 ===
+Çözümlü videoları
+izlemek için kare kodu
+okutunuz. İlk Türk Devletleri
+5. İslam öncesinde, Türk ekonomisinde tarımın bu-
+TEST - 1
+lunduğunu;
+I. tohumluk buğday üretmeleri,
+1. Aşağıdaki yerleşim birimlerinden hangisi Orta
+II. demirden saban ve orak yapmaları,
+Asya Türk kültürünün araştırılmasında önemli bir
+III. sulama kanalı inşa etmeleri
+etkiye sahip değildir?
+durumlarından hangileri kanıtlar?
+A) Karasuk
+A) Yalnız I B) Yalnız II C) I ve II
+B) Tagar
+D) II ve III E) I, II ve III
+C) Andronova
+D) Afanasyevo
+E) Kültepe
+2. 6. Göktürklerde hapis cezalarının kısa süreli olması
+ve hukuk kurallarının yazılı hâle getirilmemesi aşa-
+I. Haristan
+ğıdaki özelliklerden hangisi ile açıklanabilir?
+II. Belencer
+A) Savaşçı karakter
+III. Bolçu
+B) Feodal yapı
+Yukarıda verilen savaşlardan hangileri İslam Öncesi
+P
+Dönem’de Türklerle Araplar arasında yapılmıştır? C) Federatif anlayış
+E
+G D) Veraset sistemi
+A) Yalnız I B) Yalnız II C) I ve II
+E
+E) Göçebe yaşam
+D) I ve III E) I, II ve III M
+A
+K
+A
+D
+3. Orta Asya Türk toplulukları arasında, göçebe bir E
+yaşamın olması; M
+İ
+I. geçim kaynaklarının hayvancılık olması, 7. Aşağıdaki Türk hükümdarlarından hangisi Orta
+Asya’da devlet kurmamıştır?
+II. yaşadıkları bölgenin karasal olması,
+III. savaşçı özelliklerinin gelişmiş olması A) Uldız
+durumlarından hangilerine dayandırılabilir? B) Bumin
+C) İlteriş
+A) Yalnız I B) Yalnız II C) I ve II
+D) Kutluk Bilge
+D) II ve III E) I, II ve III
+E) Baga Tarkan
+8. Burcu Öğretmen, beş öğrencisini boy sırasına uygun
+4. Aşağıdaki Türk hükümdarlarından hangisi
+dizerek en uzun boylu olana “devlet” adını vermiştir.
+Avrupa’da hüküm sürmemiştir? Ardından sınıfa, öğrencilerin her birinin devleti oluştu-
+ran sosyal unsurları temsil ettiklerini belirtmiştir.
+A) Uldız
+Buna göre “devlet” adlı en uzun boylu öğrenciden
+B) Moyen-Çur
+sonra gelen uzun boylu öğrencinin adı aşağıdaki-
+C) Boris Han
+lerden hangisidir?
+D) Bleda
+A) Boy B) Oguş C) Budun
+E) Attila
+D) Urug E) İl
+1
+
+=== PAGE 28 ===
+İlk Türk Devletleri
+9. 13. Arap seyyah İbn-i Fadlan’nın seyahatnamesinde
+İslamlaşmasından bahsettiği Türk devleti aşağıda-
+I. Eftalitler
+kilerden hangisidir?
+II. Tabgaçlar
+III. Tunguzlar A) İtil Bulgarları
+Yukarıdakilerden hangileri Türk devlet ve topluluk- B) Karahanlılar
+larından değildir? C) Gazneliler
+D) Akhunlar
+A) Yalnız I B) Yalnız III C) I ve II
+E) Oğuzlar
+D) II ve III E) I, II ve III
+14. Türk devlet ve hükümdarları ile ilgili verilen aşağı-
+daki bilgilerden hangisi doğru değildir?
+10. Aşağıdakilerden hangisi Uygurların yerleşik hayata
+geçtiklerinin göstergesi olamaz? A) İslamiyet’i kabul eden ilk devlet İtil Bulgarlarıdır.
+B) Attila; hükümdarlığı, babadan oğula geçen salta-
+A) Matbaa ve kağıdı kullanmaları
+nat sistemine dönüştürmüştür.
+B) Tapınaklar yapmaları
+C) Hunlar ve Avarlar hem Asya hem de Avrupa’da
+C) Duvar resim sanatının gelişmesi devlet kurmuştur.
+D) Yazıtlar dikmeleri D) İstemi Yabgu Dönemi’nde ipek yolu egemenliği
+P
+E) Emlak ve kira hukukunun gelişmesi sağlanmıştır.
+E
+G E) I. Köktürk Devleti Çin’e karşı bir isyan sonucu ku-
+E rulmuştur.
+M
+A
+K
+A
+11.
+D
+I. Uygur, E
+M 15. Orta Asya’da bulunan aşağıdaki yerleşim birimle-
+II. Hun,
+İ rinden hangisi Türk devletlerine merkezlik yapma-
+III. Hazar
+mıştır?
+devletlerinden hangilerinin hükümdarları Manihe-
+izm dinini benimsemiştir? A) Ordu-balık
+B) Hanbalık
+A) Yalnız I B) Yalnız II C) I ve III
+C) Ötüken
+D) II ve III E) I, II ve III
+D) Kaşgar
+E) Turfan
+12. Avrupa’da hüküm süren aşağıdaki Türk devlet ya
+da topluluklarından hangisi Altınordu Devleti’nin
+Türkleşmesine ve bugünkü Kazan Türklerinin orta- 16. Aşağıdaki Türk hükümdarlardan hangisi sahibi ol-
+ya çıkmasına etki etmiştir? duğu devlete en parlak devrini yaşatmamıştır?
+A) Tuna Bulgarları A) Attila
+B) İtil Bulgarları B) Mete
+C) Peçenekler C) Bilge Kağan
+D) Avarlar D) Kutluk Kül Bilge
+E) Hunlar E) Moyen-Çur
+2
+
+=== PAGE 29 ===
+İlk Türk Devletleri
+9. Eftalitler (Akhunlar) ve Tabgaçlar Türk devletlerindendir.
+ÇÖZÜMLER –1
+Tunguzlar, Asya Kıtası’nda Türklerle yakın bağları olan bir
+millettir. Kimilerine göre bu iki milletin dili aynı dil grubun-
+dadır. Türk olarak kabul edilmezler.
+1. Karasuk, Tagar, Andronova ve Afanasyevo, Orta Asya kül-
+türleriyle ilgili eski yerleşim birimlerindendir. Kültepe ise Cevap B
+Anadolu kültürüyle ilgili eski yerleşim birimlerindendir. Bu
+nedenle Kültepe’nin Orta Asya Türk kültürünü aydınlat-
+mada herhangi bir etkisi olamaz.
+10. Yazıt dikmiş olmaları yerleşik hayatın kanıtı olamaz. Çün-
+Cevap E kü Göktürkler de göçebe olmalarına rağmen yazıt dikmiş-
+tir. Ancak diğer seçenekler ancak yerleşik toplumlarda
+2. Belencer Savaşı, Hazar Türkleriyle Hz. Osman
+ortaya çıkabilecek özelliklerdendir.
+Dönemi’nde İslam orduları arasında yapılmıştır. Türkler ve
+Araplar arasında yapılan ilk savaştır. Haristan ise Emevi Cevap D
+Arapları ile Türgişler arasında yapılmıştır. Bolçu Savaşı
+Köktürkler ile Türgişler arasında yapılmıştır.
+Cevap C 11. Uygur hükümdarı Bögü Kağan Maniheizmi benimsemiş-
+tir. Hazarlar Museviliği benimsemiştir. Hunlar ise Budizm
+3. Karasal iklim ve hayvancılığın geçim kaynağı olması gö- etkisinde kalmıştır.
+çebe yaşamın temel sebebidir. Savaşçı olmaları bir sebep
+değil göçebe olmanın bir sonucudur. Toplumların yaşam Cevap A
+şeklini bulundukları coğrafya ve geçim kaynakları belirler.
+Cevap C
+12. Altınordu Devleti’nin Türkleşmesine etki eden devlet İtil
+4. Uldız, Bleda ve Attila Avrupa Hun hükümdarlarıdır. Boris
+Bulgarlarıdır. İtil Bulgarları yapılan son araştırmalarda bu-
+PP
+Han Tuna Bulgar Devleti’nin hükümdarıdır. Moyen-Çur ise
+EE günkü Kazan Türklerinin ataları sayılmıştır.
+Uygurların en ünlü hükümdarıdır ve Orta Asya’da hüküm
+GG
+sürmüştür. Cevap B
+EE
+Cevap B MM
+5. İslam öncesinde sulama kanalları, saban ve oraklar, to-
+AA
+humluk buğday yetiştirmeleri doğrudan tarımla uğraştık- 13. İbn-i Fadlan’nın seyahatnamesinde 920 tarihinde İtil Bul-
+KK
+larını ve ekonominin tarıma dayandığını kanıtlayan du- garı ülkesinde camilerin bulunduğu ve Bulgarların halife-
+AA
+rumlardır. Göçebe toplumlarda bunlar olmaz ancak Orta DD den ustalar ve din adamları istediği anlatılmıştır.
+Asya’da yarı göçebe bir hayatın olduğu ve bazı bölgelerin EE
+Cevap A
+tarıma elverişli olduğu unutulmamalıdır. MM
+İİ
+Cevap E
+6. Orta Asya Türk topluluklarının göçebe olmaları mima- 14. Çin’e karşı bir isyan sonucu kurulan devlet II. Köktürk
+ri eserlerin ortaya çıkmasını engellemiş ve bu sebepten
+Devleti’dir. Kutluk Kağan 680 yılında Bilge Tonyukuk ile
+dolayı hapis cezaları kısa süreli olmuştur. Yazıya ihtiyaç
+Çin’e karşı isyan ederek bu devleti kurmuştur. Seçenek-
+duymayan topluluklar hukuk kurallarını da töre denilen
+lerde verilen diğer bilgiler doğrudur.
+yazısız kurallara dayandırmıştır.
+Cevap E
+Cevap E
+7. Uldız, Avrupa Hun Devleti’nin asıl kurucusu kabul edilir.
+Bumin Kağan Köktürk Devleti’ni, İlteriş Kağan II. Köktürk
+15. Ordu-balık ve Turfan Uygurlara, Ötüken Köktürklere, Kaş-
+Devleti’ni, Kutluk Bilge Kağan Uygur Devleti’ni, Baga Tar-
+gar Karahanlılara merkezlik yapmıştır. Ancak Hanbalık Çin
+kan Türgiş Devleti’ni kurmuştur.
+Devleti’nin merkezidir.
+Cevap A
+Cevap B
+8. “Devlet” adlı en uzun boylu öğrenciden sonra gelen uzun
+boylu öğrencinin adı “Budun”dur. Budun, devletin kurucu-
+sudur.
+16. Attila Avrupa Hunlarına, Mete Asya Hunları’na, Bilge Ka-
+İl: Devlet ğan II. Köktürklere, Moyen-Çur Uygurlara en parlak dev-
+Budun: Millet rini yaşatmıştır. Kutluk Kül Bilge Kağan, Uygur Devleti’nin
+Urug: Aile birliği kurucusudur. II. Köktürk Devleti’nin en parlak dönemi ola-
+rak Kapgan Kağan gösteren kaynaklar bulunmakla bera-
+Boy: Ok
+ber genel kanaat Bilge Kağan yönündedir.
+Oguş: Aile
+olarak adlandırılır. Cevap D
+Cevap C
+3
+
+=== PAGE 30 ===
+Çözümlü videoları
+izlemek için kare kodu
+İlk Türk Devletleri okutunuz.
+4. Kumanlar (Kıpçaklar) ile ilgili olarak;
+TEST - 2
+I. Memluk ve Delhi Türk Sultanlığı’nın kuruluşunda
+etkili olmuşlardır.
+1. Mete Han Dönemi’nde;
+II. Moğolların Türkleşmesinde etkili olmuşlardır.
+I. kurultayın oluşturulması,
+III. Eyyubi Devleti’nin yıkılışında etkili olmuşlardır.
+II. orduda onluk sistemin kurulması,
+yargılarından hangileri söylenebilir?
+III. Çin’i egemenliği altına almak yerine vergiye bağ-
+A) Yalnız I B) I ve II C) I ve III
+lama
+D) II ve III E) I, II ve III
+uygulamalarından hangileri teşkilatlanma faaliyet-
+leri alanında gerçekleştirilmiştir?
+A) I ve II B) I ve III C) Yalnız I
+D) I, II ve III E) Yalnız III
+2. Aşağıdakilerden hangisi bir bölgede tarımsal faa- P 5. Aşağıdaki seçeneklerden hangisi Kavimler Göçü
+liyetlerde bulunulduğunun kesin olarak kanıtı de- E ile ilgili doğru bir bilgi değildir?
+ğildir? G
+E A) Kuzey Hunları tarafından başlatılmıştır.
+A) Yerleşik yaşama geçmeleri M
+B) Avrupa’nın siyasi ve dini yapısını etkilemiştir.
+B) Tahıl öğütme taşları
+A C) Orta Çağ kapanmış, Yeni Çağ başlamıştır.
+C) Tohumluk tarım ürünlerini kullanmaları K
+D) Avrupa’nın sosyal yapısı üzerinde etkili olmuştur.
+A
+D) Yaşadıkları bölgelerde orak, saban gibi aletlere
+D E) Orta Asya’da Türk nüfusunun azalmasına yol aç-
+rastlanması E mıştır.
+E) Sulama kanalları inşa etmeleri M
+İ
+6. Aşağıdakilerden hangisi “Atımın ayak bastığı her yer
+benim toprağımdır.” diyen Cesur Kavimlerin Efendi-
+si Attila Dönemi gelişmeleri arasında yer almaz?
+A) Bizans’ın ilk kez vergiye bağlanması
+3. İslamiyet Öncesi Dönem’de yazısız hukuk kuralları B) Bizans ile Margus ve Anatolius antlaşmalarının im-
+olan törelerin değiştirilemeyen kuralları arasında zalanması
+aşağıdakilerden hangisi yer almaz? C) Batı Roma üzerine Galya ve İtalya seferlerinin dü-
+zenlenmesi
+A) Adalet
+D) Avrupa Hunları’nın en parlak döneminin yaşanma-
+B) Kişilik
+sı
+C) Eşitlik
+E) Doğu Roma üzerine 1. ve 2. Balkan Seferlerinin
+D) Kut inancı düzenlenmesi
+E) Faydalılık
+4
+
+=== PAGE 31 ===
+2022
+EĞİTİM
+BİZİMİŞİMİZ
+GENEL YETENEK - GENEL KÜLTÜR
+COĞRAFYA
+SORU
+TAMAMI BANKASI
+VİDEO ÇÖZÜMLÜ
+MODÜLER
+SET
+QRKODU OKUTARAK
+PEGEMKAMPÜS
+UYGULAMASINIİNDİR
+SORULARIN ÇÖZÜM
+VİDEOLARINI HEMEN İZLE
+Lütfen detaylıbilgi için ön sözü okuyunuz.
+PEGEM AKADEMİ
+
+=== PAGE 32 ===
+Komisyon
+KPSS COĞRAFYA SORU BANKASI
+ISBN 978-0-2021-0002-9
+Kitapta yer alan bölümlerin tüm sorumluluğu yazarlarına aittir.
+Bu kitabın basım, yayım ve satış hakları Pegem Akademi Yay. Eğt. Dan. Hizm. Tic. AŞ’ye aittir. Anılan kuruluşun izni
+alınmadan kitabın tümü ya da bölümleri, kapak tasarımı; mekanik, elektronik, fotokopi, manyetik kayıt ya da başka
+yöntemlerle çoğaltılamaz, basılamaz ve dağıtılamaz. Bu kitap, T.C. Kültür ve Turizm Bakanlığı bandrolü ile satılmakta-
+dır. Okuyucularımızın bandrolü olmayan kitaplar hakkında yayınevimize bilgi vermesini ve bandrolsüz yayınları satın
+almamasını diliyoruz.
+Pegem Akademi Yayıncılık, 1998 yılından bugüne uluslararası düzeyde düzenli faaliyet yürüten uluslararası akademik
+bir yayınevidir. Yayımladığı kitaplar; Yükseköğretim Kurulunca tanınan yükseköğretim kurumlarının kataloglarında yer
+almaktadır. Dünyadaki en büyük çevrimiçi kamu erişim kataloğu olan WorldCat ve ayrıca Türkiye’de kurulan Turca-
+demy.com tarafından yayınları taranmaktadır, indekslenmektedir. Aynı alanda farklı yazarlara ait 1000’in üzerinde ya-
+yını bulunmaktadır. Pegem Akademi Yayınları ile ilgili detaylı bilgilere http://pegem.net adresinden ulaşılabilmektedir.
+7. Baskı: 2022, Ankara
+Proje-Yayın: Nilay Balin
+Dizgi-Grafik Tasarım: Gülnur Öcalan
+Kapak Tasarımı: Pegem Akademi
+Baskı: Vadi Grup Basım AŞ
+Saray Mah. 126. Cad. No: 20/A
+Kazan/ANKARA
+(0312 394 55 91)
+Yayıncı Sertifika No: 51818
+Matbaa Sertifika No: 49180
+İLETİŞİM
+Shira Ticaret Merkezi, Macun Mah. 204. Cad. No: 141/A-33 Yenimahalle/ANKARA
+Yayınevi: 0312 430 67 50
+www.pegem.net 0538 594 92 40
+Dağıtım: 0312 434 54 24
+pegem@pegem.net pegemakademi
+Hazırlık Kursları: 0312 419 05 60
+
+=== PAGE 33 ===
+Değerli Adaylar;
+Bu kitap Kamu Personeli Seçme Sınavı (KPSS) Genel Kültür Testinde önemli bir yer tutan “Coğrafya” kapsamındaki 18
+soruyu etkili bir şekilde çözebilmeniz amacıyla hazırlanmıştır. Kitabın çalışmalarınızda yararlı olması dileğiyle, KPSS’de ve
+meslek hayatınızda başarılar.
+Bu kitaba ilişkin görüşlerinizi pegem@pegem.net adresine e-posta yoluyla ya da 0538 594 92 40 numarasına WhatsApp
+üzerinden iletmeniz yeterli olacaktır.
+Pegem Akademi
+Uygulamanızı Kullanabilmeniz İçin
+Aşağıdaki Adımları Takip Ediniz:
+Kapaktaki QR kodunu Üyelik ekranına erişebilmek için;
+herhangi bir kod okuyucu 1. Adım “Kayıt Ol” butonuna tıklayarak,
+uygulaması ile okutarak Uygulama 2. Adım üyelik formunu eksiksiz
+ilgili Pegem Kampüs uygu- İndirme Üyelik doldurduktan sonra uygulamayı
+lamasını indirebilirsiniz. kullanmaya başlayabilirsiniz.
+Üye girişi yaptıktan sonra açılan Aktivasyonunu yapmış
+pencerede sol tarafta bulunan olduğunuz konu anlatım
+kategori menüsünden “Aktivasyon 3. Adım 4. Adım kitabınızı “Video Çözümler”
+Kodlarım”ı, seçerek “Kod Ekle”ye Aktivasyon Ürünlerim sekmesinden görüntüleyebilir
+tıklayıp kitabınız ile birlikte size ve videolarınızı izlemeye
+iletilen aktivasyon kodu ile aktivasyon başlayabilirsiniz.
+işlemlerini gerçekleştirebilirsiniz.
+Kitabın içerisindeki QR’ı okutarak 5. Adım
+ilgili kitabınızın videolarını QR Kod
+izleyebilirsiniz. Okutma
+BC_291001
+Pegem Kampüs Web Sitesi Üzerinden Videolarınıza
+Erişebilmek İçin Aşağıdaki Adımları Takip Ediniz:
+1 Mevcut tarayıcınıza https://dijital.pegemkampus.com yazarak web sitemiz üzerinden erişim sağlayabilirsiniz.
+2 Pegem Kampüs üyeliğiniz yoksa “Kayıt Ol” butonuna tıkladıktan sonra formu doldurarak üyelik işlemlerinizi
+gerçekleştirebilirsiniz.
+3 Üyelik bilgileriniz ile giriş yaptıktan sonra sağ üst sekmede yer alan “Aktivasyon Kodlarım” alanından kodunuzu
+aktif edebilirsiniz.
+Aktivasyon işleminizi tamamladıktan sonra kategori alanından “Video Çözümler” sekmesine tıklayarak videolarınıza
+4
+ulaşabilirsiniz..
+Aktivasyon Kodu Türkçe kitabınızın ilk sayfasında yer almaktadır.
+Aktivasyon Kodu ile aktif ettiğiniz video dersler 31 Ağustos 2022 tarihine kadar geçerlidir.
+Pegem Kampüs İletişim Hattı
+0312 418 51 55
+iii
+
+=== PAGE 34 ===
+İçindekiler
+Coğrafi Konum Türkiye’nin Yeryüzü Şekilleri
+Test - 1 ����������������������������������������������������������������������������������������������������������������1 (Toprak Türleri)
+Test - 2 ��������������������������������������������������������������������������������������������������������������6 Test - 1 �������������������������������������������������������������������������������������������������������������93
+Test - 3 �������������������������������������������������������������������������������������������������������������13 Test - 2 ���������������������������������������������������������������������������������������������������������100
+Test - 4������������������������������������������������������������������������������������������������������������18
+Türkiye’nin Yeryüzü Şekilleri Türkiye’nin İklimi ve Bitki Örtüsü
+(Dağlar, Ovalar, Platolar) (İklim)
+Test - 1 �������������������������������������������������������������������������������������������������������������23 Test - 1 �����������������������������������������������������������������������������������������������������������105
+Test - 2 ������������������������������������������������������������������������������������������������������������28 Test - 2 �����������������������������������������������������������������������������������������������������������110
+Türkiye’nin Yeryüzü Şekilleri
+(Akarsu, Göller, Yeraltı Suları, Deniz) Türkiye’nin İklimi ve Bitki Örtüsü
+Test - 1 �������������������������������������������������������������������������������������������������������������35 Test - 1 ������������������������������������������������������������������������������������������������������������116
+Test - 2 �����������������������������������������������������������������������������������������������������������40
+Test - 3 �����������������������������������������������������������������������������������������������������������45
+Test - 4�����������������������������������������������������������������������������������������������������������50
+Türkiye’de Nüfus ve Yerleşme
+Test - 1 ������������������������������������������������������������������������������������������������������������121
+Türkiye’nin Yeryüzü Şekilleri Test - 2 ����������������������������������������������������������������������������������������������������������128
+(Rüzgâr, Buzul, Karstik Şekiller, Kıyı Tipleri) Test - 3 ����������������������������������������������������������������������������������������������������������134
+Test - 1 �������������������������������������������������������������������������������������������������������������57
+Test - 2 ������������������������������������������������������������������������������������������������������������62
+Türkiye Ekonomisi
+Türkiye’nin Yeryüzü Şekilleri
+(Tarım, Hayvancılık ve Ormancılık)
+Tarama Test - 1 �����������������������������������������������������������������������������������������������������������140
+Test - 1 ������������������������������������������������������������������������������������������������������������69 Test - 2 ����������������������������������������������������������������������������������������������������������145
+Test - 2 �����������������������������������������������������������������������������������������������������������74
+Türkiye’nin Yeryüzü Şekilleri Türkiye Ekonomisi
+(Doğal Afetler) (Maden, Enerji Kaynakları ve Sanayi)
+Test - 1 �������������������������������������������������������������������������������������������������������������81 Test - 1 �����������������������������������������������������������������������������������������������������������152
+Test - 2 ������������������������������������������������������������������������������������������������������������86 Test - 2 ����������������������������������������������������������������������������������������������������������157
+iv
+
+=== PAGE 35 ===
+İçindekiler
+Türkiye Ekonomisi Bölgeler Coğrafyası
+(Ulaşım, Turizm ve Ticaret) (Doğu Anadolu Bölgesi)
+Test - 1 �����������������������������������������������������������������������������������������������������������163 Test - 1 ����������������������������������������������������������������������������������������������������������248
+Test - 2 ����������������������������������������������������������������������������������������������������������168 Test - 2 ���������������������������������������������������������������������������������������������������������253
+Test - 3 ���������������������������������������������������������������������������������������������������������259
+Türkiye Ekonomisi Tarama
+Test - 1 �����������������������������������������������������������������������������������������������������������175
+Test - 2 ����������������������������������������������������������������������������������������������������������180 Bölgeler Coğrafyası
+(Güneydoğu Anadolu Bölgesi)
+Test - 1 ����������������������������������������������������������������������������������������������������������264
+Bölgeler Coğrafyası Test - 2 ���������������������������������������������������������������������������������������������������������269
+(Karadeniz Bölgesi) Test - 3 ���������������������������������������������������������������������������������������������������������274
+Test - 1 �����������������������������������������������������������������������������������������������������������187
+Test - 2 ����������������������������������������������������������������������������������������������������������192
+Test - 3 ����������������������������������������������������������������������������������������������������������197
+Bölgeler Coğrafyası
+Bölgeler Coğrafyası (İç Anadolu Bölgesi)
+(Marmara Bölgesi) Test - 1 ����������������������������������������������������������������������������������������������������������280
+Test - 1 ����������������������������������������������������������������������������������������������������������202 Test - 2 ���������������������������������������������������������������������������������������������������������285
+Test - 2 ���������������������������������������������������������������������������������������������������������207 Test - 3 ���������������������������������������������������������������������������������������������������������290
+Test - 3 ����������������������������������������������������������������������������������������������������������212
+Bölgeler Coğrafyası
+(Ege Bölgesi)
+Test - 1 �����������������������������������������������������������������������������������������������������������218
+Test - 2 ���������������������������������������������������������������������������������������������������������223
+Test - 3 ���������������������������������������������������������������������������������������������������������228
+Bölgeler Coğrafyası
+(Akdeniz Bölgesi)
+Test - 1 �����������������������������������������������������������������������������������������������������������233
+Test - 2 ���������������������������������������������������������������������������������������������������������238
+Test - 3 ���������������������������������������������������������������������������������������������������������243
+v
+
+=== PAGE 36 ===
+[Empty]
+
+=== PAGE 37 ===
+Çözümlü videoları
+izlemek için kare kodu
+okutunuz. Coğrafi Konum
+4.
+TEST - 1
+1. Aşağıdakilerden hangisi Türkiye’nin bir Kuzey Ya- Tunceli
+rım Küre ülkesi olduğunun kesin kanıtı değildir?
+A) Güneyindeki enlem derecelerinin kuzeyindeki en-
+lem derecelerinden küçük olması
+B) Kuzeyine doğru gidildikçe çizgisel hızın azalması Türkiye haritası üzerinde Tunceli ilinin konumu veril-
+C) Doğuya doğru gidildikçe meridyen derecelerinin miştir.
+artması Buna göre, Tunceli’den yola çıkarak;
+D) Güneş ışınlarının atmosferde tutulma oranının gü-
+• Yengeç Dönencesi’ne yaklaşmak için,
+neye doğru azalması
+• Başlangıç meridyeninden uzaklaşmak için,
+E) İki meridyen arası mesafenin güneye doğru geniş-
+• Tarih değiştirme çizgisine yaklaşmak için
+lemesi
+hangi yöne doğru gidilmesi gerekir?
+A) Kuzey-Batı B) Güney C) Güney-Batı
+D) Kuzey-Doğu E) Güney-Doğu
+5.
+2.
+Sinop
+P
+B D
+Bursa E
+Iğdır
+G Güneş, 23 Eylül’de 45° doğu meridyeninde yukarı-
+Manisa E
+daki konumda iken aynı anda Çanakkale’de yakla-
+M
+şık olarak hangi konumda olur?
+Mersin
+A A) B) C)
+K
+Türkiye haritası üzerinde verilen illerin hangisin- A
+de 21 Aralık tarihinde gündüz süresi diğerlerinden D B D B D B D
+E
+daha kısadır? D) E)
+M
+İ
+A) Sinop B) Bursa C) Manisa
+B D B D
+D) Iğdır E) Mersin
+6.
+Kağızman
+Gelibolu
+3. Aşağıda Türkiye’nin coğrafi konumu ile ilgili bazı bilgi-
+ler verilmiştir.
+I. Yükseltisi batıdan doğuya doğru gidildikçe art-
+maktadır.
+II. Gölge yönü sürekli kuzeyi gösterir.
+Türkiye haritası üzerinde Gelibolu ve Kağızman ilçele-
+III. Dünya’da bilinen bor yataklarının %70’ten fazla- rinin konumu verilmiştir.
+sını barındırır. Bu iki ilçe için,
+IV. Dört mevsim belirgin olarak yaşanır. I. Çizgisel hızları
+Buna göre yukarıda verilen bilgilerden hangileri II. Gündüz süreleri
+Türkiye’nin özel (göreceli) konumuyla açıklanır? III. Güneş ışınlarının atmosferde aldığı yol
+A) I ve II B) II ve III C) I ve IV bilgilerinden hangileri yıl boyunca aynıdır?
+D) I ve III E) II ve IV A) Yalnız III B) I ve II C) II ve III
+D) I ve III E) I, II ve III
+1
+
+=== PAGE 38 ===
+Coğrafi Konum
+7. Aşağıda bazı koordinat değerleri verilmiştir. 10. Türkiye, İstanbul ve Çanakkale Boğazlarına sahip ol-
+masından dolayı bölgedeki jeopolitik ve jeostratejik
+I. 43° Kuzey 43° Doğu
+konumunu yükseltmiştir. Özellikle Karadeniz’e kıyısı
+II. 38° Kuzey 38° Doğu
+olan ülkelerin çoğu bu boğazları kullanabilmek için
+III. 34° Kuzey 44° Doğu Türkiye ile arasını iyi tutmaya çalışmıştır. Çünkü bu ül-
+IV. 41° Kuzey 33° Doğu kelerin uluslararası sulara açılan tek kapısı Türkiye’de-
+ki boğazlardır.
+Buna göre verilen coğrafi koordinat değerlerinden
+hangileri Türkiye sınırları içerisinde yer almaz? Buna göre aşağıda verilen ülkelerden hangisi Tür-
+kiye’deki boğazları kullanmadan uluslararası su
+A) Yalnız I B) I ve II C) I ve III
+yollarına ve okyanuslara çıkabilir?
+D) II ve IV E) III ve IV
+A) Gürcistan
+B) Rusya Federasyonu
+C) Ukrayna
+8. D) Bulgaristan
+E) Romanya
+IV
+II
+I
+III
+11.
+V Samsun
+Kırşehir
+Türkiye haritası üzerinde verilen yerlerin hangisin- P
+E
+de 21 Haziran tarihinde ok yönüne doğru gidildi-
+G
+ğinde hem gece süresi uzar hem de yerel saat ileri
+E Mersin
+olur? M
+A) I B) II C) III D) IV E) V A Yukarıdaki haritada aynı meridyen üzerinde yer alan
+K üç il merkezinin konumları verilmiştir.
+A
+Bu merkezler ile ilgili,
+D
+E I. Başlangıç Meridyeni’ne en yakın yer Mersin’dir.
+M
+9. Sarıyer İ II. Çizgisel hız en fazla Samsun’dadır.
+Pazar III. 21 Mart tarihinde Mersin’in gündüz uzunluğu
+Kırşehir’den fazladır.
+Şereflikoçhisar
+IV. Yer çekimi Kırşehir’e göre Samsun’da daha fazladır.
+verilen bilgilerden hangileri yanlıştır?
+Datça İskenderun
+A) I ve II B) II, III ve IV C) I ve IV
+D) I, II ve III E) I, III ve IV
+Yukarıdaki Türkiye haritası üzerinde beş farklı ilçe gös-
+terilmiştir.
+12.
+Buna göre bu ilçelerle ilgili verilen bilgilerden han-
+gisi mutlak (matematik) konumun bir sonucudur? II
+A) Şereflikoçhisar’da donlu geçen gün sayısının
+IV
+Sarıyer’den fazla olması
+I
+B) Pazar’ın ocak ayı sıcaklık ortalamasının
+Şereflikoçhisar’dan fazla olması III
+V
+C) İskenderun’un yıllık yağış miktarının Pazar’dan az
+olması Yukarıdaki Türkiye haritası üzerinde verilen yerle-
+D) Şereflikoçhisar’ın temmuz ayı yağış ortalamasının rin hangisi ile ulusal saat arasında zaman farkı en
+Sarıyer’den az olması azdır?
+E) Datça’nın ocak ayı sıcaklık ortalamasının A) I B) II C) III D) IV E) V
+Pazar’dan fazla olması
+2
+
+=== PAGE 39 ===
+Coğrafi Konum
+13. Türkiye’de herhangi bir noktaya dikilen çubuğun 16. Türkiye’de özel tarihler ile ilgili,
+gölgesinin yıl içerisinde hiçbir zaman sıfır olmama-
+I. 23 Eylül’de sonbahar başlar.
+sının nedeni aşağıdakilerden hangisidir?
+II. 21 Aralık’tan sonra gündüzler kısalmaya başlar.
+A) Türkiye’nin Kuzey Yarım Küre’de yer alması III. 21 Mart’ta en uzun gece yaşanır.
+B) Türkiye’nin Yengeç ve Oğlak Dönenceleri arasında IV. 21 Haziran’da en kısa gece yaşanır.
+olmaması
+bilgilerden hangileri doğrudur?
+C) Başlangıç Meridyeni’nin doğusunda yer alması
+A) I ve II B) II ve III C) III ve IV
+D) Ortalama yükseltisinin ve engebenin fazla olması
+D) I ve III E) I ve IV
+E) Güneş ışınlarının atmosferde tutulma oranının faz-
+la olması
+17.
+I. Gündüz süresinin gece süresinden uzun olmaya
+başladığı tarihtir.
+II. Gece süresinin gündüz süresinden uzun olmaya
+başladığı tarihtir.
+14. III. Gündüzlerin kısalmaya başladığı tarihtir.
+IV. Gecelerin kısalmaya başladığı tarihtir.
+III
+V Yukarıda Türkiye’de görülen durumlar ile özel ta-
+I
+rihler eşleştirildiğinde hangi seçenek doğru olur?
+IV P
+21 Mart 23 Eylül 21 Haziran 21 Aralık
+II E
+G A) I II III IV
+E
+27°Doğu M B) II III IV I
+X C) III II I IV
+41°Kuzey A
+K D) IV I III II
+A
+Türkiye haritası üzerinde verilen oklardan hangisi
+D E) I IV II III
+yönünde gidilirse yukarıda coğrafi koordinatı veri-
+E
+len X merkezine ulaşılır? M
+İ
+A) I B) II C) III D) IV E) V
+18.
+Van
+İzmir
+15.
+I. +4 saat diliminde yer alır.
+Yaklaşık aynı enlem üzerinde bulunan İzmir ve
+II. En doğusu ile en batısı arasında 78 dakikalık fark Van’ın coğrafi konumları düşünüldüğünde,
+vardır.
+I. İzmir ve Van’da alacakaranlık süreleri farklıdır.
+III. En kuzey ile en güney ucu arası kuş uçumu 666
+II. Van’ın ocak ayı ortalama sıcaklık değeri İzmir’den
+km’dir.
+düşüktür.
+IV. Batısından doğuya doğru gidildikçe meridyen yay-
+III. İzmir’in yıllık ortalama yağış miktarı Van’dan faz-
+ları kısalır.
+ladır.
+V. Güneyden kuzeye doğru paralel boyları uzar.
+bilgilerinden hangileri yanlıştır?
+Türkiye’nin matematik konumu ile ilgili olarak yu-
+karıda verilen bilgilerden hangileri yanlıştır? A) Yalnız I B) Yalnız II C) Yalnız III
+D) I ve II E) II ve III
+A) I ve II B) I, II ve III C) III, IV ve V
+D) I, II, IV ve V E) I, II, III, IV ve V
+3
+
+=== PAGE 40 ===
+Coğrafi Konum
+6. I. Çizgisel hızları
+ÇÖZÜMLER
+II. Gündüz süreleri
+III. Güneş ışınlarının atmosferde aldığı yol
+1. A, B, D ve E seçenekleri Türkiye’nin Kuzey Yarım Küre’de
+Harita üzerinde verilen ilçeler aynı enlem üzerinde olduğu
+olduğunun kesin kanıtıdır. Ancak Güney Yarım Küre’de de
+için öncüllerde verilen bilgilerin hepsi yıl boyunca aynıdır.
+doğuya doğru gidildikçe meridyenlerin dereceleri artar.
+Cevap E
+Cevap C
+2. 21 Aralık tarihinde kuzeye doğru gidildikçe gündüz süresi
+kısaldığı için cevap en kuzeydeki Sinop olmalıdır. Ayrıca
+21 Aralıkta en uzun gündüz, harita üzerinde verilen yerler- 7. 26°D 45°D
+den Mersin’de yaşanır. 42°K
+Not: Özel tarihler ile ilgili sorularda (21 Haziran, 21 Aralık,
+21 Mart, 23 Eylül) en kuzey veya en güneye bakılır.
+Cevap A
+36°K
+3. II ve IV numaralı bilgiler Türkiye’nin matematik (mutlak) Türkiye 36°-42° kuzey paralelleri ile 26°-45° doğu merid-
+konumuyla ilgili iken, I ve III numaralı bilgiler Türkiye’nin yenleri arasında kalır. Bu değerler dışında kalan 43 ve 34
+özel (göreceli) konumuyla ilgilidir. kuzey paralelleri Türkiye’den geçmez.
+Not: Ekvator’a ve Başlangıç Meridyeni’ne göre bulunan P Cevap C
+E
+konuma matematik konum denir. Kıtalara, ülkelere ulaşım
+G
+yollarına, karasallık, yükselti ve denizelliğe göre bulunan
+E
+konuma göreceli konum denir.
+M
+Cevap D
+A
+K 8. 21 Haziran’da Türkiye’de gece süresinin uzun ve yerel sa-
+A atin ileri olduğu yön güneydoğudur.
+4. Türkiye, Yengeç Dönencesi’nin kuzeyinde, başlangıç me- D • 21 Haziran’da gece süresinin uzadığı yön güneydir.
+E
+ridyeninin doğusunda yer almaktadır. Ayrıca tarih değiştir-
+M • Yerel saatin ileri olması için doğuya doğru gidilmesi
+me çizgisinin (180° meridyen) batısında bulunur.
+İ gerekir.
+• Yengeç Dönencesi’ne yaklaşmak için (güneye),
+Cevap A
+• Başlangıç meridyeninden uzaklaşmak (doğuya),
+• Tarih değiştirme çizgisine yaklaşmak için (doğuya)
+gidilmesi gerekir.
+Cevap E
+9. A, B, C ve D seçenekleri özel (göreceli) konumun sonu-
+cudur. Ancak Datça ve Pazar ilçelerinin özel konumları
+(deniz kıyısı) aynıdır. Ayrıca Datça Ekvator’a daha yakın
+olduğu için sıcaklık ortalamasının daha fazla olması mut-
+5. Iğdır, Türkiye’nin en doğusunda, Çanakkale’de en ba-
+lak (matematiksel) konumun sonucudur.
+tısında yer alır. Bundan dolayı iki il arasında yaklaşık 76
+dakikalık zaman farkı olur. Soruda verilen Güneş’in konu- Cevap E
+mu yaklaşık 17.00 cıvarıdır. Çanakkale yaklaşık bir saat
+geride olduğu için Çanakkale’de Güneş’in ufuktaki saati
+16.00 cıvarı olmalıdır.
+12.00
+10. A, C, D ve E seçeneklerinde verilen ülkelerin sadece
+Çanakkale
+16.00 Karadeniz’e kıyısı vardır ve Türkiye’deki boğazları kullan-
+17.00 mak zorundadır. Ancak Rusya Federasyonu’nun Baltık
+18.00 06.00 Denizi’ne ve Kuzey Buz Denizi’ne kıyısı olduğu için Tür-
+B D kiye’deki boğazları kullanmadan da okyanuslara açılabilir.
+Cevap B Cevap B
+4
+
+=== PAGE 41 ===
+2022
+EĞİTİM
+BİZİMİŞİMİZ
+GENEL YETENEK - GENEL KÜLTÜR
+VATANDAŞLIK
+SORU
+BANKASI
+TAMAMI
+VİDEO ÇÖZÜMLÜ
+MODÜLER
+SET
+QRKODU OKUTARAK
+PEGEMKAMPÜS
+UYGULAMASINIİNDİR
+SORULARIN ÇÖZÜM
+VİDEOLARINI HEMEN İZLE
+Lütfen detaylıbilgi için ön sözü okuyunuz.
+PEGEM AKADEMİ
+
+=== PAGE 42 ===
+GYGK LİSANS VATANDAŞLIK SORU BANKASI
+Komisyon
+ISBN 978-0-2021-0002-9
+Kitapta yer alan bölümlerin tüm sorumluluğu yazarlarına aittir.
+Bu kitabın basım, yayım ve satış hakları Pegem Akademi Yay. Eğt. Dan. Hizm. Tic. AŞ’ye aittir. Anılan kuruluşun izni
+alınmadan kitabın tümü ya da bölümleri, kapak tasarımı; mekanik, elektronik, fotokopi, manyetik kayıt ya da başka
+yöntemlerle çoğaltılamaz, basılamaz ve dağıtılamaz. Bu kitap, T.C. Kültür ve Turizm Bakanlığı bandrolü ile satılmakta-
+dır. Okuyucularımızın bandrolü olmayan kitaplar hakkında yayınevimize bilgi vermesini ve bandrolsüz yayınları satın
+almamasını diliyoruz.
+Pegem Akademi Yayıncılık, 1998 yılından bugüne uluslararası düzeyde düzenli faaliyet yürüten uluslararası akademik
+bir yayınevidir. Yayımladığı kitaplar; Yükseköğretim Kurulunca tanınan yükseköğretim kurumlarının kataloglarında yer
+almaktadır. Dünyadaki en büyük çevrimiçi kamu erişim kataloğu olan WorldCat ve ayrıca Türkiye’de kurulan Turca-
+demy.com tarafından yayınları taranmaktadır, indekslenmektedir. Aynı alanda farklı yazarlara ait 1000’in üzerinde ya-
+yını bulunmaktadır. Pegem Akademi Yayınları ile ilgili detaylı bilgilere http://pegem.net adresinden ulaşılabilmektedir.
+7. Baskı: 2022, Ankara
+Proje-Yayın: Nilay Balin
+Dizgi-Grafik Tasarım: Gülnur Öcalan
+Kapak Tasarımı: Pegem Akademi
+Baskı: Vadi Grup Basım AŞ
+Saray Mah. 126. Cad. No: 20/A
+Kazan/ANKARA
+(0312 394 55 91)
+Yayıncı Sertifika No: 51818
+Matbaa Sertifika No: 49180
+İLETİŞİM
+Shira Ticaret Merkezi, Macun Mah. 204. Cad. No: 141/A-33 Yenimahalle/ANKARA
+Yayınevi: 0312 430 67 50
+www.pegem.net 0538 594 92 40
+Dağıtım: 0312 434 54 24
+pegem@pegem.net pegemakademi
+Hazırlık Kursları: 0312 419 05 60
+
+=== PAGE 43 ===
+Değerli Adaylar;
+Bu kitap, Kamu Personeli Seçme Sınavı (KPSS) Genel Kültür testinde önemli bir yeri olan Vatandaşlık bölümündeki soruları
+uygun bir sürede ve hatasız çözebilmeniz için oluşturulmuştur.
+Kitabın çalışmalarınızda yararlı olması dileğiyle, KPSS’de ve meslek hayatınızda başarılar.
+Bu kitaba ilişkin görüşlerinizi pegem@pegem.net adresine e-posta yoluyla ya da 0538 594 92 40 numarasına WhatsApp
+üzerinden iletmeniz yeterli olacaktır.
+Pegem Akademi
+Uygulamanızı Kullanabilmeniz İçin
+Aşağıdaki Adımları Takip Ediniz:
+Kapaktaki QR kodunu Üyelik ekranına erişebilmek için;
+herhangi bir kod okuyucu 1. Adım “Kayıt Ol” butonuna tıklayarak,
+uygulaması ile okutarak Uygulama 2. Adım üyelik formunu eksiksiz
+ilgili Pegem Kampüs uygu- İndirme Üyelik doldurduktan sonra uygulamayı
+lamasını indirebilirsiniz. kullanmaya başlayabilirsiniz.
+Üye girişi yaptıktan sonra açılan Aktivasyonunu yapmış
+pencerede sol tarafta bulunan olduğunuz konu anlatım
+kategori menüsünden “Aktivasyon 3. Adım 4. Adım kitabınızı “Video Çözümler”
+Kodlarım”ı, seçerek “Kod Ekle”ye Aktivasyon Ürünlerim sekmesinden görüntüleyebilir
+tıklayıp kitabınız ile birlikte size ve videolarınızı izlemeye
+iletilen aktivasyon kodu ile aktivasyon başlayabilirsiniz.
+işlemlerini gerçekleştirebilirsiniz.
+Kitabın içerisindeki QR’ı okutarak 5. Adım
+ilgili kitabınızın videolarını QR Kod
+izleyebilirsiniz. Okutma
+BC_304089
+Pegem Kampüs Web Sitesi Üzerinden Videolarınıza
+Erişebilmek İçin Aşağıdaki Adımları Takip Ediniz:
+1 Mevcut tarayıcınıza https://dijital.pegemkampus.com yazarak web sitemiz üzerinden erişim sağlayabilirsiniz.
+2 Pegem Kampüs üyeliğiniz yoksa “Kayıt Ol” butonuna tıkladıktan sonra formu doldurarak üyelik işlemlerinizi
+gerçekleştirebilirsiniz.
+3 Üyelik bilgileriniz ile giriş yaptıktan sonra sağ üst sekmede yer alan “Aktivasyon Kodlarım” alanından kodunuzu
+aktif edebilirsiniz.
+Aktivasyon işleminizi tamamladıktan sonra kategori alanından “Video Çözümler” sekmesine tıklayarak videolarınıza
+4
+ulaşabilirsiniz..
+Aktivasyon Kodu Türkçe kitabınızın ilk sayfasında yer almaktadır.
+Aktivasyon Kodu ile aktif ettiğiniz video dersler 31 Ağustos 2022 tarihine kadar geçerlidir.
+Pegem Kampüs İletişim Hattı
+0312 418 51 55
+iii
+
+=== PAGE 44 ===
+İÇİNDEKİLER Genel Hükümler
+Hukuka Giriş Test 1 �����������������������������������������������������������������������������������������������������������84
+Test 1 ���������������������������������������������������������������������������������������������������������������1 Test 2 ����������������������������������������������������������������������������������������������������������88
+Test 2 ������������������������������������������������������������������������������������������������������������5 Test 3 ���������������������������������������������������������������������������������������������������������92
+Test 3 ������������������������������������������������������������������������������������������������������������9 Test 4 ���������������������������������������������������������������������������������������������������������95
+Test 4 �����������������������������������������������������������������������������������������������������������12 Test 5���������������������������������������������������������������������������������������������������������98
+Test 5����������������������������������������������������������������������������������������������������������16 Test 6 ��������������������������������������������������������������������������������������������������������101
+Test 6 ����������������������������������������������������������������������������������������������������������19 Temel Hak ve Hürriyetler
+Test 7 ���������������������������������������������������������������������������������������������������������22 Test 1 ��������������������������������������������������������������������������������������������������������103
+Test 8 ���������������������������������������������������������������������������������������������������������25 Test 2 �������������������������������������������������������������������������������������������������������107
+Test 9 ����������������������������������������������������������������������������������������������������������28 Test 3 �����������������������������������������������������������������������������������������������������������111
+Test 10���������������������������������������������������������������������������������������������������������31 Test 4 ���������������������������������������������������������������������������������������������������������115
+Test 11 ���������������������������������������������������������������������������������������������������������34 Test 5���������������������������������������������������������������������������������������������������������119
+Test 12 ��������������������������������������������������������������������������������������������������������37 Test 6 �������������������������������������������������������������������������������������������������������123
+Test 13 �������������������������������������������������������������������������������������������������������40 Test 7 ��������������������������������������������������������������������������������������������������������127
+Test 14 �������������������������������������������������������������������������������������������������������43 Yasama
+Anayasacılık ve Devlet Test 1 ����������������������������������������������������������������������������������������������������������131
+Test 1 ����������������������������������������������������������������������������������������������������������46 Test 2 ��������������������������������������������������������������������������������������������������������135
+Test 2 ��������������������������������������������������������������������������������������������������������50 Test 3 ��������������������������������������������������������������������������������������������������������139
+Test 3 ���������������������������������������������������������������������������������������������������������53 Test 4 ��������������������������������������������������������������������������������������������������������142
+Test 4 ���������������������������������������������������������������������������������������������������������56 Test 5��������������������������������������������������������������������������������������������������������146
+Test 5���������������������������������������������������������������������������������������������������������59 Test 6 ������������������������������������������������������������������������������������������������������150
+Test 6 ��������������������������������������������������������������������������������������������������������62 Test 7 ��������������������������������������������������������������������������������������������������������154
+Anayasacılık Tarihi Test 8 ��������������������������������������������������������������������������������������������������������157
+Test 1 ����������������������������������������������������������������������������������������������������������67 Test 9 �������������������������������������������������������������������������������������������������������160
+Test 2 ���������������������������������������������������������������������������������������������������������70 Test 10�����������������������������������������������������������������������������������������������������163
+Test 3 ����������������������������������������������������������������������������������������������������������73 Test 11 �������������������������������������������������������������������������������������������������������166
+Test 4 ���������������������������������������������������������������������������������������������������������76 Test 12 �����������������������������������������������������������������������������������������������������170
+Test 5���������������������������������������������������������������������������������������������������������79 Test 13 ������������������������������������������������������������������������������������������������������173
+Test 6 ���������������������������������������������������������������������������������������������������������82
+iv
+
+=== PAGE 45 ===
+Yürütme İdari Teşkilat
+Test 1 ���������������������������������������������������������������������������������������������������������176 Test 1 �������������������������������������������������������������������������������������������������������267
+Test 2 ��������������������������������������������������������������������������������������������������������179 Test 2 ��������������������������������������������������������������������������������������������������������271
+Test 3 ��������������������������������������������������������������������������������������������������������183 Test 3 �������������������������������������������������������������������������������������������������������275
+Test 4 ��������������������������������������������������������������������������������������������������������187 Test 4 �������������������������������������������������������������������������������������������������������278
+Test 5�������������������������������������������������������������������������������������������������������190 Test 5��������������������������������������������������������������������������������������������������������281
+Test 6 �������������������������������������������������������������������������������������������������������193 Ulusal ve Uluslararası Kuruluşlar
+Yargı Test 1 �������������������������������������������������������������������������������������������������������285
+Test 1 ���������������������������������������������������������������������������������������������������������197 Test 2 ������������������������������������������������������������������������������������������������������289
+Test 2 �������������������������������������������������������������������������������������������������������201 Genel Kültür
+Test 3 �����������������������������������������������������������������������������������������������������205 Test 1 �������������������������������������������������������������������������������������������������������293
+Test 4 �����������������������������������������������������������������������������������������������������209 Test 2 ������������������������������������������������������������������������������������������������������296
+Test 5��������������������������������������������������������������������������������������������������������213 Test 3 ������������������������������������������������������������������������������������������������������299
+Test 6 �������������������������������������������������������������������������������������������������������217 Test 4 �������������������������������������������������������������������������������������������������������301
+Test 7 ��������������������������������������������������������������������������������������������������������221 Cevap Anahtarı ���������������������������������������������������������������������������������303
+Test 8 �������������������������������������������������������������������������������������������������������224
+Test 9 �������������������������������������������������������������������������������������������������������228
+İnsan Hakları
+Test 1 �������������������������������������������������������������������������������������������������������232
+Test 2 ������������������������������������������������������������������������������������������������������235
+İdare Hukukunun Genel Esasları
+Test 1 �������������������������������������������������������������������������������������������������������239
+Test 2 ������������������������������������������������������������������������������������������������������243
+Test 3 �������������������������������������������������������������������������������������������������������247
+Test 4 ��������������������������������������������������������������������������������������������������������251
+Test 5������������������������������������������������������������������������������������������������������255
+Test 6 �����������������������������������������������������������������������������������������������������259
+Test 7 ������������������������������������������������������������������������������������������������������263
+v
+
+=== PAGE 46 ===
+[Empty]
+
+=== PAGE 47 ===
+Çözümlü videoları
+izlemek için kare
+kodu okutunuz. Hukuka Giriş
+4. Bir somut olaya uygulanacak yazılı ya da yazılı ol-
+TEST - 1
+mayan bir hukuk kuralının bulunmaması durumuna
+verilen isim aşağıdakilerden hangisidir?
+1. Kişileri hukuk kurallarına uymaya zorlayan huku-
+A) Hukuk boşluğu
+kun hangi özelliğidir?
+B) Kural içi boşluk
+A) Emirler içermesi
+C) Örtülü boşluk
+B) Yaptırımının maddi olması
+D) Gerçek kanun boşluğu
+C) Sosyal yaşamı düzenlemesi
+E) Açık kanun boşluğu
+D) Subjektif nitelikte olması
+E) Yasaklar içermesi
+5. Aşağıdakilerden hangisinin yaptırımı manevi değil-
+dir?
+2. Fiil ehliyetinin en önemli koşulu olan ayırt etme gü-
+A) Ahlak kurallarının
+cünden yoksun olan kişiler aşağıdakilerden hangi-
+P
+B) Hukuk kurallarının
+sidir? E
+G C) Din kurallarının
+A) Sınırlı ehliyetsizler E
+D) Görgü kurallarının
+B) Sınırlı ehliyetliler M
+E) Örf ve âdet kurallarının
+C) Tam ehliyetsizler A
+K
+D) Tam ehliyetliler
+A
+E) Nispi ehliyetliler D
+E
+M
+İ
+3. Tam ehliyetsiz olan A, son derece değerli bir tabloyu
+çok düşük bir bedelle satın almıştır. 6. Hâkimin hukuk yaratması ile ilgili aşağıdaki ifade-
+lerden hangisi doğrudur?
+Bu işlemin geçerliliğiyle ilgili aşağıdaki ifadelerden
+hangisi doğrudur? A) Hâkimin hukuk yaratması, kanunda örtülü boşluk
+varsa mümkündür.
+A) İşlem hâkimin iptal kararı vermesine kadar geçer-
+lidir. B) Hâkimin hukuk yaratması, hukuk boşluğu varsa
+mümkündür.
+B) İşlem geçersizdir.
+C) Hâkimin hukuk yaratması, kanunda kural içi boş-
+C) A’nın kanuni temsilcisi icazet verirse işlem geçerli
+luk varsa mümkündür.
+hâle gelir.
+D) Kanun koyucu bir konuda kasıtlı sustuğu takdirde,
+D) İşlemin geçerli olması için A’nın, tabloyu 5 yıl sü-
+hâkim susulan durumu doldurur.
+reyle elinde bulundurması gerekir.
+E) Kanun metni ihtiyaca cevap vermiyorsa kanunda
+E) İşlemin geçerli olması için, işlemi yapan diğer tara-
+boşluk vardır ve hâkim bu boşluğu doldurur.
+fın, A’nın tam ehliyetsiz olduğunu işlemi yaparken
+bilmiyor olması gerekir.
+1
+
+=== PAGE 48 ===
+Hukuka Giriş
+7. Bir geleneğin örf ve âdet hukuku kuralı olabilmesi 10. Aşağıdakilerden hangisi medeni hukukun alanına
+için bulunması gereken unsurlar aşağıdakilerden girmez?
+hangisinde tam ve doğru olarak verilmiştir?
+A) Kişiler hukuku
+A) Maddi unsur - Manevi unsur - Ahlak unsuru B) Miras hukuku
+B) Hukuki unsur - Manevi unsur - Genel uygulanabi- C) Sigorta hukuku
+lirlik unsur
+D) Eşya hukuku
+C) Hukuki unsur - Ahlaki unsur
+E) Aile hukuku
+D) Maddi unsur - Manevi unsur - Hukuki unsur
+E) Maddi unsur - Manevi unsur - Toplumsal kabul
+unsuru
+11. Hükümsüzlük yaptırımı ile ilgili aşağıdaki ifadeler-
+8. Fiil ehliyeti ile ilgili olarak aşağıdaki ifadelerden
+den hangisi yanlıştır?
+hangisi doğrudur?
+P
+E A) Yokluk şeklinde ortaya çıkabilir.
+A) Kişi hak ehliyetiyle birlikte fiil ehliyetini de tam ola-
+G
+rak kazanır. B) Hukuk kurallarının belirlediği şekil şartlarına uyma-
+E
+yan işlemler için söz konusudur.
+B) Kişinin ergin olması onun fiil ehliyetine her zaman M
+sahip olacağı anlamına gelmez. C) Mutlak butlan şeklinde ortaya çıkabilir.
+A
+C) Kişi kendi isteği ile her zaman fiil ehliyetini sınır- K D) Nispi butlan şeklinde ortaya çıkabilir.
+layabilir. A E) Hukuka aykırı idari işlemler için söz konusudur.
+D
+D) Kişinin ayırt etme gücüne sahip olmaması onun fiil
+E
+ehliyetine sahip olmadığı anlamına gelmez. M
+E) Kişi kendi isteği ile fiil ehliyetinden tamamen vaz- İ
+geçebilir.
+9. İlk derece mahkemeleri tarafından verilmiş olup,
+hatalı olduğu ileri sürülen kararların yeniden in-
+celenmesini sağlamak üzere davanın taraflarına
+12. Bir sözleşmenin kurulabilmesi için tarafların yap-
+tanınmış hukuki yolun genel adı aşağıdakilerden
+tıkları irade açıklamaları aşağıdakilerden hangisi-
+hangisidir?
+dir?
+A) Kanuni hâkim güvencesi
+A) İlan - Kabul
+B) Kanun yolu
+B) İlan - İhbar
+C) Hâkimin takdir yetkisi
+C) İcaba davet - İcap
+D) Kanun yararına bozma
+D) Teklif - İhbar
+E) Kanuni idare ilkesi
+E) Teklif - Kabul
+2
+
+=== PAGE 49 ===
+Hukuka Giriş
+4. Bir somut olaya uygulanacak yazılı ya da yazılı olmayan
+ÇÖZÜMLER –1
+bir hukuk kuralının bulunmaması durumuna hukuk boş-
+luğu adı verilmektedir. Kanunda ya da örf âdet hukukun-
+da bir meselenin çözümüyle ilgili hiçbir kuralın olmaması
+1. Sosyal yaşantıyı düzenleyen tüm kurallar, bazı emirler ve durumudur. Bir başka ifadeyle uygulanabilir hiçbir hukuk
+yasaklar içerir. Aynı zamanda bu emir ve yasaklar top- kuralının olmamasıdır. Bu durumda hâkim bu boşluğu hu-
+lumun geneli tarafından kabul görmüştür. Sosyal hayatı kuk yaratarak doldurur.
+düzenleyen kurallardan olan hukuk kuralları diğer kurallar-
+dan farklı olarak maddi yaptırıma sahiptir ve bu yaptırım- Cevap A
+lar devlet gücü ile desteklenmiştir. Kişileri hukuk kuralla-
+rına uymaya zorlayan özellikler de maddi yaptırıma sahip
+olması ve devlet gücü ile destekli olmasıdır.
+Cevap B
+5. Yaptırımı maddi olan ve devlet gücü ile desteklenmiş olan
+kurallara hukuk kuralları denilmektedir. Ahlak kuralları, din
+kuralları, görgü kuralları gibi sosyal hayatı düzenleyen di-
+ğer kurallar manevi yaptırıma sahiptirler.
+Cevap B
+PP
+EE
+GG
+2. Fiil ehliyeti, kişinin haklarını kullanabilme ehliyetidir. Hak EE
+ehliyeti tam ve sağ doğmak koşulu ile ana rahmine düş- MM
+meyle başlar ancak fiil ehliyetinin kullanılabilmesi için belli
+AA
+şartlar aranmaktadır. Bunlar; erginlik, ayırtım gücü (sez- KK 6. “Hâkimin hukuk yaratması”, Türk Medeni Kanunu’nun 1.
+ginlik) ve kısıtlı olmamaktır. Ayırtım gücüne sahip olma- AA maddesinde “yasal dayanağı”nı bulmuş olup hâkim bu
+yan kişilerin, fiil ehliyetlerini kullanma bakımından yetkileri DD madde kapsamını aşmaksızın “kural” koyabilecektir. “Ka-
+yoktur. Bu kişiler tam ehliyetsiz sınıfına girerler. EE nun, sözüyle ve özüyle değindiği bütün konularda uygula-
+MM nır. Kanunda uygulanabilir bir hüküm yoksa hâkim, örf ve
+Cevap C İİ
+âdet hukukuna göre, bu da yoksa kendisi kanun koyucu
+olsaydı nasıl bir kural koyacak idiyse ona göre karar verir.
+Hâkim, karar verirken bilimsel görüşlerden ve yargı karar-
+larından yararlanır.”
+Bu maddeyi analiz ettiğimizde şu ilkelerin varlığını görü-
+rüz:
+• Kanunun açık ve net hükmü varken subjektif değer-
+lendirmelere gidilemez. Örneğin, yeterlik derecesi
+konusunda yasada açık ve net bir hüküm varken
+artık bu madde ihtiyaca cevap vermiyor diyerek yeni
+ve mevcut hükmü değiştirir nitelikte bir “kural” ihdas
+edilemez; hâkimin buna yetkisi yoktur.
+• Kanunda açık bir hüküm yoksa, hâkim uyuşmazlığı
+3. A’nın tam ehliyetsiz olması, kişinin yaptığı hukuki işlemle-
+çözmekten kaçınamayacağından bu takdirde o ko-
+rin geçersiz olmasını beraberinde getirmektedir. Bu kişiler
+nuda toplumda yerleşik bir “örf ve âdet kuralı” olup
+ayırt etme gücünden yoksundurlar ve iradeleri yok sayılır.
+olmadığını araştıracaktır. Örneğin, nişanın bozul-
+Karşı tarafın kişinin durumunu bilmesi ya da durumundan
+masından sonra takılan takıların iadesi konusunda
+haberdar olmaması bu noktada bir fark yaratmayacaktır.
+yasada bir hüküm yoksa hâkim o toplumda örf ve
+Üstelik soruda olduğu gibi ayırt etme gücü olmayan ki-
+âdetin olup olmadığını araştırır, varsa hükmünü bu
+şinin menfaati dahilinde gelişen işlem dahi geçerli olma-
+örf ve âdete göre verir.
+yacaktır.
+Bu noktada, hâkim ancak hukuk boşluğu varsa hukuk ya-
+Cevap B
+ratma hakkına sahip olacaktır.
+Cevap B
+3
+
+=== PAGE 50 ===
+Hukuka Giriş
+7. Örf ve âdet hukukunun kurallarının maddi unsuru; örf ve 10. Medeni hukuk, dört kitaptan oluşmaktadır. Bunlar; kişiler
+âdet kuralının hukuki sorunlara uygulanabilmesi için is- hukuku, miras hukuku, eşya hukuku ve aile hukukudur.
+tenen süreklilik koşuludur. O âdetin, o geleneğin uzunca Sigorta hukuku, ticaret hukukunun alt dalı olup medeni
+bir süreden beri uygulanmakta olması, onun toplumda ilk hukukun alt dalları arasında değildir.
+defa kimin tarafından uygulandığının bilmemesi hâlinde
+Cevap C
+mevcut sayılacaktır. Manevi unsur, toplumda genel kabul
+görme sürecini yansıtmaktadır. Ancak, toplumda genel
+kabul gören tüm kuralların hukuk kuralı sayılamayacağı
+gerçeğinden hareketle, kanuna aykırı olmama yani huku-
+kilik unsuru da aranır.
+Cevap D
+P
+E
+G
+E
+11. Hükümsüzlük, hukuki işlemin kanunun öngördüğü yollar-
+8. Fiil ehliyetine sahip olan kimse, kendi fiilleriyle hak edine- M
+la yapılmaması durumunda veya kanuna aykırı bir şekilde
+bilir ve borç altına girebilir. Genel olarak, ayırt etme gü-
+A yapıldığı zaman öngörülen maddi yaptırım türüdür. Hü-
+cüne sahip ve kısıtlı olmayan her ergin kişinin fiil ehliyeti
+K kümsüzlük; yokluk, butlan ve tek taraflı bağlamazlık ola-
+vardır. Ayırt etme gücünün yanında kişinin ergin olması ve A
+rak karşımıza çıkabilir. Hukuka aykırı bir idari işlem var ise
+kısıtlı olmaması şartları da fiil ehliyeti için gerekli şartlardır. D
+hükümsüzlükten değil, iptal yaptırımından söz edilebilir.
+Bu durumda ergin olmak fiil ehliyeti için tek başına yeterli E
+bulunmamaktadır. M Cevap E
+İ
+Cevap B
+9. Bir davanın taraflarının, dava sonucunda verilen ve yanlış 12. Bir sözleşmenin kurulabilmesi için en temelde gerekli olan
+olduğunu düşündükleri kararın değiştirilmesi veya düzel- iki şart, teklif (öneri) ve kabuldür. Teklif, sözleşme kurul-
+tilmesi için bir üst mahkemeye başvurmaları kanun yolu ması vaadidir ve önerinin kabulü ile de sözleşme kurul-
+olarak tanımlanmaktadır. Bu durum idari yargıda olağan muş olur.
+ve olağanüstü kanun yolu olarak ikiye ayrılır.
+Cevap E
+Cevap B
+4

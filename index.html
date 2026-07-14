@@ -3,203 +3,803 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>KPSS Drill — Optik</title>
+<title>KPSS Drill — Optik v2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --paper:#FAF8F3;      /* exam paper */
-    --ink:#1B2A4A;        /* booklet ink navy */
-    --graphite:#3A3A3A;   /* pencil fill */
-    --osym-red:#C0392B;   /* registration-mark red */
-    --stamp-green:#1E7B4F;/* grader's green */
-    --line:#D8D3C8;       /* faint form lines */
-    --muted:#8A8577;
-    --scale:1;
-  }
-  :root[data-theme="dark"]{
-    --paper:#1C1B1F;
-    --ink:#EDEAE1;
-    --graphite:#B8B8B8;
-    --osym-red:#E5645A;
-    --stamp-green:#4CC38A;
-    --line:#3A3936;
-    --muted:#9C9890;
-  }
-  :root[data-motion="reduced"] *{ transition:none !important; }
-  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-  body{
-    font-family:'IBM Plex Sans',system-ui,sans-serif;
-    background:var(--paper); color:var(--ink);
-    min-height:100dvh; display:flex; flex-direction:column;
-    font-size:calc(1rem * var(--scale));
-  }
-  .mono{font-family:'IBM Plex Mono',monospace}
-
-  /* ---------- top bar: booklet header ---------- */
-  header{
-    display:flex; justify-content:space-between; align-items:baseline;
-    padding:14px 18px 10px; border-bottom:2px solid var(--ink);
-  }
-  header .code{font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:.8rem; letter-spacing:.12em}
-  header .cat{font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); font-weight:600}
-
-  /* ---------- gear / settings ---------- */
-  .gear-btn{
-    position:fixed; top:12px; right:14px; z-index:50;
-    width:34px; height:34px; border-radius:50%;
-    border:1.5px solid var(--ink); background:var(--paper); color:var(--ink);
-    display:none; align-items:center; justify-content:center; cursor:pointer; font-size:1.05rem;
-  }
-  .gear-btn.show{ display:flex; }
-  .overlay{
-    position:fixed; inset:0; background:rgba(0,0,0,.4); z-index:100;
-    display:none; align-items:flex-end; justify-content:center;
-  }
-  .overlay.active{ display:flex; }
-  .sheet-panel{
-    background:var(--paper); color:var(--ink); width:100%; max-width:560px;
-    border-radius:18px 18px 0 0; padding:22px 18px 28px; max-height:80vh; overflow-y:auto;
-  }
-  .sheet-panel h2{ font-size:1.2rem; margin-bottom:16px; }
-  .opt-row{ display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px solid var(--line); }
-  .opt-row input[type=checkbox]{ width:20px; height:20px; }
-
-  /* ---------- timer bar ---------- */
-  .timer{height:4px; background:var(--line); position:relative}
-  .timer i{position:absolute; inset:0 auto 0 0; width:100%; background:var(--ink); transition:width .25s linear}
-  .timer.low i{background:var(--osym-red)}
-
-  /* ---------- screens ---------- */
-  .screen{flex:1; display:none; flex-direction:column; padding:22px 18px; max-width:560px; width:100%; margin:0 auto}
-  .screen.active{display:flex}
-
-  /* ---------- generic ---------- */
-  .brand{font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:.75rem; letter-spacing:.2em; color:var(--muted); margin-bottom:6px}
-  h1{font-size:1.7rem; font-weight:700; line-height:1.15; margin-bottom:26px}
-  .fieldlabel{font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:600; margin:18px 0 8px}
-  .chips{display:flex; gap:8px; flex-wrap:wrap}
-  .chip{
-    padding:10px 16px; border:1.5px solid var(--ink); border-radius:999px;
-    font-size:.9rem; font-weight:600; background:transparent; color:var(--ink); cursor:pointer;
-  }
-  .chip.sel{background:var(--ink); color:var(--paper)}
-  .go{
-    margin-top:auto; padding:16px; width:100%;
-    background:var(--ink); color:var(--paper); border:none; border-radius:10px;
-    font-family:'IBM Plex Sans',sans-serif; font-size:1.05rem; font-weight:700; cursor:pointer;
-  }
-  .linkbtn{
-    background:none; border:none; color:var(--muted); text-decoration:underline;
-    font-size:.9rem; cursor:pointer; padding:10px 0; text-align:left;
+  /* ================================================================
+     OPTİK FORM DESIGN SYSTEM — v2 Merged
+     Paper/ink aesthetic inspired by Turkish exam booklets
+     ================================================================ */
+  :root {
+    --paper: #FAF8F3;
+    --paper-alt: #F3F0E9;
+    --ink: #1B2A4A;
+    --ink-light: #3A4A6A;
+    --graphite: #2D2D2D;
+    --graphite-light: #6B6B6B;
+    --osym-red: #C0392B;
+    --osym-red-light: #E74C3C;
+    --stamp-green: #1E7B4F;
+    --stamp-green-light: #27AE60;
+    --line: #D8D3C8;
+    --line-light: #E8E4DB;
+    --muted: #8A8577;
+    --muted-light: #9C9890;
+    --gold: #D4A017;
+    --gold-light: #F4C430;
+    --blue-accent: #2980B9;
+    --purple-accent: #8E44AD;
+    --scale: 1;
+    --radius: 12px;
+    --shadow: 0 2px 8px rgba(27,42,74,0.08);
+    --shadow-lg: 0 4px 20px rgba(27,42,74,0.12);
   }
 
-  /* ---------- login ---------- */
-  .userlist{ display:flex; flex-direction:column; gap:10px; margin-top:4px; }
-  .userbtn{
-    padding:14px 16px; border:1.5px solid var(--ink); border-radius:10px; background:transparent;
-    color:var(--ink); font-size:1rem; font-weight:600; text-align:left; cursor:pointer;
-  }
-  .pwform{ display:flex; flex-direction:column; gap:12px; margin-top:16px; }
-  input[type=password], input[type=text]{
-    padding:13px 14px; border:1px solid var(--line); border-radius:10px; background:transparent;
-    color:var(--ink); font-family:'IBM Plex Sans',sans-serif; font-size:1rem;
-  }
-  .formerr{ color:var(--osym-red); font-size:.85rem; font-weight:600; min-height:1.2em; }
-
-  /* ---------- menu ---------- */
-  .menubtn{
-    display:flex; flex-direction:column; gap:4px; padding:20px; margin-bottom:12px;
-    border:1.5px solid var(--ink); border-radius:14px; background:transparent; color:var(--ink);
-    text-align:left; cursor:pointer;
-  }
-  .menubtn strong{ font-size:1.1rem; }
-  .menubtn span{ font-size:.8rem; color:var(--muted); }
-  .menubtn:disabled{ opacity:.4; cursor:default; }
-  .menu-logout{ margin-top:auto; }
-
-  /* ---------- stats ---------- */
-  .tabs{ display:flex; gap:6px; margin-bottom:16px; }
-  .tab{ flex:1; padding:10px; border:1.5px solid var(--ink); background:transparent; color:var(--ink); border-radius:8px; font-weight:600; cursor:pointer; font-family:'IBM Plex Sans',sans-serif; }
-  .tab.sel{ background:var(--ink); color:var(--paper); }
-  .wronglist{ display:flex; flex-direction:column; gap:8px; }
-  .wrow{ position:relative; overflow:hidden; border-radius:10px; }
-  .wrow-del{ position:absolute; inset:0; background:var(--osym-red); color:#fff; display:flex; align-items:center; justify-content:flex-end; padding-right:20px; font-weight:700; border-radius:10px; }
-  .wrow-inner{ position:relative; display:flex; justify-content:space-between; gap:10px; align-items:center; padding:14px; background:var(--paper); border:1px solid var(--line); border-radius:10px; cursor:pointer; }
-  .wrow-inner p{ flex:1; font-size:.92rem; line-height:1.35; }
-  .wdetail .qtext{ font-size:1.05rem; margin-bottom:18px; }
-
-  /* ---------- multiplayer ---------- */
-  .codebox{ font-family:'IBM Plex Mono',monospace; font-size:1.4rem; font-weight:700; letter-spacing:.14em; }
-  .mp-actionbtn{ border:1.5px solid var(--ink); border-radius:8px; padding:10px 14px; background:transparent; color:var(--ink); font-weight:600; cursor:pointer; font-family:'IBM Plex Sans',sans-serif; }
-  .joinrow{ display:flex; gap:8px; }
-  .joinrow input{ flex:1; text-transform:uppercase; }
-  .joinrow .go{ width:auto; margin:0; padding:12px 18px; }
-  .mp-player{ display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid var(--line); }
-  .mp-player .rdy{ font-family:'IBM Plex Mono',monospace; font-size:.75rem; font-weight:600; color:var(--muted); letter-spacing:.08em; }
-  .mp-player .rdy.on{ color:var(--stamp-green); }
-  .pvp-summary{ display:flex; gap:18px; margin-bottom:16px; }
-  .pvp-stat{ text-align:center; }
-  .pvp-stat b{ display:block; font-family:'IBM Plex Mono',monospace; font-size:1.5rem; }
-  .pvp-stat span{ font-size:.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:.1em; }
-  .pvp-row{ display:flex; justify-content:space-between; padding:12px 2px; border-bottom:1px solid var(--line); font-size:.9rem; }
-  .pvp-row .res{ font-weight:700; }
-  .pvp-row .res.win{ color:var(--stamp-green); }
-  .pvp-row .res.loss{ color:var(--osym-red); }
-  .go:disabled{ opacity:.5; cursor:default; }
-
-  /* ---------- quiz ---------- */
-  .qtext{font-size:1.12rem; line-height:1.55; font-weight:400; margin:6px 0 26px; white-space:pre-line}
-  .opts{display:flex; flex-direction:column; gap:10px}
-  .opt{
-    display:flex; align-items:center; gap:14px; text-align:left;
-    padding:13px 14px; background:transparent; border:1px solid var(--line); border-radius:10px;
-    font-family:'IBM Plex Sans',sans-serif; font-size:.98rem; color:var(--ink); cursor:pointer;
-    transition:border-color .12s;
-  }
-  .opt:active{border-color:var(--ink)}
-  .bubble{
-    flex:none; width:30px; height:30px; border-radius:50%;
-    border:1.8px solid var(--ink); display:grid; place-items:center;
-    font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:.85rem;
-    transition:all .15s;
-  }
-  /* filled like graphite */
-  .opt.picked .bubble{background:var(--graphite); border-color:var(--graphite); color:var(--paper)}
-  /* grading marks */
-  .opt.correct{border-color:var(--stamp-green)}
-  .opt.correct .bubble{background:var(--stamp-green); border-color:var(--stamp-green); color:#fff}
-  .opt.wrong{border-color:var(--osym-red); position:relative}
-  .opt.wrong .bubble{background:var(--osym-red); border-color:var(--osym-red); color:#fff}
-  .opt.wrong::after{
-    content:''; position:absolute; left:8px; right:8px; top:50%;
-    border-top:2px solid var(--osym-red); transform:rotate(-1.2deg); opacity:.55;
-  }
-  .opt:disabled{cursor:default}
-
-  .verdict{
-    margin-top:22px; font-family:'IBM Plex Mono',monospace; font-weight:600;
-    font-size:.85rem; letter-spacing:.1em; min-height:1.4em;
-  }
-  .verdict.ok{color:var(--stamp-green)}
-  .verdict.no{color:var(--osym-red)}
-  .next{
-    margin-top:14px; padding:14px; background:transparent; color:var(--ink);
-    border:1.5px solid var(--ink); border-radius:10px; font-weight:700; font-size:1rem; cursor:pointer;
-    font-family:'IBM Plex Sans',sans-serif; display:none;
+  :root[data-theme="dark"] {
+    --paper: #1C1B1F;
+    --paper-alt: #252428;
+    --ink: #EDEAE1;
+    --ink-light: #B8B8B0;
+    --graphite: #B8B8B8;
+    --graphite-light: #7A7A7A;
+    --osym-red: #E5645A;
+    --osym-red-light: #FF7B6E;
+    --stamp-green: #4CC38A;
+    --stamp-green-light: #5DD89B;
+    --line: #3A3936;
+    --line-light: #2E2D2A;
+    --muted: #9C9890;
+    --muted-light: #7A7670;
+    --gold: #F4C430;
+    --gold-light: #FFD740;
+    --blue-accent: #5DADE2;
+    --purple-accent: #BB8FCE;
+    --shadow: 0 2px 8px rgba(0,0,0,0.3);
+    --shadow-lg: 0 4px 20px rgba(0,0,0,0.4);
   }
 
-  /* ---------- summary: corrected sheet ---------- */
-  .score{font-family:'IBM Plex Mono',monospace; font-size:2.4rem; font-weight:600; margin:4px 0 2px}
-  .score small{font-size:1rem; color:var(--muted)}
-  .sheet{margin-top:20px; border-top:1px solid var(--line)}
-  .row{display:flex; gap:12px; padding:12px 2px; border-bottom:1px solid var(--line); font-size:.9rem; align-items:baseline}
-  .row .n{font-family:'IBM Plex Mono',monospace; font-weight:600; color:var(--muted); flex:none; width:2.2em}
-  .row .mark{font-family:'IBM Plex Mono',monospace; font-weight:600; flex:none}
-  .row.wrongrow .mark{color:var(--osym-red)}
-  .row.okrow .mark{color:var(--stamp-green)}
-  .row p{flex:1; color:var(--ink); opacity:.85; line-height:1.4}
-  .again{margin-top:22px}
+  :root[data-motion="reduced"] * {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  body {
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    font-size: calc(1rem * var(--scale));
+    overflow-x: hidden;
+  }
+
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+
+  /* ---- Scrollbar ---- */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+  /* ---- Top Bar ---- */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 14px 18px 10px;
+    border-bottom: 2px solid var(--ink);
+    position: sticky;
+    top: 0;
+    background: var(--paper);
+    z-index: 100;
+  }
+
+  body:has(.gear-btn.show) header {
+    padding-left: 54px;
+  }
+
+  header .code {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+  }
+
+  header .cat {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  /* ---- Gear / Settings Button ---- */
+  .gear-btn {
+    position: fixed;
+    top: 12px;
+    left: 14px;
+    z-index: 150;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1.5px solid var(--ink);
+    background: var(--paper);
+    color: var(--ink);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.05rem;
+  }
+
+  .gear-btn.show { display: flex; }
+
+  /* ---- Overlays / Modals ---- */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 100;
+    display: none;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .overlay.active { display: flex; }
+
+  .sheet-panel {
+    background: var(--paper);
+    color: var(--ink);
+    width: 100%;
+    max-width: 560px;
+    border-radius: 18px 18px 0 0;
+    padding: 22px 18px 28px;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .sheet-panel h2 { font-size: 1.2rem; margin-bottom: 16px; }
+
+  /* ---- Timer Bar ---- */
+  .timer {
+    height: 4px;
+    background: var(--line);
+    position: relative;
+  }
+
+  .timer i {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 100%;
+    background: var(--ink);
+    transition: width 0.25s linear;
+  }
+
+  .timer.low i { background: var(--osym-red); }
+
+  /* ---- Screens ---- */
+  .screen {
+    flex: 1;
+    display: none;
+    flex-direction: column;
+    padding: 22px 18px;
+    max-width: 560px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .screen.active { display: flex; }
+
+  /* ---- Generic Components ---- */
+  .brand {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 26px;
+  }
+
+  .fieldlabel {
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    margin: 18px 0 8px;
+  }
+
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  .chip {
+    padding: 10px 16px;
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    font-family: 'IBM Plex Sans', sans-serif;
+    transition: all 0.15s;
+  }
+
+  .chip:hover { background: var(--paper-alt); }
+  .chip.sel { background: var(--ink); color: var(--paper); }
+
+  .btn {
+    padding: 16px;
+    width: 100%;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.15s;
+    text-align: center;
+  }
+
+  .btn:hover { opacity: 0.9; }
+  .btn:disabled { opacity: 0.4; cursor: default; }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+  }
+
+  .btn-danger { background: var(--osym-red); }
+  .btn-success { background: var(--stamp-green); }
+  .btn-sm { padding: 8px 14px; font-size: 0.85rem; width: auto; }
+
+  .linkbtn {
+    background: none;
+    border: none;
+    color: var(--muted);
+    text-decoration: underline;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 10px 0;
+    text-align: left;
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+
+  .opt-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .opt-row input[type=checkbox] { width: 20px; height: 20px; }
+
+  /* ---- Login Screen ---- */
+  .userlist { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+
+  .userbtn {
+    padding: 14px 16px;
+    border: 1.5px solid var(--ink);
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--ink);
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'IBM Plex Sans', sans-serif;
+    transition: background 0.15s;
+  }
+
+  .userbtn:hover { background: var(--paper-alt); }
+
+  .pwform { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+
+  input[type="password"],
+  input[type="text"],
+  input[type="file"],
+  textarea {
+    padding: 13px 14px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  textarea { min-height: 120px; resize: vertical; font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; }
+
+  .formerr { color: var(--osym-red); font-size: 0.85rem; font-weight: 600; min-height: 1.2em; }
+
+  /* ---- Menu ---- */
+  .menubtn {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 20px;
+    margin-bottom: 12px;
+    border: 1.5px solid var(--ink);
+    border-radius: 14px;
+    background: transparent;
+    color: var(--ink);
+    text-align: left;
+    cursor: pointer;
+    font-family: 'IBM Plex Sans', sans-serif;
+    transition: background 0.15s;
+  }
+
+  .menubtn:hover { background: var(--paper-alt); }
+  .menubtn strong { font-size: 1.1rem; }
+  .menubtn span { font-size: 0.8rem; color: var(--muted); }
+  .menubtn:disabled { opacity: 0.4; cursor: default; }
+
+  /* ---- Multiplayer ---- */
+  .codebox { font-family: 'IBM Plex Mono', monospace; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.14em; }
+  .mp-actionbtn { border: 1.5px solid var(--ink); border-radius: 8px; padding: 10px 14px; background: transparent; color: var(--ink); font-weight: 600; cursor: pointer; font-family: 'IBM Plex Sans', sans-serif; }
+  .joinrow { display: flex; gap: 8px; }
+  .joinrow input { flex: 1; text-transform: uppercase; }
+  .joinrow .btn { width: auto; margin: 0; padding: 12px 18px; }
+  .mp-player { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .mp-player .rdy { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; }
+  .mp-player .rdy.on { color: var(--stamp-green); }
+  
+  /* ---- Stats Cards ---- */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .stat-card {
+    background: var(--paper-alt);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 16px;
+    text-align: center;
+  }
+
+  .stat-card .value {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .stat-card .label {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  .stat-card.gold .value { color: var(--gold); }
+  .stat-card.green .value { color: var(--stamp-green); }
+  .stat-card.red .value { color: var(--osym-red); }
+  .stat-card.blue .value { color: var(--blue-accent); }
+
+  .pvp-summary { display: flex; gap: 18px; margin-bottom: 16px; }
+  .pvp-stat { text-align: center; }
+  .pvp-stat b { display: block; font-family: 'IBM Plex Mono', monospace; font-size: 1.5rem; }
+  .pvp-stat span { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+  .pvp-row { display: flex; justify-content: space-between; padding: 12px 2px; border-bottom: 1px solid var(--line); font-size: 0.9rem; }
+  .pvp-row .res { font-weight: 700; }
+  .pvp-row .res.win { color: var(--stamp-green); }
+  .pvp-row .res.loss { color: var(--osym-red); }
+
+  /* ---- Quiz ---- */
+  .qtext {
+    font-size: 1.12rem;
+    line-height: 1.55;
+    font-weight: 400;
+    margin: 6px 0 26px;
+    white-space: pre-line;
+  }
+
+  .opts { display: flex; flex-direction: column; gap: 10px; }
+
+  .opt {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+    padding: 13px 14px;
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.98rem;
+    color: var(--ink);
+    cursor: pointer;
+    transition: border-color 0.12s;
+  }
+
+  .opt:hover { border-color: var(--ink); }
+  .opt:active { border-color: var(--ink); }
+
+  .bubble {
+    flex: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1.8px solid var(--ink);
+    display: grid;
+    place-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.15s;
+  }
+
+  .opt.picked .bubble {
+    background: var(--graphite);
+    border-color: var(--graphite);
+    color: var(--paper);
+  }
+
+  .opt.correct { border-color: var(--stamp-green); }
+  .opt.correct .bubble { background: var(--stamp-green); border-color: var(--stamp-green); color: #fff; }
+
+  .opt.wrong { border-color: var(--osym-red); position: relative; }
+  .opt.wrong .bubble { background: var(--osym-red); border-color: var(--osym-red); color: #fff; }
+  .opt.wrong::after {
+    content: '';
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    top: 50%;
+    border-top: 2px solid var(--osym-red);
+    transform: rotate(-1.2deg);
+    opacity: 0.55;
+  }
+
+  .opt:disabled { cursor: default; }
+
+  .verdict {
+    margin-top: 22px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    min-height: 1.4em;
+  }
+
+  .verdict.ok { color: var(--stamp-green); }
+  .verdict.no { color: var(--osym-red); }
+
+  .opp-thinking {
+    animation: oppPulse 1s infinite alternate;
+    color: var(--gold) !important;
+  }
+  @keyframes oppPulse {
+    from { opacity: 0.65; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .floating-emoji {
+    position: absolute;
+    font-size: 2rem;
+    animation: floatUp 1.2s forwards ease-out;
+    z-index: 250;
+    pointer-events: none;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(0) scale(0.5); opacity: 0; }
+    20% { transform: translateY(-10px) scale(1.2); opacity: 1; }
+    100% { transform: translateY(-50px) scale(1); opacity: 0; }
+  }
+
+  .next {
+    margin-top: 14px;
+    padding: 14px;
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'IBM Plex Sans', sans-serif;
+    display: none;
+    width: 100%;
+  }
+
+  /* ---- Summary Sheet ---- */
+  .score {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin: 4px 0 2px;
+  }
+
+  .score small { font-size: 1rem; color: var(--muted); }
+
+  .sheet { margin-top: 20px; border-top: 1px solid var(--line); }
+
+  .row {
+    display: flex;
+    gap: 12px;
+    padding: 12px 2px;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.9rem;
+    align-items: baseline;
+  }
+
+  .row .n {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    color: var(--muted);
+    flex: none;
+    width: 2.2em;
+  }
+
+  .row .mark { font-family: 'IBM Plex Mono', monospace; font-weight: 600; flex: none; }
+  .row.wrongrow .mark { color: var(--osym-red); }
+  .row.okrow .mark { color: var(--stamp-green); }
+  .row p { flex: 1; color: var(--ink); opacity: 0.85; line-height: 1.4; }
+
+  /* ---- Tabs ---- */
+  .tabs { display: flex; gap: 6px; margin-bottom: 16px; }
+
+  .tab {
+    flex: 1;
+    padding: 10px;
+    border: 1.5px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.85rem;
+    transition: all 0.15s;
+    text-align: center;
+  }
+
+  .tab:hover { background: var(--paper-alt); }
+  .tab.sel { background: var(--ink); color: var(--paper); }
+
+  /* ---- Wrong Answer List ---- */
+  .wronglist { display: flex; flex-direction: column; gap: 8px; }
+
+  .wrow { position: relative; overflow: hidden; border-radius: var(--radius); }
+  .wrow-del { position: absolute; inset: 0; background: var(--osym-red); color: #fff; display: flex; align-items: center; justify-content: flex-end; padding-right: 20px; font-weight: 700; border-radius: var(--radius); }
+
+  .wrow-inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    padding: 14px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    cursor: pointer;
+  }
+
+  .wrow-inner p { flex: 1; font-size: 0.92rem; line-height: 1.35; }
+  .wdetail .qtext { font-size: 1.05rem; margin-bottom: 18px; }
+
+  /* ---- Streak Calendar ---- */
+  .calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-top: 12px;
+  }
+
+  .cal-day {
+    border-radius: 4px;
+    background: var(--line-light);
+    display: grid;
+    place-items: center;
+    font-size: 0.7rem;
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--muted);
+    aspect-ratio: 1;
+  }
+
+  .cal-day.active { background: var(--stamp-green); color: #fff; }
+  .cal-day.today { border: 1.5px solid var(--ink); }
+
+  /* ---- Achievements ---- */
+  .achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+  }
+
+  .achievement {
+    background: var(--paper-alt);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 14px;
+    text-align: center;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+  }
+
+  .achievement.unlocked { opacity: 1; border-color: var(--gold); }
+  .achievement .icon { font-size: 2rem; margin-bottom: 6px; }
+  .achievement .name { font-size: 0.8rem; font-weight: 600; }
+  .achievement .desc { font-size: 0.7rem; color: var(--muted); margin-top: 2px; }
+
+  /* ---- Question Bank ---- */
+  .qbank-item {
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .qbank-item:hover { background: var(--paper-alt); }
+  .qbank-item .qcat {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  .qbank-item .qtext-preview {
+    font-size: 0.9rem;
+    margin-top: 4px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .qbank-item .qmeta {
+    display: flex;
+    gap: 12px;
+    margin-top: 6px;
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* ---- Import Area ---- */
+  .import-area {
+    border: 2px dashed var(--line);
+    border-radius: var(--radius);
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    margin: 16px 0;
+  }
+
+  .import-area:hover, .import-area.dragover {
+    border-color: var(--ink);
+    background: var(--paper-alt);
+  }
+
+  .import-area .icon { font-size: 2.5rem; margin-bottom: 12px; }
+  .import-area .label { font-size: 0.9rem; color: var(--muted); }
+
+  /* ---- Loading ---- */
+  .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 20px 0;
+    gap: 16px;
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--line);
+    border-top-color: var(--ink);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ---- Progress Bar ---- */
+  .progress-bar {
+    height: 6px;
+    background: var(--line);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 8px 0;
+  }
+
+  .progress-bar .fill {
+    height: 100%;
+    background: var(--stamp-green);
+    transition: width 0.3s;
+    border-radius: 3px;
+  }
+
+  /* ---- Category Breakdown ---- */
+  .cat-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .cat-bar .cat-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    width: 100px;
+    flex: none;
+  }
+
+  .cat-bar .bar {
+    flex: 1;
+    height: 10px;
+    background: var(--line);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .cat-bar .bar .fill {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.4s;
+  }
+
+  .cat-bar .cat-pct {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    width: 40px;
+    text-align: right;
+    flex: none;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 400px) {
+    h1 { font-size: 1.4rem; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .achievement-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ---- Animations ---- */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .screen.active { animation: fadeIn 0.2s ease; }
+
+  /* ---- Empty State ---- */
+  .empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--muted);
+  }
+
+  .empty-state .icon { font-size: 3rem; margin-bottom: 12px; }
+  .empty-state .text { font-size: 0.95rem; }
 </style>
 </head>
 <body>
@@ -211,6 +811,7 @@
 </header>
 <button class="gear-btn" id="btn-gear" aria-label="Ayarlar">⚙</button>
 
+<!-- Settings Overlay -->
 <div class="overlay" id="settings-overlay">
   <div class="sheet-panel">
     <h2>Ayarlar</h2>
@@ -218,20 +819,24 @@
     <div class="chips" id="theme-chips">
       <button class="chip" data-theme="light">Aydınlık</button>
       <button class="chip" data-theme="dark">Karanlık</button>
+      <button class="chip" data-theme="auto">Otomatik</button>
     </div>
     <div class="fieldlabel">Yazı Boyutu</div>
     <div class="chips" id="fontsize-chips">
+      <button class="chip" data-size="small">Küçük</button>
       <button class="chip" data-size="normal">Normal</button>
       <button class="chip" data-size="large">Büyük</button>
     </div>
-    <div class="opt-row">
+    <div class="opt-row" style="margin-bottom: 20px;">
       <span>Azaltılmış Hareket</span>
       <input type="checkbox" id="chk-reduced-motion">
     </div>
-    <button class="go" id="btn-close-settings" style="margin-top:18px">Kapat</button>
+    <button class="btn btn-outline" id="btn-exit-to-menu" style="margin-bottom:12px; display:none">Ana Menüye Dön</button>
+    <button class="btn" id="btn-close-settings">Kapat</button>
   </div>
 </div>
 
+<!-- Multiplayer Overlay -->
 <div class="overlay" id="mp-overlay">
   <div class="sheet-panel">
     <h2>Çok Oyunculu</h2>
@@ -249,26 +854,27 @@
     <div class="fieldlabel">Kod ile Katıl</div>
     <div class="joinrow">
       <input type="text" id="mp-join-code" placeholder="KOD">
-      <button class="go" id="btn-join-code">Katıl</button>
+      <button class="btn" id="btn-join-code">Katıl</button>
     </div>
     <div class="formerr" id="mp-join-err"></div>
 
-    <button class="go" id="btn-close-mp" style="margin-top:18px">Kapat</button>
+    <button class="btn btn-outline" id="btn-close-mp" style="margin-top:18px">Kapat</button>
   </div>
 </div>
 
+<!-- Invite Overlay -->
 <div class="overlay" id="invite-overlay">
   <div class="sheet-panel">
     <h2 id="invite-title">.</h2>
     <p style="color:var(--muted); margin-bottom:18px">Seni bir maça davet etti.</p>
-    <button class="go" id="btn-invite-accept">Kabul Et</button>
-    <button class="linkbtn" id="btn-invite-decline">Reddet</button>
+    <button class="btn" id="btn-invite-accept">Kabul Et</button>
+    <button class="linkbtn" id="btn-invite-decline" style="width:100%; text-align:center; margin-top:10px">Reddet</button>
   </div>
 </div>
 
-<!-- LOGIN -->
+<!-- ============ LOGIN SCREEN ============ -->
 <section class="screen active" id="s-login">
-  <div class="brand">OPTİK · v0.1</div>
+  <div class="brand">OPTİK · v2.0</div>
   <h1>Kimsin?</h1>
 
   <div class="userlist" id="userlist"></div>
@@ -279,7 +885,7 @@
     <input type="password" id="pw-input" placeholder="Şifre">
     <input type="password" id="pw-confirm" placeholder="Şifre (tekrar)" style="display:none">
     <div class="formerr" id="pw-err"></div>
-    <button class="go" id="btn-pw-submit">Devam Et</button>
+    <button class="btn" id="btn-pw-submit">Devam Et</button>
     <button class="linkbtn" id="btn-pw-cancel">← Geri</button>
   </div>
 
@@ -290,36 +896,66 @@
     <input type="password" id="nu-pw" placeholder="Şifre">
     <input type="password" id="nu-pw2" placeholder="Şifre (tekrar)">
     <div class="formerr" id="nu-err"></div>
-    <button class="go" id="btn-nu-submit">Hesap Oluştur</button>
+    <button class="btn" id="btn-nu-submit">Hesap Oluştur</button>
     <button class="linkbtn" id="btn-nu-cancel">← Geri</button>
   </div>
 </section>
 
-<!-- MENU -->
+<!-- ============ MAIN MENU ============ -->
 <section class="screen" id="s-menu">
   <div class="brand">HOŞ GELDİN</div>
   <h1 id="menu-name">.</h1>
 
-  <button class="menubtn" id="btn-goto-solo">
-    <strong>Kendi Başına Oyna</strong>
-    <span>Tek kişilik antrenman</span>
+  <!-- Streak Display -->
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;padding:14px;background:var(--paper-alt);border:1px solid var(--line);border-radius:var(--radius)">
+    <span style="font-size:2rem">🔥</span>
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:1.3rem;font-weight:700" id="streak-count">...</div>
+      <div style="font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em">Günlük Seri</div>
+    </div>
+    <div style="margin-left:auto;text-align:right">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:1.3rem;font-weight:700" id="total-attempts">...</div>
+      <div style="font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em">Toplam Çözüm</div>
+    </div>
+  </div>
+
+  <button class="menubtn" id="btn-goto-quiz-setup">
+    <strong>📝 Sınav Başlat</strong>
+    <span>Standard, Çalışma, Sınav veya SRS modu</span>
   </button>
   <button class="menubtn" id="btn-goto-mp">
-    <strong>Çok Oyunculu</strong>
+    <strong>⚔️ Çok Oyunculu</strong>
     <span>Bir rakip seç veya davet kodu paylaş</span>
   </button>
   <button class="menubtn" id="btn-goto-stats">
-    <strong>İstatistikler</strong>
-    <span>Performans ve yanlış cevap bankası</span>
+    <strong>📊 İstatistikler</strong>
+    <span>Yanlış cevaplar, PvP ve genel performans</span>
+  </button>
+  <button class="menubtn" id="btn-goto-qbank">
+    <strong>📚 Soru Bankası</strong>
+    <span>Supabase sorularını listele ve incele</span>
+  </button>
+  <button class="menubtn" id="btn-goto-achievements">
+    <strong>🏆 Başarımlar</strong>
+    <span id="achievement-count">...</span>
   </button>
 
-  <button class="linkbtn menu-logout" id="btn-logout">Çıkış yap</button>
+  <button class="linkbtn" id="btn-logout" style="margin-top:auto">Çıkış yap</button>
 </section>
 
-<!-- SOLO LOBBY -->
-<section class="screen" id="s-lobby">
-  <div class="brand">KENDİ BAŞINA</div>
+<!-- ============ QUIZ SETUP (SOLO LOBBY) ============ -->
+<section class="screen" id="s-quiz-setup">
+  <div class="brand">SINAV KURULUMU</div>
   <h1>Kuralları ayarla.</h1>
+
+  <div class="fieldlabel">Mod</div>
+  <div class="chips" id="quiz-modes">
+    <button class="chip sel" data-mode="standard">📝 Standart</button>
+    <button class="chip" data-mode="study">📖 Çalışma</button>
+    <button class="chip" data-mode="exam">🏅 Sınav</button>
+    <button class="chip" data-mode="srs">🧠 SRS (Aralıklı Tekrar)</button>
+    <button class="chip" data-mode="indexed">🔢 İndeksli Testler</button>
+  </div>
 
   <div class="fieldlabel">Ders</div>
   <div class="chips" id="cats">
@@ -330,27 +966,38 @@
     <button class="chip" data-c="guncel">Güncel</button>
   </div>
 
-  <div class="fieldlabel">Soru Sayısı</div>
-  <div class="chips" id="qcounts">
-    <button class="chip" data-n="10">10</button>
-    <button class="chip sel" data-n="20">20</button>
-    <button class="chip" data-n="30">30</button>
-    <button class="chip" data-n="60">60</button>
+  <div id="qcounts-wrapper">
+    <div class="fieldlabel">Soru Sayısı</div>
+    <div class="chips" id="qcounts">
+      <button class="chip" data-n="10">10</button>
+      <button class="chip sel" data-n="20">20</button>
+      <button class="chip" data-n="30">30</button>
+      <button class="chip" data-n="60">60</button>
+      <button class="chip" data-n="0">Tümü</button>
+    </div>
+  </div>
+
+  <div id="indexed-test-section" style="display:none;">
+    <div class="fieldlabel">Test Seçin</div>
+    <select id="indexed-test-select" class="btn btn-outline" style="width:100%; padding:10px; border-radius:var(--radius); background:var(--paper); border:1px solid var(--line); font-family:inherit; font-size:0.9rem; margin-bottom:12px; color:var(--ink);">
+      <!-- Options populated dynamically -->
+    </select>
   </div>
 
   <div class="fieldlabel">Soru Başına Süre</div>
   <div class="chips" id="durations">
+    <button class="chip" data-s="15">15sn</button>
     <button class="chip" data-s="30">30sn</button>
     <button class="chip sel" data-s="60">60sn</button>
     <button class="chip" data-s="90">90sn</button>
     <button class="chip" data-s="0">Süresiz</button>
   </div>
 
-  <button class="go" id="btn-start">Sınavı Başlat</button>
-  <button class="linkbtn" id="btn-lobby-back">← Ana menü</button>
+  <button class="btn" id="btn-start" style="margin-top:20px">Sınavı Başlat</button>
+  <button class="linkbtn" id="btn-quiz-setup-back" style="margin-top:8px; width:100%; text-align:center">← Ana menü</button>
 </section>
 
-<!-- MULTIPLAYER MATCH LOBBY -->
+<!-- ============ MULTIPLAYER LOBBY ============ -->
 <section class="screen" id="s-mplobby">
   <div class="brand">ÇOK OYUNCULU</div>
   <h1>Maç Lobisi</h1>
@@ -385,49 +1032,68 @@
     </div>
   </div>
 
-  <button class="go" id="btn-mp-ready">Hazırım</button>
-  <button class="linkbtn" id="btn-mp-leave">← Maçtan çık</button>
+  <button class="btn" id="btn-mp-ready" style="margin-top:20px">Hazırım</button>
+  <button class="linkbtn" id="btn-mp-leave" style="margin-top:8px; width:100%; text-align:center">← Maçtan çık</button>
 </section>
 
-<!-- MULTIPLAYER RESULT -->
+<!-- ============ QUIZ SCREEN ============ -->
+<section class="screen" id="s-quiz">
+  <!-- Scoreboard (Multiplayer) -->
+  <div id="mp-scoreboard" style="display:none; justify-content:space-between; align-items:center; margin-bottom:12px; font-weight:600; font-family:'IBM Plex Mono',monospace; font-size:.9rem; color:var(--muted)">
+    <span id="score-me" style="position:relative;">Sen: 0</span>
+    <button id="btn-emoji-trigger" style="padding: 4px 10px; border-radius: 12px; font-size: 0.95rem; background: var(--paper-alt); border: 1px solid var(--line); color: var(--ink); cursor: pointer;">💬</button>
+    <span id="score-opp" style="position:relative;">Rakip: 0</span>
+  </div>
+
+  <div id="emoji-bar" style="display:none; justify-content:center; gap:16px; margin-bottom:12px; background: var(--paper-alt); border: 1px solid var(--line); border-radius: var(--radius); padding: 8px;">
+    <button class="emoji-btn" style="background:none; border:none; font-size:1.4rem; cursor:pointer;" data-emoji="😎">😎</button>
+    <button class="emoji-btn" style="background:none; border:none; font-size:1.4rem; cursor:pointer;" data-emoji="😮">😮</button>
+    <button class="emoji-btn" style="background:none; border:none; font-size:1.4rem; cursor:pointer;" data-emoji="🔥">🔥</button>
+    <button class="emoji-btn" style="background:none; border:none; font-size:1.4rem; cursor:pointer;" data-emoji="😭">😭</button>
+  </div>
+
+  <div id="mp-risk-container" style="display:none; justify-content:center; margin-bottom:12px;">
+    <button id="btn-mp-risk" class="chip" style="padding: 6px 12px; font-size: 0.8rem; border-color: var(--osym-red); color: var(--osym-red); font-family: inherit; font-weight:600;">🔥 İkili Bahis (Risk)</button>
+  </div>
+
+  <!-- Progress Bar (Solo) -->
+  <div id="solo-progress-info" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--muted)" id="quiz-progress">Soru 1 / 20</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--muted)" id="quiz-score">0 doğru</span>
+  </div>
+  <div class="progress-bar" id="solo-progress-bar-container"><div class="fill" id="quiz-progress-bar" style="width:0%"></div></div>
+  
+  <p class="qtext" id="qtext"></p>
+  <div style="flex: 1; min-height: 12px;"></div>
+  <div class="opts" id="opts"></div>
+  <div class="verdict" id="verdict"></div>
+  <button class="next" id="btn-next">Sonraki Soru →</button>
+</section>
+
+<!-- ============ MULTIPLAYER RESULT ============ -->
 <section class="screen" id="s-mp-result">
   <div class="brand">MAÇ SONUCU</div>
   <h1 id="mp-result-title">.</h1>
   <div class="score" id="mp-result-score"></div>
-  <button class="go" id="btn-mp-rematch">Yeniden Oyna</button>
-  <button class="linkbtn" id="btn-mp-result-leave">Ana menüye dön</button>
+  <button class="btn" id="btn-mp-rematch" style="margin-top:20px">Yeniden Oyna</button>
+  <button class="linkbtn" id="btn-mp-result-leave" style="margin-top:8px; width:100%; text-align:center">Ana menüye dön</button>
 </section>
 
-<section class="screen" id="s-quiz">
-  <div id="mp-scoreboard" style="display:none; justify-content:space-between; margin-bottom:12px; font-weight:600; font-family:'IBM Plex Mono',monospace; font-size:.9rem; color:var(--muted)">
-    <span id="score-me">Sen: 0</span>
-    <span id="score-opp">Rakip: 0</span>
-  </div>
-  
-  <p class="qtext" id="qtext"></p>
-  <div class="opts" id="opts"></div>
-  <div class="verdict" id="verdict"></div>
-  <button class="next" id="btn-next">Sonraki Soru →</button>
-</section>
-
-<!-- QUIZ -->
-<section class="screen" id="s-quiz">
-  <p class="qtext" id="qtext"></p>
-  <div class="opts" id="opts"></div>
-  <div class="verdict" id="verdict"></div>
-  <button class="next" id="btn-next">Sonraki Soru →</button>
-</section>
-
-<!-- SUMMARY -->
+<!-- ============ SOLO QUIZ END (SUMMARY) ============ -->
 <section class="screen" id="s-end">
   <div class="brand">SONUÇ BELGESİ</div>
   <div class="score" id="score"></div>
+  <div class="progress-bar" style="margin:12px 0"><div class="fill" id="score-bar" style="width:0%"></div></div>
   <div class="fieldlabel">Cevap Anahtarı Karşılaştırması</div>
   <div class="sheet" id="sheet"></div>
-  <button class="go again" id="btn-again">Yeni Oturum</button>
+  
+  <div style="display:flex;gap:8px;margin-top:20px">
+    <button class="btn" id="btn-again" style="flex:1">Yeni Oturum</button>
+    <button class="btn btn-outline" id="btn-quiz-end-menu" style="flex:1">Ana Menü</button>
+  </div>
 </section>
 
-<!-- STATS -->
+<!-- ============ STATISTICS SCREEN ============ -->
 <section class="screen" id="s-stats">
   <div class="brand">İSTATİSTİK</div>
   <h1>Performansın.</h1>
@@ -435,6 +1101,7 @@
   <div class="tabs">
     <button class="tab sel" data-tab="pvp">PvP</button>
     <button class="tab" data-tab="wrong">Yanlış Cevaplar</button>
+    <button class="tab" data-tab="perf">Performans</button>
   </div>
 
   <div id="tab-pvp">
@@ -449,22 +1116,76 @@
     <div class="wdetail" id="wrong-detail" style="display:none"></div>
   </div>
 
-  <button class="linkbtn" id="btn-stats-back">← Ana menü</button>
+  <div id="tab-perf" style="display:none">
+    <div class="stat-grid" id="stat-overview">
+      <div class="stat-card green"><div class="value" id="stat-total">...</div><div class="label">Toplam Cevap</div></div>
+      <div class="stat-card blue"><div class="value" id="stat-accuracy">...</div><div class="label">Doğru Oranı</div></div>
+      <div class="stat-card gold"><div class="value" id="stat-streak">...</div><div class="label">Günlük Seri</div></div>
+      <div class="stat-card"><div class="value" id="stat-questions">...</div><div class="label">Toplam Soru</div></div>
+    </div>
+
+    <div class="fieldlabel">Kategori Bazında Performans</div>
+    <div id="cat-breakdown"></div>
+
+    <div class="fieldlabel" style="margin-top:24px">Çalışma Takvimi (Son 30 Gün)</div>
+    <div class="calendar" id="calendar"></div>
+  </div>
+
+  <button class="linkbtn" id="btn-stats-back" style="margin-top:20px; width:100%; text-align:center">← Ana menü</button>
 </section>
+
+<!-- ============ QUESTION BANK ============ -->
+<section class="screen" id="s-qbank">
+  <div class="brand">SORU BANKASI</div>
+  <h1>Sorular.</h1>
+
+  <div class="chips" id="qbank-cats" style="margin-bottom:12px">
+    <button class="chip sel" data-c="all">Hepsi</button>
+    <button class="chip" data-c="tarih">Tarih</button>
+    <button class="chip" data-c="cografya">Coğrafya</button>
+    <button class="chip" data-c="vatandaslik">Vatandaşlık</button>
+    <button class="chip" data-c="guncel">Güncel</button>
+  </div>
+
+  <div style="display:flex;gap:8px;margin-bottom:12px">
+    <input type="text" id="qbank-search" placeholder="Soruda ara...">
+  </div>
+
+  <div id="qbank-list"></div>
+
+  <button class="linkbtn" id="btn-qbank-back" style="margin-top:20px; width:100%; text-align:center">← Ana menü</button>
+</section>
+
+<!-- ============ QUESTION DETAIL OVERLAY ============ -->
+<div class="overlay" id="qdetail-overlay">
+  <div class="sheet-panel" id="qdetail-panel">
+    <h2 id="qdetail-cat"></h2>
+    <p class="qtext" id="qdetail-text"></p>
+    <div id="qdetail-options" class="opts" style="margin-bottom:16px"></div>
+    <div id="qdetail-meta" style="margin-top:16px;font-size:0.8rem;color:var(--muted);font-family:'IBM Plex Mono',monospace"></div>
+    <button class="btn" id="btn-close-qdetail" style="margin-top:16px">Kapat</button>
+  </div>
+</div>
+
+<!-- Import Screen Removed -->
+
+<!-- ============ ACHIEVEMENTS ============ -->
+<section class="screen" id="s-achievements">
+  <div class="brand">BAŞARIMLAR</div>
+  <h1>Rozetin.</h1>
+  <div class="achievement-grid" id="achievement-grid"></div>
+  <button class="linkbtn" id="btn-achievements-back" style="margin-top:20px; width:100%; text-align:center">← Ana menü</button>
+</section>
+
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
 /* =====================================================================
-   SUPABASE SEAM — the coding agent replaces exactly these two functions.
-   Everything below them is pure UI and should not need changes.
+   SUPABASE SEAM — Cloud Connection Client
    ===================================================================== */
-
 const SUPABASE_URL = 'https://rknepvongsjlqodnkbtg.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJrbmVwdm9uZ3NqbHFvZG5rYnRnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMzNTAxNzYsImV4cCI6MjA5ODkyNjE3Nn0.5smHl86AN9x6gZIWW0416UP1xUawEWqjBIRmadRokgE';
-// The CDN's UMD build declares a global `var supabase`, so this variable must
-// NOT be named `supabase` — a top-level redeclaration is a SyntaxError that
-// kills the whole script before any click handler binds. try/catch guards
-// against the CDN script failing to load entirely.
+
 let sb = null;
 try {
   sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -472,6 +1193,93 @@ try {
   console.error('Supabase client init failed', e);
 }
 
+// Constants
+const CATEGORIES = ['tarih', 'cografya', 'vatandaslik', 'guncel'];
+const CAT_LABELS = { tarih: 'TARİH', cografya: 'COĞRAFYA', vatandaslik: 'VATANDAŞLIK', guncel: 'GÜNCEL' };
+const CAT_COLORS = { tarih: '#C0392B', cografya: '#27AE60', vatandaslik: '#2980B9', guncel: '#8E44AD' };
+const OPTION_KEYS = ['A', 'B', 'C', 'D', 'E'];
+
+const ACHIEVEMENT_DEFS = [
+  { id: 'first_login', name: 'İlk Adım', desc: 'İlk girişini yaptın', icon: '👋', check: (s) => s.totalSessions >= 1 },
+  { id: 'first_quiz', name: 'Sınav Başlangıcı', desc: 'İlk sınavını tamamladın', icon: '📝', check: (s) => s.totalQuizzes >= 1 },
+  { id: 'ten_quizzes', name: 'Alışkanlık', desc: '10 sınav tamamladın', icon: '🔥', check: (s) => s.totalQuizzes >= 10 },
+  { id: 'hundred_answers', name: 'Yüz Soru', desc: '100 soru çözdün', icon: '💯', check: (s) => s.totalAnswers >= 100 },
+  { id: 'perfect_quiz', name: 'Mükemmel', desc: 'Tüm soruları doğru cevapla', icon: '⭐', check: (s) => s.perfectQuizzes >= 1 },
+  { id: 'streak_7', name: 'Haftalık Seri', desc: '7 gün üst üste çalıştın', icon: '🗓️', check: (s) => s.maxStreak >= 7 },
+  { id: 'streak_30', name: 'Aylık Seri', desc: '30 gün üst üste çalıştın', icon: '🏅', check: (s) => s.maxStreak >= 30 },
+  { id: 'all_categories', name: 'Çok Yönlü', desc: 'Tüm kategorilerde soru çözdün', icon: '🌈', check: (s) => s.categoriesAttempted >= 4 },
+  { id: 'import_50', name: 'Kütüphaneci', desc: '50+ soru ekledin', icon: '📚', check: (s) => s.importedQuestions >= 50 },
+  { id: 'import_200', name: 'Ansiklopedi', desc: '200+ soru ekledin', icon: '🏛️', check: (s) => s.importedQuestions >= 200 },
+  { id: 'speed_demon', name: 'Hız Kanunu', desc: 'Bir soruyu 5 saniyede çöz', icon: '⚡', check: (s) => s.fastestAnswer > 0 && s.fastestAnswer <= 5000 },
+  { id: 'scholar', name: 'Alim', desc: '500 soru çözdün', icon: '🎓', check: (s) => s.totalAnswers >= 500 },
+];
+
+/* ---------------- state ---------------- */
+let currentUser = null;      // {user_id, display_name, settings}
+let pendingUser = null;      // user row mid password check/creation on login screen
+let allUsers = [];
+let lobbyMode = 'standard';
+let lobbyCat = 'all';
+let lobbyQCount = 20;
+let lobbyPerQ = 60;
+
+// Quiz loop state
+let queue = [];
+let idx = 0;
+let correct = 0;
+let wrongs = [];
+let answered = false;
+let tLeft = 0;
+let tHandle = null;
+let tStart = 0;
+let sessionId = null;
+
+// QuizState object containing current session parameters
+let quizState = {
+  mode: 'standard',
+  queue: [],
+  idx: 0,
+  correct: 0,
+  wrongs: [],
+  answered: false,
+  perQuestionS: 60,
+  tLeft: 0,
+  tHandle: null,
+  tStart: 0,
+  sessionId: null
+};
+
+/* multiplayer state */
+let mpMatch = null;              // current matches row
+let lobbyPresenceChannel = null; // who's online
+let inviteChannel = null;        // personal channel
+let matchChannel = null;         // postgres_changes subscription
+let mpPresenceChannel = null;    // per-match presence
+let quizStartedForMatch = null;  // guards duplicate starts
+let myMpFinished = false;        // finished waiting on opponent
+let incomingInvite = null;
+let myLockedAnswer = undefined;
+let oppLockedAnswer = undefined;
+let myNextReady = false;
+let oppNextReady = false;
+let myMpScore = 0;
+let oppMpScore = 0;
+let myTimeTaken = undefined;
+let oppTimeTaken = undefined;
+let myRisk = false;
+let oppRisk = false;
+let hasUsedRisk = false;
+let riskActive = false;
+let myStreak = 0;
+let oppStreak = 0;
+let hasUsedSabotage = false;
+let myStats = [];
+let oppStats = [];
+
+/* settings */
+let currentSettings = { theme: 'auto', fontSize: 'normal', reducedMotion: false };
+
+/* ---------------- DB & Priority Helper ---------------- */
 function shuffleEqualWeights(rows){
   const groups = new Map();
   for(const r of rows){
@@ -485,21 +1293,16 @@ function shuffleEqualWeights(rows){
 }
 
 async function fetchQuestions(player, cat, limit){
-  limit = limit || 20;
+  const maxLimit = (limit === 0) ? 100000 : (limit || 20);
   if(!sb){ console.error('fetchQuestions: supabase client unavailable'); return []; }
   let priQuery = sb.from('v_question_priority').select('q_id, weight').eq('user_id', player);
   if(cat !== 'all') priQuery = priQuery.eq('category', cat);
-  // No .limit() here: with far more questions than fit in one session, most
-  // rows tie on weight (e.g. every unseen question scores a flat 3.0), and
-  // Postgres has no reason to break ties randomly. Truncating server-side
-  // would let the same fixed subset win the tie every time, effectively
-  // hiding the rest. Fetch every candidate (cheap at this scale), shuffle
-  // within each weight tier, THEN slice to the requested count.
+  
   const { data: priRows, error: priErr } = await priQuery.order('weight', { ascending: false });
   if(priErr){ console.error('fetchQuestions priority error', priErr); return []; }
   if(!priRows || priRows.length === 0) return [];
 
-  const ordered = shuffleEqualWeights(priRows).slice(0, limit);
+  const ordered = shuffleEqualWeights(priRows).slice(0, maxLimit);
   const ids = ordered.map(r => r.q_id);
   const { data: qRows, error: qErr } = await sb.from('questions').select('*').in('q_id', ids);
   if(qErr){ console.error('fetchQuestions questions error', qErr); return []; }
@@ -508,7 +1311,38 @@ async function fetchQuestions(player, cat, limit){
   return ordered.map(r => qMap.get(r.q_id)).filter(Boolean);
 }
 
-async function logAttempt(player, qid, chosen, isCorrect, ms, sessionId){
+async function getCategoryQuestionCount(category) {
+  if (!sb) return 0;
+  let query = sb.from('questions').select('q_id', { count: 'exact', head: true }).eq('has_image', false);
+  if (category !== 'all') {
+    query = query.eq('category', category);
+  }
+  const { count, error } = await query;
+  if (error) { console.error('getCategoryQuestionCount error', error); return 0; }
+  return count || 0;
+}
+
+async function updateIndexedTestsList() {
+  const select = $('indexed-test-select');
+  select.innerHTML = '<option value="">Yükleniyor...</option>';
+  
+  const count = await getCategoryQuestionCount(lobbyCat);
+  if (count === 0) {
+    select.innerHTML = '<option value="">Bu kategoride soru bulunamadı.</option>';
+    return;
+  }
+  
+  const numTests = Math.ceil(count / 10);
+  let html = '';
+  for (let i = 1; i <= numTests; i++) {
+    const start = (i - 1) * 10 + 1;
+    const end = Math.min(i * 10, count);
+    html += `<option value="${i}">Test ${i} (Sorular ${start}-${end})</option>`;
+  }
+  select.innerHTML = html;
+}
+
+async function logAttempt(player, qid, chosen, isCorrect, ms, sessId){
   if(!sb){ console.error('logAttempt: supabase client unavailable'); return; }
   const { error } = await sb.from('attempts').insert({
     user_id: player,
@@ -516,342 +1350,546 @@ async function logAttempt(player, qid, chosen, isCorrect, ms, sessionId){
     chosen_answer: chosen,
     is_correct: isCorrect,
     time_taken_ms: ms,
-    session_id: sessionId
+    session_id: sessId
   });
   if(error) console.error('logAttempt error', error);
 }
 
-/* ---------------- utilities ---------------- */
-const $=id=>document.getElementById(id);
-const show=id=>{document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');}
-const shuffle=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(v=>v[1]);
-const catLabel={tarih:'TARİH',cografya:'COĞRAFYA',vatandaslik:'VATANDAŞLIK',guncel:'GÜNCEL'};
-const uuid=()=>(typeof crypto!=='undefined'&&crypto.randomUUID) ? crypto.randomUUID() : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return (c==='x'?r:(r&0x3|0x8)).toString(16);});
-
-async function sha256Hex(text){
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
-  return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');
+/* ---------------- SRS local engine ---------------- */
+function handleSRSReview(qId, ok) {
+  const userId = currentUser.user_id;
+  const srsCards = JSON.parse(localStorage.getItem(`srs_cards_${userId}`) || '{}');
+  
+  let card = srsCards[qId] || { ease_factor: 2.5, interval: 0, repetitions: 0, status: 'new' };
+  let ease = card.ease_factor;
+  let interval = card.interval;
+  let reps = card.repetitions;
+  
+  if (ok) {
+    reps++;
+    if (reps === 1) interval = 1;
+    else if (reps === 2) interval = 6;
+    else interval = Math.round(interval * ease);
+    ease = Math.max(1.3, ease + 0.1);
+  } else {
+    reps = 0;
+    interval = 1;
+    ease = Math.max(1.3, ease - 0.2);
+  }
+  
+  const nextReview = new Date();
+  nextReview.setDate(nextReview.getDate() + interval);
+  
+  srsCards[qId] = {
+    ease_factor: ease,
+    interval: interval,
+    repetitions: reps,
+    next_review: nextReview.toISOString(),
+    status: reps >= 2 ? 'graduated' : 'review'
+  };
+  
+  localStorage.setItem(`srs_cards_${userId}`, JSON.stringify(srsCards));
 }
 
-function slugify(name){
-  const map={'ç':'c','ğ':'g','ı':'i','ö':'o','ş':'s','ü':'u'};
-  const base=name.trim().toLowerCase().replace(/[çğıöşü]/g,c=>map[c]||c).replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,'');
+/* ---------------- Statistics aggregation ---------------- */
+async function getUserStats() {
+  if (!sb || !currentUser) return null;
+  
+  const { data: attempts, error } = await sb.from('attempts')
+    .select('is_correct, time_taken_ms, session_id, created_at, questions(category)')
+    .eq('user_id', currentUser.user_id);
+    
+  if (error) {
+    console.error('getUserStats error', error);
+    return null;
+  }
+  
+  const { count: totalQuestions } = await sb.from('questions')
+    .select('*', { count: 'exact', head: true })
+    .eq('has_image', false);
+    
+  const totalAnswers = attempts.length;
+  const totalCorrect = attempts.filter(a => a.is_correct).length;
+  
+  const times = attempts.map(a => a.time_taken_ms).filter(t => t > 0);
+  const fastestAnswer = times.length > 0 ? Math.min(...times) : 0;
+  
+  const categories = new Set(attempts.map(a => a.questions?.category).filter(Boolean));
+  const categoriesAttempted = categories.size;
+  
+  const sessionsMap = new Map();
+  attempts.forEach(a => {
+    if (!a.session_id) return;
+    if (!sessionsMap.has(a.session_id)) sessionsMap.set(a.session_id, { total: 0, correct: 0 });
+    const s = sessionsMap.get(a.session_id);
+    s.total++;
+    if (a.is_correct) s.correct++;
+  });
+  
+  let perfectQuizzes = 0;
+  for (const s of sessionsMap.values()) {
+    if (s.total > 0 && s.correct === s.total) perfectQuizzes++;
+  }
+  const totalQuizzes = sessionsMap.size;
+  
+  const days = [...new Set(attempts.map(a => a.created_at.split('T')[0]))].sort().reverse();
+  let streak = 0;
+  if (days.length > 0) {
+    let d = new Date();
+    while (true) {
+      const key = d.toISOString().split('T')[0];
+      if (days.includes(key)) {
+        streak++;
+        d.setDate(d.getDate() - 1);
+      } else {
+        break;
+      }
+    }
+  }
+  
+  let maxStreak = parseInt(localStorage.getItem(`max_streak_${currentUser.user_id}`) || '0');
+  if (streak > maxStreak) {
+    maxStreak = streak;
+    localStorage.setItem(`max_streak_${currentUser.user_id}`, streak);
+  }
+  
+  const { count: importedQuestions } = await sb.from('questions')
+    .select('*', { count: 'exact', head: true })
+    .neq('source', 'demo');
+    
+  return {
+    totalAnswers,
+    totalCorrect,
+    totalSessions: totalQuizzes,
+    todayAnswers: attempts.filter(a => a.created_at.startsWith(new Date().toISOString().split('T')[0])).length,
+    streak,
+    maxStreak,
+    totalQuizzes,
+    perfectQuizzes,
+    categoriesAttempted,
+    importedQuestions: importedQuestions || 0,
+    fastestAnswer,
+    totalQuestions: totalQuestions || 0,
+    attempts
+  };
+}
+
+async function checkAndTriggerAchievements() {
+  const stats = await getUserStats();
+  if (!stats) return;
+  
+  const userId = currentUser.user_id;
+  const raw = localStorage.getItem(`achievements_${userId}`);
+  const unlocked = raw ? new Set(JSON.parse(raw)) : new Set();
+  
+  const newUnlocks = [];
+  ACHIEVEMENT_DEFS.forEach(def => {
+    if (!unlocked.has(def.id) && def.check(stats)) {
+      unlocked.add(def.id);
+      newUnlocks.push(def);
+    }
+  });
+  
+  if (newUnlocks.length > 0) {
+    localStorage.setItem(`achievements_${userId}`, JSON.stringify([...unlocked]));
+    newUnlocks.forEach(def => {
+      setTimeout(() => alert(`🏆 Başarım Kilitlendi: ${def.name}\n${def.desc}`), 500);
+    });
+  }
+}
+
+/* ---------------- utilities ---------------- */
+const $ = id => document.getElementById(id);
+const show = id => { document.querySelectorAll('.screen').forEach(s => s.classList.remove('active')); $(id).classList.add('active'); }
+const shuffle = a => a.map(v => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map(v => v[1]);
+const catLabel = { tarih: 'TARİH', cografya: 'COĞRAFYA', vatandaslik: 'VATANDAŞLIK', guncel: 'GÜNCEL' };
+const uuid = () => (typeof crypto !== 'undefined' && crypto.randomUUID) ? crypto.randomUUID() : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => { const r = Math.random() * 16 | 0; return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16); });
+
+async function sha256Hex(text) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function slugify(name) {
+  const map = { 'ç': 'c', 'ğ': 'g', 'ı': 'i', 'ö': 'o', 'ş': 's', 'ü': 'u' };
+  const base = name.trim().toLowerCase().replace(/[çğıöşü]/g, c => map[c] || c).replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
   return base || 'kullanici';
 }
 
-/* ---------------- state ---------------- */
-let currentUser=null;      // {user_id, display_name, settings}
-let pendingUser=null;      // user row mid password check/creation on login screen
-let allUsers=[];
-let lobbyCat='all', lobbyQCount=20, lobbyPerQ=60;
-let perQuestionS=60;
-let queue=[], idx=0, correct=0, wrongs=[], answered=false;
-let tLeft=0, tHandle=null, tStart=0, sessionId=uuid();
-
-/* multiplayer state */
-let mpMatch=null;              // current matches row, kept fresh by the realtime subscription
-let lobbyPresenceChannel=null; // who's online, for the multiplayer popup
-let inviteChannel=null;        // personal channel this user listens on for incoming invites
-let matchChannel=null;         // postgres_changes subscription on the active match row
-let mpPresenceChannel=null;    // per-match presence, used to detect the opponent disconnecting
-let quizStartedForMatch=null;  // match_id already transitioned into s-quiz, guards duplicate starts
-let myMpFinished=false;        // I've submitted my score for the current match, just waiting on the opponent
-let incomingInvite=null;
-let myLockedAnswer = undefined;
-let oppLockedAnswer = undefined;
-let myNextReady = false;
-let oppNextReady = false;
-let myMpScore = 0;
-let oppMpScore = 0;
-
-function applyTheme(settings){
-  document.documentElement.setAttribute('data-theme', settings.theme==='dark' ? 'dark' : 'light');
-  document.documentElement.setAttribute('data-motion', settings.reducedMotion ? 'reduced' : 'normal');
-  document.documentElement.style.setProperty('--scale', settings.fontSize==='large' ? '1.15' : '1');
+function applyTheme(settings) {
+  currentSettings = settings || { theme: 'auto', fontSize: 'normal', reducedMotion: false };
+  let theme = currentSettings.theme || 'auto';
+  if (theme === 'auto') {
+    theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  document.documentElement.setAttribute('data-theme', theme);
+  document.documentElement.setAttribute('data-motion', currentSettings.reducedMotion ? 'reduced' : 'normal');
+  const scales = { small: '0.9', normal: '1', large: '1.15' };
+  document.documentElement.style.setProperty('--scale', scales[currentSettings.fontSize] || '1');
 }
 
 /* ---------------- login ---------------- */
-async function loadUsers(){
-  if(!sb) return [];
+async function loadUsers() {
+  if (!sb) return [];
   const { data, error } = await sb.from('users').select('user_id,display_name,password_hash,settings').order('display_name');
-  if(error){ console.error('loadUsers error', error); return []; }
+  if (error) { console.error('loadUsers error', error); return []; }
   return data || [];
 }
 
-function renderUserList(){
-  const box=$('userlist'); box.innerHTML='';
-  allUsers.forEach(u=>{
-    const b=document.createElement('button');
-    b.className='userbtn'; b.textContent=u.display_name;
-    b.onclick=()=>openPwForm(u);
+function renderUserList() {
+  const box = $('userlist'); box.innerHTML = '';
+  if (allUsers.length === 0) {
+    box.innerHTML = '<div class="empty-state"><div class="icon">👤</div><div class="text">Henüz kullanıcı yok. İlk hesabını oluştur!</div></div>';
+    return;
+  }
+  allUsers.forEach(u => {
+    const b = document.createElement('button');
+    b.className = 'userbtn'; b.textContent = u.display_name;
+    b.onclick = () => openPwForm(u);
     box.appendChild(b);
   });
 }
 
-function openPwForm(u){
-  pendingUser=u;
-  $('newuserform').style.display='none';
-  $('pwform').style.display='flex';
+function openPwForm(u) {
+  pendingUser = u;
+  $('newuserform').style.display = 'none';
+  $('pwform').style.display = 'flex';
   $('pw-confirm').style.display = u.password_hash ? 'none' : 'block';
   $('pwform-label').textContent = u.password_hash ? `${u.display_name} — şifre gir` : `${u.display_name} — ilk giriş, şifre belirle`;
-  $('pw-input').value=''; $('pw-confirm').value=''; $('pw-err').textContent='';
+  $('pw-input').value = ''; $('pw-confirm').value = ''; $('pw-err').textContent = '';
   $('pw-input').focus();
 }
 
-$('btn-pw-cancel').onclick=()=>{ $('pwform').style.display='none'; pendingUser=null; };
+$('btn-pw-cancel').onclick = () => { $('pwform').style.display = 'none'; pendingUser = null; };
 
-$('btn-pw-submit').onclick=async()=>{
-  const pw=$('pw-input').value;
-  if(!pw){ $('pw-err').textContent='Şifre gerekli.'; return; }
-  if(!pendingUser.password_hash){
-    const pw2=$('pw-confirm').value;
-    if(pw!==pw2){ $('pw-err').textContent='Şifreler uyuşmuyor.'; return; }
-    const hash=await sha256Hex(pw);
-    const { error } = await sb.from('users').update({password_hash:hash}).eq('user_id',pendingUser.user_id);
-    if(error){ $('pw-err').textContent='Bir şeyler ters gitti.'; console.error(error); return; }
-    pendingUser.password_hash=hash;
+$('btn-pw-submit').onclick = async () => {
+  const pw = $('pw-input').value;
+  if (!pw) { $('pw-err').textContent = 'Şifre gerekli.'; return; }
+  if (!pendingUser.password_hash) {
+    const pw2 = $('pw-confirm').value;
+    if (pw !== pw2) { $('pw-err').textContent = 'Şifreler uyuşmuyor.'; return; }
+    const hash = await sha256Hex(pw);
+    const { error } = await sb.from('users').update({ password_hash: hash }).eq('user_id', pendingUser.user_id);
+    if (error) { $('pw-err').textContent = 'Bir şeyler ters gitti.'; console.error(error); return; }
+    pendingUser.password_hash = hash;
     loginAs(pendingUser);
   } else {
-    const hash=await sha256Hex(pw);
-    if(hash!==pendingUser.password_hash){ $('pw-err').textContent='Şifre yanlış.'; return; }
+    const hash = await sha256Hex(pw);
+    if (hash !== pendingUser.password_hash) { $('pw-err').textContent = 'Şifre yanlış.'; return; }
     loginAs(pendingUser);
   }
 };
 
-$('btn-show-newuser').onclick=()=>{
-  $('pwform').style.display='none';
-  $('newuserform').style.display='flex';
-  $('nu-name').value=''; $('nu-pw').value=''; $('nu-pw2').value=''; $('nu-err').textContent='';
+$('btn-show-newuser').onclick = () => {
+  $('pwform').style.display = 'none';
+  $('newuserform').style.display = 'flex';
+  $('nu-name').value = ''; $('nu-pw').value = ''; $('nu-pw2').value = ''; $('nu-err').textContent = '';
 };
-$('btn-nu-cancel').onclick=()=>{ $('newuserform').style.display='none'; };
+$('btn-nu-cancel').onclick = () => { $('newuserform').style.display = 'none'; };
 
-$('btn-nu-submit').onclick=async()=>{
-  const name=$('nu-name').value.trim();
-  const pw=$('nu-pw').value, pw2=$('nu-pw2').value;
-  if(!name){ $('nu-err').textContent='Ad gerekli.'; return; }
-  if(!pw || pw!==pw2){ $('nu-err').textContent='Şifreler uyuşmuyor.'; return; }
-  const base=slugify(name);
-  let candidate=base, n=1;
-  while(allUsers.some(u=>u.user_id===candidate)) candidate = base+'_'+(++n);
-  const hash=await sha256Hex(pw);
-  const { data, error } = await sb.from('users').insert({user_id:candidate, display_name:name, password_hash:hash}).select().single();
-  if(error){ $('nu-err').textContent='Bir şeyler ters gitti.'; console.error(error); return; }
+$('btn-nu-submit').onclick = async () => {
+  const name = $('nu-name').value.trim();
+  const pw = $('nu-pw').value, pw2 = $('nu-pw2').value;
+  if (!name) { $('nu-err').textContent = 'Ad gerekli.'; return; }
+  if (!pw || pw !== pw2) { $('nu-err').textContent = 'Şifreler uyuşmuyor.'; return; }
+  const base = slugify(name);
+  let candidate = base, n = 1;
+  while (allUsers.some(u => u.user_id === candidate)) candidate = base + '_' + (++n);
+  const hash = await sha256Hex(pw);
+  const { data, error } = await sb.from('users').insert({ user_id: candidate, display_name: name, password_hash: hash }).select().single();
+  if (error) { $('nu-err').textContent = 'Bir şeyler ters gitti.'; console.error(error); return; }
   loginAs(data);
 };
 
-function loginAs(u){
-  currentUser = { user_id:u.user_id, display_name:u.display_name, settings:u.settings||{} };
+function loginAs(u) {
+  currentUser = { user_id: u.user_id, display_name: u.display_name, settings: u.settings || {} };
+  localStorage.setItem('kpss_current_user', JSON.stringify(u)); // Persist session
   applyTheme(currentUser.settings);
   $('btn-gear').classList.add('show');
   startLobbyPresence();
   startInviteListener();
   goToMenu();
+  checkAndTriggerAchievements();
 }
 
-async function initLogin(){
+async function initLogin() {
   allUsers = await loadUsers();
   renderUserList();
 }
 
-/* ---------------- settings panel ---------------- */
-$('btn-gear').onclick=()=>{
-  if(!currentUser) return;
-  document.querySelectorAll('#theme-chips .chip').forEach(b=>b.classList.toggle('sel', b.dataset.theme===(currentUser.settings.theme||'light')));
-  document.querySelectorAll('#fontsize-chips .chip').forEach(b=>b.classList.toggle('sel', b.dataset.size===(currentUser.settings.fontSize||'normal')));
-  $('chk-reduced-motion').checked = !!currentUser.settings.reducedMotion;
-  $('settings-overlay').classList.add('active');
-};
-$('btn-close-settings').onclick=()=>{ $('settings-overlay').classList.remove('active'); };
-
-async function saveSettings(){
-  if(!sb || !currentUser) return;
-  const { error } = await sb.from('users').update({settings: currentUser.settings}).eq('user_id', currentUser.user_id);
-  if(error) console.error('saveSettings error', error);
+/* ---------------- settings panel & exit menu ---------------- */
+function toggleSettingsOverlay() {
+  if (!currentUser) return;
+  const isActive = $('settings-overlay').classList.contains('active');
+  if (isActive) {
+    $('settings-overlay').classList.remove('active');
+  } else {
+    document.querySelectorAll('#theme-chips .chip').forEach(b => b.classList.toggle('sel', b.dataset.theme === (currentUser.settings.theme || 'light')));
+    document.querySelectorAll('#fontsize-chips .chip').forEach(b => b.classList.toggle('sel', b.dataset.size === (currentUser.settings.fontSize || 'normal')));
+    $('chk-reduced-motion').checked = !!currentUser.settings.reducedMotion;
+    
+    // Check if we should display the exit button (only when not on menu or login)
+    const currentActiveScreen = document.querySelector('.screen.active')?.id;
+    const showExitBtn = (currentActiveScreen && currentActiveScreen !== 's-menu' && currentActiveScreen !== 's-login');
+    $('btn-exit-to-menu').style.display = showExitBtn ? 'block' : 'none';
+    
+    $('settings-overlay').classList.add('active');
+  }
 }
 
-document.querySelectorAll('#theme-chips .chip').forEach(b=>b.onclick=async()=>{
-  document.querySelectorAll('#theme-chips .chip').forEach(x=>x.classList.remove('sel'));
-  b.classList.add('sel');
-  currentUser.settings.theme=b.dataset.theme;
-  applyTheme(currentUser.settings);
-  await saveSettings();
-});
-document.querySelectorAll('#fontsize-chips .chip').forEach(b=>b.onclick=async()=>{
-  document.querySelectorAll('#fontsize-chips .chip').forEach(x=>x.classList.remove('sel'));
-  b.classList.add('sel');
-  currentUser.settings.fontSize=b.dataset.size;
-  applyTheme(currentUser.settings);
-  await saveSettings();
-});
-$('chk-reduced-motion').onchange=async(e)=>{
-  currentUser.settings.reducedMotion=e.target.checked;
-  applyTheme(currentUser.settings);
-  await saveSettings();
-};
+$('btn-gear').onclick = toggleSettingsOverlay;
+$('btn-close-settings').onclick = () => { $('settings-overlay').classList.remove('active'); };
 
-/* ---------------- menu ---------------- */
-function goToMenu(){
-  $('menu-name').textContent = currentUser.display_name;
-  $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='ANA MENÜ';
-  show('s-menu');
-}
-$('btn-goto-solo').onclick=()=>{ $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='KURAL AYARI'; show('s-lobby'); };
-$('btn-goto-stats').onclick=()=>{ $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='İSTATİSTİK'; show('s-stats'); refreshPvpStats(); };
-$('btn-lobby-back').onclick=goToMenu;
-$('btn-stats-back').onclick=goToMenu;
-$('btn-logout').onclick=()=>{
+$('btn-exit-to-menu').onclick = () => {
+  // Clear any timers
+  clearInterval(tHandle);
+  $('timerbar').style.visibility = 'hidden';
+  
+  // Clean up multiplayer if exiting match
   cleanupMatch();
-  if(lobbyPresenceChannel){ sb.removeChannel(lobbyPresenceChannel); lobbyPresenceChannel=null; }
-  if(inviteChannel){ sb.removeChannel(inviteChannel); inviteChannel=null; }
-  currentUser=null;
+  
+  // Hide settings
+  $('settings-overlay').classList.remove('active');
+  
+  // Go to main menu
+  goToMenu();
+};
+
+async function saveSettings() {
+  if (!sb || !currentUser) return;
+  const { error } = await sb.from('users').update({ settings: currentUser.settings }).eq('user_id', currentUser.user_id);
+  if (error) console.error('saveSettings error', error);
+}
+
+document.querySelectorAll('#theme-chips .chip').forEach(b => b.onclick = async () => {
+  document.querySelectorAll('#theme-chips .chip').forEach(x => x.classList.remove('sel'));
+  b.classList.add('sel');
+  currentUser.settings.theme = b.dataset.theme;
+  applyTheme(currentUser.settings);
+  await saveSettings();
+});
+document.querySelectorAll('#fontsize-chips .chip').forEach(b => b.onclick = async () => {
+  document.querySelectorAll('#fontsize-chips .chip').forEach(x => x.classList.remove('sel'));
+  b.classList.add('sel');
+  currentUser.settings.fontSize = b.dataset.size;
+  applyTheme(currentUser.settings);
+  await saveSettings();
+});
+$('chk-reduced-motion').onchange = async (e) => {
+  currentUser.settings.reducedMotion = e.target.checked;
+  applyTheme(currentUser.settings);
+  await saveSettings();
+};
+
+/* ---------------- menu routing ---------------- */
+async function goToMenu() {
+  $('menu-name').textContent = currentUser.display_name;
+  $('hdrcode').textContent = 'KPSS · GK'; $('hdrcat').textContent = 'ANA MENÜ';
+  show('s-menu');
+
+  // Stats placeholders
+  $('streak-count').textContent = '...';
+  $('total-attempts').textContent = '...';
+  $('achievement-count').textContent = '...';
+  
+  const stats = await getUserStats();
+  if (stats) {
+    $('streak-count').textContent = stats.streak;
+    $('total-attempts').textContent = stats.totalAnswers;
+    
+    const userId = currentUser.user_id;
+    const raw = localStorage.getItem(`achievements_${userId}`);
+    const unlocked = raw ? JSON.parse(raw).length : 0;
+    $('achievement-count').textContent = `${unlocked} / ${ACHIEVEMENT_DEFS.length}`;
+  }
+}
+
+$('btn-goto-quiz-setup').onclick = () => {
+  $('hdrcode').textContent = 'KPSS · GK';
+  $('hdrcat').textContent = 'SINAV KURULUMU';
+  show('s-quiz-setup');
+};
+
+$('btn-goto-stats').onclick = () => {
+  $('hdrcode').textContent = 'KPSS · GK';
+  $('hdrcat').textContent = 'İSTATİSTİK';
+  show('s-stats');
+  refreshPvpStats();
+};
+
+$('btn-goto-qbank').onclick = () => {
+  $('hdrcode').textContent = 'KPSS · GK';
+  $('hdrcat').textContent = 'SORU BANKASI';
+  renderQuestionBank();
+  show('s-qbank');
+};
+
+$('btn-goto-achievements').onclick = () => {
+  $('hdrcode').textContent = 'KPSS · GK';
+  $('hdrcat').textContent = 'BAŞARIMLAR';
+  renderAchievements();
+  show('s-achievements');
+};
+
+$('btn-quiz-setup-back').onclick = goToMenu;
+$('btn-stats-back').onclick = goToMenu;
+$('btn-qbank-back').onclick = goToMenu;
+$('btn-achievements-back').onclick = goToMenu;
+
+$('btn-logout').onclick = () => {
+  localStorage.removeItem('kpss_current_user'); // Clear persisted session
+  cleanupMatch();
+  if (lobbyPresenceChannel) { sb.removeChannel(lobbyPresenceChannel); lobbyPresenceChannel = null; }
+  if (inviteChannel) { sb.removeChannel(inviteChannel); inviteChannel = null; }
+  currentUser = null;
   $('btn-gear').classList.remove('show');
   document.documentElement.removeAttribute('data-theme');
   document.documentElement.removeAttribute('data-motion');
-  document.documentElement.style.setProperty('--scale','1');
-  $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='GİRİŞ';
-  $('pwform').style.display='none'; $('newuserform').style.display='none';
+  document.documentElement.style.setProperty('--scale', '1');
+  $('hdrcode').textContent = 'KPSS · GK'; $('hdrcat').textContent = 'GİRİŞ';
+  $('pwform').style.display = 'none'; $('newuserform').style.display = 'none';
   show('s-login');
   initLogin();
 };
 
 /* ---------------- multiplayer: presence & invites ---------------- */
-function genInviteCode(){
-  const alphabet='ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // no O/0, I/1 — easy to read aloud
-  let code='';
-  for(let i=0;i<6;i++) code+=alphabet[Math.floor(Math.random()*alphabet.length)];
+function genInviteCode() {
+  const alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let code = '';
+  for (let i = 0; i < 6; i++) code += alphabet[Math.floor(Math.random() * alphabet.length)];
   return code;
 }
 
-function subscribeAndWait(channel){
-  return new Promise(resolve=>{ channel.subscribe(status=>{ if(status==='SUBSCRIBED') resolve(); }); });
+function subscribeAndWait(channel) {
+  return new Promise(resolve => { channel.subscribe(status => { if (status === 'SUBSCRIBED') resolve(); }); });
 }
 
-function displayNameFor(userId){
-  if(currentUser && userId===currentUser.user_id) return currentUser.display_name;
-  const u=allUsers.find(x=>x.user_id===userId);
-  return u ? u.display_name : (userId||'—');
+function displayNameFor(userId) {
+  if (currentUser && userId === currentUser.user_id) return currentUser.display_name;
+  const u = allUsers.find(x => x.user_id === userId);
+  return u ? u.display_name : (userId || '—');
 }
 
-function startLobbyPresence(){
-  lobbyPresenceChannel = sb.channel('lobby-presence', { config:{ presence:{ key: currentUser.user_id } } });
-  lobbyPresenceChannel.on('presence', {event:'sync'}, ()=>{
-    if($('mp-overlay').classList.contains('active')) renderOnlineList();
+function startLobbyPresence() {
+  lobbyPresenceChannel = sb.channel('lobby-presence', { config: { presence: { key: currentUser.user_id } } });
+  lobbyPresenceChannel.on('presence', { event: 'sync' }, () => {
+    if ($('mp-overlay').classList.contains('active')) renderOnlineList();
   });
-  lobbyPresenceChannel.subscribe(async status=>{
-    if(status==='SUBSCRIBED') await lobbyPresenceChannel.track({user_id:currentUser.user_id, display_name:currentUser.display_name});
+  lobbyPresenceChannel.subscribe(async status => {
+    if (status === 'SUBSCRIBED') await lobbyPresenceChannel.track({ user_id: currentUser.user_id, display_name: currentUser.display_name });
   });
 }
 
-function startInviteListener(){
-  inviteChannel = sb.channel('invites-'+currentUser.user_id);
-  inviteChannel.on('broadcast', {event:'invite'}, ({payload})=>{ showIncomingInvite(payload); });
+function startInviteListener() {
+  inviteChannel = sb.channel('invites-' + currentUser.user_id);
+  inviteChannel.on('broadcast', { event: 'invite' }, ({ payload }) => { showIncomingInvite(payload); });
   inviteChannel.subscribe();
 }
 
-function renderOnlineList(){
+function renderOnlineList() {
   const state = lobbyPresenceChannel ? lobbyPresenceChannel.presenceState() : {};
-  const seen=new Set(); const others=[];
-  Object.values(state).flat().forEach(p=>{
-    if(p.user_id===currentUser.user_id || seen.has(p.user_id)) return;
+  const seen = new Set(); const others = [];
+  Object.values(state).flat().forEach(p => {
+    if (p.user_id === currentUser.user_id || seen.has(p.user_id)) return;
     seen.add(p.user_id); others.push(p);
   });
-  const box=$('mp-online-list'); box.innerHTML='';
+  const box = $('mp-online-list'); box.innerHTML = '';
   $('mp-online-empty').style.display = others.length ? 'none' : 'block';
-  others.forEach(p=>{
-    const b=document.createElement('button');
-    b.className='userbtn'; b.textContent=p.display_name;
-    b.onclick=()=>inviteUser(p.user_id);
+  others.forEach(p => {
+    const b = document.createElement('button');
+    b.className = 'userbtn'; b.textContent = p.display_name;
+    b.onclick = () => inviteUser(p.user_id);
     box.appendChild(b);
   });
 }
 
-$('btn-goto-mp').onclick=()=>{
+$('btn-goto-mp').onclick = () => {
   renderOnlineList();
-  $('mp-join-err').textContent=''; $('mp-join-code').value='';
-  $('mp-code-display').style.display='none';
+  $('mp-join-err').textContent = ''; $('mp-join-code').value = '';
+  $('mp-code-display').style.display = 'none';
   $('mp-overlay').classList.add('active');
 };
-$('btn-close-mp').onclick=()=>{ $('mp-overlay').classList.remove('active'); };
+$('btn-close-mp').onclick = () => { $('mp-overlay').classList.remove('active'); };
 
-$('btn-gen-code').onclick=async()=>{
-  const code=genInviteCode();
-  const { data, error } = await sb.from('matches').insert({invite_code:code, host_id:currentUser.user_id, status:'waiting'}).select().single();
-  if(error){ console.error('gen code error', error); $('mp-join-err').textContent='Bir şeyler ters gitti.'; return; }
+$('btn-gen-code').onclick = async () => {
+  const code = genInviteCode();
+  const { data, error } = await sb.from('matches').insert({ invite_code: code, host_id: currentUser.user_id, status: 'waiting' }).select().single();
+  if (error) { console.error('gen code error', error); $('mp-join-err').textContent = 'Bir şeyler ters gitti.'; return; }
   $('mp-overlay').classList.remove('active');
   enterMatchLobby(data);
 };
 
-$('btn-copy-code').onclick=async()=>{
-  try{ await navigator.clipboard.writeText($('mp-my-code').textContent); }catch(e){ /* clipboard unavailable, ignore */ }
+$('btn-copy-code').onclick = async () => {
+  try { await navigator.clipboard.writeText($('mp-my-code').textContent); } catch (e) { }
 };
 
-$('btn-join-code').onclick=async()=>{
-  const code=$('mp-join-code').value.trim().toUpperCase();
-  $('mp-join-err').textContent='';
-  if(!code) return;
-  const { data, error } = await sb.from('matches').select('*').eq('invite_code', code).eq('status','waiting').is('guest_id', null).maybeSingle();
-  if(error || !data){ $('mp-join-err').textContent='Kod bulunamadı.'; return; }
-  if(data.host_id===currentUser.user_id){ $('mp-join-err').textContent='Kendi kodunla oynayamazsın.'; return; }
-  const joined=await claimMatch(data.match_id);
-  if(!joined){ $('mp-join-err').textContent='Bu maça başka biri katılmış olabilir.'; return; }
+$('btn-join-code').onclick = async () => {
+  const code = $('mp-join-code').value.trim().toUpperCase();
+  $('mp-join-err').textContent = '';
+  if (!code) return;
+  const { data, error } = await sb.from('matches').select('*').eq('invite_code', code).eq('status', 'waiting').is('guest_id', null).maybeSingle();
+  if (error || !data) { $('mp-join-err').textContent = 'Kod bulunamadı.'; return; }
+  if (data.host_id === currentUser.user_id) { $('mp-join-err').textContent = 'Kendi kodunla oynayamazsın.'; return; }
+  const joined = await claimMatch(data.match_id);
+  if (!joined) { $('mp-join-err').textContent = 'Bu maça başka biri katılmış olabilir.'; return; }
   $('mp-overlay').classList.remove('active');
   enterMatchLobby(joined);
 };
 
-async function inviteUser(targetUserId){
-  const code=genInviteCode();
-  const { data, error } = await sb.from('matches').insert({invite_code:code, host_id:currentUser.user_id, status:'waiting'}).select().single();
-  if(error){ console.error('inviteUser error', error); return; }
-  const ch=sb.channel('invites-'+targetUserId);
+async function inviteUser(targetUserId) {
+  const code = genInviteCode();
+  const { data, error } = await sb.from('matches').insert({ invite_code: code, host_id: currentUser.user_id, status: 'waiting' }).select().single();
+  if (error) { console.error('inviteUser error', error); return; }
+  const ch = sb.channel('invites-' + targetUserId);
   await subscribeAndWait(ch);
-  await ch.send({ type:'broadcast', event:'invite', payload:{ match_id:data.match_id, from_id:currentUser.user_id, from_name:currentUser.display_name } });
+  await ch.send({ type: 'broadcast', event: 'invite', payload: { match_id: data.match_id, from_id: currentUser.user_id, from_name: currentUser.display_name } });
   await sb.removeChannel(ch);
   $('mp-overlay').classList.remove('active');
   enterMatchLobby(data);
 }
 
-function showIncomingInvite(payload){
-  incomingInvite=payload;
-  $('invite-title').textContent=payload.from_name;
+function showIncomingInvite(payload) {
+  incomingInvite = payload;
+  $('invite-title').textContent = payload.from_name;
   $('invite-overlay').classList.add('active');
 }
 
-$('btn-invite-decline').onclick=async()=>{
+$('btn-invite-decline').onclick = async () => {
   $('invite-overlay').classList.remove('active');
-  if(incomingInvite){
-    await sb.from('matches').update({status:'abandoned'}).eq('match_id', incomingInvite.match_id).eq('status','waiting');
-    incomingInvite=null;
+  if (incomingInvite) {
+    await sb.from('matches').update({ status: 'abandoned' }).eq('match_id', incomingInvite.match_id).eq('status', 'waiting');
+    incomingInvite = null;
   }
 };
 
-$('btn-invite-accept').onclick=async()=>{
-  if(!incomingInvite) return;
+$('btn-invite-accept').onclick = async () => {
+  if (!incomingInvite) return;
   $('invite-overlay').classList.remove('active');
-  const joined=await claimMatch(incomingInvite.match_id);
-  incomingInvite=null;
-  if(joined) enterMatchLobby(joined);
+  const joined = await claimMatch(incomingInvite.match_id);
+  incomingInvite = null;
+  if (joined) enterMatchLobby(joined);
 };
 
-async function claimMatch(matchId){
-  const { data, error } = await sb.from('matches').update({guest_id:currentUser.user_id, status:'lobby'}).eq('match_id', matchId).eq('status','waiting').select().single();
-  if(error || !data) return null;
+async function claimMatch(matchId) {
+  const { data, error } = await sb.from('matches').update({ guest_id: currentUser.user_id, status: 'lobby' }).eq('match_id', matchId).eq('status', 'waiting').select().single();
+  if (error || !data) return null;
   return data;
 }
 
 /* ---------------- multiplayer: match lobby ---------------- */
-function enterMatchLobby(row){
+function enterMatchLobby(row) {
   cleanupMatch();
-  mpMatch=row;
+  mpMatch = row;
   subscribeToMatch(row.match_id);
   joinMatchPresence(row.match_id);
   renderMpLobbyUI(row);
-  $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='MAÇ LOBİSİ';
+  $('hdrcode').textContent = 'KPSS · GK'; $('hdrcat').textContent = 'MAÇ LOBİSİ';
   show('s-mplobby');
 }
 
-function subscribeToMatch(matchId){
-  matchChannel = sb.channel('match-'+matchId)
-    .on('postgres_changes', {event:'UPDATE', schema:'public', table:'matches', filter:`match_id=eq.${matchId}`}, payload=>{
+function subscribeToMatch(matchId) {
+  matchChannel = sb.channel('match-' + matchId)
+    .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'matches', filter: `match_id=eq.${matchId}` }, payload => {
       onMatchUpdate(payload.new);
     })
     .on('broadcast', { event: 'mp_action' }, ({ payload }) => {
@@ -864,48 +1902,57 @@ function handleMpAction(payload) {
   if (!mpMatch || mpMatch.status !== 'in_progress') return;
   if (payload.action === 'lock_answer' && payload.userId !== currentUser.user_id) {
     oppLockedAnswer = payload.ans;
+    oppTimeTaken = payload.timeTaken;
+    oppRisk = payload.risk;
+    oppIsThinking = false;
+    updateScoreboard();
+    if (navigator.vibrate) {
+      navigator.vibrate([30, 50, 30]); // Haptic: Opponent locked their answer!
+    }
     checkRoundResolve();
   } else if (payload.action === 'next_q' && payload.userId !== currentUser.user_id) {
     oppNextReady = true;
     checkNextResolve();
+  } else if (payload.action === 'send_emoji' && payload.userId !== currentUser.user_id) {
+    showFloatingEmoji(payload.emoji, 'opp');
   }
 }
 
-function onMatchUpdate(row){
-  mpMatch=row;
-  if(row.status==='abandoned' || row.status==='completed'){ showMpResult(row); return; }
-  if(row.status==='lobby' || row.status==='waiting'){
+function onMatchUpdate(row) {
+  mpMatch = row;
+  if (row.status === 'abandoned' || row.status === 'completed') { showMpResult(row); return; }
+  if (row.status === 'lobby' || row.status === 'waiting') {
     renderMpLobbyUI(row);
-    if(document.querySelector('.screen.active')?.id!=='s-mplobby'){
-      $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='MAÇ LOBİSİ';
+    if (document.querySelector('.screen.active')?.id !== 's-mplobby') {
+      $('hdrcode').textContent = 'KPSS · GK'; $('hdrcat').textContent = 'MAÇ LOBİSİ';
       show('s-mplobby');
     }
-    if(row.host_ready && row.guest_ready && row.host_id===currentUser.user_id){
+    if (row.host_ready && row.guest_ready && row.host_id === currentUser.user_id) {
       startMatchAsHost(row);
     }
     return;
   }
-  if(row.status==='in_progress'){
-    if(quizStartedForMatch!==row.match_id){ beginMultiplayerQuiz(row); return; }
-    if(myMpFinished) maybeFinalizeAndShowResult(row);
+  if (row.status === 'in_progress') {
+    if (quizStartedForMatch !== row.match_id) { beginMultiplayerQuiz(row); return; }
+    if (myMpFinished) maybeFinalizeAndShowResult(row);
   }
 }
 
-function renderMpLobbyUI(row){
-  const isHost = row.host_id===currentUser.user_id;
-  const waitingForGuest = row.status==='waiting' || !row.guest_id;
+function renderMpLobbyUI(row) {
+  const isHost = row.host_id === currentUser.user_id;
+  const waitingForGuest = row.status === 'waiting' || !row.guest_id;
   $('mp-waiting-msg').style.display = waitingForGuest ? 'block' : 'none';
   $('mp-waiting-msg').textContent = `Rakip bekleniyor… Kodu paylaş: ${row.invite_code}`;
   $('mp-settings-block').style.display = waitingForGuest ? 'none' : 'block';
   $('btn-mp-ready').style.display = waitingForGuest ? 'none' : 'block';
 
-  const players=$('mp-players'); players.innerHTML='';
-  const entries=[{id:row.host_id, ready:row.host_ready}];
-  if(row.guest_id) entries.push({id:row.guest_id, ready:row.guest_ready});
-  entries.forEach(e=>{
-    const label = e.id===currentUser.user_id ? `${displayNameFor(e.id)} (Sen)` : displayNameFor(e.id);
-    const d=document.createElement('div'); d.className='mp-player';
-    d.innerHTML=`<span>${label}</span><span class="rdy ${e.ready?'on':''}">${e.ready?'HAZIR':'BEKLİYOR'}</span>`;
+  const players = $('mp-players'); players.innerHTML = '';
+  const entries = [{ id: row.host_id, ready: row.host_ready }];
+  if (row.guest_id) entries.push({ id: row.guest_id, ready: row.guest_ready });
+  entries.forEach(e => {
+    const label = e.id === currentUser.user_id ? `${displayNameFor(e.id)} (Sen)` : displayNameFor(e.id);
+    const d = document.createElement('div'); d.className = 'mp-player';
+    d.innerHTML = `<span>${label}</span><span class="rdy ${e.ready ? 'on' : ''}">${e.ready ? 'HAZIR' : 'BEKLİYOR'}</span>`;
     players.appendChild(d);
   });
 
@@ -918,407 +1965,688 @@ function renderMpLobbyUI(row){
   $('btn-mp-ready').disabled = myReady;
 }
 
-function syncLobbyChips(containerId, attr, value){
-  document.querySelectorAll(`#${containerId} .chip`).forEach(b=>{
-    b.classList.toggle('sel', b.dataset[attr]===value);
+function syncLobbyChips(containerId, attr, value) {
+  document.querySelectorAll(`#${containerId} .chip`).forEach(b => {
+    b.classList.toggle('sel', b.dataset[attr] === value);
   });
 }
 
-document.querySelectorAll('#mp-cats .chip').forEach(b=>b.onclick=async()=>{
-  if(!mpMatch || mpMatch.host_id!==currentUser.user_id) return;
-  await sb.from('matches').update({category:b.dataset.c, host_ready:false, guest_ready:false}).eq('match_id', mpMatch.match_id);
+document.querySelectorAll('#mp-cats .chip').forEach(b => b.onclick = async () => {
+  if (!mpMatch || mpMatch.host_id !== currentUser.user_id) return;
+  await sb.from('matches').update({ category: b.dataset.c, host_ready: false, guest_ready: false }).eq('match_id', mpMatch.match_id);
 });
-document.querySelectorAll('#mp-qcounts .chip').forEach(b=>b.onclick=async()=>{
-  if(!mpMatch || mpMatch.host_id!==currentUser.user_id) return;
-  await sb.from('matches').update({question_count:parseInt(b.dataset.n,10), host_ready:false, guest_ready:false}).eq('match_id', mpMatch.match_id);
+document.querySelectorAll('#mp-qcounts .chip').forEach(b => b.onclick = async () => {
+  if (!mpMatch || mpMatch.host_id !== currentUser.user_id) return;
+  await sb.from('matches').update({ question_count: parseInt(b.dataset.n, 10), host_ready: false, guest_ready: false }).eq('match_id', mpMatch.match_id);
 });
-document.querySelectorAll('#mp-durations .chip').forEach(b=>b.onclick=async()=>{
-  if(!mpMatch || mpMatch.host_id!==currentUser.user_id) return;
-  await sb.from('matches').update({per_question_seconds:parseInt(b.dataset.s,10), host_ready:false, guest_ready:false}).eq('match_id', mpMatch.match_id);
+document.querySelectorAll('#mp-durations .chip').forEach(b => b.onclick = async () => {
+  if (!mpMatch || mpMatch.host_id !== currentUser.user_id) return;
+  await sb.from('matches').update({ per_question_seconds: parseInt(b.dataset.s, 10), host_ready: false, guest_ready: false }).eq('match_id', mpMatch.match_id);
 });
 
-$('btn-mp-ready').onclick=async()=>{
-  if(!mpMatch) return;
-  const isHost=mpMatch.host_id===currentUser.user_id;
-  await sb.from('matches').update(isHost?{host_ready:true}:{guest_ready:true}).eq('match_id', mpMatch.match_id);
+$('btn-mp-ready').onclick = async () => {
+  if (!mpMatch) return;
+  const isHost = mpMatch.host_id === currentUser.user_id;
+  await sb.from('matches').update(isHost ? { host_ready: true } : { guest_ready: true }).eq('match_id', mpMatch.match_id);
 };
 
-$('btn-mp-leave').onclick=async()=>{
-  if(mpMatch && mpMatch.status!=='completed' && mpMatch.status!=='abandoned'){
-    await sb.from('matches').update({status:'abandoned', ended_at:new Date().toISOString()}).eq('match_id', mpMatch.match_id);
+/* ---------------- Multiplayer: Emojis and Risk Bets Bindings ---------------- */
+$('btn-emoji-trigger').onclick = () => {
+  const bar = $('emoji-bar');
+  bar.style.display = bar.style.display === 'none' ? 'flex' : 'none';
+};
+
+document.querySelectorAll('.emoji-btn').forEach(b => b.onclick = () => {
+  const emoji = b.dataset.emoji;
+  if (mpMatch) {
+    matchChannel.send({
+      type: 'broadcast',
+      event: 'mp_action',
+      payload: { action: 'send_emoji', userId: currentUser.user_id, emoji }
+    });
+  }
+  showFloatingEmoji(emoji, 'me');
+  $('emoji-bar').style.display = 'none';
+});
+
+function showFloatingEmoji(emoji, target) {
+  const parent = target === 'me' ? $('score-me') : $('score-opp');
+  if (!parent) return;
+  const el = document.createElement('div');
+  el.className = 'floating-emoji';
+  el.textContent = emoji;
+  el.style.left = '50%';
+  el.style.top = '-20px';
+  el.style.transform = 'translateX(-50%)';
+  parent.appendChild(el);
+  setTimeout(() => el.remove(), 1200);
+}
+
+$('btn-mp-risk').onclick = () => {
+  if (hasUsedRisk) return;
+  riskActive = !riskActive;
+  
+  const btn = $('btn-mp-risk');
+  if (riskActive) {
+    btn.classList.add('sel');
+    btn.style.background = 'var(--osym-red)';
+    btn.style.color = '#fff';
+    btn.textContent = '🔥 Risk AKTİF (-1 / +2)';
+    if (navigator.vibrate) navigator.vibrate(20);
+  } else {
+    btn.classList.remove('sel');
+    btn.style.background = 'transparent';
+    btn.style.color = 'var(--osym-red)';
+    btn.textContent = '🔥 İkili Bahis (Risk)';
+    if (navigator.vibrate) navigator.vibrate(10);
+  }
+};
+
+$('btn-mp-leave').onclick = async () => {
+  if (mpMatch && mpMatch.status !== 'completed' && mpMatch.status !== 'abandoned') {
+    await sb.from('matches').update({ status: 'abandoned', ended_at: new Date().toISOString() }).eq('match_id', mpMatch.match_id);
   }
   cleanupMatch();
   goToMenu();
 };
 
-async function startMatchAsHost(row){
-  const qids=await drawRandomQuestionIds(row.category, row.question_count);
-  if(qids.length===0){
-    $('mp-waiting-msg').style.display='block';
-    $('mp-waiting-msg').textContent='Soru bankası boş, kategori değiştir.';
+async function startMatchAsHost(row) {
+  const qids = await drawRandomQuestionIds(row.category, row.question_count);
+  if (qids.length === 0) {
+    $('mp-waiting-msg').style.display = 'block';
+    $('mp-waiting-msg').textContent = 'Soru bankası boş, kategori değiştir.';
     return;
   }
   await sb.from('matches').update({
-    question_ids: qids, status:'in_progress', started_at:new Date().toISOString()
-  }).eq('match_id', row.match_id).eq('status','lobby');
+    question_ids: qids, status: 'in_progress', started_at: new Date().toISOString()
+  }).eq('match_id', row.match_id).eq('status', 'lobby');
 }
 
-async function drawRandomQuestionIds(category, count){
+async function drawRandomQuestionIds(category, count) {
   let q = sb.from('questions').select('q_id').eq('has_image', false);
-  if(category!=='all') q = q.eq('category', category);
+  if (category !== 'all') q = q.eq('category', category);
   const { data, error } = await q;
-  if(error){ console.error('drawRandomQuestionIds error', error); return []; }
-  return shuffle((data||[]).map(r=>r.q_id)).slice(0, count);
+  if (error) { console.error('drawRandomQuestionIds error', error); return []; }
+  return shuffle((data || []).map(r => r.q_id)).slice(0, count);
 }
 
 /* ---------------- multiplayer: quiz + result ---------------- */
-async function beginMultiplayerQuiz(row){
-  quizStartedForMatch=row.match_id;
-  myMpFinished=false;
+
+async function beginMultiplayerQuiz(row) {
+  quizStartedForMatch = row.match_id;
+  myMpFinished = false;
   const { data: qs, error } = await sb.from('questions').select('*').in('q_id', row.question_ids);
-  if(error){ console.error('beginMultiplayerQuiz error', error); return; }
-  const qMap=new Map(qs.map(q=>[q.q_id,q]));
-  queue = row.question_ids.map(id=>qMap.get(id)).filter(Boolean);
-  perQuestionS = row.per_question_seconds;
-  idx=0; correct=0; wrongs=[]; sessionId=row.match_id;
+  if (error) { console.error('beginMultiplayerQuiz error', error); return; }
+  const qMap = new Map(qs.map(q => [q.q_id, q]));
+  queue = row.question_ids.map(id => qMap.get(id)).filter(Boolean);
   
-  // Reset Scores
+  quizState.mode = 'standard';
+  lobbyPerQ = row.per_question_seconds;
+  idx = 0; correct = 0; wrongs = []; sessionId = row.match_id;
+  
   myMpScore = 0; 
   oppMpScore = 0;
   
+  hasUsedRisk = false;
+  riskActive = false;
+  
+  $('mp-risk-container').style.display = 'flex';
+  const rBtn = $('btn-mp-risk');
+  rBtn.disabled = false;
+  rBtn.classList.remove('sel');
+  rBtn.style.background = 'transparent';
+  rBtn.style.color = 'var(--osym-red)';
+  rBtn.textContent = '🔥 İkili Bahis (Risk)';
+  
   show('s-quiz'); renderQ();
 }
+
+let oppIsThinking = false;
 
 function updateScoreboard() {
   if (!mpMatch) return;
   const oppId = mpMatch.host_id === currentUser.user_id ? mpMatch.guest_id : mpMatch.host_id;
   $('score-me').textContent = `Sen: ${myMpScore}`;
-  $('score-opp').textContent = `${displayNameFor(oppId)}: ${oppMpScore}`;
+  
+  const oppName = displayNameFor(oppId);
+  const oppText = oppIsThinking ? `${oppName} 🤔: ${oppMpScore}` : `${oppName}: ${oppMpScore}`;
+  $('score-opp').textContent = oppText;
+  if (oppIsThinking) {
+    $('score-opp').classList.add('opp-thinking');
+  } else {
+    $('score-opp').classList.remove('opp-thinking');
+  }
 }
 
-async function endMultiplayerQuiz(){
+async function endMultiplayerQuiz() {
   clearInterval(tHandle);
-  $('timerbar').style.visibility='hidden';
-  myMpFinished=true;
-  const isHost=mpMatch.host_id===currentUser.user_id;
-  const field=isHost?{host_score:correct, host_finished:true}:{guest_score:correct, guest_finished:true};
+  $('timerbar').style.visibility = 'hidden';
+  myMpFinished = true;
+  const isHost = mpMatch.host_id === currentUser.user_id;
+  const field = isHost ? { host_score: myMpScore, host_finished: true } : { guest_score: myMpScore, guest_finished: true };
   const { data, error } = await sb.from('matches').update(field).eq('match_id', mpMatch.match_id).select().single();
-  if(error){ console.error('endMultiplayerQuiz error', error); return; }
-  mpMatch=data;
+  if (error) { console.error('endMultiplayerQuiz error', error); return; }
+  mpMatch = data;
   maybeFinalizeAndShowResult(data);
 }
 
-function maybeFinalizeAndShowResult(row){
-  if(row.host_finished && row.guest_finished && row.host_id===currentUser.user_id){
+function maybeFinalizeAndShowResult(row) {
+  if (row.host_finished && row.guest_finished && row.host_id === currentUser.user_id) {
     finalizeMatch(row);
     return;
   }
   showMpResult(row);
 }
 
-async function finalizeMatch(row){
-  let winner=null;
-  if(row.host_score>row.guest_score) winner=row.host_id;
-  else if(row.guest_score>row.host_score) winner=row.guest_id;
+async function finalizeMatch(row) {
+  let winner = null;
+  if (row.host_score > row.guest_score) winner = row.host_id;
+  else if (row.guest_score > row.host_score) winner = row.guest_id;
   const { data, error } = await sb.from('matches').update({
-    status:'completed', winner_id:winner, ended_at:new Date().toISOString()
-  }).eq('match_id', row.match_id).eq('status','in_progress').select().single();
-  if(error || !data) return;
-  mpMatch=data;
+    status: 'completed', winner_id: winner, ended_at: new Date().toISOString()
+  }).eq('match_id', row.match_id).eq('status', 'in_progress').select().single();
+  if (error || !data) return;
+  mpMatch = data;
   showMpResult(data);
 }
 
-function showMpResult(row){
+function showMpResult(row) {
   stopMatchPresence();
-  const isHost=row.host_id===currentUser.user_id;
+  const isHost = row.host_id === currentUser.user_id;
   const myScore = isHost ? row.host_score : row.guest_score;
   const oppScore = isHost ? row.guest_score : row.host_score;
 
-  $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='MAÇ SONUCU';
+  $('hdrcode').textContent = 'KPSS · GK'; $('hdrcat').textContent = 'MAÇ SONUCU';
 
-  if(row.status==='completed'){
-    const wt=row.winner_id;
-    $('mp-result-title').textContent = !wt ? 'Berabere!' : (wt===currentUser.user_id ? 'Kazandın! 🎉' : 'Kaybettin.');
+  if (row.status === 'completed') {
+    const wt = row.winner_id;
+    $('mp-result-title').textContent = !wt ? 'Berabere!' : (wt === currentUser.user_id ? 'Kazandın! 🎉' : 'Kaybettin.');
     $('mp-result-score').textContent = `${myScore} — ${oppScore}`;
-  } else if(row.status==='abandoned'){
-    if(row.winner_id){
-      $('mp-result-title').textContent = row.winner_id===currentUser.user_id ? 'Rakip bağlantıyı kaybetti — Kazandın!' : 'Bağlantın koptu — Kaybettin.';
+  } else if (row.status === 'abandoned') {
+    if (row.winner_id) {
+      $('mp-result-title').textContent = row.winner_id === currentUser.user_id ? 'Rakip bağlantıyı kaybetti — Kazandın!' : 'Bağlantın koptu — Kaybettin.';
       $('mp-result-score').textContent = `${myScore ?? correct} — ${oppScore ?? '—'}`;
     } else {
-      $('mp-result-title').textContent='Maç iptal edildi.';
-      $('mp-result-score').textContent='';
+      $('mp-result-title').textContent = 'Maç iptal edildi.';
+      $('mp-result-score').textContent = '';
     }
   } else {
-    $('mp-result-title').textContent='Rakip bekleniyor…';
+    $('mp-result-title').textContent = 'Rakip bekleniyor…';
     $('mp-result-score').textContent = `Sen: ${myScore ?? correct}`;
   }
   show('s-mp-result');
 }
 
-$('btn-mp-rematch').onclick=async()=>{
-  if(!mpMatch) return;
+$('btn-mp-rematch').onclick = async () => {
+  if (!mpMatch) return;
   const { data, error } = await sb.from('matches').update({
-    status:'lobby', host_ready:false, guest_ready:false, question_ids:null,
-    host_score:null, guest_score:null, host_finished:false, guest_finished:false,
-    winner_id:null, started_at:null, ended_at:null
+    status: 'lobby', host_ready: false, guest_ready: false, question_ids: null,
+    host_score: null, guest_score: null, host_finished: false, guest_finished: false,
+    winner_id: null, started_at: null, ended_at: null
   }).eq('match_id', mpMatch.match_id).select().single();
-  if(error || !data) return;
-  mpMatch=data; quizStartedForMatch=null; myMpFinished=false;
+  if (error || !data) return;
+  mpMatch = data; quizStartedForMatch = null; myMpFinished = false;
   joinMatchPresence(data.match_id);
   renderMpLobbyUI(data);
-  $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='MAÇ LOBİSİ';
+  $('hdrcode').textContent = 'KPSS · GK'; $('hdrcat').textContent = 'MAÇ LOBİSİ';
   show('s-mplobby');
 };
 
-$('btn-mp-result-leave').onclick=()=>{ cleanupMatch(); goToMenu(); };
+$('btn-mp-result-leave').onclick = () => { cleanupMatch(); goToMenu(); };
 
 /* ---------------- multiplayer: disconnect detection ---------------- */
-function joinMatchPresence(matchId){
-  if(mpPresenceChannel) return;
-  mpPresenceChannel = sb.channel('match-presence-'+matchId, { config:{ presence:{ key: currentUser.user_id } } });
-  mpPresenceChannel.on('presence', {event:'leave'}, ({leftPresences})=>{ handlePossibleForfeit(leftPresences); });
-  mpPresenceChannel.subscribe(async status=>{
-    if(status==='SUBSCRIBED') await mpPresenceChannel.track({user_id:currentUser.user_id});
+function joinMatchPresence(matchId) {
+  if (mpPresenceChannel) return;
+  mpPresenceChannel = sb.channel('match-presence-' + matchId, { config: { presence: { key: currentUser.user_id } } });
+  mpPresenceChannel.on('presence', { event: 'leave' }, ({ leftPresences }) => { handlePossibleForfeit(leftPresences); });
+  mpPresenceChannel.subscribe(async status => {
+    if (status === 'SUBSCRIBED') await mpPresenceChannel.track({ user_id: currentUser.user_id });
   });
 }
 
-function stopMatchPresence(){
-  if(mpPresenceChannel){ sb.removeChannel(mpPresenceChannel); mpPresenceChannel=null; }
+function stopMatchPresence() {
+  if (mpPresenceChannel) { sb.removeChannel(mpPresenceChannel); mpPresenceChannel = null; }
 }
 
-function handlePossibleForfeit(leftPresences){
-  if(!mpMatch) return;
-  const leftIds=leftPresences.map(p=>p.user_id);
-  const opponentId = mpMatch.host_id===currentUser.user_id ? mpMatch.guest_id : mpMatch.host_id;
-  if(!opponentId || !leftIds.includes(opponentId)) return;
-  if(mpMatch.status==='in_progress') forfeitWin();
-  else if(mpMatch.status==='waiting' || mpMatch.status==='lobby') abandonMatch();
+function handlePossibleForfeit(leftPresences) {
+  if (!mpMatch) return;
+  const leftIds = leftPresences.map(p => p.user_id);
+  const opponentId = mpMatch.host_id === currentUser.user_id ? mpMatch.guest_id : mpMatch.host_id;
+  if (!opponentId || !leftIds.includes(opponentId)) return;
+  if (mpMatch.status === 'in_progress') forfeitWin();
+  else if (mpMatch.status === 'waiting' || mpMatch.status === 'lobby') abandonMatch();
 }
 
-async function forfeitWin(){
-  const isHost=mpMatch.host_id===currentUser.user_id;
-  const patch={ status:'abandoned', winner_id:currentUser.user_id, ended_at:new Date().toISOString() };
-  patch[isHost?'host_score':'guest_score']=correct;
+async function forfeitWin() {
+  const isHost = mpMatch.host_id === currentUser.user_id;
+  const patch = { status: 'abandoned', winner_id: currentUser.user_id, ended_at: new Date().toISOString() };
+  patch[isHost ? 'host_score' : 'guest_score'] = myMpScore;
   const { data, error } = await sb.from('matches').update(patch).eq('match_id', mpMatch.match_id).eq('status', mpMatch.status).select().single();
-  if(error || !data) return;
+  if (error || !data) return;
   clearInterval(tHandle);
-  mpMatch=data;
+  mpMatch = data;
   showMpResult(data);
 }
 
-async function abandonMatch(){
-  const { data, error } = await sb.from('matches').update({status:'abandoned', ended_at:new Date().toISOString()}).eq('match_id', mpMatch.match_id).eq('status', mpMatch.status).select().single();
-  if(error || !data) return;
-  mpMatch=data;
+async function abandonMatch() {
+  const { data, error } = await sb.from('matches').update({ status: 'abandoned', ended_at: new Date().toISOString() }).eq('match_id', mpMatch.match_id).eq('status', mpMatch.status).select().single();
+  if (error || !data) return;
+  mpMatch = data;
   showMpResult(data);
 }
 
-function cleanupMatch(){
-  if(matchChannel){ sb.removeChannel(matchChannel); matchChannel=null; }
+function cleanupMatch() {
+  if (matchChannel) { sb.removeChannel(matchChannel); matchChannel = null; }
   stopMatchPresence();
-  mpMatch=null; quizStartedForMatch=null; myMpFinished=false;
+  mpMatch = null; quizStartedForMatch = null; myMpFinished = false;
 }
 
 /* ---------------- multiplayer: pvp stats ---------------- */
-async function loadPvpStats(){
-  if(!sb || !currentUser) return {wins:0, losses:0, draws:0, history:[]};
+async function loadPvpStats() {
+  if (!sb || !currentUser) return { wins: 0, losses: 0, draws: 0, history: [] };
   const { data, error } = await sb.from('matches')
     .select('match_id,host_id,guest_id,host_score,guest_score,winner_id,status,category,ended_at')
     .or(`host_id.eq.${currentUser.user_id},guest_id.eq.${currentUser.user_id}`)
-    .in('status', ['completed','abandoned'])
+    .in('status', ['completed', 'abandoned'])
     .not('ended_at', 'is', null)
-    .order('ended_at', {ascending:false});
-  if(error){ console.error('loadPvpStats error', error); return {wins:0,losses:0,draws:0,history:[]}; }
-  let wins=0, losses=0, draws=0;
-  (data||[]).forEach(m=>{
-    if(!m.winner_id) draws++;
-    else if(m.winner_id===currentUser.user_id) wins++;
+    .order('ended_at', { ascending: false });
+  if (error) { console.error('loadPvpStats error', error); return { wins: 0, losses: 0, draws: 0, history: [] }; }
+  let wins = 0, losses = 0, draws = 0;
+  (data || []).forEach(m => {
+    if (!m.winner_id) draws++;
+    else if (m.winner_id === currentUser.user_id) wins++;
     else losses++;
   });
-  return { wins, losses, draws, history:data||[] };
+  return { wins, losses, draws, history: data || [] };
 }
 
-function renderPvpStats({wins,losses,draws,history}){
+function renderPvpStats({ wins, losses, draws, history }) {
   $('pvp-summary').innerHTML = `
     <div class="pvp-stat"><b>${wins}</b><span>Galibiyet</span></div>
     <div class="pvp-stat"><b>${losses}</b><span>Mağlubiyet</span></div>
     <div class="pvp-stat"><b>${draws}</b><span>Berabere</span></div>`;
-  const box=$('pvp-history'); box.innerHTML='';
+  const box = $('pvp-history'); box.innerHTML = '';
   $('pvp-empty').style.display = history.length ? 'none' : 'block';
-  history.forEach(m=>{
-    const isHost=m.host_id===currentUser.user_id;
-    const myScore=isHost?m.host_score:m.guest_score;
-    const oppScore=isHost?m.guest_score:m.host_score;
-    const oppId=isHost?m.guest_id:m.host_id;
-    let resLabel='Berabere', resClass='';
-    if(m.winner_id){ resLabel = m.winner_id===currentUser.user_id?'Galibiyet':'Mağlubiyet'; resClass = m.winner_id===currentUser.user_id?'win':'loss'; }
-    const row=document.createElement('div'); row.className='pvp-row';
-    row.innerHTML=`<span>${displayNameFor(oppId)} · ${catLabel[m.category]||'Hepsi'}</span><span class="res ${resClass}">${resLabel} (${myScore??'—'}-${oppScore??'—'})</span>`;
+  history.forEach(m => {
+    const isHost = m.host_id === currentUser.user_id;
+    const myScore = isHost ? m.host_score : m.guest_score;
+    const oppScore = isHost ? m.guest_score : m.host_score;
+    const oppId = isHost ? m.guest_id : m.host_id;
+    let resLabel = 'Berabere', resClass = '';
+    if (m.winner_id) { resLabel = m.winner_id === currentUser.user_id ? 'Galibiyet' : 'Mağlubiyet'; resClass = m.winner_id === currentUser.user_id ? 'win' : 'loss'; }
+    const row = document.createElement('div'); row.className = 'pvp-row';
+    row.innerHTML = `<span>${displayNameFor(oppId)} · ${catLabel[m.category] || 'Hepsi'}</span><span class="res ${resClass}">${resLabel} (${myScore ?? '—'}-${oppScore ?? '—'})</span>`;
     box.appendChild(row);
   });
 }
 
-async function refreshPvpStats(){
+async function refreshPvpStats() {
   renderPvpStats(await loadPvpStats());
 }
 
-/* ---------------- solo lobby ---------------- */
-document.querySelectorAll('#cats .chip').forEach(b=>b.onclick=()=>{
-  document.querySelectorAll('#cats .chip').forEach(x=>x.classList.remove('sel'));
-  b.classList.add('sel'); lobbyCat=b.dataset.c;
+/* ---------------- solo lobby & setup ---------------- */
+document.querySelectorAll('#quiz-modes .chip').forEach(b => b.onclick = () => {
+  document.querySelectorAll('#quiz-modes .chip').forEach(x => x.classList.remove('sel'));
+  b.classList.add('sel'); lobbyMode = b.dataset.mode;
+  if (lobbyMode === 'indexed') {
+    $('indexed-test-section').style.display = 'block';
+    $('qcounts-wrapper').style.display = 'none';
+    updateIndexedTestsList();
+  } else {
+    $('indexed-test-section').style.display = 'none';
+    $('qcounts-wrapper').style.display = 'block';
+  }
 });
-document.querySelectorAll('#qcounts .chip').forEach(b=>b.onclick=()=>{
-  document.querySelectorAll('#qcounts .chip').forEach(x=>x.classList.remove('sel'));
-  b.classList.add('sel'); lobbyQCount=parseInt(b.dataset.n,10);
+document.querySelectorAll('#cats .chip').forEach(b => b.onclick = () => {
+  document.querySelectorAll('#cats .chip').forEach(x => x.classList.remove('sel'));
+  b.classList.add('sel'); lobbyCat = b.dataset.c;
+  if (lobbyMode === 'indexed') {
+    updateIndexedTestsList();
+  }
 });
-document.querySelectorAll('#durations .chip').forEach(b=>b.onclick=()=>{
-  document.querySelectorAll('#durations .chip').forEach(x=>x.classList.remove('sel'));
-  b.classList.add('sel'); lobbyPerQ=parseInt(b.dataset.s,10);
+document.querySelectorAll('#qcounts .chip').forEach(b => b.onclick = () => {
+  document.querySelectorAll('#qcounts .chip').forEach(x => x.classList.remove('sel'));
+  b.classList.add('sel'); lobbyQCount = parseInt(b.dataset.n, 10);
+});
+document.querySelectorAll('#durations .chip').forEach(b => b.onclick = () => {
+  document.querySelectorAll('#durations .chip').forEach(x => x.classList.remove('sel'));
+  b.classList.add('sel'); lobbyPerQ = parseInt(b.dataset.s, 10);
 });
 
-$('btn-start').onclick=async()=>{
-  perQuestionS=lobbyPerQ;
-  queue=await fetchQuestions(currentUser.user_id, lobbyCat, lobbyQCount);
-  if(queue.length === 0){
+$('btn-start').onclick = async () => {
+  quizState.mode = lobbyMode;
+  
+  if (lobbyMode === 'srs') {
+    const srsCards = JSON.parse(localStorage.getItem(`srs_cards_${currentUser.user_id}`) || '{}');
+    const now = new Date().toISOString();
+    const dueIds = Object.keys(srsCards).filter(id => {
+      const card = srsCards[id];
+      return card.status !== 'new' && card.next_review <= now;
+    });
+    
+    if (dueIds.length > 0) {
+      const limit = lobbyQCount === 0 ? 100000 : (lobbyQCount || 20);
+      const selectedIds = shuffle(dueIds).slice(0, limit);
+      const { data: qRows, error } = await sb.from('questions').select('*').in('q_id', selectedIds);
+      if (error || !qRows || qRows.length === 0) {
+        alert('Tekrar edilecek soru yüklenemedi.');
+        return;
+      }
+      queue = qRows;
+    } else {
+      alert('Şu an tekrar edecek SRS sorunuz yok. Yeni sorularla devam ediliyor.');
+      queue = await fetchQuestions(currentUser.user_id, lobbyCat, lobbyQCount);
+      quizState.mode = 'standard';
+    }
+  } else if (lobbyMode === 'indexed') {
+    const selectedTestIndex = parseInt($('indexed-test-select').value, 10);
+    if (!selectedTestIndex) {
+      alert('Lütfen geçerli bir test seçin.');
+      return;
+    }
+    const offset = (selectedTestIndex - 1) * 10;
+    let query = sb.from('questions').select('*').eq('has_image', false);
+    if (lobbyCat !== 'all') {
+      query = query.eq('category', lobbyCat);
+    }
+    query = query.order('source', { ascending: true }).order('question_no', { ascending: true });
+    query = query.range(offset, offset + 9);
+    
+    const { data: qRows, error } = await query;
+    if (error || !qRows || qRows.length === 0) {
+      alert('Seçilen test yüklenemedi veya boş.');
+      return;
+    }
+    queue = qRows;
+  } else {
+    queue = await fetchQuestions(currentUser.user_id, lobbyCat, lobbyQCount);
+  }
+  
+  if (queue.length === 0) {
     show('s-quiz');
-    $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='UYARI';
-    $('qtext').textContent='Soru bankası boş';
-    $('opts').innerHTML=''; $('verdict').textContent=''; $('verdict').className='verdict';
-    $('btn-next').style.display='none';
-    $('timerbar').style.visibility='hidden';
+    $('hdrcode').textContent = 'KPSS · GK'; $('hdrcat').textContent = 'UYARI';
+    $('qtext').textContent = 'Soru bankası boş';
+    $('opts').innerHTML = ''; $('verdict').textContent = ''; $('verdict').className = 'verdict';
+    $('btn-next').style.display = 'none';
+    $('timerbar').style.visibility = 'hidden';
     return;
   }
-  idx=0; correct=0; wrongs=[]; sessionId=uuid();
+  
+  idx = 0; correct = 0; wrongs = []; sessionId = uuid();
   show('s-quiz'); renderQ();
 };
 
 /* ---------------- quiz loop ---------------- */
-function renderQ(){
-  const q=queue[idx]; answered=false;
+function renderQ() {
+  const q = queue[idx]; answered = false;
   
-  // Reset synchronization state for the new question
   myLockedAnswer = undefined;
   oppLockedAnswer = undefined;
+  myTimeTaken = undefined;
+  oppTimeTaken = undefined;
+  myRisk = false;
+  oppRisk = false;
+  
   myNextReady = false;
   oppNextReady = false;
+  oppIsThinking = true;
 
-  $('hdrcode').textContent=`SORU ${String(idx+1).padStart(2,'0')} / ${queue.length}`;
-  $('hdrcat').textContent=catLabel[q.category]||'GK';
-  $('qtext').textContent=q.question_text;
-  $('verdict').textContent=''; $('verdict').className='verdict';
+  if (mpMatch) {
+    riskActive = false;
+    const rBtn = $('btn-mp-risk');
+    if (hasUsedRisk) {
+      $('mp-risk-container').style.display = 'none';
+    } else {
+      $('mp-risk-container').style.display = 'flex';
+      rBtn.disabled = false;
+      rBtn.classList.remove('sel');
+      rBtn.style.background = 'transparent';
+      rBtn.style.color = 'var(--osym-red)';
+      rBtn.textContent = '🔥 İkili Bahis (Risk)';
+    }
+    $('emoji-bar').style.display = 'none';
+  }
+
+  $('hdrcode').textContent = `SORU ${String(idx + 1).padStart(2, '0')} / ${queue.length}`;
+  $('hdrcat').textContent = catLabel[q.category] || 'GK';
+  $('qtext').textContent = q.question_text;
+  $('verdict').textContent = ''; $('verdict').className = 'verdict';
   
-  $('btn-next').style.display='none';
+  $('btn-next').style.display = 'none';
   $('btn-next').disabled = false;
   
-  // Show/Hide Scoreboard
-  $('mp-scoreboard').style.display = mpMatch ? 'flex' : 'none';
-  updateScoreboard();
+  if (mpMatch) {
+    $('mp-scoreboard').style.display = 'flex';
+    $('solo-progress-info').style.display = 'none';
+    $('solo-progress-bar-container').style.display = 'none';
+    updateScoreboard();
+  } else {
+    $('mp-scoreboard').style.display = 'none';
+    $('solo-progress-info').style.display = 'flex';
+    $('solo-progress-bar-container').style.display = 'block';
+    
+    $('quiz-progress').textContent = `Soru ${idx + 1} / ${queue.length}`;
+    $('quiz-score').textContent = `${correct} doğru`;
+    $('quiz-progress-bar').style.width = ((idx / queue.length) * 100) + '%';
+  }
 
-  const box=$('opts'); box.innerHTML='';
-  for(const k of ['A','B','C','D','E']){
-    if(!(k in q.options)) continue;
-    const b=document.createElement('button');
-    b.className='opt'; b.dataset.k=k;
-    b.innerHTML=`<span class="bubble">${k}</span><span>${q.options[k]}</span>`;
-    b.onclick=()=>answer(k,b);
+  const box = $('opts'); box.innerHTML = '';
+  for (const k of OPTION_KEYS) {
+    if (!(k in q.options)) continue;
+    const b = document.createElement('button');
+    b.className = 'opt'; b.dataset.k = k;
+    b.innerHTML = `<span class="bubble">${k}</span><span>${q.options[k]}</span>`;
+    b.onclick = () => answer(k, b);
     box.appendChild(b);
   }
-  startTimer();
+  
+  if (quizState.mode === 'study') {
+    $('timerbar').style.visibility = 'hidden';
+  } else {
+    startTimer();
+  }
 }
 
-function startTimer(){
-  clearInterval(tHandle); tStart=Date.now();
-  const bar=$('timerbar'), fill=$('timerfill');
-  if(perQuestionS<=0){ bar.style.visibility='hidden'; return; }
-  bar.style.visibility='visible'; bar.classList.remove('low'); fill.style.width='100%';
-  tLeft=perQuestionS;
-  tHandle=setInterval(()=>{
-    tLeft-=0.25;
-    fill.style.width=Math.max(0,(tLeft/perQuestionS)*100)+'%';
-    if(tLeft<=10) bar.classList.add('low');
-    if(tLeft<=0) answer(null,null);
-  },250);
+function startTimer() {
+  clearInterval(tHandle); tStart = Date.now();
+  const bar = $('timerbar'), fill = $('timerfill');
+  if (lobbyPerQ <= 0) { bar.style.visibility = 'hidden'; return; }
+  bar.style.visibility = 'visible'; bar.classList.remove('low'); fill.style.width = '100%';
+  tLeft = lobbyPerQ;
+  let timerTickCount = 0;
+  tHandle = setInterval(() => {
+    tLeft -= 0.25;
+    timerTickCount++;
+    fill.style.width = Math.max(0, (tLeft / lobbyPerQ) * 100) + '%';
+    if (tLeft <= 10) bar.classList.add('low');
+    
+    // Heartbeat vibration for last 3 seconds, standard tick for 10s down to 3s
+    if (tLeft <= 3 && tLeft > 0) {
+      if (timerTickCount % 3 === 0) {
+        if (navigator.vibrate) navigator.vibrate([30, 80, 30]); // Heartbeat pulse
+      }
+    } else if (tLeft <= 10 && tLeft > 3) {
+      if (timerTickCount % 4 === 0) {
+        if (navigator.vibrate) navigator.vibrate(20); // Single tick
+      }
+    }
+    
+    if (tLeft <= 0) answer(null, null);
+  }, 250);
 }
 
-function answer(k, btn){
-  if(answered) return; answered=true;
+function answer(k, btn) {
+  if (answered) return; answered = true;
   clearInterval(tHandle);
 
   if (mpMatch) {
-    // MULTIPLAYER LOGIC
     myLockedAnswer = k;
+    myTimeTaken = Date.now() - tStart;
+    myRisk = riskActive;
+    if (myRisk) {
+      hasUsedRisk = true;
+      $('mp-risk-container').style.display = 'none';
+    }
+    
     document.querySelectorAll('.opt').forEach(o => o.disabled = true);
     if (btn) btn.classList.add('picked');
+    
+    if (navigator.vibrate) navigator.vibrate(30); // Soft vibration on locked answer
 
     const v = $('verdict');
     v.textContent = 'Rakip bekleniyor...';
     v.className = 'verdict';
 
-    // Tell the opponent we locked an answer
     matchChannel.send({
       type: 'broadcast',
       event: 'mp_action',
-      payload: { action: 'lock_answer', userId: currentUser.user_id, ans: k }
+      payload: { 
+        action: 'lock_answer', 
+        userId: currentUser.user_id, 
+        ans: k,
+        timeTaken: myTimeTaken,
+        risk: myRisk
+      }
     });
 
     checkRoundResolve();
   } else {
-    // SOLO LOGIC
-    const q=queue[idx], ok=(k===q.correct_answer), ms=Date.now()-tStart;
-    document.querySelectorAll('.opt').forEach(o=>{
-      o.disabled=true;
-      if(o.dataset.k===q.correct_answer) o.classList.add('correct');
-    });
-    if(btn){ btn.classList.add('picked'); if(!ok) btn.classList.add('wrong'); }
-    const v=$('verdict');
-    if(ok){ correct++; v.textContent='DOĞRU ✓'; v.classList.add('ok'); }
-    else{
-      wrongs.push({q, chosen:k});
-      v.textContent = k===null ? 'SÜRE DOLDU — CEVAP: '+q.correct_answer : 'YANLIŞ ✗ — CEVAP: '+q.correct_answer;
-      v.classList.add('no');
+    const q = queue[idx], ok = (k === q.correct_answer), ms = Date.now() - tStart;
+    const isExam = (quizState.mode === 'exam');
+    
+    // Feedback vibration on click
+    if (navigator.vibrate) {
+      if (ok) {
+        navigator.vibrate([40, 40]); // Double tap for correct
+      } else {
+        navigator.vibrate(150); // Rumble for wrong/timeout
+      }
     }
-    logAttempt(currentUser.user_id,q.q_id,k,ok,ms,sessionId);
-    $('btn-next').style.display='block';
-    $('btn-next').textContent = idx+1<queue.length ? 'Sonraki Soru →' : 'Sonucu Gör →';
+
+    document.querySelectorAll('.opt').forEach(o => {
+      o.disabled = true;
+      if (!isExam) {
+        if (o.dataset.k === q.correct_answer) o.classList.add('correct');
+      }
+    });
+
+    if (btn) {
+      btn.classList.add('picked');
+      if (!isExam && !ok) btn.classList.add('wrong');
+    }
+
+    const v = $('verdict');
+    if (ok) {
+      correct++;
+      if (!isExam) {
+        v.textContent = 'DOĞRU ✓';
+        v.classList.add('ok');
+      }
+    } else {
+      wrongs.push({ q, chosen: k });
+      if (!isExam) {
+        v.textContent = k === null ? 'SÜRE DOLDU — CEVAP: ' + q.correct_answer : 'YANLIŞ ✗ — CEVAP: ' + q.correct_answer;
+        v.classList.add('no');
+      }
+    }
+
+    if (quizState.mode === 'srs') {
+      handleSRSReview(q.q_id, ok);
+    } else {
+      const userId = currentUser.user_id;
+      const srsCards = JSON.parse(localStorage.getItem(`srs_cards_${userId}`) || '{}');
+      if (!srsCards[q.q_id]) {
+        srsCards[q.q_id] = { ease_factor: 2.5, interval: 0, repetitions: 0, status: 'new', next_review: new Date().toISOString() };
+        localStorage.setItem(`srs_cards_${userId}`, JSON.stringify(srsCards));
+      }
+    }
+
+    logAttempt(currentUser.user_id, q.q_id, k, ok, ms, sessionId);
+    
+    $('btn-next').style.display = 'block';
+    $('btn-next').textContent = idx + 1 < queue.length ? 'Sonraki Soru →' : 'Sonucu Gör →';
   }
 }
 
 function checkRoundResolve() {
   if (myLockedAnswer !== undefined && oppLockedAnswer !== undefined) {
-    // Both players have locked their answers
     const q = queue[idx];
     const myOk = (myLockedAnswer === q.correct_answer);
     const oppOk = (oppLockedAnswer === q.correct_answer);
-
-    if (myOk) { correct++; myMpScore++; }
-    else wrongs.push({q, chosen: myLockedAnswer});
-
-    if (oppOk) oppMpScore++;
+    
+    // Evaluate speed bonus points
+    // 0-5s: 3pts, 5-15s: 2pts, 15s+: 1pt
+    let myBase = 1;
+    if (myOk) {
+      if (myTimeTaken <= 5000) myBase = 3;
+      else if (myTimeTaken <= 15000) myBase = 2;
+    }
+    let oppBase = 1;
+    if (oppOk) {
+      if (oppTimeTaken <= 5000) oppBase = 3;
+      else if (oppTimeTaken <= 15000) oppBase = 2;
+    }
+    
+    // Apply Risk factor
+    let myEarned = 0;
+    if (myOk) {
+      myEarned = myRisk ? (myBase * 2) : myBase;
+    } else {
+      myEarned = myRisk ? -1 : 0;
+    }
+    
+    let oppEarned = 0;
+    if (oppOk) {
+      oppEarned = oppRisk ? (oppBase * 2) : oppBase;
+    } else {
+      oppEarned = oppRisk ? -1 : 0;
+    }
+    
+    // Update scores
+    if (myOk) correct++;
+    else wrongs.push({ q, chosen: myLockedAnswer });
+    
+    myMpScore = Math.max(0, myMpScore + myEarned);
+    oppMpScore = Math.max(0, oppMpScore + oppEarned);
+    
     updateScoreboard();
-    logAttempt(currentUser.user_id, q.q_id, myLockedAnswer, myOk, Date.now()-tStart, sessionId);
+    logAttempt(currentUser.user_id, q.q_id, myLockedAnswer, myOk, myTimeTaken || 0, sessionId);
 
-    // Apply grading visuals
     document.querySelectorAll('.opt').forEach(o => {
       if (o.dataset.k === q.correct_answer) o.classList.add('correct');
       if (o.dataset.k === myLockedAnswer && !myOk) o.classList.add('wrong');
     });
 
     const v = $('verdict');
-    if (myOk) { v.textContent='DOĞRU ✓'; v.classList.add('ok'); }
-    else {
-      v.textContent = myLockedAnswer === null ? 'SÜRE DOLDU — CEVAP: '+q.correct_answer : 'YANLIŞ ✗ — CEVAP: '+q.correct_answer;
-      v.classList.add('no');
+    let speedLabel = myBase === 3 ? ' 🔥 (Süper Hızlı)' : (myBase === 2 ? ' ⚡ (Hızlı)' : '');
+    let riskLabel = myRisk ? ' 🎯 (İkili Bahis!)' : '';
+    
+    if (myOk) {
+      v.textContent = `DOĞRU ✓ +${myEarned}${speedLabel}${riskLabel}`;
+      v.className = 'verdict ok';
+    } else {
+      v.textContent = myLockedAnswer === null ? 'SÜRE DOLDU' : `YANLIŞ ✗ ${myRisk ? '-1 Puan' : ''} — CEVAP: ${q.correct_answer}`;
+      v.className = 'verdict no';
     }
     
-    // Add subtext for how the opponent did
-    const oppMsg = oppLockedAnswer === null ? 'Rakip süreye yenildi.' : (oppOk ? 'Rakip doğru bildi.' : 'Rakip yanlış bildi.');
+    let oppSpeedLabel = oppBase === 3 ? ' 🔥 (Süper Hızlı)' : (oppBase === 2 ? ' ⚡ (Hızlı)' : '');
+    let oppRiskLabel = oppRisk ? ' 🎯 (İkili Bahis!)' : '';
+    let oppMsg = '';
+    if (oppLockedAnswer === null) {
+      oppMsg = 'Rakip süreye yenildi.';
+    } else if (oppOk) {
+      oppMsg = `Rakip doğru bildi: +${oppEarned}${oppSpeedLabel}${oppRiskLabel}`;
+    } else {
+      oppMsg = `Rakip yanlış bildi${oppRisk ? ': -1 Puan' : '.'}`;
+    }
     v.innerHTML += `<br><span style="color:var(--muted); font-size:0.8rem; font-weight:400; letter-spacing:0">${oppMsg}</span>`;
 
-    $('btn-next').style.display='block';
-    $('btn-next').textContent = idx+1<queue.length ? 'Hazırım (İleri) →' : 'Sonucu Gör →';
+    $('btn-next').style.display = 'block';
+    $('btn-next').textContent = idx + 1 < queue.length ? 'Hazırım (İleri) →' : 'Sonucu Gör →';
   }
 }
-$('btn-next').onclick=()=>{
+
+$('btn-next').onclick = () => {
   if (mpMatch) {
     myNextReady = true;
     $('btn-next').disabled = true;
@@ -1332,7 +2660,7 @@ $('btn-next').onclick=()=>{
     checkNextResolve();
   } else {
     idx++;
-    if(idx<queue.length) renderQ();
+    if (idx < queue.length) renderQ();
     else endQuiz();
   }
 };
@@ -1345,124 +2673,381 @@ function checkNextResolve() {
   }
 }
 
-/* ---------------- summary ---------------- */
-function endQuiz(){
+/* ---------------- solo summary ---------------- */
+function endQuiz() {
   clearInterval(tHandle);
-  $('timerbar').style.visibility='hidden';
-  $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='SONUÇ';
-  $('score').innerHTML=`${correct} / ${queue.length} <small>· ${currentUser.display_name}</small>`;
-  const sheet=$('sheet'); sheet.innerHTML='';
-  queue.forEach((q,i)=>{
-    const w=wrongs.find(x=>x.q.q_id===q.q_id);
-    const row=document.createElement('div');
-    row.className='row '+(w?'wrongrow':'okrow');
-    row.innerHTML=`<span class="n">${String(i+1).padStart(2,'0')}</span>
-      <span class="mark">${w?'✗ '+(w.chosen??'—')+'→'+q.correct_answer:'✓ '+q.correct_answer}</span>
-      <p>${q.question_text.slice(0,90)}${q.question_text.length>90?'…':''}</p>`;
+  $('timerbar').style.visibility = 'hidden';
+  $('hdrcode').textContent = 'KPSS · GK'; $('hdrcat').textContent = 'SONUÇ';
+  
+  const pct = Math.round((correct / queue.length) * 100);
+  $('score').innerHTML = `${correct} / ${queue.length} <small>· %${pct}</small>`;
+  $('score-bar').style.width = pct + '%';
+  
+  const sheet = $('sheet'); sheet.innerHTML = '';
+  queue.forEach((q, i) => {
+    const w = wrongs.find(x => x.q.q_id === q.q_id);
+    const row = document.createElement('div');
+    row.className = 'row ' + (w ? 'wrongrow' : 'okrow');
+    row.innerHTML = `<span class="n">${String(i + 1).padStart(2, '0')}</span>
+      <span class="mark">${w ? '✗ ' + (w.chosen ?? '—') + '→' + q.correct_answer : '✓ ' + q.correct_answer}</span>
+      <p>${q.question_text.slice(0, 90)}${q.question_text.length > 90 ? '…' : ''}</p>`;
     sheet.appendChild(row);
   });
   show('s-end');
+  checkAndTriggerAchievements();
 }
-$('btn-again').onclick=()=>{ $('hdrcode').textContent='KPSS · GK'; $('hdrcat').textContent='KURAL AYARI'; show('s-lobby'); };
 
-/* ---------------- stats ---------------- */
-document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
-  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('sel'));
+$('btn-again').onclick = () => { $('hdrcode').textContent = 'KPSS · GK'; $('hdrcat').textContent = 'SINAV KURULUMU'; show('s-quiz-setup'); };
+$('btn-quiz-end-menu').onclick = goToMenu;
+
+/* ---------------- stats tabs switcher ---------------- */
+document.querySelectorAll('.tab').forEach(t => t.onclick = () => {
+  document.querySelectorAll('.tab').forEach(x => x.classList.remove('sel'));
   t.classList.add('sel');
-  const tab=t.dataset.tab;
-  $('tab-pvp').style.display = tab==='pvp' ? 'block':'none';
-  $('tab-wrong').style.display = tab==='wrong' ? 'block':'none';
-  if(tab==='wrong') refreshWrongList();
-  if(tab==='pvp') refreshPvpStats();
+  const tab = t.dataset.tab;
+  $('tab-pvp').style.display = tab === 'pvp' ? 'block' : 'none';
+  $('tab-wrong').style.display = tab === 'wrong' ? 'block' : 'none';
+  $('tab-perf').style.display = tab === 'perf' ? 'block' : 'none';
+  if (tab === 'wrong') refreshWrongList();
+  if (tab === 'pvp') refreshPvpStats();
+  if (tab === 'perf') renderStats();
 });
 
-async function loadWrongAnswers(){
-  if(!sb || !currentUser) return [];
+async function loadWrongAnswers() {
+  if (!sb || !currentUser) return [];
   const { data: atts, error } = await sb.from('attempts')
     .select('attempt_id,q_id,chosen_answer,created_at')
     .eq('user_id', currentUser.user_id).eq('is_correct', false)
-    .order('created_at', {ascending:false});
-  if(error){ console.error('loadWrongAnswers error', error); return []; }
-  if(!atts || atts.length===0) return [];
-  const ids=[...new Set(atts.map(a=>a.q_id))];
+    .order('created_at', { ascending: false });
+  if (error) { console.error('loadWrongAnswers error', error); return []; }
+  if (!atts || atts.length === 0) return [];
+  const ids = [...new Set(atts.map(a => a.q_id))];
   const { data: qs, error: qErr } = await sb.from('questions').select('*').in('q_id', ids);
-  if(qErr){ console.error('loadWrongAnswers questions error', qErr); return []; }
-  const qMap=new Map(qs.map(q=>[q.q_id,q]));
-  return atts.map(a=>({attempt:a, q:qMap.get(a.q_id)})).filter(x=>x.q);
+  if (qErr) { console.error('loadWrongAnswers questions error', qErr); return []; }
+  const qMap = new Map(qs.map(q => [q.q_id, q]));
+  return atts.map(a => ({ attempt: a, q: qMap.get(a.q_id) })).filter(x => x.q);
 }
 
-async function deleteAttempt(id){
+async function deleteAttempt(id) {
   const { error } = await sb.from('attempts').delete().eq('attempt_id', id);
-  if(error) console.error('deleteAttempt error', error);
+  if (error) console.error('deleteAttempt error', error);
 }
 
-function showWrongDetail(q, attempt){
-  $('wronglist').style.display='none';
-  $('wrong-empty').style.display='none';
-  const d=$('wrong-detail');
-  d.style.display='block';
-  let html=`<p class="qtext">${q.question_text}</p><div class="opts">`;
-  for(const k of ['A','B','C','D','E']){
-    if(!(k in q.options)) continue;
-    let cls='opt';
-    if(k===q.correct_answer) cls+=' correct';
-    if(k===attempt.chosen_answer && k!==q.correct_answer) cls+=' wrong picked';
-    html+=`<div class="${cls}"><span class="bubble">${k}</span><span>${q.options[k]}</span></div>`;
+function showWrongDetail(q, attempt) {
+  $('wronglist').style.display = 'none';
+  $('wrong-empty').style.display = 'none';
+  const d = $('wrong-detail');
+  d.style.display = 'block';
+  let html = `<p class="qtext">${q.question_text}</p><div class="opts">`;
+  for (const k of OPTION_KEYS) {
+    if (!(k in q.options)) continue;
+    let cls = 'opt';
+    if (k === q.correct_answer) cls += ' correct';
+    if (k === attempt.chosen_answer && k !== q.correct_answer) cls += ' wrong picked';
+    html += `<div class="${cls}"><span class="bubble">${k}</span><span>${q.options[k]}</span></div>`;
   }
-  html+=`</div><button class="linkbtn" id="btn-close-detail" style="margin-top:18px">← Listeye dön</button>`;
-  d.innerHTML=html;
-  $('btn-close-detail').onclick=()=>{
-    d.style.display='none';
-    $('wronglist').style.display='flex';
+  html += `</div><button class="linkbtn" id="btn-close-detail" style="margin-top:18px">← Listeye dön</button>`;
+  d.innerHTML = html;
+  $('btn-close-detail').onclick = () => {
+    d.style.display = 'none';
+    $('wronglist').style.display = 'flex';
   };
 }
 
-function renderWrongList(items){
-  const box=$('wronglist'); box.innerHTML='';
+function renderWrongList(items) {
+  const box = $('wronglist'); box.innerHTML = '';
   $('wrong-empty').style.display = items.length ? 'none' : 'block';
-  items.forEach(({attempt,q})=>{
-    const row=document.createElement('div'); row.className='wrow';
-    row.innerHTML=`<div class="wrow-del">Sil</div>
+  items.forEach(({ attempt, q }) => {
+    const row = document.createElement('div'); row.className = 'wrow';
+    row.innerHTML = `<div class="wrow-del">Sil</div>
       <div class="wrow-inner">
-        <p>${q.question_text.slice(0,70)}${q.question_text.length>70?'…':''}</p>
-        <span class="mono" style="color:var(--osym-red); flex:none">${attempt.chosen_answer??'—'}→${q.correct_answer}</span>
+        <p>${q.question_text.slice(0, 70)}${q.question_text.length > 70 ? '…' : ''}</p>
+        <span class="mono" style="color:var(--osym-red); flex:none">${attempt.chosen_answer ?? '—'}→${q.correct_answer}</span>
       </div>`;
-    const inner=row.querySelector('.wrow-inner');
-    let startX=0, startY=0, dx=0, dragging=false;
-    inner.addEventListener('touchstart', e=>{ startX=e.touches[0].clientX; startY=e.touches[0].clientY; dragging=true; dx=0; }, {passive:true});
-    inner.addEventListener('touchmove', e=>{
-      if(!dragging) return;
-      const ndx=e.touches[0].clientX-startX;
-      const dy=e.touches[0].clientY-startY;
-      if(Math.abs(dy)>Math.abs(ndx)) return;
-      dx=ndx;
-      if(dx<0) inner.style.transform=`translateX(${dx}px)`;
-    }, {passive:true});
-    inner.addEventListener('touchend', ()=>{
-      dragging=false;
-      if(dx<-80){
-        inner.style.transform='translateX(-100%)';
-        inner.style.opacity='0';
+    const inner = row.querySelector('.wrow-inner');
+    let startX = 0, startY = 0, dx = 0, dragging = false;
+    inner.addEventListener('touchstart', e => { startX = e.touches[0].clientX; startY = e.touches[0].clientY; dragging = true; dx = 0; }, { passive: true });
+    inner.addEventListener('touchmove', e => {
+      if (!dragging) return;
+      const ndx = e.touches[0].clientX - startX;
+      const dy = e.touches[0].clientY - startY;
+      if (Math.abs(dy) > Math.abs(ndx)) return;
+      dx = ndx;
+      if (dx < 0) inner.style.transform = `translateX(${dx}px)`;
+    }, { passive: true });
+    inner.addEventListener('touchend', () => {
+      dragging = false;
+      if (dx < -80) {
+        inner.style.transform = 'translateX(-100%)';
+        inner.style.opacity = '0';
         deleteAttempt(attempt.attempt_id);
-        setTimeout(()=>{ row.remove(); if(!$('wronglist').children.length) $('wrong-empty').style.display='block'; }, 200);
+        setTimeout(() => { row.remove(); if (!box.children.length) $('wrong-empty').style.display = 'block'; }, 200);
       } else {
-        inner.style.transform='';
+        inner.style.transform = '';
       }
     });
-    inner.addEventListener('click', ()=>{ if(Math.abs(dx)<5) showWrongDetail(q, attempt); });
+    inner.addEventListener('click', () => { if (Math.abs(dx) < 5) showWrongDetail(q, attempt); });
     box.appendChild(row);
   });
 }
 
-async function refreshWrongList(){
-  $('wrong-detail').style.display='none';
-  $('wronglist').style.display='flex';
-  const items=await loadWrongAnswers();
+async function refreshWrongList() {
+  $('wrong-detail').style.display = 'none';
+  $('wronglist').style.display = 'flex';
+  const items = await loadWrongAnswers();
   renderWrongList(items);
 }
 
+async function renderStats() {
+  $('stat-total').textContent = '...';
+  $('stat-accuracy').textContent = '...';
+  $('stat-streak').textContent = '...';
+  $('stat-questions').textContent = '...';
+  $('cat-breakdown').innerHTML = '<div class="loading"><div class="spinner"></div></div>';
+  $('calendar').innerHTML = '';
+
+  const stats = await getUserStats();
+  if (!stats) return;
+
+  $('stat-total').textContent = stats.totalAnswers;
+  $('stat-accuracy').textContent = stats.totalAnswers > 0 ? Math.round((stats.totalCorrect / stats.totalAnswers) * 100) + '%' : '0%';
+  $('stat-streak').textContent = stats.streak;
+  $('stat-questions').textContent = stats.totalQuestions;
+
+  const catAttempts = {};
+  stats.attempts.forEach(a => {
+    const cat = a.questions?.category;
+    if (!cat) return;
+    if (!catAttempts[cat]) catAttempts[cat] = { total: 0, correct: 0 };
+    catAttempts[cat].total++;
+    if (a.is_correct) catAttempts[cat].correct++;
+  });
+
+  const breakdown = $('cat-breakdown');
+  breakdown.innerHTML = '';
+  let hasData = false;
+
+  CATEGORIES.forEach(cat => {
+    const data = catAttempts[cat];
+    if (!data) return;
+    hasData = true;
+    const pct = Math.round((data.correct / data.total) * 100);
+    const color = CAT_COLORS[cat] || '#888';
+    const div = document.createElement('div');
+    div.className = 'cat-bar';
+    div.innerHTML = `
+      <span class="cat-name">${CAT_LABELS[cat] || cat}</span>
+      <div class="bar"><div class="fill" style="width:${pct}%;background:${color}"></div></div>
+      <span class="cat-pct">%${pct}</span>`;
+    breakdown.appendChild(div);
+  });
+
+  if (!hasData) {
+    breakdown.innerHTML = '<div class="empty-state"><div class="text">Henüz veri yok. Sınav çözmeye başla!</div></div>';
+  }
+
+  const cal = $('calendar');
+  cal.innerHTML = '';
+  const activeDays = new Set(stats.attempts.map(a => a.created_at.split('T')[0]));
+  const today = new Date();
+  const startDay = new Date(today);
+  startDay.setDate(startDay.getDate() - 29);
+
+  for (let i = 0; i < 30; i++) {
+    const d = new Date(startDay);
+    d.setDate(d.getDate() + i);
+    const key = d.toISOString().split('T')[0];
+    const div = document.createElement('div');
+    div.className = 'cal-day' + (activeDays.has(key) ? ' active' : '') + (i === 29 ? ' today' : '');
+    div.textContent = d.getDate();
+    cal.appendChild(div);
+  }
+}
+
+/* ---------------- Question Bank ---------------- */
+let qbankFilter = 'all';
+let qbankSearch = '';
+
+async function renderQuestionBank() {
+  const list = $('qbank-list');
+  list.innerHTML = '<div class="loading"><div class="spinner"></div></div>';
+
+  let query = sb.from('questions').select('q_id, category, question_text, correct_answer').eq('has_image', false);
+  if (qbankFilter !== 'all') {
+    query = query.eq('category', qbankFilter);
+  }
+  if (qbankSearch) {
+    query = query.ilike('question_text', `%${qbankSearch}%`);
+  }
+
+  const { data: rows, error } = await query.order('created_at', { ascending: false }).limit(200);
+
+  list.innerHTML = '';
+
+  if (error || !rows || rows.length === 0) {
+    list.innerHTML = '<div class="empty-state"><div class="icon">📭</div><div class="text">Bu kriterde soru bulunamadı.</div></div>';
+    return;
+  }
+
+  rows.forEach(r => {
+    const item = document.createElement('div');
+    item.className = 'qbank-item';
+    item.innerHTML = `
+      <div class="qcat">${CAT_LABELS[r.category] || r.category}</div>
+      <div class="qtext-preview">${r.question_text}</div>
+      <div class="qmeta">
+        <span>Cevap: ${r.correct_answer}</span>
+      </div>`;
+    item.onclick = () => showQuestionDetail(r.q_id, r.category, r.question_text, r.correct_answer);
+    list.appendChild(item);
+  });
+}
+
+async function showQuestionDetail(qId, cat, text, ans) {
+  $('qdetail-cat').textContent = CAT_LABELS[cat] || cat;
+  $('qdetail-text').textContent = text;
+
+  const { data: q } = await sb.from('questions').select('options').eq('q_id', qId).single();
+  const opts = q?.options || {};
+
+  const optDiv = $('qdetail-options');
+  optDiv.innerHTML = '';
+  OPTION_KEYS.forEach(k => {
+    if (!(k in opts)) return;
+    const div = document.createElement('div');
+    div.className = 'opt';
+    div.style.cssText = `${k === ans ? 'border-color:var(--stamp-green);background:rgba(30,123,79,0.05)' : ''}`;
+    div.innerHTML = `<span class="bubble" style="${k === ans ? 'background:var(--stamp-green);border-color:var(--stamp-green);color:#fff' : ''}">${k}</span><span>${opts[k]}</span>${k === ans ? '<span style="margin-left:auto;color:var(--stamp-green);font-weight:600">✓</span>' : ''}`;
+    optDiv.appendChild(div);
+  });
+
+  const { data: attempts } = await sb.from('attempts').select('is_correct').eq('q_id', qId).eq('user_id', currentUser.user_id);
+  const total = attempts?.length || 0;
+  const correctAttempts = attempts?.filter(a => a.is_correct).length || 0;
+
+  $('qdetail-meta').innerHTML = `Toplam Deneme: ${total} · Doğru: ${correctAttempts} · ${total > 0 ? 'Başarı: %' + Math.round((correctAttempts / total) * 100) : 'Henüz çözülmedi'}`;
+
+  $('qdetail-overlay').classList.add('active');
+}
+
+$('btn-close-qdetail').onclick = () => { $('qdetail-overlay').classList.remove('active'); };
+
+document.querySelectorAll('#qbank-cats .chip').forEach(b => b.onclick = () => {
+  document.querySelectorAll('#qbank-cats .chip').forEach(x => x.classList.remove('sel'));
+  b.classList.add('sel');
+  qbankFilter = b.dataset.c;
+  renderQuestionBank();
+});
+
+$('qbank-search').oninput = (e) => {
+  qbankSearch = e.target.value;
+  renderQuestionBank();
+};
+
+/* ---------------- Achievements ---------------- */
+function renderAchievements() {
+  const grid = $('achievement-grid');
+  grid.innerHTML = '';
+  
+  const userId = currentUser.user_id;
+  const raw = localStorage.getItem(`achievements_${userId}`);
+  const unlocked = raw ? new Set(JSON.parse(raw)) : new Set();
+  
+  ACHIEVEMENT_DEFS.forEach(def => {
+    const isUnlocked = unlocked.has(def.id);
+    const div = document.createElement('div');
+    div.className = 'achievement' + (isUnlocked ? ' unlocked' : '');
+    div.innerHTML = `
+      <div class="icon">${def.icon}</div>
+      <div class="name">${isUnlocked ? def.name : '???'}</div>
+      <div class="desc">${def.desc}</div>`;
+    grid.appendChild(div);
+  });
+}
+
+/* ---------------- Imports Removed ---------------- */
+
+/* ---------------- Keyboard Shortcuts ---------------- */
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const activeOverlay = document.querySelector('.overlay.active');
+    if (activeOverlay) {
+      activeOverlay.classList.remove('active');
+    } else {
+      toggleSettingsOverlay();
+    }
+    return;
+  }
+
+  const quizScreen = $('s-quiz');
+  if (!quizScreen.classList.contains('active')) return;
+  if (answered) {
+    if (e.key === 'Enter') $('btn-next').click();
+    return;
+  }
+
+  const keyMap = { '1': 'A', '2': 'B', '3': 'C', '4': 'D', '5': 'E' };
+  const opt = keyMap[e.key];
+  if (opt) {
+    const btn = document.querySelector(`.opt[data-k="${opt}"]`);
+    if (btn && !btn.disabled) answer(opt, btn);
+  }
+});
+
+/* ---------------- Touch Gestures (Swipe to Navigate) ---------------- */
+let touchStartX = 0;
+let touchStartY = 0;
+
+$('s-quiz').addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+  touchStartY = e.changedTouches[0].screenY;
+}, { passive: true });
+
+$('s-quiz').addEventListener('touchend', (e) => {
+  const touchEndX = e.changedTouches[0].screenX;
+  const touchEndY = e.changedTouches[0].screenY;
+  
+  const diffX = touchEndX - touchStartX;
+  const diffY = touchEndY - touchStartY;
+  
+  // Swipe Left: Next Question (triggers only when the next button is visible and active)
+  if (diffX < -65 && Math.abs(diffY) < 45) {
+    const nextBtn = $('btn-next');
+    if (nextBtn && nextBtn.style.display === 'block' && !nextBtn.disabled) {
+      if (navigator.vibrate) navigator.vibrate(20);
+      nextBtn.click();
+    }
+  }
+}, { passive: true });
+
 /* ---------------- boot ---------------- */
-initLogin();
+async function boot() {
+  const savedUser = localStorage.getItem('kpss_current_user');
+  if (savedUser) {
+    try {
+      const u = JSON.parse(savedUser);
+      allUsers = await loadUsers();
+      const freshU = allUsers.find(x => x.user_id === u.user_id);
+      if (freshU) {
+        loginAs(freshU);
+      } else {
+        localStorage.removeItem('kpss_current_user');
+        show('s-login');
+        initLogin();
+      }
+    } catch(e) {
+      console.error('Boot restore failed', e);
+      localStorage.removeItem('kpss_current_user');
+      show('s-login');
+      initLogin();
+    }
+  } else {
+    show('s-login');
+    initLogin();
+  }
+}
+
+boot();
 </script>
 </body>
 </html>

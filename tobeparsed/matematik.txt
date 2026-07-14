@@ -1,0 +1,158 @@
+=== PAGE 8 ===
+Çözümlü videoları
+izlemek için kare kodu
+Doğal Sayı – Tam Sayı okutunuz.
+6. x, y ! N olmak üzere,
+TEST - 1
+3x + 5y = 46 eşitliğini sağlayan (x, y) sıralı ikilisi kaç
+tanedir?
+1. a ve b birer rakam olmak üzere,
+A) 5 B) 4 C) 3 D) 2 E) 1
+11a + 17b = 152 olduğuna göre a · b çarpımı kaçtır?
+A) 35 B) 28 C) 24 D) 21 E) 18
+2. a ve b sayma sayılarıdır.
+a · b = 20
+olduğuna göre, a + b toplamının en büyük değeri 7. a, b, c birer doğal sayıdır.
+ile en küçük değerinin toplamı kaçtır?
+a + b + c = 19 olduğuna göre, a · b · c çarpımının
+A) 9 B) 16 C) 21 D) 24 E) 30 alabileceği en büyük değer kaçtır?
+A) 150 B) 230 C) 252 D) 264 E) 286
+P
+E
+G
+E
+3. a ve b sayma sayılarıdır. M
+2a + 3b = 36 A
+K
+olduğuna göre, b’nin alabileceği değerler toplamı
+A
+kaçtır?
+D
+E
+A) 42 B) 40 C) 36 D) 30 E) 28
+M
+İ
+8. x, y, z doğal sayılardır.
+3x – 4y + 3z = 0
+olduğuna göre, 6x + 7y + 6z toplamı aşağıdakiler-
+den hangisi olamaz?
+4. m, n, k sayma sayılarıdır.
+A) 0 B) 45 C) 70 D) 90 E) 135
+2m + 3n + 4k = 48
+olduğuna göre, k en çok kaçtır?
+A) 11 B) 10 C) 9 D) 8 E) 7
+5. a, b, c birbirinden farklı doğal sayılardır.
+9. x, y, z birbirinden farklı doğal sayılardır.
+a · b = 48
+5x + 2y + 6z = 42
+a · c = 32
+olduğuna göre, x + y + z toplamı en az kaçtır?
+olduğuna göre, a + b + c toplamı en az kaçtır?
+A) 7 B) 8 C) 9 D) 10 E) 11
+A) 16 B) 18 C) 21 D) 24 E) 27
+2
+
+
+
+=== PAGE 9 ===
+Doğal Sayı – Tam Sayı
+10. x, y, z birbirinden farklı doğal sayılardır. 15. a ve b tam sayıdır.
+4x + 3y + 2z = 83 a · b = 15 olduğuna göre, 3a + 4b toplam en az kaç-
+tır?
+olduğuna göre, x + y + z toplamının alabileceği en
+büyük değer kaçtır? A) 29 B) 27 C) –27 D) –49 E) –63
+A) 38 B) 41 C) 43 D) 45 E) 48
+11. a ve b doğal sayıdır.
+1 1
+a · b = 24 olduğuna göre, + toplamı en az kaç-
+a b 16. x ve y pozitif sayı olmak üzere, 2x + 3y = 17 olduğuna
+tır? göre, x – y farkının alabileceği en küçük değer kaçtır?
+1 3 5 1 5 A) –4 B) –2 C) 1 D) 3 E) 6
+A) B) C) D) E)
+3 8 12 2 8
+P
+E
+G
+E
+M
+A
+12. m ve n doğal sayıdır.
+K
+n · (m2 + 1) = 16 A
+D
+olduğuna göre, m + n toplamı en az kaçtır? E
+M
+A) 9 B) 10 C) 13 D) 15 E) 17 İ 17. x, y ve z tam sayıdır.
+x · y = –8 ve x · z = –13
+olduğuna göre, x · y · z çarpımı en çok kaçtır?
+A) –104 B) –52 C) 26 D) 52 E) 104
+13. x, y birer pozitif tam sayı ve x + y = 14 olduğuna göre
+x · y çarpımının alabileceği en büyük tam sayı değeri
+en küçük tam sayı değerinden kaç fazladır?
+A) 49 B) 42 C) 39 D) 36 E) 35
+18. a, b, c pozitif tam sayıdır.
+a + b – 5c = 0
+14. 5a = 7b eşitliğini sağlayan en küçük a ve b pozitif tam olduğuna göre, a + b + c toplamı aşağıdakilerden
+sayıları için a + 2b toplamı kaçtır? hangisi olabilir?
+A) 19 B) 17 C) 16 D) 15 E) 12 A) 121 B) 124 C) 126 D) 128 E) 130
+3
+
+
+
+=== PAGE 10 ===
+Doğal Sayı – Tam Sayı
+6. x, y ! N ise
+ÇÖZÜMLER - 1
+3x + 5y = 46
+. .
+2 8
+1. 11a + 17b = 152
+. . 12 2
+3 7 7 5
+Buna göre, a · b = 3 · 7 = 21 bulunur. Buna göre, 3 tane (x, y) sıralı ikilisi bulunur.
+Cevap D
+Cevap C
+2. a · b = 20 ise
+1 20
+2 10
+4 5 olur.
+7. a + b + c = 19 ise a · b · c’nin en büyük olması için birbirine
+Bu durumda a + b = 21
+. . .
+6 7 6
+en büyük değeri, a + b = 9 en küçük değeri olacaktır.
+yakın sayılar seçilmelidir. Buna göre, 6 · 6 · 7 = 252 bu-
+Toplamları ise 21 + 9 = 30 bulunur. lunur.
+P
+E
+Cevap E Cevap C
+G
+E
+M
+A
+K
+A
+D
+3. 2a + 3b = 36 olacak şekilde b sayma sayısı 2, 4, 6, 8 ve E
+10 değerleri alır. M
+İ
+Bu değerler toplamı 2 + 4 + 6 + 8 + 10 = 30 bulunur.
+Cevap D
+8. 3x – 4y + 3z = 0 & 3x + 3z = 4y olur Buradan;
+6x + 7y + 6z ifadesinde 6x + 6z yerine 8y yazılırsa ifade
+7y + 8y = 15y olur. y doğal sayı olacak şekilde 15y ifadesi
+70’e eşit olamaz.
+4. 2m + 3n + 4k = 48 olacak şekilde k’nin en büyük olması
+Cevap C
+için m ve n sayıları en küçük değerlerini almalıdır. O hâlde
+m = 1, n = 2 için k = 10 olur.
+Cevap B
+5. a · b = 48 ve a · c = 32 olacak şekilde
+a + b + c toplamının en az olması için a, b ve c sayıları 9. 5x + 2y + 6z = 42 ifadesinde x + y + z toplamının en az
+birbirine yakın seçilmelidir. O hâlde a = 8, b = 6 ve c = 4 olması için x = 2, y = 1 ve z = 5 seçilmelidir.
+için a + b + c = 8 + 6 + 4 = 18 olur.
+Buradan x + y + z = 2 + 1 + 5 = 8 olur.
+Cevap B
+Cevap B
+4
+
