@@ -1,0 +1,227 @@
+[
+ {
+  "category": "guncel",
+  "source": "TUIK-GUNCEL-2026",
+  "question_no": 1,
+  "question_text": "TÜİK’in açıkladığı 2025 yılı Adrese Dayalı Nüfus Kayıt Sistemi (ADNKS) sonuçlarına göre, Türkiye’nin toplam nüfusu aşağıdakilerden hangisidir?",
+  "options": {
+   "A": "84.680.273",
+   "B": "85.372.377",
+   "C": "85.664.944",
+   "D": "86.092.168",
+   "E": "87.204.510"
+  },
+  "correct_answer": "D",
+  "has_image": false
+ },
+ {
+  "category": "guncel",
+  "source": "TUIK-GUNCEL-2026",
+  "question_no": 2,
+  "question_text": "TÜİK’in 2025 ADNKS sonuçlarına göre, Türkiye’nin en kalabalık nüfusa sahip ili aşağıdakilerden hangisidir?",
+  "options": {
+   "A": "Ankara",
+   "B": "İzmir",
+   "C": "İstanbul",
+   "D": "Bursa",
+   "E": "Antalya"
+  },
+  "correct_answer": "C",
+  "has_image": false
+ },
+ {
+  "category": "guncel",
+  "source": "TUIK-GUNCEL-2026",
+  "question_no": 3,
+  "question_text": "TÜİK’in 2025 ADNKS sonuçlarına göre, Türkiye’nin en az nüfusa sahip ili aşağıdakilerden hangisidir?",
+  "options": {
+   "A": "Tunceli",
+   "B": "Ardahan",
+   "C": "Bayburt",
+   "D": "Gümüşhane",
+   "E": "Kilis"
+  },
+  "correct_answer": "C",
+  "has_image": false
+ },
+ {
+  "category": "guncel",
+  "source": "TUIK-GUNCEL-2026",
+  "question_no": 4,
+  "question_text": "TÜİK’in Doğum İstatistikleri 2024 sonuçlarına göre, Türkiye’de toplam doğurganlık hızı (kadın başına düşen ortalama çocuk sayısı) aşağıdakilerden hangisidir?",
+  "options": {
+   "A": "1,48",
+   "B": "1,88",
+   "C": "2,10",
+   "D": "2,38",
+   "E": "1,20"
+  },
+  "correct_answer": "A",
+  "has_image": false
+ },
+ {
+  "category": "guncel",
+  "source": "TUIK-GUNCEL-2026",
+  "question_no": 5,
+  "question_text": "TÜİK verilerine göre, toplam doğurganlık hızı 2024 itibarıyla kaç yıldır aralıksız olarak nüfusun yenilenme seviyesi kabul edilen 2,10’un altında seyretmektedir?",
+  "options": {
+   "A": "3",
+   "B": "5",
+   "C": "8",
+   "D": "10",
+   "E": "15"
+  },
+  "correct_answer": "C",
+  "has_image": false
+ },
+ {
+  "category": "guncel",
+  "source": "TUIK-GUNCEL-2026",
+  "question_no": 6,
+  "question_text": "TÜİK’in 2022-2024 dönemi Hayat Tabloları sonuçlarına göre, Türkiye’de doğuşta beklenen yaşam süresi kaç yıl olarak hesaplanmıştır?",
+  "options": {
+   "A": "75,5",
+   "B": "76,4",
+   "C": "77,3",
+   "D": "78,1",
+   "E": "80,7"
+  },
+  "correct_answer": "D",
+  "has_image": false
+ },
+ {
+  "category": "guncel",
+  "source": "TUIK-GUNCEL-2026",
+  "question_no": 7,
+  "question_text": "Aynı döneme (2022-2024) ait TÜİK Hayat Tabloları verilerine göre, kadınların ve erkeklerin doğuşta beklenen yaşam süreleri arasındaki fark kaç yıldır?",
+  "options": {
+   "A": "2,6",
+   "B": "3,8",
+   "C": "5,2",
+   "D": "6,4",
+   "E": "7,1"
+  },
+  "correct_answer": "C",
+  "has_image": false
+ },
+ {
+  "category": "guncel",
+  "source": "TUIK-GUNCEL-2026",
+  "question_no": 8,
+  "question_text": "TÜİK’in 2024 yılı verilerine göre, Türkiye’de ortalama hanehalkı büyüklüğü (bir hanede yaşayan ortalama kişi sayısı) aşağıdakilerden hangisidir?",
+  "options": {
+   "A": "2,53",
+   "B": "3,11",
+   "C": "3,45",
+   "D": "4,00",
+   "E": "4,85"
+  },
+  "correct_answer": "B",
+  "has_image": false
+ },
+ {
+  "category": "guncel",
+  "source": "TUIK-GUNCEL-2026",
+  "question_no": 9,
+  "question_text": "TÜİK verilerine göre 2024 yılında ortalama hanehalkı büyüklüğünün (kişi sayısının) en yüksek olduğu il aşağıdakilerden hangisidir?",
+  "options": {
+   "A": "Giresun",
+   "B": "Çanakkale",
+   "C": "Bayburt",
+   "D": "Şırnak",
+   "E": "Tunceli"
+  },
+  "correct_answer": "D",
+  "has_image": false
+ },
+ {
+  "category": "guncel",
+  "source": "TUIK-GUNCEL-2026",
+  "question_no": 10,
+  "question_text": "TÜİK’in Evlenme ve Boşanma İstatistikleri 2024 sonuçlarına göre, Türkiye’de 2024 yılında gerçekleşen toplam evlenme sayısı aşağıdakilerden hangisine en yakındır?",
+  "options": {
+   "A": "387 bin",
+   "B": "456 bin",
+   "C": "568 bin",
+   "D": "623 bin",
+   "E": "701 bin"
+  },
+  "correct_answer": "C",
+  "has_image": false
+ },
+ {
+  "category": "guncel",
+  "source": "TUIK-GUNCEL-2026",
+  "question_no": 11,
+  "question_text": "Aynı TÜİK bültenine göre, 2024 yılında kesinleşen boşanma davaları sonucunda boşanan çift sayısı aşağıdakilerden hangisine en yakındır?",
+  "options": {
+   "A": "98 bin",
+   "B": "132 bin",
+   "C": "187 bin",
+   "D": "214 bin",
+   "E": "256 bin"
+  },
+  "correct_answer": "C",
+  "has_image": false
+ },
+ {
+  "category": "guncel",
+  "source": "TUIK-GUNCEL-2026",
+  "question_no": 12,
+  "question_text": "TÜİK’in Evlenme ve Boşanma İstatistikleri 2024 sonuçlarına göre, kesinleşen boşanma davaları sonucunda çocukların velayetinin yüzde kaçı anneye verilmiştir?",
+  "options": {
+   "A": "50,0",
+   "B": "62,8",
+   "C": "68,5",
+   "D": "74,4",
+   "E": "81,2"
+  },
+  "correct_answer": "D",
+  "has_image": false
+ },
+ {
+  "category": "guncel",
+  "source": "TUIK-GUNCEL-2026",
+  "question_no": 13,
+  "question_text": "TÜİK’in 2025 ADNKS sonuçlarına göre, Türkiye’de il ve ilçe merkezlerinde yaşayanların oranı (kentleşme oranı) yüzde kaçtır?",
+  "options": {
+   "A": "89,7",
+   "B": "91,2",
+   "C": "93,6",
+   "D": "95,8",
+   "E": "97,1"
+  },
+  "correct_answer": "C",
+  "has_image": false
+ },
+ {
+  "category": "guncel",
+  "source": "TUIK-GUNCEL-2026",
+  "question_no": 14,
+  "question_text": "TÜİK verilerine göre, Türkiye’nin 2025 yılı itibarıyla yıllık nüfus artış hızı (binde) aşağıdakilerden hangisidir?",
+  "options": {
+   "A": "3,4",
+   "B": "5,0",
+   "C": "7,2",
+   "D": "9,8",
+   "E": "12,5"
+  },
+  "correct_answer": "B",
+  "has_image": false
+ },
+ {
+  "category": "guncel",
+  "source": "TUIK-GUNCEL-2026",
+  "question_no": 15,
+  "question_text": "TÜİK’in Doğum İstatistikleri 2024 sonuçlarına göre, 2024 yılında Türkiye’de canlı doğan bebek sayısı aşağıdakilerden hangisine en yakındır?",
+  "options": {
+   "A": "750 bin",
+   "B": "850 bin",
+   "C": "940 bin",
+   "D": "1 milyon 50 bin",
+   "E": "1 milyon 150 bin"
+  },
+  "correct_answer": "C",
+  "has_image": false
+ }
+]
